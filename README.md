@@ -44,3 +44,13 @@ All commands are run from the root of the project, from a terminal:
 ## 👀 Want to learn more?
 
 Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+
+## 重新生成数据
+
+数据源是《火焰之纹章 Engage》在线数据表 xlsx（约 100 MB，不进仓库）。xlsx 更新后运行：
+
+```sh
+python3 scripts/x2c.py <xlsx路径> list                                  # 查看 sheet 编号
+python3 scripts/x2c.py <xlsx路径> src/data/characters.csv 2 --clean    # 角色表
+python3 scripts/x2c.py selftest                                         # 自检
+```
