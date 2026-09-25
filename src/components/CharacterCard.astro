@@ -1,0 +1,64 @@
+---
+/** 角色卡片：头像 + 中文名 + 一行副信息，整张卡片链接到角色条目。 */
+import { Image } from "astro:assets";
+import type { ImageMetadata } from "astro";
+
+interface Props {
+  id: string;
+  name: string;
+  subtitle?: string;
+}
+const { id, name, subtitle } = Astro.props;
+
+const portraits = import.meta.glob<{ default: ImageMetadata }>(
+  "/src/assets/characters/*.webp",
+  { eager: true },
+);
+const portrait = portraits[`/src/assets/characters/${id}.webp`]?.default;
+---
+
+<a class="character-card" href={`/characters/${id}`}>
+  {
+    portrait ? (
+      <Image src={portrait} alt={name} width={96} height={96} densities={[1, 2]} />
+    ) : (
+      <span class="placeholder" />
+    )
+  }
+  <span class="name">{name}</span>
+  {subtitle && <span class="subtitle">{subtitle}</span>}
+</a>
+
+<style>
+  .character-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.25rem;
+    text-decoration: none;
+    color: inherit;
+    text-align: center;
+  }
+  img,
+  .placeholder {
+    width: 96px;
+    max-width: 100%;
+    height: auto;
+    aspect-ratio: 1;
+    border-radius: 12px;
+  }
+  .placeholder {
+    background: #e5e5e5;
+  }
+  .name {
+    font-weight: 600;
+    color: #2a64b8;
+  }
+  .subtitle {
+    font-size: 0.8rem;
+    color: #666;
+  }
+  .character-card:hover .name {
+    text-decoration: underline;
+  }
+</style>

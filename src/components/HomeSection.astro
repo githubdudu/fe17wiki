@@ -1,0 +1,94 @@
+---
+/** 首页栏目容器：标题 +「查看全部」链接 + 内容。 */
+interface Props {
+  title: string;
+  moreHref?: string;
+  moreLabel?: string;
+}
+const { title, moreHref, moreLabel = "查看全部" } = Astro.props;
+---
+
+<section class="home-section">
+  <header>
+    <h2>{title}</h2>
+  </header>
+  <slot />
+  {
+    moreHref && (
+      <a class="more" href={moreHref}>
+        {moreLabel}
+        <svg viewBox="0 0 32 32" aria-hidden="true">
+          <circle cx="16" cy="18" r="12" fill="#fff" />
+          <path d="M16 8 A10 10 0 0 0 16 28" fill="none" stroke="#d6334a" stroke-width="4" />
+          <path d="M16 8 A10 10 0 0 1 16 28" fill="none" stroke="#3b6fd6" stroke-width="4" />
+          <path d="M16 2 L20.5 7 L16 12 L11.5 7 Z" fill="#f4c542" stroke="#6b4a00" stroke-width="1.2" />
+        </svg>
+      </a>
+    )
+  }
+</section>
+
+<style>
+  header {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-bottom: 0.75rem;
+    padding: 0.75rem 1rem;
+    background: #262a3f;
+    color: #fff;
+    border-bottom: 4px solid #e0735a;
+  }
+  h2 {
+    margin: 0;
+    font-size: 1.25rem;
+  }
+
+  /* 整行按钮：红蓝渐变描边的胶囊，悬停填满渐变、戒指图标旋转 */
+  .more {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1rem;
+    padding: 1.05rem 3.2rem;
+    border: 2px solid transparent;
+    border-radius: 999px;
+    color: #22263a;
+    background:
+      linear-gradient(#fff, #fff) padding-box,
+      linear-gradient(90deg, #d6334a, #3b6fd6) border-box;
+    font-weight: 700;
+    text-decoration: none;
+    transition: color 0.18s;
+  }
+  .more svg {
+    position: absolute;
+    right: 1rem;
+    top: 50%;
+    width: 1.6rem;
+    height: 1.6rem;
+    transform: translateY(-50%);
+    transition: transform 0.18s;
+  }
+  .more:hover,
+  .more:focus-visible {
+    color: #fff;
+    background: linear-gradient(90deg, #d6334a, #3b6fd6) border-box;
+  }
+  .more:hover svg,
+  .more:focus-visible svg {
+    transform: translateY(-50%) rotate(90deg);
+  }
+  .more:focus-visible {
+    outline: 3px solid #f4c542;
+    outline-offset: 2px;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .more,
+    .more svg {
+      transition: none;
+    }
+  }
+</style>

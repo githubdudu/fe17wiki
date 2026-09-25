@@ -1,11 +1,18 @@
 ---
+import { getCollection } from "astro:content";
 import NavLayout from "../components/NavLayout.jsx";
+import HomeSection from "../components/HomeSection.astro";
+import CharacterGrid from "../components/CharacterGrid.astro";
 import BaseLayout from "../layouts/BaseLayout.astro";
+
+const characters = await getCollection("characters");
 ---
 
 <BaseLayout>
   <NavLayout>
     <div slot="sidebar">Sidebar</div>
-    <div>Main</div>
+    <HomeSection title="角色" moreHref="/characters" moreLabel="角色简要清单">
+      <CharacterGrid characters={characters} />
+    </HomeSection>
   </NavLayout>
 </BaseLayout>
