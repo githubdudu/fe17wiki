@@ -1,0 +1,38 @@
+---
+/** 页面骨架：顶部菜单 + 侧边栏（仅桌面）+ 主内容。侧边栏用 slot="sidebar" 传入。 */
+---
+
+<div class="nav-layout">
+  <div class="menu">Menu</div>
+  <aside><slot name="sidebar" /></aside>
+  <main><slot /></main>
+</div>
+
+<style>
+  /* 手机优先：单列。桌面布局相同，只在左边多出侧边栏。 */
+  .nav-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-areas: "menu" "main";
+  }
+  .nav-layout > .menu { grid-area: menu; }
+  .nav-layout > aside { display: none; }
+  .nav-layout > main {
+    grid-area: main;
+    width: 100%;
+    max-width: 720px;
+    justify-self: center;
+    padding: 0 12px 24px;
+    box-sizing: border-box;
+  }
+
+  @media (min-width: 960px) {
+    .nav-layout {
+      grid-template-columns: 240px minmax(0, 720px);
+      grid-template-areas: "menu menu" "aside main";
+      justify-content: center;
+      column-gap: 24px;
+    }
+    .nav-layout > aside { display: block; grid-area: aside; }
+  }
+</style>
