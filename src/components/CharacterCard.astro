@@ -20,7 +20,7 @@ const portrait = portraits[`/src/assets/characters/${id}.webp`]?.default;
 <a class="character-card" href={`/characters/${id}`}>
   {
     portrait ? (
-      <Image src={portrait} alt={name} width={96} height={96} densities={[1, 2]} />
+      <Image src={portrait} alt={name} width={48} height={48} densities={[1, 2]} />
     ) : (
       <span class="placeholder" />
     )
@@ -41,16 +41,17 @@ const portrait = portraits[`/src/assets/characters/${id}.webp`]?.default;
   }
   img,
   .placeholder {
-    width: 96px;
+    width: 48px;
     max-width: 100%;
     height: auto;
     aspect-ratio: 1;
-    border-radius: 12px;
+    border-radius: 6px;
   }
   .placeholder {
     background: #e5e5e5;
   }
   .name {
+    font-size: 0.75rem;
     font-weight: 600;
     color: #2a64b8;
   }

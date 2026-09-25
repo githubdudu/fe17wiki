@@ -51,31 +51,34 @@ const { title, moreHref, moreLabel = "查看全部" } = Astro.props;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-top: 1rem;
-    padding: 1.05rem 3.2rem;
+    margin-top: 0.75rem;
+    padding: 0.6rem 2.6rem;
     border: 2px solid transparent;
     border-radius: 999px;
     color: #22263a;
+    /* 三层：白色遮罩（靠右）盖住渐变底；悬停时遮罩宽度 100%→0，渐变从左往右露出 */
     background:
-      linear-gradient(#fff, #fff) padding-box,
+      linear-gradient(#fff, #fff) right / 100% 100% no-repeat padding-box,
+      linear-gradient(90deg, #d6334a, #3b6fd6) padding-box,
       linear-gradient(90deg, #d6334a, #3b6fd6) border-box;
+    font-size: 0.85rem;
     font-weight: 700;
     text-decoration: none;
-    transition: color 0.18s;
+    transition: background-size 0.35s ease, color 0.2s 0.1s;
   }
   .more svg {
     position: absolute;
-    right: 1rem;
+    right: 0.6rem;
     top: 50%;
-    width: 1.6rem;
-    height: 1.6rem;
+    width: 1.25rem;
+    height: 1.25rem;
     transform: translateY(-50%);
-    transition: transform 0.18s;
+    transition: transform 0.35s ease;
   }
   .more:hover,
   .more:focus-visible {
     color: #fff;
-    background: linear-gradient(90deg, #d6334a, #3b6fd6) border-box;
+    background-size: 0% 100%, auto, auto;
   }
   .more:hover svg,
   .more:focus-visible svg {
