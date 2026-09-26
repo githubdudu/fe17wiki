@@ -3,10 +3,31 @@ import { getCollection } from "astro:content";
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import NavLayout from "../../components/NavLayout.astro";
 import SkillSummary from "../../components/SkillSummary.astro";
+import InfoTip from "../../components/InfoTip.astro";
 
 const skills = (await getCollection("skills")).sort((a, b) => a.data.order - b.data.order);
 // 分组和组的先后都来自 CSV：「特技类型」列 + 行序
 const groups = [...Map.groupBy(skills, (s) => s.data["特技类型"])];
+
+// 各特技类型的说明（分组标题旁的「i」）
+const TYPE_TIPS: Record<string, string[]> = {
+  个人特技: ["每个角色独有的特技，始终生效，不能更换，也不能继承给其他角色。"],
+  兵种特技: [
+    "职业自带的特技，转职成该职业后获得。",
+    "部分特技要在该职业达到一定等级后才习得，详见各特技的备注。",
+  ],
+  "纹章士-同步特技": [
+    "佩戴纹章士戒指时自动生效的特技，随着和该纹章士的羁绊等级提升依次解锁。",
+    "大部分同步特技也可以消耗 SP 继承，继承后不佩戴戒指也能装备。",
+  ],
+  "纹章士-继承特技": [
+    "和纹章士的羁绊等级达到要求后，在戒指之间消耗 SP 学习的特技。",
+    "学会后即使不佩戴该纹章士的戒指也能装备，每个角色最多同时装备 2 个继承特技。",
+  ],
+  "纹章士-结合特技": ["和纹章士「结合」时才生效的特技，不能继承。"],
+  "纹章士-结合指令技": ["和纹章士「结合」时才能使用的指令，大多是威力很强的结合技，不能继承。"],
+  牵绊戒指特技: ["佩戴对应的牵绊戒指时才生效的特技。"],
+};
 ---
 
 <BaseLayout>
@@ -31,6 +52,13 @@ const groups = [...Map.groupBy(skills, (s) => s.data["特技类型"])];
           <h2>
             {type}
             <span>{list.length}</span>
+            {TYPE_TIPS[type] && (
+              <InfoTip id={`info-type-${i}`} label={type}>
+                {TYPE_TIPS[type].map((t) => (
+                  <p>{t}</p>
+                ))}
+              </InfoTip>
+            )}
           </h2>
           <ul>
             {list.map((s) => {
