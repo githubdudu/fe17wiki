@@ -2,6 +2,7 @@
 /** 角色清单：<table>，每个角色一行（按 CSV 行序，行由 CharacterRow 渲染）。顶部勾选要显示的列（角色列始终显示）。 */
 import { getCollection, type CollectionEntry } from "astro:content";
 import CharacterRow from "./CharacterRow.astro";
+import InfoTip from "./InfoTip.astro";
 
 interface Props {
   characters: CollectionEntry<"characters">[];
@@ -56,23 +57,61 @@ const sorted = [...characters].sort((a, b) => a.data.order - b.data.order);
       <input type="checkbox" id="col-growth" class="widen" checked /><label for="col-growth">个人成长率</label>
       <input type="checkbox" id="col-base" class="widen" checked /><label for="col-base">初始能力值</label>
     </fieldset>
-    <p class="legend">
-      <span class="swatch" data-rank="1"></span>第 1 名
-      <span class="swatch" data-rank="2"></span>第 2 名
-      <span class="swatch" data-rank="3"></span>第 3 名（并列同色）
-    </p>
   </div>
 
   <div class="table">
     <table>
       <thead>
         <tr>
-          <th scope="col" rowspan="2" class="who">角色</th>
-          <th scope="col" rowspan="2" class="col join-col">加入时间和条件</th>
-          <th scope="col" rowspan="2" class="col skill-col">个人特技</th>
-          <th scope="col" rowspan="2" class="col weapons-col">初始武器资质</th>
-          <th scope="colgroup" colspan={STATS.length} class="col growth-col group">个人成长率（颜色标记为各项前三）</th>
-          <th scope="colgroup" colspan={BASE.length} class="col base-col group">初始能力值</th>
+          <th scope="col" rowspan="2" class="who">
+            角色
+            <InfoTip id="info-who" label="角色">
+              <p>头像、名字和初始职业，【】里是兵种。点击名字进入角色页面。</p>
+              <p>名字后的字母是评级，S 最高、D 最低；邪龙之章 DLC 角色暂无评级。</p>
+              <p>评级仅供参考。实际强弱还取决于难度、职业路线和纹章士搭配。</p>
+            </InfoTip>
+          </th>
+          <th scope="col" rowspan="2" class="col join-col">
+            加入时间和条件
+            <InfoTip id="info-join" label="加入时间和条件">
+              <p>加入的章节及加入条件。</p>
+              <p>需要对话说得或保证存活的角色，错过就无法加入。</p>
+            </InfoTip>
+          </th>
+          <th scope="col" rowspan="2" class="col skill-col">
+            个人特技
+            <InfoTip id="info-skill" label="个人特技">
+              <p>每个角色独有、无法继承的特技。点击特技名查看详情。</p>
+            </InfoTip>
+          </th>
+          <th scope="col" rowspan="2" class="col weapons-col">
+            初始武器资质
+            <InfoTip id="info-weapons" label="初始武器资质">
+              <p>角色天生拥有的武器资质。在使用这类武器的职业中，天生资质可以提高该武器的熟练度上限。</p>
+              <p>转职时，角色必须拥有新职业所用全部武器的资质。天生资质以外的资质，可以通过提升与纹章士的羁绊等级获得。</p>
+              <p>鼠标悬停在图标上可以看到武器名。</p>
+            </InfoTip>
+          </th>
+          <th scope="colgroup" colspan={STATS.length} class="col growth-col group">
+            个人成长率（颜色标记为各项前三）
+            <InfoTip id="info-growth" label="个人成长率">
+              <p>角色自身的成长率。实际成长率 = 个人成长率 + 当前职业的成长率修正。</p>
+              <p>随机成长模式下，实际成长率就是升级时该项 +1 的概率；固定成长模式下，每次升级累加实际成长率，累计满 100% 该项 +1。</p>
+              <p>金色由深到浅：该项在全部角色中排第 1 / 2 / 3 名，数值相同的并列同色。</p>
+              <p class="legend">
+                <span class="swatch" data-rank="1"></span>第 1 名
+                <span class="swatch" data-rank="2"></span>第 2 名
+                <span class="swatch" data-rank="3"></span>第 3 名
+              </p>
+            </InfoTip>
+          </th>
+          <th scope="colgroup" colspan={BASE.length} class="col base-col group">
+            初始能力值
+            <InfoTip id="info-base" label="初始能力值">
+              <p>角色加入时的等级和各项能力值。</p>
+              <p>内置等级：已是高级职业的角色，在此之前累计的等级；「--」表示没有。</p>
+            </InfoTip>
+          </th>
         </tr>
         <tr>
           {STATS.map((s, i) => <th scope="col" class={`col growth-col stat g${i}`}>{s}</th>)}
@@ -141,21 +180,20 @@ const sorted = [...characters].sort((a, b) => a.data.order - b.data.order);
     outline: 3px solid #f4c542;
     outline-offset: 2px;
   }
+  /* 成长率说明卡片里的图例；色块颜色和 CharacterRow 里成长率的 .chip[data-rank] 相同 */
   .legend {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    gap: 0.25rem;
-    margin: 0;
-    font-size: 0.75rem;
-    color: #5d6478;
+    gap: 0.3rem;
   }
-  /* 图例色块，颜色和 CharacterRow 里成长率的 .chip[data-rank] 相同 */
   .swatch {
     width: 0.8rem;
     height: 0.8rem;
-    margin-left: 0.35rem;
     border-radius: 2px;
+  }
+  .swatch:not(:first-child) {
+    margin-left: 0.6rem;
   }
   .swatch[data-rank="1"] { background: #c98a00; }
   .swatch[data-rank="2"] { background: #f4c542; }
@@ -165,8 +203,7 @@ const sorted = [...characters].sort((a, b) => a.data.order - b.data.order);
   .character-list:has(#col-join:not(:checked)) :global(.join-col),
   .character-list:has(#col-skill:not(:checked)) :global(.skill-col),
   .character-list:has(#col-growth:not(:checked)) :global(.growth-col),
-  .character-list:has(#col-base:not(:checked)) :global(.base-col),
-  .character-list:has(#col-growth:not(:checked)) .legend {
+  .character-list:has(#col-base:not(:checked)) :global(.base-col) {
     display: none;
   }
 

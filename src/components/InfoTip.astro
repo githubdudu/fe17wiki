@@ -1,0 +1,76 @@
+---
+/**
+ * 「i」说明按钮：点击弹出说明卡片，再点一次、点别处或按 Esc 关闭。
+ * 用浏览器原生 Popover（popovertarget / popover），不写 JS，手机上同样可用。
+ * 说明文字写在默认插槽里；label 是卡片标题，也用作按钮的无障碍名称。
+ */
+interface Props {
+  id: string;
+  label: string;
+}
+const { id, label } = Astro.props;
+---
+
+<button class="info" type="button" popovertarget={id} aria-label={`${label}：说明`}>i</button>
+<div class="tip" id={id} popover>
+  <p class="title">{label}</p>
+  <div class="body"><slot /></div>
+</div>
+
+<style>
+  .info {
+    display: inline-grid;
+    place-items: center;
+    width: 1rem;
+    height: 1rem;
+    margin-left: 0.3rem;
+    padding: 0;
+    border: 1px solid currentColor;
+    border-radius: 50%;
+    background: none;
+    color: #5d6478;
+    font-family: "Barlow", system-ui, sans-serif;
+    font-size: 0.65rem;
+    font-weight: 700;
+    line-height: 1;
+    vertical-align: 0.1em;
+    cursor: pointer;
+  }
+  .info:hover {
+    background: #5d6478;
+    color: #fff;
+  }
+  .info:focus-visible {
+    outline: 3px solid #f4c542;
+    outline-offset: 2px;
+  }
+
+  /* 弹出卡片（在最顶层显示，不会被表格的滚动框裁掉） */
+  .tip {
+    max-width: min(90vw, 22rem);
+    margin: auto;
+    padding: 0.75rem 1rem;
+    border: 1px solid #d4dde2;
+    border-radius: 8px;
+    background: #fff;
+    color: #22263a;
+    box-shadow: 0 8px 24px rgb(34 38 58 / 0.18);
+    font-size: 0.85rem;
+    font-weight: 400;
+    line-height: 1.6;
+    text-align: left;
+  }
+  .tip::backdrop {
+    background: rgb(34 38 58 / 0.15);
+  }
+  .title {
+    margin: 0 0 0.3rem;
+    font-weight: 700;
+  }
+  .body :global(p) {
+    margin: 0;
+  }
+  .body :global(p + p) {
+    margin-top: 0.35rem;
+  }
+</style>
