@@ -29,25 +29,37 @@ const d = character.data;
       {d["评级"] && <span class="rank" data-rank={d["评级"]}>{d["评级"]}</span>}
     </div>
   </th>
-  <td class="col weapons-col" tabindex="-1"><p class="main">{d["初始武器资质"]}</p></td>
-  <td class="col join-col" tabindex="-1">
+  <td class="col weapons-col" tabindex="-1" title="武器资质"><p class="main">{d["初始武器资质"]}</p></td>
+  <td class="col join-col" tabindex="-1" title="加入时间和条件">
     <p class="main">{d["加入章节"]}</p>
     <p class="sub">{d["加入条件"]}</p>
   </td>
-  <td class="col skill-col" tabindex="-1">
+  <td class="col skill-col" tabindex="-1" title="个人特技">
     <p class="main skill-name">{d["个人特技"]}</p>
     <p class="sub">{d["详细说明"]}</p>
   </td>
   {
     growth.map((g, i) => (
-      <td class={`col growth-col stat g${i}`} tabindex="-1">
-        <span class="chip" data-rank={g.rank}>{g.value}</span>
+      <td
+        class={`col growth-col stat g${i}`}
+        tabindex="-1"
+        title={`个人成长率·${g.stat}：${g.value}%${g.rank ? `（第 ${g.rank} 名）` : ""}`}
+      >
+        <span class="chip" data-rank={g.rank}>{g.value}<small class="pct">%</small></span>
       </td>
     ))
   }
   {
     base.map((b, i) => (
-      <td class={`col base-col stat b${i}`} tabindex="-1">
+      <td
+        class={`col base-col stat b${i}`}
+        tabindex="-1"
+        title={
+          i === 0 ? `初始等级：Lv ${b.value}`
+          : i === 1 ? `内置等级：${Number.isNaN(Number(b.value)) ? "无" : `Lv ${b.value}`}`
+          : `初始能力值·${b.stat}：${b.value}`
+        }
+      >
         <span class="chip">
           {i < 2 && !Number.isNaN(Number(b.value)) && <small class="lv">Lv</small>}
           {b.value}
@@ -155,11 +167,18 @@ const d = character.data;
   .growth-col .chip[data-rank="3"] { background: #fbe9b0; }
   /* 初始等级、内置等级：数字大一号 */
   /* 初始等级、内置等级是「等级」不是能力值：数字前加小号 Lv，数字略大、深色（区分主要靠底色带和分隔线） */
-  .lv {
-    margin-right: 0.1em;
+  /* 数字旁的小号单位：等级前的 Lv、成长率后的 %（% 颜色跟随色块文字色） */
+  .lv,
+  .pct {
     font-size: 0.6em;
     font-weight: 500;
+  }
+  .lv {
+    margin-right: 0.1em;
     color: #5d6478;
+  }
+  .pct {
+    margin-left: 0.05em;
   }
   .b0 .chip,
   .b1 .chip {
