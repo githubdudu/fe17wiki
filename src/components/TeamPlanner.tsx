@@ -101,8 +101,8 @@ export default function TeamPlanner({
   };
 
   /** 小图 + 名字的可拖胶囊（角色、职业、纹章士、刻印）。角色的 value 是 id，显示名字。 */
-  const chip = (d: Drag, img?: string, extra = "") => (
-    <Draggable key={d.value} d={d} className={`chip ${extra}`}>
+  const chip = (d: Drag, img?: string) => (
+    <Draggable key={d.value} d={d} className={`chip k-${d.kind}`}>
       <Avatar src={img} size={22} />
       {d.kind === "character" ? byId.get(d.value)!.name : d.value}
     </Draggable>
@@ -117,7 +117,7 @@ export default function TeamPlanner({
     );
 
   const newWeapon = (
-    <Draggable key="tbd" d={{ kind: "weapon", value: "" }} className="chip tbd">
+    <Draggable key="tbd" d={{ kind: "weapon", value: "" }} className="chip tbd k-weapon">
       武器（待定）
     </Draggable>
   );
@@ -139,7 +139,7 @@ export default function TeamPlanner({
       "",
       emblems
         .filter((e) => !usedEngraves.has(e.name))
-        .map((e) => chip({ kind: "engrave", value: e.name }, e.img, "engrave")),
+        .map((e) => chip({ kind: "engrave", value: e.name }, e.img)),
     ),
   };
 
@@ -147,10 +147,10 @@ export default function TeamPlanner({
     const slot: Target = { row: i, cell: "engrave", slot: k };
     return (
       <Draggable key={k} d={{ kind: "weapon", value: w.engrave, row: i, slot: k }} className="slot">
-        <Zone as="span" t={slot} className={`slot-in${hint(slot)}`}>
+        <Zone as="span" t={slot} className={`slot-in k-weapon${hint(slot)}`}>
           武器（待定）
           {w.engrave ? (
-            chip({ kind: "engrave", value: w.engrave, row: i, slot: k }, emblemImg.get(w.engrave), "engrave")
+            chip({ kind: "engrave", value: w.engrave, row: i, slot: k }, emblemImg.get(w.engrave))
           ) : (
             <span className="hint">无刻印</span>
           )}
@@ -229,7 +229,7 @@ export default function TeamPlanner({
     if (d.kind === "weapon" && d.row !== undefined) return weaponSlot(rows[d.row].weapons[d.slot!], d.row, d.slot!);
     if (d.kind === "weapon") return newWeapon;
     const img = { character: byId.get(d.value)?.img, class: classImg.get(d.value), emblem: emblemImg.get(d.value), engrave: emblemImg.get(d.value) }[d.kind];
-    return chip(d, img, d.kind === "engrave" ? "engrave" : "");
+    return chip(d, img);
   };
 
   return (
@@ -248,7 +248,7 @@ export default function TeamPlanner({
       }}
       onDragCancel={() => setDnd(null)}
     >
-      <div className="planner">
+      <div className={`planner${dnd ? ` k-${dnd.drag.kind}` : ""}`}>
         <div className="top">
           <h1>阵容搭配</h1>
           <div className="actions">
@@ -266,10 +266,10 @@ export default function TeamPlanner({
                 <th className="grip-cell no-export" />
                 <th className="num">序号</th>
                 <th>定位</th>
-                <th className={head("character")}>角色</th>
-                <th className={head("class")}>职业</th>
-                <th className={head("emblem")}>纹章士</th>
-                <th className={head("weapon")}>武器 · 刻印</th>
+                <th className={`k-character ${head("character")}`}>角色</th>
+                <th className={`k-class ${head("class")}`}>职业</th>
+                <th className={`k-emblem ${head("emblem")}`}>纹章士</th>
+                <th className={`k-weapon ${head("weapon")}`}>武器 · 刻印</th>
                 <th className="no-export" />
               </tr>
             </thead>
@@ -283,7 +283,7 @@ export default function TeamPlanner({
         <Zone as="div" t="pool" className={`pool${hint("pool")}`}>
           <div className="tabs" role="tablist">
             {TABS.map(([k, label]) => (
-              <button key={k} role="tab" aria-selected={tab === k} onClick={() => setTab(k)}>
+              <button key={k} role="tab" className={`k-${k}`} aria-selected={tab === k} onClick={() => setTab(k)}>
                 {label}
               </button>
             ))}

@@ -46,14 +46,8 @@ const emblems = (await getCollection("emblems")).sort(byOrder).map((e) => ({
 <style is:global>
   .planner {
     --line: #d4dde2;
-  }
-  .planner h2 {
-    margin: 1rem 0 0.5rem;
-    padding: 0.35rem 0.75rem;
-    font-size: 1rem;
-    color: #fff;
-    background: #262a3f;
-    border-bottom: 3px solid #e0735a;
+    /* 拖动中根元素带上被拖那一类的 k-* 类，--drop 就是它的类别色；拖整行（没有类别）用石板灰 */
+    --drop: var(--kind, #5d6478);
   }
   .planner button {
     font: inherit;
@@ -69,16 +63,20 @@ const emblems = (await getCollection("emblems")).sort(byOrder).map((e) => ({
     color: #999;
     font-size: 0.8rem;
   }
-  /* 拖动途中：能放下的位置淡色虚线提示；指针所在的目标加深为实线 */
+  /* 拖动途中：能放下的位置用被拖那一类的颜色淡虚线提示；指针所在的目标加深为实线 + 稍深底色 */
   .planner .can-drop {
-    outline: 2px dashed #f0b3a4;
+    outline: 2px dashed color-mix(in srgb, var(--drop) 55%, #fff);
     outline-offset: -2px;
-    background: #fdf3f0;
+    background: color-mix(in srgb, var(--drop) 6%, #fff);
   }
   .planner .over {
-    outline: 2px solid #e0735a;
+    outline: 2px solid var(--drop);
     outline-offset: -2px;
-    background: #fbe1d9;
+    background: color-mix(in srgb, var(--drop) 16%, #fff);
+  }
+  /* 拖回下方 = 清掉：用中性灰，不借类别色（红色是纹章士的），也不像报错 */
+  .planner .pool {
+    --drop: #8a8f9c;
   }
 
   /* 工具栏 */
@@ -141,14 +139,26 @@ const emblems = (await getCollection("emblems")).sort(byOrder).map((e) => ({
     outline: none;
     background: #fff;
   }
+  /*
+   * 类别色：每一类（角色 / 职业 / 纹章士 / 武器·刻印）一个固定颜色，表头色条、胶囊、标签页都用它，
+   * 让人一眼对上「这个胶囊放哪一列」。四色经 dataviz 校验：两两色盲区分 ΔE ≥ 8.6。
+   * 青绿、琥珀在白底对比度不足 3:1，只用在边框 / 色块上，文字保持深色。刻印和武器同色。
+   */
+  /* 「.planner.k-*」= 拖动中的根元素（见 --drop），「.planner .k-*」= 里面的胶囊、表头、标签 */
+  .planner.k-character, .planner .k-character { --kind: #3b6fd6; }
+  .planner.k-class, .planner .k-class { --kind: #1baf7a; }
+  .planner.k-emblem, .planner .k-emblem { --kind: #d6334a; }
+  .planner.k-weapon, .planner .k-weapon,
+  .planner.k-engrave, .planner .k-engrave { --kind: #eda100; }
+
   .planner .chip {
     display: inline-flex;
     align-items: center;
     gap: 0.25rem;
     padding: 2px 8px 2px 2px;
-    border: 1px solid var(--line);
+    border: 1px solid color-mix(in srgb, var(--kind, #d4dde2) 55%, #fff);
     border-radius: 999px;
-    background: #fff;
+    background: color-mix(in srgb, var(--kind, #fff) 8%, #fff);
     font-size: 0.85rem;
     white-space: nowrap;
   }
@@ -156,11 +166,11 @@ const emblems = (await getCollection("emblems")).sort(byOrder).map((e) => ({
     border-radius: 50%;
   }
   .planner .chip:hover {
-    border-color: #262a3f;
+    border-color: var(--kind, #262a3f);
   }
-  .planner .engrave {
-    border-color: #f4c542;
-    background: #fff8e1;
+  /* 刻印：同武器的琥珀色，但填得更满，和武器槽区分 */
+  .planner .chip.k-engrave {
+    background: color-mix(in srgb, var(--kind) 22%, #fff);
   }
   .planner .slot {
     display: inline-block;
@@ -170,7 +180,7 @@ const emblems = (await getCollection("emblems")).sort(byOrder).map((e) => ({
     align-items: center;
     gap: 0.35rem;
     padding: 2px 4px 2px 8px;
-    border: 1px solid var(--line);
+    border: 1px solid color-mix(in srgb, var(--kind) 55%, #fff);
     border-radius: 6px;
     color: #666;
     font-size: 0.85rem;
@@ -197,6 +207,10 @@ const emblems = (await getCollection("emblems")).sort(byOrder).map((e) => ({
     font-size: 0.8rem;
     color: #666;
     background: #f1f5f7;
+  }
+  /* 可放置的列：表头顶部一条类别色（用内阴影，不改变表格尺寸） */
+  .planner .team th[class*="k-"] {
+    box-shadow: inset 0 3px var(--kind);
   }
   .planner .team th,
   .planner .team td {
@@ -327,31 +341,33 @@ const emblems = (await getCollection("emblems")).sort(byOrder).map((e) => ({
     margin-top: 1rem;
     border: 1px solid var(--line);
   }
+  /* 标签栏：每个标签是自己类别色的淡底，选中的标签用类别色下划线 */
   .planner .tabs {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    background: #262a3f;
-    border-bottom: 3px solid #e0735a;
+    background: #f1f5f7;
+    border-bottom: 1px solid var(--line);
   }
   .planner .tabs button {
-    padding: 0.45rem 0.9rem;
+    padding: 0.5rem 0.9rem;
     border: 0;
-    background: none;
-    color: #fff;
-    font-weight: 700;
+    background: color-mix(in srgb, var(--kind) 10%, #fff); /* 同胶囊：类别色的淡底 */
+    color: #5d6478;
     cursor: pointer;
   }
   .planner .tabs button:hover {
-    background: #353a57;
+    color: #262a3f;
+    background: color-mix(in srgb, var(--kind) 18%, #fff);
   }
   .planner .tabs button[aria-selected="true"] {
-    background: #e0735a;
+    color: #262a3f;
+    font-weight: 700;
+    box-shadow: inset 0 -3px var(--kind);
   }
   .planner .tabs .hint {
     margin-left: auto;
     padding: 0 0.75rem;
-    color: #aab;
   }
   .planner .panel {
     padding: 0.25rem 0.5rem 0.75rem;
