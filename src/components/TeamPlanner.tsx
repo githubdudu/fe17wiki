@@ -4,7 +4,7 @@
  * 表格里的每一项也能拖：拖到别的行的同一列 = 移过去（角色是两行交换），拖回下方 = 清掉；
  * 行首把手拖整行 = 排序；× 删行。
  * 角色、纹章士、刻印在整队里各只能用一次（下方只列没用过的）；职业可重复。
- * 状态存 localStorage；分享链接把状态放在 #t= 里。
+ * 状态存 localStorage；分享链接把压缩后的队伍放在 #s= 里（见 ./team/storage.ts）。
  *
  * 拖放用 @dnd-kit/core（鼠标、触屏长按）。本文件只管界面；其余在 ./team/：
  * rules.ts（数据和拖放规则）、dnd.tsx（dnd-kit 接线）、storage.ts（保存 / 分享链接）、exportImage.ts（导出图片）。
@@ -13,7 +13,7 @@ import { useEffect, useRef, useState, type ReactNode } from "react";
 import { DndContext, DragOverlay, MouseSensor, TouchSensor, useSensor, useSensors } from "@dnd-kit/core";
 import { EMPTY, accepts, drop, type Drag, type Row, type Tab, type Target } from "./team/rules";
 import { Draggable, Ghost, Zone, collision, zoneId } from "./team/dnd";
-import { load, save, shareLink } from "./team/storage";
+import { load, loadLink, save, shareLink } from "./team/storage";
 import { renderImage } from "./team/exportImage";
 
 type Character = { id: string; name: string; img?: string; initClass: string };
@@ -56,6 +56,12 @@ export default function TeamPlanner({
   );
 
   useEffect(() => save(rows), [rows]);
+  // 分享链接里的序号按 CSV 行序对应到 id / 名字
+  const dict = { chars: characters.map((c) => c.id), classes: classes.map((c) => c.name), emblems: emblems.map((e) => e.name) };
+  // 打开的是分享链接：解压是异步的，先显示本地保存，读完再换成链接里的队伍
+  useEffect(() => {
+    loadLink(dict).then((r) => r && setRows(r));
+  }, []);
 
   const inTeam = new Set(rows.map((r) => r.id));
   const usedEmblems = new Set(rows.flatMap((r) => r.emblems));
@@ -68,7 +74,7 @@ export default function TeamPlanner({
   const head = (cell: Tab) => (dnd?.drag.kind === cell ? "can-drop" : "");
 
   const share = async () => {
-    const link = shareLink(rows);
+    const link = await shareLink(rows, dict);
     try {
       await navigator.clipboard.writeText(link);
       setMsg("已复制分享链接");
