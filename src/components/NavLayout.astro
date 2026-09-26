@@ -35,4 +35,14 @@
     }
     .nav-layout > aside { display: block; grid-area: aside; }
   }
+
+  /* 页面内有勾选的 .widen 选框时（如角色清单勾选「成长率」），主内容加宽到 1320px */
+  :global(.nav-layout:has(.widen:checked) > main) {
+    max-width: 1320px;
+  }
+  @media (min-width: 960px) {
+    :global(.nav-layout:has(.widen:checked)) {
+      grid-template-columns: 240px minmax(0, 1320px);
+    }
+  }
 </style>

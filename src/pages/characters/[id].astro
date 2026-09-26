@@ -1,0 +1,30 @@
+---
+import { getCollection } from "astro:content";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import NavLayout from "../../components/NavLayout.astro";
+
+export async function getStaticPaths() {
+  const characters = await getCollection("characters");
+  return characters.map((c) => ({ params: { id: c.id }, props: { character: c } }));
+}
+
+const { character } = Astro.props;
+const { id, ...fields } = character.data;
+---
+
+<BaseLayout>
+  <NavLayout>
+    <div slot="sidebar">Sidebar</div>
+    <h1>{fields["角色名称_简中"]} {fields["角色名称_英文"]}</h1>
+    <table>
+      <tbody>
+        {Object.entries(fields).map(([key, value]) => (
+          <tr>
+            <th>{key}</th>
+            <td>{value}</td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
+  </NavLayout>
+</BaseLayout>

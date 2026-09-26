@@ -1,7 +1,6 @@
 ---
 /** 角色卡片：头像 + 中文名 + 一行副信息，整张卡片链接到角色条目。 */
-import { Image } from "astro:assets";
-import type { ImageMetadata } from "astro";
+import Portrait from "./Portrait.astro";
 
 interface Props {
   id: string;
@@ -9,22 +8,10 @@ interface Props {
   subtitle?: string;
 }
 const { id, name, subtitle } = Astro.props;
-
-const portraits = import.meta.glob<{ default: ImageMetadata }>(
-  "/src/assets/characters/*.webp",
-  { eager: true },
-);
-const portrait = portraits[`/src/assets/characters/${id}.webp`]?.default;
 ---
 
 <a class="character-card" href={`/characters/${id}`}>
-  {
-    portrait ? (
-      <Image src={portrait} alt={name} width={48} height={48} densities={[1, 2]} />
-    ) : (
-      <span class="placeholder" />
-    )
-  }
+  <Portrait id={id} alt={name} size={48} />
   <span class="name">{name}</span>
   {subtitle && <span class="subtitle">{subtitle}</span>}
 </a>
@@ -38,17 +25,6 @@ const portrait = portraits[`/src/assets/characters/${id}.webp`]?.default;
     text-decoration: none;
     color: inherit;
     text-align: center;
-  }
-  img,
-  .placeholder {
-    width: 48px;
-    max-width: 100%;
-    height: auto;
-    aspect-ratio: 1;
-    border-radius: 6px;
-  }
-  .placeholder {
-    background: #e5e5e5;
   }
   .name {
     font-size: 0.75rem;

@@ -1,0 +1,370 @@
+---
+/** 角色清单：<table>，每个角色一行（按 CSV 行序，行由 CharacterRow 渲染）。顶部勾选要显示的列（角色列始终显示）。 */
+import type { CollectionEntry } from "astro:content";
+import CharacterRow from "./CharacterRow.astro";
+
+interface Props {
+  characters: CollectionEntry<"characters">[];
+}
+const { characters } = Astro.props;
+
+const STATS = ["HP", "力量", "魔力", "技巧", "速度", "幸运", "防守", "魔防"];
+const BASE = ["LV", "内置等级", ...STATS];
+
+// 个人成长率：每项取不同数值从高到低的前三个，标出第 1 / 2 / 3 名（并列同名次，所以一项可能不止 3 人）。
+const top3Of = (prefix: string, stats: string[]) => {
+  const tops = Object.fromEntries(
+    stats.map((s) => [
+      s,
+      [...new Set(characters.map((c) => Number(c.data[`${prefix}${s}`])))]
+        .filter((v) => !Number.isNaN(v))
+        .sort((a, b) => b - a)
+        .slice(0, 3),
+    ]),
+  );
+  return (c: CollectionEntry<"characters">) =>
+    stats.map((stat) => {
+      const value = c.data[`${prefix}${stat}`];
+      const i = tops[stat].indexOf(Number(value));
+      return { stat, value, rank: i < 0 ? undefined : i + 1 };
+    });
+};
+const growthOf = top3Of("个人成长率_", STATS);
+// 初始能力值不着色：它几乎只反映加入时的等级（总和与初始等级+内置等级的相关系数约 0.97），排名没有意义
+const baseOf = (c: CollectionEntry<"characters">) =>
+  BASE.map((stat) => ({ stat, value: c.data[`初始能力值_${stat}`] }));
+
+const sorted = [...characters].sort((a, b) => a.data.order - b.data.order);
+---
+
+<div class="character-list">
+  <div class="toolbar">
+    <fieldset class="cols">
+      <legend>显示列</legend>
+      <input type="checkbox" id="col-weapons" checked /><label for="col-weapons">武器资质</label>
+      <input type="checkbox" id="col-join" checked /><label for="col-join">加入</label>
+      <input type="checkbox" id="col-skill" checked /><label for="col-skill">个人特技</label>
+      <!-- .widen：勾选成长率或初始能力值时 NavLayout 把主内容加宽 -->
+      <input type="checkbox" id="col-growth" class="widen" checked /><label for="col-growth">个人成长率（颜色标记为各项前三）</label>
+      <input type="checkbox" id="col-base" class="widen" checked /><label for="col-base">初始能力值</label>
+    </fieldset>
+    <p class="legend">
+      <span class="swatch" data-rank="1"></span>第 1 名
+      <span class="swatch" data-rank="2"></span>第 2 名
+      <span class="swatch" data-rank="3"></span>第 3 名（并列同色）
+    </p>
+  </div>
+
+  <div class="table">
+    <table>
+      <thead>
+        <tr>
+          <th scope="col" rowspan="2" class="who">角色</th>
+          <th scope="col" rowspan="2" class="col weapons-col">武器资质</th>
+          <th scope="col" rowspan="2" class="col join-col">加入时间和条件</th>
+          <th scope="col" rowspan="2" class="col skill-col">个人特技</th>
+          <th scope="colgroup" colspan={STATS.length} class="col growth-col group">个人成长率（颜色标记为各项前三）</th>
+          <th scope="colgroup" colspan={BASE.length} class="col base-col group">初始能力值</th>
+        </tr>
+        <tr>
+          {STATS.map((s, i) => <th scope="col" class={`col growth-col stat g${i}`}>{s}</th>)}
+          {BASE.map((s, i) => (
+            <th scope="col" class={`col base-col stat b${i}`}>{s === "LV" ? "初始等级" : s}</th>
+          ))}
+        </tr>
+      </thead>
+      <tbody>
+        {sorted.map((c) => <CharacterRow character={c} growth={growthOf(c)} base={baseOf(c)} />)}
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<style>
+  .character-list {
+    display: grid;
+    gap: 1rem;
+  }
+
+  .toolbar {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.5rem 1rem;
+  }
+  .cols {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.35rem;
+    margin: 0;
+    padding: 0;
+    border: 0;
+  }
+  .cols legend {
+    float: left;
+    margin-right: 0.25rem;
+    font-size: 0.75rem;
+    color: #5d6478;
+  }
+  .cols input {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+  }
+  .cols label {
+    padding: 0.2rem 0.75rem;
+    border: 1px solid #2a64b8;
+    border-radius: 999px;
+    color: #2a64b8;
+    font-size: 0.8rem;
+    font-weight: 700;
+    cursor: pointer;
+  }
+  .cols input:checked + label {
+    background: #2a64b8;
+    color: #fff;
+  }
+  .cols input:focus-visible + label {
+    outline: 3px solid #f4c542;
+    outline-offset: 2px;
+  }
+  .legend {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.25rem;
+    margin: 0;
+    font-size: 0.75rem;
+    color: #5d6478;
+  }
+  /* 图例色块，颜色和 CharacterRow 里成长率的 .chip[data-rank] 相同 */
+  .swatch {
+    width: 0.8rem;
+    height: 0.8rem;
+    margin-left: 0.35rem;
+    border-radius: 2px;
+  }
+  .swatch[data-rank="1"] { background: #c98a00; }
+  .swatch[data-rank="2"] { background: #f4c542; }
+  .swatch[data-rank="3"] { background: #fbe9b0; }
+  /* 没勾选的列隐藏（列在 CharacterRow 里，所以用 :global） */
+  .character-list:has(#col-weapons:not(:checked)) :global(.weapons-col),
+  .character-list:has(#col-join:not(:checked)) :global(.join-col),
+  .character-list:has(#col-skill:not(:checked)) :global(.skill-col),
+  .character-list:has(#col-growth:not(:checked)) :global(.growth-col),
+  .character-list:has(#col-base:not(:checked)) :global(.base-col),
+  .character-list:has(#col-growth:not(:checked)) .legend {
+    display: none;
+  }
+
+    /*
+   * 表格在自己的框里上下、左右滚动，表头才能吸顶（外层不是滚动容器时 sticky 不生效）。
+   * 两行表头整体吸顶；左上角「角色」格同时吸左，thead 的层级高于数据行里吸左的角色格。
+   */
+  .table {
+    overflow: auto;
+    max-height: calc(100dvh - 8rem);
+  }
+  thead {
+    position: sticky;
+    top: 0;
+    z-index: 2;
+  }
+  table {
+    min-width: 100%;
+    border: 1px solid #d4dde2;
+    border-spacing: 0;
+    color: #22263a;
+  }
+  /*
+   * 单元格样式对表头（本组件）和数据行（CharacterRow）都生效，所以用 :global。
+   * 横线只画在每格底部；悬停时把本行和上一行的底线变蓝，就是本行的上下边。
+   */
+  table :global(th),
+  table :global(td) {
+    padding: 0.6rem 0.75rem;
+    border-bottom: 1px solid #d4dde2;
+    background: #fff;
+    vertical-align: top;
+    transition: background-color 0.15s, border-color 0.15s;
+  }
+  table :global(.col) {
+    border-left: 1px dashed #d4dde2;
+  }
+  table :global(tbody tr:last-child > *) {
+    border-bottom: 0;
+  }
+  thead th {
+    padding-block: 0.35rem;
+    background: #f1f5f7;
+    color: #5d6478;
+    font-size: 0.75rem;
+    text-align: left;
+  }
+  /*
+   * 初始等级、内置等级和后面 8 项能力值性质不同（是等级，决定了能力值的高低）：
+   * 两列加一条中性灰的底色带，和能力值之间用实线隔开。
+   * 不用蓝（悬停/选中）和金（成长率前三），避免和已有含义混淆。
+   */
+  table :global(td.b0),
+  table :global(td.b1) {
+    background: #f6f7f9;
+  }
+  thead th.b0,
+  thead th.b1 {
+    background: #e7ecf0;
+  }
+  table :global(.b2) {
+    border-left: 1px solid #aab4be;
+  }
+  /* 成长率、初始能力值的小列：居中、窄内边距 */
+  table :global(.stat) {
+    padding-inline: 0.2rem;
+    text-align: center;
+    vertical-align: middle;
+  }
+  thead th.group,
+  thead th.stat {
+    text-align: center;
+  }
+  /* 需要控制换行的列给个最小宽度，其余由内容决定 */
+  table :global(.who) { min-width: 10rem; }
+  table :global(.join-col) { min-width: 9rem; }
+  table :global(.skill-col) { min-width: 15rem; }
+  table :global(.weapons-col) { white-space: nowrap; }
+
+  /* 横向滚动时角色列固定在左边 */
+  table :global(.who) {
+    position: sticky;
+    left: 0;
+    z-index: 1;
+    box-shadow: 4px 0 4px -4px rgb(34 38 58 / 0.25);
+  }
+
+  /* ---- 行：悬停浅蓝底 + 上下边变蓝；点击某格（格子 tabindex=-1）后更深的蓝底 + 内侧 2px 蓝线 ---- */
+  table :global(tbody tr:hover > *) {
+    background: #eef3fb;
+  }
+  table :global(tbody tr:hover > *),
+  table :global(tbody tr:has(+ tr:hover) > *),
+  table:has(:global(tbody tr:first-child:hover)) thead th:not(.group) {
+    border-bottom-color: #2a64b8;
+  }
+  table :global(tbody tr:focus-within > *) {
+    background: #dce7f8;
+    box-shadow: inset 0 2px #2a64b8, inset 0 -2px #2a64b8;
+  }
+
+  /*
+   * ---- 列：和行同一套效果 ----
+   * 每一列一个类名：角色 who、武器资质、加入、个人特技，成长率小列 g0–g7，初始能力值小列 b0–b9。
+   */
+
+  /* 悬停：浅蓝底 */
+  .table:has(:global(.who:hover)) :global(.who),
+  .table:has(:global(.weapons-col:hover)) :global(.weapons-col),
+  .table:has(:global(.join-col:hover)) :global(.join-col),
+  .table:has(:global(.skill-col:hover)) :global(.skill-col),
+  .table:has(:global(.g0:hover)) :global(.g0),
+  .table:has(:global(.g1:hover)) :global(.g1),
+  .table:has(:global(.g2:hover)) :global(.g2),
+  .table:has(:global(.g3:hover)) :global(.g3),
+  .table:has(:global(.g4:hover)) :global(.g4),
+  .table:has(:global(.g5:hover)) :global(.g5),
+  .table:has(:global(.g6:hover)) :global(.g6),
+  .table:has(:global(.g7:hover)) :global(.g7),
+  .table:has(:global(.b0:hover)) :global(.b0),
+  .table:has(:global(.b1:hover)) :global(.b1),
+  .table:has(:global(.b2:hover)) :global(.b2),
+  .table:has(:global(.b3:hover)) :global(.b3),
+  .table:has(:global(.b4:hover)) :global(.b4),
+  .table:has(:global(.b5:hover)) :global(.b5),
+  .table:has(:global(.b6:hover)) :global(.b6),
+  .table:has(:global(.b7:hover)) :global(.b7),
+  .table:has(:global(.b8:hover)) :global(.b8),
+  .table:has(:global(.b9:hover)) :global(.b9) {
+    background: #eef3fb;
+  }
+
+  /* 悬停：本列左边线 + 下一列左边线（= 本列右边线）变蓝实线；角色列没有左边线 */
+  .table:has(:global(.weapons-col:hover)) :global(.weapons-col),
+  .table:has(:global(.join-col:hover)) :global(.join-col),
+  .table:has(:global(.skill-col:hover)) :global(.skill-col),
+  .table:has(:global(.g0:hover)) :global(.g0),
+  .table:has(:global(.g1:hover)) :global(.g1),
+  .table:has(:global(.g2:hover)) :global(.g2),
+  .table:has(:global(.g3:hover)) :global(.g3),
+  .table:has(:global(.g4:hover)) :global(.g4),
+  .table:has(:global(.g5:hover)) :global(.g5),
+  .table:has(:global(.g6:hover)) :global(.g6),
+  .table:has(:global(.g7:hover)) :global(.g7),
+  .table:has(:global(.b0:hover)) :global(.b0),
+  .table:has(:global(.b1:hover)) :global(.b1),
+  .table:has(:global(.b2:hover)) :global(.b2),
+  .table:has(:global(.b3:hover)) :global(.b3),
+  .table:has(:global(.b4:hover)) :global(.b4),
+  .table:has(:global(.b5:hover)) :global(.b5),
+  .table:has(:global(.b6:hover)) :global(.b6),
+  .table:has(:global(.b7:hover)) :global(.b7),
+  .table:has(:global(.b8:hover)) :global(.b8),
+  .table:has(:global(.b9:hover)) :global(.b9),
+  .table:has(:global(.who:hover)) :global(.who + .col),
+  .table:has(:global(.weapons-col:hover)) :global(.weapons-col + .col),
+  .table:has(:global(.join-col:hover)) :global(.join-col + .col),
+  .table:has(:global(.skill-col:hover)) :global(.skill-col + .col),
+  .table:has(:global(.g0:hover)) :global(.g0 + .col),
+  .table:has(:global(.g1:hover)) :global(.g1 + .col),
+  .table:has(:global(.g2:hover)) :global(.g2 + .col),
+  .table:has(:global(.g3:hover)) :global(.g3 + .col),
+  .table:has(:global(.g4:hover)) :global(.g4 + .col),
+  .table:has(:global(.g5:hover)) :global(.g5 + .col),
+  .table:has(:global(.g6:hover)) :global(.g6 + .col),
+  .table:has(:global(.g7:hover)) :global(.g7 + .col),
+  .table:has(:global(.b0:hover)) :global(.b0 + .col),
+  .table:has(:global(.b1:hover)) :global(.b1 + .col),
+  .table:has(:global(.b2:hover)) :global(.b2 + .col),
+  .table:has(:global(.b3:hover)) :global(.b3 + .col),
+  .table:has(:global(.b4:hover)) :global(.b4 + .col),
+  .table:has(:global(.b5:hover)) :global(.b5 + .col),
+  .table:has(:global(.b6:hover)) :global(.b6 + .col),
+  .table:has(:global(.b7:hover)) :global(.b7 + .col),
+  .table:has(:global(.b8:hover)) :global(.b8 + .col) {
+    border-left-style: solid;
+    border-left-color: #2a64b8;
+  }
+
+  /* 选中（点击某格）：更深的蓝底 + 格子内侧左右 2px 蓝线 */
+  .table:has(:global(.who:focus-within)) :global(.who),
+  .table:has(:global(.weapons-col:focus-within)) :global(.weapons-col),
+  .table:has(:global(.join-col:focus-within)) :global(.join-col),
+  .table:has(:global(.skill-col:focus-within)) :global(.skill-col),
+  .table:has(:global(.g0:focus-within)) :global(.g0),
+  .table:has(:global(.g1:focus-within)) :global(.g1),
+  .table:has(:global(.g2:focus-within)) :global(.g2),
+  .table:has(:global(.g3:focus-within)) :global(.g3),
+  .table:has(:global(.g4:focus-within)) :global(.g4),
+  .table:has(:global(.g5:focus-within)) :global(.g5),
+  .table:has(:global(.g6:focus-within)) :global(.g6),
+  .table:has(:global(.g7:focus-within)) :global(.g7),
+  .table:has(:global(.b0:focus-within)) :global(.b0),
+  .table:has(:global(.b1:focus-within)) :global(.b1),
+  .table:has(:global(.b2:focus-within)) :global(.b2),
+  .table:has(:global(.b3:focus-within)) :global(.b3),
+  .table:has(:global(.b4:focus-within)) :global(.b4),
+  .table:has(:global(.b5:focus-within)) :global(.b5),
+  .table:has(:global(.b6:focus-within)) :global(.b6),
+  .table:has(:global(.b7:focus-within)) :global(.b7),
+  .table:has(:global(.b8:focus-within)) :global(.b8),
+  .table:has(:global(.b9:focus-within)) :global(.b9) {
+    background: #dce7f8;
+    box-shadow: inset 2px 0 #2a64b8, inset -2px 0 #2a64b8;
+  }
+
+  /* 被点的格子同时属于选中行和选中列：四边都画（排在列规则之后才能胜出） */
+  .table:has(:focus) :global(.who:focus),
+  .table:has(:focus) :global(.col:focus) {
+    outline: none;
+    box-shadow: inset 0 0 0 2px #2a64b8;
+  }
+</style>

@@ -1,0 +1,170 @@
+---
+/**
+ * 角色清单的一行 <tr>：角色（行表头 th）| 武器资质 | 加入 | 个人特技 | 成长率 8 格 | 初始能力值 10 格。
+ * 成长率、初始能力值每一项是独立的一格（类名 g0–g7、b0–b9，整列效果按类名生成，见 CharacterList）。
+ * 表格结构、边框、悬停/选中效果、列显隐都在 CharacterList；这里只管格子里的内容。
+ * 每格 tabindex="-1"：点击即获得焦点，用来标出选中的行和列。
+ */
+import type { CollectionEntry } from "astro:content";
+import Portrait from "./Portrait.astro";
+
+interface Props {
+  character: CollectionEntry<"characters">;
+  /** rank 1–3：该项成长率在全部角色中的名次（并列同名次）；不在前三时没有 rank */
+  growth: { stat: string; value: string; rank?: number }[];
+  base: { stat: string; value: string }[];
+}
+const { character, growth, base } = Astro.props;
+const d = character.data;
+---
+
+<tr>
+  <th scope="row" class="who" tabindex="-1">
+    <div class="who-inner">
+      <Portrait id={character.id} alt={d["角色名称_简中"]} size={48} />
+      <div>
+        <p class="name"><a href={`/characters/${character.id}`}>{d["角色名称_简中"]}</a></p>
+        <p class="sub">{d["初始职业"]}</p>
+      </div>
+      {d["评级"] && <span class="rank" data-rank={d["评级"]}>{d["评级"]}</span>}
+    </div>
+  </th>
+  <td class="col weapons-col" tabindex="-1"><p class="main">{d["初始武器资质"]}</p></td>
+  <td class="col join-col" tabindex="-1">
+    <p class="main">{d["加入章节"]}</p>
+    <p class="sub">{d["加入条件"]}</p>
+  </td>
+  <td class="col skill-col" tabindex="-1">
+    <p class="main skill-name">{d["个人特技"]}</p>
+    <p class="sub">{d["详细说明"]}</p>
+  </td>
+  {
+    growth.map((g, i) => (
+      <td class={`col growth-col stat g${i}`} tabindex="-1">
+        <span class="chip" data-rank={g.rank}>{g.value}</span>
+      </td>
+    ))
+  }
+  {
+    base.map((b, i) => (
+      <td class={`col base-col stat b${i}`} tabindex="-1">
+        <span class="chip">
+          {i < 2 && !Number.isNaN(Number(b.value)) && <small class="lv">Lv</small>}
+          {b.value}
+        </span>
+      </td>
+    ))
+  }
+</tr>
+
+<style>
+  p {
+    margin: 0;
+  }
+
+  .who {
+    text-align: left;
+    font-weight: 400;
+  }
+  .who-inner {
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr) auto;
+    align-items: center;
+    gap: 0.6rem;
+  }
+  .name {
+    font-size: 0.95rem;
+    font-weight: 700;
+  }
+  /* 只有名字是链接，跳转到角色条目 */
+  .name a {
+    color: #2a64b8;
+    text-decoration: none;
+  }
+  .name a:hover {
+    text-decoration: underline;
+  }
+  .name a:focus-visible {
+    outline: 3px solid #f4c542;
+    outline-offset: 2px;
+  }
+  /* 武器资质、加入、个人特技统一两级文字：主文字 .main + 说明 .sub（职业也用 .sub） */
+  .main {
+    font-size: 0.8rem;
+    font-weight: 700;
+  }
+  .sub {
+    font-size: 0.75rem;
+    line-height: 1.5;
+    color: #5d6478;
+  }
+  /* 加入条件、特技说明的小字更小（角色列里的职业不变） */
+  .join-col .sub,
+  .skill-col .sub {
+    font-size: 10px;
+  }
+  .rank {
+    min-width: 1.4rem;
+    border-radius: 4px;
+    background: #8a93a8;
+    color: #fff;
+    font-size: 0.8rem;
+    font-weight: 800;
+    text-align: center;
+  }
+  .rank[data-rank="S"] { background: #d6334a; }
+  .rank[data-rank="A"] { background: #e0735a; }
+  .rank[data-rank="B"] { background: #3b6fd6; }
+
+  .skill-name {
+    display: flex;
+    align-items: center;
+    gap: 0.45rem;
+  }
+  .skill-name::before {
+    content: "";
+    width: 0.45rem;
+    height: 0.45rem;
+    background: #f4c542;
+    outline: 1px solid #6b4a00;
+    transform: rotate(45deg);
+  }
+
+  /* 成长率、初始能力值的数值：默认无底色、灰色常规字 */
+  .chip {
+    display: block;
+    min-width: 2.2rem;
+    padding: 0.15rem 0.3rem;
+    border-radius: 3px;
+    color: #5d6478;
+    font-family: "Barlow", system-ui, sans-serif;
+    font-size: 1rem;
+    font-weight: 500;
+    font-variant-numeric: tabular-nums;
+  }
+  /*
+   * 成长率：只有各项前三名是色块（金色同色相、由深到浅 = 第 1/2/3 名，深色字对比度都 ≥ 5:1），
+   * 是整张表唯一的彩色，让前三名跳出来。金色取自站点图标的宝石；蓝色留给悬停/选中。
+   */
+  .growth-col .chip[data-rank] {
+    color: #22263a;
+    font-weight: 700;
+  }
+  .growth-col .chip[data-rank="1"] { background: #c98a00; }
+  .growth-col .chip[data-rank="2"] { background: #f4c542; }
+  .growth-col .chip[data-rank="3"] { background: #fbe9b0; }
+  /* 初始等级、内置等级：数字大一号 */
+  /* 初始等级、内置等级是「等级」不是能力值：数字前加小号 Lv，数字略大、深色（区分主要靠底色带和分隔线） */
+  .lv {
+    margin-right: 0.1em;
+    font-size: 0.6em;
+    font-weight: 500;
+    color: #5d6478;
+  }
+  .b0 .chip,
+  .b1 .chip {
+    color: #22263a;
+    font-size: 1.05rem;
+    font-weight: 500;
+  }
+</style>

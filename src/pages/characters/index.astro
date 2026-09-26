@@ -1,11 +1,15 @@
 ---
+import { getCollection } from "astro:content";
 import BaseLayout from "../../layouts/BaseLayout.astro";
-import NavLayout from "../../components/NavLayout.jsx";
+import NavLayout from "../../components/NavLayout.astro";
+import CharacterList from "../../components/CharacterList.astro";
+
+const characters = await getCollection("characters");
 ---
 
 <BaseLayout>
   <NavLayout>
     <div slot="sidebar">Sidebar</div>
-    <div>Charactor</div>
+    <CharacterList characters={characters} />
   </NavLayout>
 </BaseLayout>
