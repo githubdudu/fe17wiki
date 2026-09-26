@@ -155,7 +155,8 @@ const emblems = (await getCollection("emblems")).sort(byOrder).map((e) => ({
     display: inline-flex;
     align-items: center;
     gap: 0.25rem;
-    padding: 2px 8px 2px 2px;
+    padding: 1px 8px 1px 1px;
+    vertical-align: middle; /* 不按基线对齐，免得行框下方多出字母下沿的空隙 */
     border: 1px solid color-mix(in srgb, var(--kind, #d4dde2) 55%, #fff);
     border-radius: 999px;
     background: color-mix(in srgb, var(--kind, #fff) 8%, #fff);
@@ -173,13 +174,13 @@ const emblems = (await getCollection("emblems")).sort(byOrder).map((e) => ({
     background: color-mix(in srgb, var(--kind) 22%, #fff);
   }
   .planner .slot {
-    display: inline-block;
+    display: inline-flex; /* 同上：inline-block 会多出基线下的空隙 */
   }
   .planner .slot-in {
     display: inline-flex;
     align-items: center;
     gap: 0.35rem;
-    padding: 2px 4px 2px 8px;
+    padding: 0 1px 0 8px; /* 上下不留白：里面的刻印胶囊贴着边，行高 = 胶囊高 */
     border: 1px solid color-mix(in srgb, var(--kind) 55%, #fff);
     border-radius: 6px;
     color: #666;
@@ -202,7 +203,7 @@ const emblems = (await getCollection("emblems")).sort(byOrder).map((e) => ({
     background: #fff;
   }
   .planner .team th {
-    padding: 0.35rem 0.5rem;
+    padding: 0.2rem 0.5rem;
     text-align: left;
     font-size: 0.8rem;
     color: #666;
@@ -217,7 +218,7 @@ const emblems = (await getCollection("emblems")).sort(byOrder).map((e) => ({
     border: 1px solid var(--line);
   }
   .planner .team td {
-    padding: 0.25rem 0.5rem;
+    padding: 2px 0.5rem;
     vertical-align: middle;
   }
   .planner .team .cell {
@@ -240,7 +241,7 @@ const emblems = (await getCollection("emblems")).sort(byOrder).map((e) => ({
     display: grid;
     place-items: center;
     width: 18px;
-    height: 24px;
+    height: 20px;
     border-radius: 4px;
     color: #999;
     fill: currentColor;
@@ -269,7 +270,7 @@ const emblems = (await getCollection("emblems")).sort(byOrder).map((e) => ({
   /* 定位：看起来像普通文字，聚焦时才显出输入框 */
   .planner .role {
     width: 7em;
-    padding: 2px 4px;
+    padding: 0 4px;
     border: 1px solid transparent;
     border-radius: 4px;
     background: none;
