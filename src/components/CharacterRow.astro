@@ -27,10 +27,12 @@ const d = character.data;
     <div class="who-inner">
       <Thumb src={d["头像"]} alt={d["角色名称_简中"]} size={48} />
       <div>
-        <p class="name"><a href={`/characters/${character.id}`}>{d["角色名称_简中"]}</a></p>
+        <p class="name">
+          <a href={`/characters/${character.id}`}>{d["角色名称_简中"]}</a>
+          {d["评级"] && <span class="tier" data-tier={d["评级"]} title={`评级 ${d["评级"]}`}>{d["评级"]}</span>}
+        </p>
         <p class="sub">{d["初始职业"]}</p>
       </div>
-      {d["评级"] && <span class="rank" data-rank={d["评级"]}>{d["评级"]}</span>}
     </div>
   </th>
   <td class="col join-col" tabindex="-1" title="加入时间和条件">
@@ -83,7 +85,7 @@ const d = character.data;
   }
   .who-inner {
     display: grid;
-    grid-template-columns: auto minmax(0, 1fr) auto;
+    grid-template-columns: auto minmax(0, 1fr);
     align-items: center;
     gap: 0.6rem;
   }
@@ -117,18 +119,21 @@ const d = character.data;
   .join-col .sub {
     font-size: 10px;
   }
-  .rank {
-    min-width: 1.4rem;
-    border-radius: 4px;
-    background: #8a93a8;
-    color: #fff;
-    font-size: 0.8rem;
-    font-weight: 800;
-    text-align: center;
+  /*
+   * 评级：紧跟在名字后面的彩色字母，像名字的标注，没有底色。
+   * 沿用玩家熟悉的梯队配色（暖 → 冷：S 橙、A 玫红、B 紫、C 绿、D 蓝）。
+   */
+  .tier {
+    margin-left: 0.3rem;
+    font-family: "Barlow", system-ui, sans-serif;
+    font-size: 0.85rem;
+    font-weight: 700;
   }
-  .rank[data-rank="S"] { background: #d6334a; }
-  .rank[data-rank="A"] { background: #e0735a; }
-  .rank[data-rank="B"] { background: #3b6fd6; }
+  .tier[data-tier="S"] { color: #a8431f; }
+  .tier[data-tier="A"] { color: #a3304e; }
+  .tier[data-tier="B"] { color: #57459a; }
+  .tier[data-tier="C"] { color: #2c6e48; }
+  .tier[data-tier="D"] { color: #35628f; }
 
   /* 成长率、初始能力值的数值：默认无底色、灰色常规字 */
   .chip {
