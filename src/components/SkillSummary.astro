@@ -1,0 +1,73 @@
+---
+/**
+ * 特技摘要：图标 + 名称（链接到 /skills/<id>）+ 效果说明，数据全部来自 skills.csv。
+ * 特技列表页和角色表的「个人特技」格共用；compact 用于表格格子（图标小、字小）。
+ * 默认插槽放在最右侧，给调用方追加内容（如列表页的纹章士 / 角色要求标签）。
+ */
+import type { CollectionEntry } from "astro:content";
+import Thumb from "./Thumb.astro";
+
+interface Props {
+  skill: CollectionEntry<"skills">;
+  compact?: boolean;
+}
+const { skill, compact = false } = Astro.props;
+const d = skill.data;
+---
+
+<div class:list={["skill", { compact }]}>
+  <Thumb src={d["图标"]} alt="" size={compact ? 24 : 40} />
+  <div class="body">
+    <p class="name"><a href={`/skills/${skill.id}`}>{d["特技名称"]}</a></p>
+    <p class="desc">{d["详细效果说明"]}</p>
+  </div>
+  <slot />
+</div>
+
+<style>
+  .skill {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+  }
+  .compact {
+    gap: 0.5rem;
+  }
+  /* 说明占满中间，插槽内容靠右 */
+  .body {
+    flex: 1;
+    min-width: 0;
+  }
+  p {
+    margin: 0;
+  }
+  .name {
+    font-size: 0.9rem;
+    font-weight: 700;
+  }
+  .name a {
+    color: #2a64b8;
+    text-decoration: none;
+  }
+  .name a:hover {
+    text-decoration: underline;
+  }
+  .name a:focus-visible {
+    outline: 3px solid #f4c542;
+    outline-offset: 2px;
+  }
+  .desc {
+    margin-top: 0.1rem;
+    color: #22263a;
+    font-size: 0.8rem;
+    line-height: 1.5;
+  }
+  /* 表格格子里：和同一行其他列统一的两级文字（主文字 0.8rem 粗体 + 10px 灰色说明） */
+  .compact .name {
+    font-size: 0.8rem;
+  }
+  .compact .desc {
+    color: #5d6478;
+    font-size: 10px;
+  }
+</style>

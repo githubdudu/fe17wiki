@@ -1,6 +1,6 @@
 ---
 /** 角色清单：<table>，每个角色一行（按 CSV 行序，行由 CharacterRow 渲染）。顶部勾选要显示的列（角色列始终显示）。 */
-import type { CollectionEntry } from "astro:content";
+import { getCollection, type CollectionEntry } from "astro:content";
 import CharacterRow from "./CharacterRow.astro";
 
 interface Props {
@@ -33,6 +33,14 @@ const growthOf = top3Of("个人成长率_", STATS);
 // 初始能力值不着色：它几乎只反映加入时的等级（总和与初始等级+内置等级的相关系数约 0.97），排名没有意义
 const baseOf = (c: CollectionEntry<"characters">) =>
   BASE.map((stat) => ({ stat, value: c.data[`初始能力值_${stat}`] }));
+
+// 个人特技按名称到 skills 集合里取（说明、图标都以 skills.csv 为准）
+const skills = new Map((await getCollection("skills")).map((s) => [s.id, s]));
+const skillOf = (c: CollectionEntry<"characters">) => {
+  const skill = skills.get(c.data["个人特技"]);
+  if (!skill) throw new Error(`skills.csv 里找不到 ${c.id} 的个人特技「${c.data["个人特技"]}」`);
+  return skill;
+};
 
 const sorted = [...characters].sort((a, b) => a.data.order - b.data.order);
 ---
@@ -74,7 +82,11 @@ const sorted = [...characters].sort((a, b) => a.data.order - b.data.order);
         </tr>
       </thead>
       <tbody>
-        {sorted.map((c) => <CharacterRow character={c} growth={growthOf(c)} base={baseOf(c)} />)}
+        {
+          sorted.map((c) => (
+            <CharacterRow character={c} skill={skillOf(c)} growth={growthOf(c)} base={baseOf(c)} />
+          ))
+        }
       </tbody>
     </table>
   </div>

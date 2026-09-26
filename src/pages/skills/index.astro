@@ -2,7 +2,7 @@
 import { getCollection } from "astro:content";
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import NavLayout from "../../components/NavLayout.astro";
-import Thumb from "../../components/Thumb.astro";
+import SkillSummary from "../../components/SkillSummary.astro";
 
 const skills = (await getCollection("skills")).sort((a, b) => a.data.order - b.data.order);
 // 分组和组的先后都来自 CSV：「特技类型」列 + 行序
@@ -38,12 +38,7 @@ const groups = [...Map.groupBy(skills, (s) => s.data["特技类型"])];
               const tags = [d["纹章士"], d["角色要求"], d["兵种要求"]].filter(Boolean);
               return (
                 <li>
-                  <Thumb src={d["图标"]} alt="" size={40} />
-                  <div class="body">
-                    <p class="name">
-                      <a href={`/skills/${s.id}`}>{d["特技名称"]}</a>
-                    </p>
-                    <p class="desc">{d["详细效果说明"]}</p>
+                  <SkillSummary skill={s}>
                     {tags.length > 0 && (
                       <p class="tags">
                         {tags.map((t) => (
@@ -51,7 +46,7 @@ const groups = [...Map.groupBy(skills, (s) => s.data["特技类型"])];
                         ))}
                       </p>
                     )}
-                  </div>
+                  </SkillSummary>
                 </li>
               );
             })}
@@ -118,9 +113,6 @@ const groups = [...Map.groupBy(skills, (s) => s.data["特技类型"])];
     list-style: none;
   }
   li {
-    display: flex;
-    align-items: flex-start;
-    gap: 0.75rem;
     padding: 0.6rem 0.75rem;
     border: 1px solid #d4dde2;
     border-top: 0;
@@ -129,38 +121,14 @@ const groups = [...Map.groupBy(skills, (s) => s.data["特技类型"])];
   li:hover {
     background: #eef3fb;
   }
-  .body {
-    min-width: 0;
-  }
-  p {
-    margin: 0;
-  }
-  .name {
-    font-size: 0.9rem;
-    font-weight: 700;
-  }
-  .name a {
-    color: #2a64b8;
-    text-decoration: none;
-  }
-  .name a:hover {
-    text-decoration: underline;
-  }
-  .name a:focus-visible {
-    outline: 3px solid #f4c542;
-    outline-offset: 2px;
-  }
-  .desc {
-    margin-top: 0.1rem;
-    color: #22263a;
-    font-size: 0.8rem;
-    line-height: 1.5;
-  }
+  /* 标签放在 SkillSummary 的插槽里，位于右侧；标签多时在右侧换行，最多占 40% 宽 */
   .tags {
     display: flex;
     flex-wrap: wrap;
+    justify-content: flex-end;
     gap: 0.25rem;
-    margin-top: 0.3rem;
+    max-width: 40%;
+    margin: 0;
   }
   .tags span {
     padding: 0 0.4rem;
