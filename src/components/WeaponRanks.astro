@@ -1,0 +1,58 @@
+---
+/**
+ * 武器熟练度：list 为 classes.csv 里的「剑A、枪C（无法剑S）」这种写法。
+ * 每项显示武器图标 + 等级字母；括号里的补充说明放在最后，用小字显示。
+ */
+import WeaponIcons from "./WeaponIcons.astro";
+
+interface Props {
+  list: string;
+}
+const { list } = Astro.props;
+
+const note = list.match(/（(.+)）$/)?.[1];
+const items = list
+  .replace(/（.+）$/, "")
+  .split("、")
+  .filter(Boolean)
+  .map((s) => {
+    const [, weapon, rank] = s.match(/^(.+?)([SABCDE])?$/) ?? [s, s, ""];
+    return { weapon, rank };
+  });
+---
+
+<span class="ranks">
+  {
+    items.map(({ weapon, rank }) => (
+      <span class="item">
+        <WeaponIcons list={weapon} size={20} />
+        {rank && <span class="rank">{rank}</span>}
+      </span>
+    ))
+  }
+  {note && <span class="note">{note}</span>}
+</span>
+
+<style>
+  .ranks {
+    display: inline-flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.3rem 0.5rem;
+  }
+  .item {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.15rem;
+  }
+  .rank {
+    font-family: "Barlow", system-ui, sans-serif;
+    font-size: 0.85rem;
+    font-weight: 700;
+  }
+  .note {
+    flex-basis: 100%;
+    color: #5d6478;
+    font-size: 10px;
+  }
+</style>

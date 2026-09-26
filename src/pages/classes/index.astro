@@ -1,0 +1,275 @@
+---
+import { getCollection } from "astro:content";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import NavLayout from "../../components/NavLayout.astro";
+import SkillSummary from "../../components/SkillSummary.astro";
+import WeaponRanks from "../../components/WeaponRanks.astro";
+import InfoTip from "../../components/InfoTip.astro";
+import Thumb from "../../components/Thumb.astro";
+
+const STATS = ["HP", "力量", "魔力", "技巧", "速度", "幸运", "防守", "魔防", "体格"];
+
+const classes = (await getCollection("classes")).sort((a, b) => a.data.order - b.data.order);
+// 分组和组的先后都来自 CSV：「分类」列 + 行序
+const groups = [...Map.groupBy(classes, (c) => c.data["分类"])];
+
+// 兵种特技按名称到 skills 集合里取（CSV 里写作「【神龙气】」）
+const skills = new Map((await getCollection("skills")).map((s) => [s.id, s]));
+const skillOf = (name: string) => skills.get(name.replace(/[【】]/g, ""));
+
+const COLS = 7 + STATS.length * 2;
+---
+
+<BaseLayout>
+  <NavLayout>
+    <div slot="sidebar">Sidebar</div>
+    <h1>兵种</h1>
+
+    <div class="table">
+      <table>
+        <thead>
+          <tr>
+            <th scope="col" rowspan="2" class="who">兵种</th>
+            <th scope="col" rowspan="2" class="center">
+              级别
+              <InfoTip id="info-level" label="级别">
+                <p>基础：角色最初的职业。基础兵种 10 级以上时，可以用大师证转职为对应的高级兵种。</p>
+                <p>高级：由基础兵种转职得到的上级职业，兵种特技在 Lv.5 习得。</p>
+                <p>特殊：不分基础和高级的职业（如小偷、舞蹈家），兵种特技在 Lv.25 习得。</p>
+              </InfoTip>
+            </th>
+            <th scope="col" rowspan="2" class="center">
+              战斗类型
+              <InfoTip id="info-type" label="战斗类型">
+                <p>兵种所属的类型，每种类型有各自的特性，同时决定会被哪些特效武器克制。</p>
+                <p>点击每格里的「i」查看该类型的特性。</p>
+              </InfoTip>
+            </th>
+            <th scope="col" rowspan="2" class="center">
+              移动
+              <InfoTip id="info-move" label="移动">
+                <p>该兵种每回合可以移动的基础格数。</p>
+              </InfoTip>
+            </th>
+            <th scope="col" rowspan="2">
+              必要资质
+              <InfoTip id="info-weapons" label="必要资质">
+                <p>转职成该兵种时必须拥有的武器资质，字母是该兵种的基础武器熟练度。</p>
+                <p>同一兵种可以用不同的武器组合转职时，每种组合各占一行。</p>
+              </InfoTip>
+            </th>
+            <th scope="col" rowspan="2">
+              兵种特技
+              <InfoTip id="info-skill" label="兵种特技">
+                <p>只有非基础兵种才有。高级兵种在 Lv.5、特殊兵种在 Lv.25 习得。</p>
+              </InfoTip>
+            </th>
+            <th scope="colgroup" colspan={STATS.length} class="group growth">
+              成长率补正
+              <InfoTip id="info-growth" label="成长率补正">
+                <p>处于该兵种时，加到个人成长率上的数值（%）。实际成长率 = 个人成长率 + 兵种成长率补正。</p>
+              </InfoTip>
+            </th>
+            <th scope="colgroup" colspan={STATS.length} class="group cap">
+              能力上限
+              <InfoTip id="info-cap" label="能力上限">
+                <p>该兵种各项能力值的基础上限。</p>
+              </InfoTip>
+            </th>
+            <th scope="col" rowspan="2">备注</th>
+          </tr>
+          <tr>
+            {STATS.map((s) => <th scope="col" class="stat growth">{s}</th>)}
+            {STATS.map((s) => <th scope="col" class="stat cap">{s}</th>)}
+          </tr>
+        </thead>
+        {
+          groups.map(([label, list]) => (
+            <tbody>
+              <tr class="section">
+                <th scope="rowgroup" colspan={COLS}>{label}</th>
+              </tr>
+              {list.map((c) => {
+                const d = c.data;
+                const skill = skillOf(d["兵种可习得特技"]);
+                return (
+                  <tr>
+                    <th scope="row" class="who" data-level={d["兵种级别"]}>
+                      <div class="who-inner">
+                        {/* 兵种图标按兵种名称存放：src/assets/classes/<兵种名称>.webp（来自 appmedia.jp） */}
+                        <Thumb src={`src/assets/classes/${d["兵种名称"]}.webp`} alt="" size={36} />
+                        <p class="name">{d["兵种名称"]}</p>
+                      </div>
+                    </th>
+                    <td class="level center" data-level={d["兵种级别"]}>{d["兵种级别"]}</td>
+                    <td class="type center">
+                      {d["战斗类型"]}
+                      <InfoTip id={`info-type-${d.order}`} label={d["战斗类型"]}>
+                        <p>{d["战斗类型说明"]}</p>
+                      </InfoTip>
+                    </td>
+                    <td class="num center">{d["基础移动"]}</td>
+                    <td class="weapons">
+                      <WeaponRanks list={d["基础武器熟练度/必要资质"]} />
+                    </td>
+                    <td class="skill">{skill ? <SkillSummary skill={skill} compact /> : <span class="none">—</span>}</td>
+                    {STATS.map((s) => (
+                      <td class="num stat growth" title={`成长率补正·${s}：${d[`兵种成长率补正_${s}`]}%`}>
+                        {d[`兵种成长率补正_${s}`]}
+                      </td>
+                    ))}
+                    {STATS.map((s) => (
+                      <td class="num stat cap" title={`能力上限·${s}：${d[`兵种上限数值_${s}`]}`}>
+                        {d[`兵种上限数值_${s}`]}
+                      </td>
+                    ))}
+                    <td class="note">{d["备注"]}</td>
+                  </tr>
+                );
+              })}
+            </tbody>
+          ))
+        }
+      </table>
+    </div>
+  </NavLayout>
+</BaseLayout>
+
+<style>
+  h1 {
+    margin: 1rem 0 0.75rem;
+    font-size: 1.4rem;
+  }
+  p {
+    margin: 0;
+  }
+
+  /* 表格在自己的框里上下左右滚动，表头吸顶、兵种列吸左（同角色清单） */
+  .table {
+    overflow: auto;
+    max-height: calc(100dvh - 8rem);
+  }
+  table {
+    min-width: 100%;
+    border: 1px solid #d4dde2;
+    border-spacing: 0;
+    color: #22263a;
+  }
+  thead {
+    position: sticky;
+    top: 0;
+    z-index: 2;
+  }
+  th,
+  td {
+    padding: 0.5rem 0.6rem;
+    border-bottom: 1px solid #d4dde2;
+    background: #fff;
+    /* 所有格子垂直居中：同一行里单行的短内容和多行的特技说明，中线对齐 */
+    vertical-align: middle;
+    text-align: left;
+    font-weight: 400;
+  }
+  /* 短值列（级别、战斗类型、移动、各项数值）水平居中，表头与内容一致；文字列保持左对齐 */
+  .center {
+    text-align: center;
+  }
+  td + td,
+  th + td,
+  thead th + th {
+    border-left: 1px dashed #d4dde2;
+  }
+  thead th {
+    padding-block: 0.35rem;
+    background: #f1f5f7;
+    color: #5d6478;
+    font-size: 0.75rem;
+    font-weight: 700;
+    white-space: nowrap;
+  }
+  thead th.group,
+  thead th.stat,
+  thead th.center {
+    text-align: center;
+  }
+
+  /* 分类标题行 */
+  .section th {
+    padding-block: 0.35rem;
+    background: #e7ecf0;
+    color: #22263a;
+    font-size: 0.8rem;
+    font-weight: 700;
+  }
+
+  .who {
+    position: sticky;
+    left: 0;
+    z-index: 1;
+    min-width: 10.5rem;
+    box-shadow: 4px 0 4px -4px rgb(34 38 58 / 0.25);
+  }
+  .who-inner {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  .name {
+    font-size: 0.9rem;
+    font-weight: 700;
+  }
+  .note {
+    min-width: 8rem;
+    color: #5d6478;
+    font-size: 0.75rem;
+  }
+  .type {
+    font-size: 0.8rem;
+    white-space: nowrap;
+  }
+  .weapons {
+    min-width: 7rem;
+  }
+  .skill {
+    min-width: 14rem;
+  }
+  .none {
+    color: #aab4be;
+  }
+  .num {
+    font-family: "Barlow", system-ui, sans-serif;
+    font-variant-numeric: tabular-nums;
+  }
+  td.stat {
+    min-width: 2rem;
+    padding-inline: 0.3rem;
+    text-align: center;
+  }
+
+  /*
+   * 级别列：整格上色，三档各一种浅色（基础最淡、高级紫、特殊青），深色字对比度足够。
+   * 成长率补正（暖米色）和能力上限（灰绿色）两组数值各铺一层底色，一眼分开两组。
+   * 这些底色都用较低的优先级，行悬停时统一变成浅蓝。
+   */
+  td.level {
+    font-size: 0.8rem;
+    font-weight: 700;
+    white-space: nowrap;
+  }
+  td.level[data-level="基础"] { background: #f1f3f6; color: #5d6478; }
+  td.level[data-level="高级"] { background: #ece6f8; color: #57459a; }
+  td.level[data-level="特殊"] { background: #dff0ec; color: #23735c; }
+  /* 兵种列同样按级别铺底色（只换底色，名字仍用正文色） */
+  th.who[data-level="基础"] { background: #f1f3f6; }
+  th.who[data-level="高级"] { background: #ece6f8; }
+  th.who[data-level="特殊"] { background: #dff0ec; }
+
+  td.growth { background: #fcf6ea; }
+  td.cap { background: #eef5f1; }
+  thead th.growth { background: #f4e7cc; color: #7a5a1c; }
+  thead th.cap { background: #d9ebe1; color: #2d5e44; }
+
+  tbody tr:not(.section):hover > * {
+    background: #eef3fb;
+  }
+</style>
