@@ -1,0 +1,49 @@
+---
+/**
+ * 武器资质图标：list 为 CSV 里「、」分隔的武器名（如「剑、体术」），
+ * 每个武器取 src/assets/weapons/<武器名>.webp；没有对应图标的武器直接显示文字。
+ * 图标来自 https://fe17.triangleattack.com （weapon_types）。
+ */
+import { Image } from "astro:assets";
+import type { ImageMetadata } from "astro";
+
+interface Props {
+  list: string;
+  size?: number;
+}
+const { list, size = 22 } = Astro.props;
+
+const icons = import.meta.glob<{ default: ImageMetadata }>("/src/assets/weapons/*.webp", {
+  eager: true,
+});
+const weapons = list.split("、").filter(Boolean);
+---
+
+<span class="weapons">
+  {
+    weapons.map((w) => {
+      const icon = icons[`/src/assets/weapons/${w}.webp`]?.default;
+      return icon ? (
+        <Image src={icon} alt={w} title={w} width={size} height={size} densities={[1, 2]} />
+      ) : (
+        <span class="text">{w}</span>
+      );
+    })
+  }
+</span>
+
+<style>
+  .weapons {
+    display: inline-flex;
+    flex-wrap: wrap;
+    gap: 3px;
+    vertical-align: middle;
+  }
+  img {
+    display: block;
+  }
+  .text {
+    font-size: 0.8rem;
+    font-weight: 700;
+  }
+</style>

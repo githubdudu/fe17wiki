@@ -49,11 +49,11 @@ const sorted = [...characters].sort((a, b) => a.data.order - b.data.order);
   <div class="toolbar">
     <fieldset class="cols">
       <legend>显示列</legend>
-      <input type="checkbox" id="col-weapons" checked /><label for="col-weapons">武器资质</label>
-      <input type="checkbox" id="col-join" checked /><label for="col-join">加入</label>
+      <input type="checkbox" id="col-join" checked /><label for="col-join">加入时间和条件</label>
       <input type="checkbox" id="col-skill" checked /><label for="col-skill">个人特技</label>
+      <input type="checkbox" id="col-weapons" checked /><label for="col-weapons">初始武器资质</label>
       <!-- .widen：勾选成长率或初始能力值时 NavLayout 把主内容加宽 -->
-      <input type="checkbox" id="col-growth" class="widen" checked /><label for="col-growth">个人成长率（颜色标记为各项前三）</label>
+      <input type="checkbox" id="col-growth" class="widen" checked /><label for="col-growth">个人成长率</label>
       <input type="checkbox" id="col-base" class="widen" checked /><label for="col-base">初始能力值</label>
     </fieldset>
     <p class="legend">
@@ -68,9 +68,9 @@ const sorted = [...characters].sort((a, b) => a.data.order - b.data.order);
       <thead>
         <tr>
           <th scope="col" rowspan="2" class="who">角色</th>
-          <th scope="col" rowspan="2" class="col weapons-col">武器资质</th>
           <th scope="col" rowspan="2" class="col join-col">加入时间和条件</th>
           <th scope="col" rowspan="2" class="col skill-col">个人特技</th>
+          <th scope="col" rowspan="2" class="col weapons-col">初始武器资质</th>
           <th scope="colgroup" colspan={STATS.length} class="col growth-col group">个人成长率（颜色标记为各项前三）</th>
           <th scope="colgroup" colspan={BASE.length} class="col base-col group">初始能力值</th>
         </tr>

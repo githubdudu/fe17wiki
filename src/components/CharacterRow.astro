@@ -8,6 +8,7 @@
 import type { CollectionEntry } from "astro:content";
 import Thumb from "./Thumb.astro";
 import SkillSummary from "./SkillSummary.astro";
+import WeaponIcons from "./WeaponIcons.astro";
 
 interface Props {
   character: CollectionEntry<"characters">;
@@ -32,7 +33,6 @@ const d = character.data;
       {d["评级"] && <span class="rank" data-rank={d["评级"]}>{d["评级"]}</span>}
     </div>
   </th>
-  <td class="col weapons-col" tabindex="-1" title="武器资质"><p class="main">{d["初始武器资质"]}</p></td>
   <td class="col join-col" tabindex="-1" title="加入时间和条件">
     <p class="main">{d["加入章节"]}</p>
     <p class="sub">{d["加入条件"]}</p>
@@ -40,6 +40,7 @@ const d = character.data;
   <td class="col skill-col" tabindex="-1" title="个人特技">
     <SkillSummary skill={skill} compact />
   </td>
+  <td class="col weapons-col" tabindex="-1" title="初始武器资质"><WeaponIcons list={d["初始武器资质"]} /></td>
   {
     growth.map((g, i) => (
       <td
