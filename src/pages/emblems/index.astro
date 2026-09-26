@@ -1,0 +1,186 @@
+---
+import { getCollection } from "astro:content";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import NavLayout from "../../components/NavLayout.astro";
+import Thumb from "../../components/Thumb.astro";
+
+const emblems = (await getCollection("emblems")).sort((a, b) => a.data.order - b.data.order);
+
+// 头像按人名存放：src/assets/emblems/<人名>.webp（取自原始 xlsx）。
+// 共用戒指的纹章士（如「库洛武/鲁弗莱」）每人一张；原表没有鲁弗莱的图，没有图的人不显示。
+const images = new Set(Object.keys(import.meta.glob("/src/assets/emblems/*.webp")));
+const portraitsOf = (names: string) =>
+  names
+    .split("/")
+    .map((n) => `src/assets/emblems/${n}.webp`)
+    .filter((p) => images.has(`/${p}`));
+---
+
+<BaseLayout>
+  <NavLayout>
+    <div slot="sidebar">Sidebar</div>
+    <h1>纹章士 <span>{emblems.length}</span></h1>
+
+    <ul class="emblems">
+      {
+        emblems.map((e) => {
+          const d = e.data;
+          return (
+            <li class="card">
+              <header>
+                <div class="portraits">
+                  {portraitsOf(d["纹章士"]).map((src) => (
+                    <Thumb src={src} alt="" size={56} />
+                  ))}
+                </div>
+                <div>
+                  <h2>{d["纹章士"]}</h2>
+                  <p class="works">{d["登场作品"]}</p>
+                </div>
+              </header>
+
+              <p class="intro">{d["简介"]}</p>
+
+              <dl>
+                <div>
+                  <dt>声优</dt>
+                  <dd>{d["声优"]}</dd>
+                </div>
+                <div>
+                  <dt>加入</dt>
+                  <dd>
+                    <span class="chapter">{d["加入章节"]}</span>
+                    <span class="cond">{d["加入条件"]}</span>
+                  </dd>
+                </div>
+                <div>
+                  <dt>满级加成</dt>
+                  <dd class="bonus">
+                    {d["满级能力加成"].split("\n").map((b) => (
+                      <span>{b}</span>
+                    ))}
+                  </dd>
+                </div>
+              </dl>
+            </li>
+          );
+        })
+      }
+    </ul>
+  </NavLayout>
+</BaseLayout>
+
+<style>
+  h1 {
+    margin: 1rem 0 0.75rem;
+    font-size: 1.4rem;
+  }
+  h1 span {
+    color: #5d6478;
+    font-size: 1rem;
+    font-weight: 400;
+  }
+  p {
+    margin: 0;
+  }
+
+  /* 手机上一列；宽度够时两列（每张卡片最小约 20rem） */
+  .emblems {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(min(100%, 20rem), 1fr));
+    gap: 0.75rem;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  .card {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    padding: 0.9rem 1rem;
+    border: 1px solid #d4dde2;
+    border-radius: 8px;
+    background: #fff;
+    color: #22263a;
+  }
+
+  header {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding-bottom: 0.6rem;
+    border-bottom: 1px solid #d4dde2;
+  }
+  /* 共用戒指的多张头像并排，略微重叠 */
+  .portraits {
+    display: flex;
+    flex: none;
+  }
+  .portraits > :global(* + *) {
+    margin-left: -0.75rem;
+  }
+  .portraits > :global(*) {
+    box-shadow: 0 0 0 2px #fff;
+  }
+  h2 {
+    margin: 0;
+    font-size: 1.1rem;
+  }
+  /* 多行内容（多部登场作品、多位声优等）保留 CSV 里的换行 */
+  .works,
+  .intro,
+  dd {
+    white-space: pre-line;
+  }
+  .works {
+    margin-top: 0.15rem;
+    color: #5d6478;
+    font-size: 0.75rem;
+  }
+  .intro {
+    font-size: 0.85rem;
+    line-height: 1.6;
+  }
+
+  dl {
+    display: grid;
+    gap: 0.4rem;
+    margin: 0;
+  }
+  dl div {
+    display: grid;
+    grid-template-columns: 4.5rem minmax(0, 1fr);
+    gap: 0.5rem;
+  }
+  dt {
+    color: #5d6478;
+    font-size: 0.75rem;
+  }
+  dd {
+    margin: 0;
+    font-size: 0.8rem;
+  }
+  .chapter {
+    display: block;
+    font-weight: 700;
+  }
+  .cond {
+    display: block;
+    color: #5d6478;
+    font-size: 0.75rem;
+  }
+  .bonus {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.25rem;
+    white-space: normal;
+  }
+  .bonus span {
+    padding: 0 0.4rem;
+    border-radius: 3px;
+    background: #f1f5f7;
+    font-family: "Barlow", system-ui, sans-serif;
+    font-size: 0.8rem;
+    font-weight: 500;
+  }
+</style>

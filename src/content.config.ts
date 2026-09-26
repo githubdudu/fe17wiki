@@ -33,4 +33,14 @@ const classes = defineCollection({
   )
 })
 
-export const collections = { characters, skills, classes };
+const emblems = defineCollection({
+  loader: file('src/data/emblems.csv',
+    {
+      parser: (text) =>
+        parse<Record<string, string>>(text, { columns: true, bom: true, skip_empty_lines: true })
+          .map((r, i) => ({ ...r, order: i })),
+    }
+  )
+})
+
+export const collections = { characters, skills, classes, emblems };

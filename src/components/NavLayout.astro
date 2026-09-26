@@ -9,6 +9,7 @@ const path = Astro.url.pathname;
     <a href="/characters" aria-current={path.startsWith("/characters") ? "page" : undefined}>角色</a>
     <a href="/skills" aria-current={path.startsWith("/skills") ? "page" : undefined}>特技</a>
     <a href="/classes" aria-current={path.startsWith("/classes") ? "page" : undefined}>兵种</a>
+    <a href="/emblems" aria-current={path.startsWith("/emblems") ? "page" : undefined}>纹章士</a>
   </nav>
   <aside><slot name="sidebar" /></aside>
   <main><slot /></main>
