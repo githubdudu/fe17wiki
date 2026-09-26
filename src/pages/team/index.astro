@@ -1,0 +1,349 @@
+---
+import { getCollection } from "astro:content";
+import type { ImageMetadata } from "astro";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import NavLayout from "../../components/NavLayout.astro";
+import TeamPlanner from "../../components/TeamPlanner";
+
+const byOrder = (a: { data: { order: number } }, b: { data: { order: number } }) => a.data.order - b.data.order;
+
+// 和 Thumb.astro 一样按 CSV 里的路径找图，这里只要 URL 交给 React。
+const images = import.meta.glob<{ default: ImageMetadata }>("/src/assets/**/*.webp", { eager: true });
+const url = (p: string) => images[`/${p}`]?.default.src;
+
+const characters = (await getCollection("characters")).sort(byOrder).map((c) => ({
+  id: c.id,
+  name: c.data["角色名称_简中"],
+  img: url(c.data["头像"]),
+  initClass: c.data["初始职业"],
+}));
+// 同名兵种在 CSV 里按变体分多行，这里每个名字只要一个。
+const classes = [
+  ...new Map(
+    (await getCollection("classes")).sort(byOrder).map((c) => [
+      c.data["兵种名称"],
+      {
+        name: c.data["兵种名称"],
+        group: c.data["分类"],
+        img: url(`src/assets/classes/${c.data["兵种名称"]}.webp`),
+      },
+    ]),
+  ).values(),
+];
+// 共用戒指的纹章士（如「库洛武/鲁弗莱」）取第一人的头像。
+const emblems = (await getCollection("emblems")).sort(byOrder).map((e) => ({
+  name: e.data["纹章士"],
+  img: url(`src/assets/emblems/${e.data["纹章士"].split("/")[0]}.webp`),
+}));
+---
+
+<BaseLayout>
+  <NavLayout>
+    <TeamPlanner client:only="react" characters={characters} classes={classes} emblems={emblems} />
+  </NavLayout>
+</BaseLayout>
+
+<style is:global>
+  .planner {
+    --line: #d4dde2;
+  }
+  .planner h2 {
+    margin: 1rem 0 0.5rem;
+    padding: 0.35rem 0.75rem;
+    font-size: 1rem;
+    color: #fff;
+    background: #262a3f;
+    border-bottom: 3px solid #e0735a;
+  }
+  .planner button {
+    font: inherit;
+  }
+  .planner .avatar {
+    display: block;
+    flex: none;
+    border-radius: 6px;
+    background: #e5e5e5;
+    object-fit: cover;
+  }
+  .planner .hint {
+    color: #999;
+    font-size: 0.8rem;
+  }
+  /* 拖动途中：能放下的位置淡色虚线提示；指针所在的目标加深为实线 */
+  .planner .can-drop {
+    outline: 2px dashed #f0b3a4;
+    outline-offset: -2px;
+    background: #fdf3f0;
+  }
+  .planner .over {
+    outline: 2px solid #e0735a;
+    outline-offset: -2px;
+    background: #fbe1d9;
+  }
+
+  /* 工具栏 */
+  /* 纯文字按钮，靠右一排 */
+  /* 标题和按钮同一行：标题靠左，按钮靠右；窄屏放不下时按钮换到下一行 */
+  .planner .top {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    justify-content: space-between;
+    column-gap: 1rem;
+  }
+  /* 同其他列表页（兵种、纹章士、特技）的标题 */
+  .planner h1 {
+    margin: 1rem 0 0.75rem;
+    font-size: 1.4rem;
+  }
+  .planner .actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    font-size: 0.85rem;
+  }
+  .planner .actions button {
+    padding: 0;
+    border: 0;
+    background: none;
+    color: #2a64b8;
+    cursor: pointer;
+  }
+  .planner .actions button:hover:not(:disabled) {
+    text-decoration: underline;
+  }
+  .planner .actions button:disabled {
+    color: #aaa;
+    cursor: default;
+  }
+  .planner .msg {
+    color: #666;
+  }
+
+  /* 可拖的项；拖动中原位变淡，跟着指针走的是残影（DragOverlay） */
+  .planner .item {
+    cursor: grab;
+    user-select: none;
+    touch-action: manipulation;
+  }
+  .planner .dragging {
+    opacity: 0.4;
+  }
+  /* 残影：整行时是一行表格，不带高亮提示 */
+  .planner .ghost {
+    table-layout: fixed;
+    box-shadow: 0 4px 12px rgb(0 0 0 / 0.2);
+  }
+  .planner .ghost tr {
+    opacity: 1;
+    outline: none;
+    background: #fff;
+  }
+  .planner .chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+    padding: 2px 8px 2px 2px;
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    background: #fff;
+    font-size: 0.85rem;
+    white-space: nowrap;
+  }
+  .planner .chip .avatar {
+    border-radius: 50%;
+  }
+  .planner .chip:hover {
+    border-color: #262a3f;
+  }
+  .planner .engrave {
+    border-color: #f4c542;
+    background: #fff8e1;
+  }
+  .planner .slot {
+    display: inline-block;
+  }
+  .planner .slot-in {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    padding: 2px 4px 2px 8px;
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    color: #666;
+    font-size: 0.85rem;
+    white-space: nowrap;
+    background: #fff;
+  }
+  .planner .tbd {
+    padding: 4px 10px;
+    border-radius: 6px;
+  }
+
+  /* 队伍表格（导出图片的范围） */
+  .planner .scroll {
+    overflow-x: auto;
+  }
+  .planner .team {
+    width: 100%;
+    border-collapse: collapse;
+    background: #fff;
+  }
+  .planner .team th {
+    padding: 0.35rem 0.5rem;
+    text-align: left;
+    font-size: 0.8rem;
+    color: #666;
+    background: #f1f5f7;
+  }
+  .planner .team th,
+  .planner .team td {
+    border: 1px solid var(--line);
+  }
+  .planner .team td {
+    padding: 0.25rem 0.5rem;
+    vertical-align: middle;
+  }
+  .planner .team .cell {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.25rem;
+  }
+  /* 武器槽不换行；太多时表格外层横向滚动 */
+  .planner .team .one-line {
+    flex-wrap: nowrap;
+  }
+  /* 行首把手（像 Notion）：鼠标移到行上才显示；触屏一直显示 */
+  .planner .team .grip-cell {
+    width: 1px;
+    padding: 0 2px;
+    border: 0;
+    background: #fff; /* 整行高亮时，把手格保持白底 */
+  }
+  .planner .grip {
+    display: grid;
+    place-items: center;
+    width: 18px;
+    height: 24px;
+    border-radius: 4px;
+    color: #999;
+    fill: currentColor;
+    opacity: 0;
+  }
+  .planner .team tr:hover .grip,
+  .planner .grip:focus-visible {
+    opacity: 1;
+  }
+  .planner .grip:hover {
+    background: #f1f5f7;
+    color: #262a3f;
+  }
+  @media (hover: none) {
+    .planner .grip {
+      opacity: 1;
+    }
+  }
+  .planner .team .num {
+    width: 1px;
+    text-align: center;
+    white-space: nowrap;
+    color: #666;
+    font-size: 0.85rem;
+  }
+  /* 定位：看起来像普通文字，聚焦时才显出输入框 */
+  .planner .role {
+    width: 7em;
+    padding: 2px 4px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    background: none;
+    font: inherit;
+    font-size: 0.85rem;
+  }
+  .planner .role:hover {
+    border-color: var(--line);
+  }
+  .planner .role:focus {
+    border-color: #262a3f;
+    outline: none;
+  }
+  /* 表格下方的「＋」：加一行空行 */
+  .planner .add-row {
+    display: block;
+    width: 100%;
+    margin-top: 4px;
+    padding: 0.25rem;
+    border: 1px dashed var(--line);
+    border-radius: 6px;
+    background: none;
+    color: #999;
+    font-size: 1.1rem;
+    cursor: pointer;
+  }
+  .planner .add-row:hover {
+    border-color: #262a3f;
+    color: #262a3f;
+  }
+  .planner .x {
+    border: 0;
+    background: none;
+    color: #999;
+    font-size: 1.1rem;
+    cursor: pointer;
+  }
+  .planner .x:hover {
+    color: #d6334a;
+  }
+
+  /* 标签页：拖出来的来源，也是「拖回移出」的目标 */
+  .planner .pool {
+    margin-top: 1rem;
+    border: 1px solid var(--line);
+  }
+  .planner .tabs {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    background: #262a3f;
+    border-bottom: 3px solid #e0735a;
+  }
+  .planner .tabs button {
+    padding: 0.45rem 0.9rem;
+    border: 0;
+    background: none;
+    color: #fff;
+    font-weight: 700;
+    cursor: pointer;
+  }
+  .planner .tabs button:hover {
+    background: #353a57;
+  }
+  .planner .tabs button[aria-selected="true"] {
+    background: #e0735a;
+  }
+  .planner .tabs .hint {
+    margin-left: auto;
+    padding: 0 0.75rem;
+    color: #aab;
+  }
+  .planner .panel {
+    padding: 0.25rem 0.5rem 0.75rem;
+  }
+  .planner .panel h3 {
+    margin: 0.5rem 0 0.25rem;
+    font-size: 0.8rem;
+    color: #666;
+  }
+  .planner .panel section:first-child h3 {
+    margin-top: 0.25rem;
+  }
+  .planner .items {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.35rem;
+    padding-top: 0.25rem;
+  }
+  .planner button:focus-visible {
+    outline: 3px solid #f4c542;
+  }
+</style>
