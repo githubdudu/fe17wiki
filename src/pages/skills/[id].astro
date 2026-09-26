@@ -1,0 +1,164 @@
+---
+import { getCollection } from "astro:content";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import NavLayout from "../../components/NavLayout.astro";
+import Thumb from "../../components/Thumb.astro";
+
+export async function getStaticPaths() {
+  const skills = await getCollection("skills");
+  return skills.map((s) => ({ params: { id: s.id }, props: { skill: s } }));
+}
+
+const { skill } = Astro.props;
+const d = skill.data;
+
+// 个人特技：找到拥有它的角色（characters.csv 的「个人特技」列）
+const owner = (await getCollection("characters")).find((c) => c.data["个人特技"] === skill.id);
+
+// 只列出有值的字段；「--」表示不适用
+const FIELDS = ["角色要求", "兵种要求", "纹章士", "牵绊等级", "继承SP", "备注"];
+const fields = FIELDS.filter((k) => d[k] && d[k] !== "--").map((k) => [k, d[k]]);
+---
+
+<BaseLayout>
+  <NavLayout>
+    <div slot="sidebar">Sidebar</div>
+
+    <p class="back"><a href="/skills">← 全部特技</a></p>
+
+    <header>
+      <Thumb src={d["图标"]} alt="" size={64} />
+      <div>
+        <p class="type">{d["特技类型"]}</p>
+        <h1>{d["特技名称"]}</h1>
+      </div>
+    </header>
+
+    <p class="desc">{d["详细效果说明"]}</p>
+
+    {
+      d["战斗类型加成"] && (
+        <section>
+          <h2>战斗类型加成</h2>
+          <p class="bonus">{d["战斗类型加成"]}</p>
+        </section>
+      )
+    }
+
+    {
+      owner && (
+        <section>
+          <h2>拥有此特技的角色</h2>
+          <a class="owner" href={`/characters/${owner.id}`}>
+            <Thumb src={owner.data["头像"]} alt="" size={40} />
+            <span>{owner.data["角色名称_简中"]}</span>
+          </a>
+        </section>
+      )
+    }
+
+    {
+      fields.length > 0 && (
+        <dl>
+          {fields.map(([k, v]) => (
+            <div>
+              <dt>{k}</dt>
+              <dd>{v}</dd>
+            </div>
+          ))}
+        </dl>
+      )
+    }
+  </NavLayout>
+</BaseLayout>
+
+<style>
+  p {
+    margin: 0;
+  }
+  a {
+    color: #2a64b8;
+  }
+  a:focus-visible {
+    outline: 3px solid #f4c542;
+    outline-offset: 2px;
+  }
+  .back {
+    margin: 1rem 0;
+    font-size: 0.8rem;
+  }
+  .back a {
+    text-decoration: none;
+  }
+
+  header {
+    display: flex;
+    align-items: center;
+    gap: 0.9rem;
+  }
+  .type {
+    color: #5d6478;
+    font-size: 0.8rem;
+  }
+  h1 {
+    margin: 0;
+    font-size: 1.5rem;
+  }
+
+  .desc {
+    margin: 1rem 0;
+    padding: 0.75rem 1rem;
+    border-left: 4px solid #f4c542;
+    background: #fbf8ee;
+    color: #22263a;
+    line-height: 1.7;
+  }
+
+  section {
+    margin: 1rem 0;
+  }
+  h2 {
+    margin: 0 0 0.4rem;
+    color: #5d6478;
+    font-size: 0.85rem;
+  }
+  /* 原文用换行分隔不同战斗类型 */
+  .bonus {
+    font-size: 0.9rem;
+    line-height: 1.7;
+    white-space: pre-line;
+  }
+  .owner {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: 700;
+    text-decoration: none;
+  }
+  .owner:hover span {
+    text-decoration: underline;
+  }
+
+  dl {
+    margin: 1rem 0 0;
+    border: 1px solid #d4dde2;
+  }
+  dl div {
+    display: grid;
+    grid-template-columns: 6rem minmax(0, 1fr);
+    gap: 0.75rem;
+    padding: 0.5rem 0.75rem;
+  }
+  dl div + div {
+    border-top: 1px solid #d4dde2;
+  }
+  dt {
+    color: #5d6478;
+    font-size: 0.8rem;
+  }
+  dd {
+    margin: 0;
+    font-size: 0.9rem;
+    white-space: pre-line;
+  }
+</style>

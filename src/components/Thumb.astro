@@ -1,0 +1,46 @@
+---
+/**
+ * 方形缩略图（角色头像、特技图标等）：src 为 CSV 里写的图片路径，如 src/assets/characters/alear.webp；
+ * 找不到图时显示同尺寸灰块。
+ */
+import { Image } from "astro:assets";
+import type { ImageMetadata } from "astro";
+
+interface Props {
+  src: string;
+  alt: string;
+  size: number;
+}
+const { src, alt, size } = Astro.props;
+
+const images = import.meta.glob<{ default: ImageMetadata }>("/src/assets/**/*.webp", {
+  eager: true,
+});
+const image = images[`/${src}`]?.default;
+---
+
+{
+  image ? (
+    <Image class="thumb" src={image} alt={alt} width={size} height={size} densities={[1, 2]} />
+  ) : (
+    <span class="thumb placeholder" style={`width: ${size}px`} />
+  )
+}
+
+<style>
+  /*
+   * max-width：容器窄时可缩小（首页网格）；flex: none：在 flex 行里不被挤压（特技列表）。
+   * 注意：放进 flex 行时，外层要设 align-items（不能是默认的 stretch），否则图会被拉伸到整行高度。
+   */
+  .thumb {
+    display: block;
+    flex: none;
+    max-width: 100%;
+    height: auto;
+    aspect-ratio: 1;
+    border-radius: 6px;
+  }
+  .placeholder {
+    background: #e5e5e5;
+  }
+</style>

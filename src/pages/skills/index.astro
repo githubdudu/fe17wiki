@@ -1,0 +1,172 @@
+---
+import { getCollection } from "astro:content";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import NavLayout from "../../components/NavLayout.astro";
+import Thumb from "../../components/Thumb.astro";
+
+const skills = (await getCollection("skills")).sort((a, b) => a.data.order - b.data.order);
+// 分组和组的先后都来自 CSV：「特技类型」列 + 行序
+const groups = [...Map.groupBy(skills, (s) => s.data["特技类型"])];
+---
+
+<BaseLayout>
+  <NavLayout>
+    <div slot="sidebar">Sidebar</div>
+    <h1>特技</h1>
+
+    <nav class="types" aria-label="特技类型">
+      {
+        groups.map(([type, list], i) => (
+          <a href={`#type-${i}`}>
+            {type}
+            <span>{list.length}</span>
+          </a>
+        ))
+      }
+    </nav>
+
+    {
+      groups.map(([type, list], i) => (
+        <section id={`type-${i}`}>
+          <h2>
+            {type}
+            <span>{list.length}</span>
+          </h2>
+          <ul>
+            {list.map((s) => {
+              const d = s.data;
+              const tags = [d["纹章士"], d["角色要求"], d["兵种要求"]].filter(Boolean);
+              return (
+                <li>
+                  <Thumb src={d["图标"]} alt="" size={40} />
+                  <div class="body">
+                    <p class="name">
+                      <a href={`/skills/${s.id}`}>{d["特技名称"]}</a>
+                    </p>
+                    <p class="desc">{d["详细效果说明"]}</p>
+                    {tags.length > 0 && (
+                      <p class="tags">
+                        {tags.map((t) => (
+                          <span>{t}</span>
+                        ))}
+                      </p>
+                    )}
+                  </div>
+                </li>
+              );
+            })}
+          </ul>
+        </section>
+      ))
+    }
+  </NavLayout>
+</BaseLayout>
+
+<style>
+  h1 {
+    margin: 1rem 0 0.75rem;
+    font-size: 1.4rem;
+  }
+
+  /* 顶部类型导航：点击跳到对应分组 */
+  .types {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.35rem;
+    margin-bottom: 1rem;
+  }
+  .types a {
+    padding: 0.2rem 0.75rem;
+    border: 1px solid #2a64b8;
+    border-radius: 999px;
+    color: #2a64b8;
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-decoration: none;
+  }
+  .types a:hover,
+  .types a:focus-visible {
+    background: #2a64b8;
+    color: #fff;
+  }
+  .types a:focus-visible {
+    outline: 3px solid #f4c542;
+    outline-offset: 2px;
+  }
+  .types span,
+  h2 span {
+    margin-left: 0.3rem;
+    font-weight: 400;
+    opacity: 0.7;
+  }
+
+  section {
+    margin-bottom: 1.5rem;
+    scroll-margin-top: 1rem;
+  }
+  h2 {
+    margin: 0;
+    padding: 0.4rem 0.75rem;
+    border: 1px solid #d4dde2;
+    background: #f1f5f7;
+    font-size: 0.9rem;
+  }
+
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  li {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    padding: 0.6rem 0.75rem;
+    border: 1px solid #d4dde2;
+    border-top: 0;
+    background: #fff;
+  }
+  li:hover {
+    background: #eef3fb;
+  }
+  .body {
+    min-width: 0;
+  }
+  p {
+    margin: 0;
+  }
+  .name {
+    font-size: 0.9rem;
+    font-weight: 700;
+  }
+  .name a {
+    color: #2a64b8;
+    text-decoration: none;
+  }
+  .name a:hover {
+    text-decoration: underline;
+  }
+  .name a:focus-visible {
+    outline: 3px solid #f4c542;
+    outline-offset: 2px;
+  }
+  .desc {
+    margin-top: 0.1rem;
+    color: #22263a;
+    font-size: 0.8rem;
+    line-height: 1.5;
+  }
+  .tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.25rem;
+    margin-top: 0.3rem;
+  }
+  .tags span {
+    padding: 0 0.4rem;
+    border-radius: 3px;
+    background: #f1f5f7;
+    color: #5d6478;
+    font-size: 0.7rem;
+  }
+</style>

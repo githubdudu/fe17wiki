@@ -6,7 +6,7 @@
  * 每格 tabindex="-1"：点击即获得焦点，用来标出选中的行和列。
  */
 import type { CollectionEntry } from "astro:content";
-import Portrait from "./Portrait.astro";
+import Thumb from "./Thumb.astro";
 
 interface Props {
   character: CollectionEntry<"characters">;
@@ -21,7 +21,7 @@ const d = character.data;
 <tr>
   <th scope="row" class="who" tabindex="-1">
     <div class="who-inner">
-      <Portrait id={character.id} alt={d["角色名称_简中"]} size={48} />
+      <Thumb src={d["头像"]} alt={d["角色名称_简中"]} size={48} />
       <div>
         <p class="name"><a href={`/characters/${character.id}`}>{d["角色名称_简中"]}</a></p>
         <p class="sub">{d["初始职业"]}</p>

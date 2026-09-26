@@ -21,7 +21,7 @@ const groups = Map.groupBy(
       <section>
         <h3>{label}</h3>
         <ul>
-          {list.map((c) => <li><CharacterCard id={c.id} name={c.data["角色名称_简中"]} /></li>)}
+          {list.map((c) => <li><CharacterCard id={c.id} name={c.data["角色名称_简中"]} src={c.data["头像"]} /></li>)}
           {Array.from({ length: (COLS - (list.length % COLS)) % COLS }, () => <li class="empty">-</li>)}
         </ul>
       </section>

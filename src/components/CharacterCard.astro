@@ -1,17 +1,19 @@
 ---
 /** 角色卡片：头像 + 中文名 + 一行副信息，整张卡片链接到角色条目。 */
-import Portrait from "./Portrait.astro";
+import Thumb from "./Thumb.astro";
 
 interface Props {
   id: string;
   name: string;
+  /** 头像路径（characters.csv 的「头像」列） */
+  src: string;
   subtitle?: string;
 }
-const { id, name, subtitle } = Astro.props;
+const { id, name, src, subtitle } = Astro.props;
 ---
 
 <a class="character-card" href={`/characters/${id}`}>
-  <Portrait id={id} alt={name} size={48} />
+  <Thumb src={src} alt={name} size={48} />
   <span class="name">{name}</span>
   {subtitle && <span class="subtitle">{subtitle}</span>}
 </a>
