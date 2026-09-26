@@ -14,7 +14,7 @@ import { DndContext, DragOverlay, MouseSensor, TouchSensor, useSensor, useSensor
 import { EMPTY, accepts, drop, type Drag, type Row, type Tab, type Target } from "./team/rules";
 import { Draggable, Ghost, Zone, collision, zoneId } from "./team/dnd";
 import { load, save, shareLink } from "./team/storage";
-import { exportImage } from "./team/exportImage";
+import { renderImage } from "./team/exportImage";
 
 type Character = { id: string; name: string; img?: string; initClass: string };
 type Named = { name: string; img?: string; group?: string };
@@ -77,11 +77,26 @@ export default function TeamPlanner({
     }
   };
 
-  const saveImage = async () => {
+  // 导出图片：先弹框预览，再选下载或复制到剪贴板
+  const previewRef = useRef<HTMLDialogElement>(null);
+  const [image, setImage] = useState(""); // png 的 data URL
+  const [copyMsg, setCopyMsg] = useState("");
+  const openPreview = async () => {
     try {
-      await exportImage(tableRef.current!, "队伍规划.png");
+      setImage(await renderImage(tableRef.current!));
+      setCopyMsg("");
+      previewRef.current!.showModal();
     } catch {
       setMsg("生成图片失败");
+    }
+  };
+  const copyImage = async () => {
+    try {
+      // Safari 要求在点击时同步创建 ClipboardItem，所以传 Promise 而不是先 await 出 Blob
+      await navigator.clipboard.write([new ClipboardItem({ "image/png": fetch(image).then((r) => r.blob()) })]);
+      setCopyMsg("已复制到剪贴板");
+    } catch {
+      setCopyMsg("复制失败，请用下载");
     }
   };
 
@@ -235,10 +250,10 @@ export default function TeamPlanner({
     >
       <div className="planner">
         <div className="top">
-          <h1>队伍规划</h1>
+          <h1>阵容搭配</h1>
           <div className="actions">
             <button onClick={share} disabled={!rows.length}>复制分享链接</button>
-            <button onClick={saveImage} disabled={!rows.length}>导出图片</button>
+            <button onClick={openPreview} disabled={!rows.length}>导出图片</button>
             <button onClick={() => confirm("清空队伍？") && setRows([])} disabled={!rows.length}>清空</button>
             <span className="msg" role="status">{msg}</span>
           </div>
@@ -283,6 +298,22 @@ export default function TeamPlanner({
         <DragOverlay dropAnimation={null}>
           {dnd && <Ghost.Provider value={true}>{ghost(dnd.drag)}</Ghost.Provider>}
         </DragOverlay>
+
+        {/* 导出预览；点遮罩或按 Esc 关闭 */}
+        <dialog
+          ref={previewRef}
+          className="preview"
+          aria-label="导出图片"
+          onClick={(e) => e.target === e.currentTarget && e.currentTarget.close()}
+        >
+          <img src={image} alt="火焰文章结合阵容搭配图片预览" />
+          <div className="actions preview-actions">
+            <span className="msg" role="status">{copyMsg}</span>
+            <a href={image} download="火焰文章结合阵容搭配.png">下载</a>
+            <button onClick={copyImage}>复制到剪贴板</button>
+            <button onClick={() => previewRef.current!.close()}>关闭</button>
+          </div>
+        </dialog>
       </div>
     </DndContext>
   );

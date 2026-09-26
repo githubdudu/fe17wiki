@@ -102,14 +102,16 @@ const emblems = (await getCollection("emblems")).sort(byOrder).map((e) => ({
     gap: 1rem;
     font-size: 0.85rem;
   }
-  .planner .actions button {
+  /* 顶部和导出弹框里的操作：纯文字按钮（<a> 是弹框里的「下载」） */
+  .planner .actions :is(button, a) {
     padding: 0;
     border: 0;
     background: none;
     color: #2a64b8;
+    text-decoration: none;
     cursor: pointer;
   }
-  .planner .actions button:hover:not(:disabled) {
+  .planner .actions :is(button, a):hover:not(:disabled) {
     text-decoration: underline;
   }
   .planner .actions button:disabled {
@@ -266,6 +268,31 @@ const emblems = (await getCollection("emblems")).sort(byOrder).map((e) => ({
   .planner .role:focus {
     border-color: #262a3f;
     outline: none;
+  }
+  /* 导出预览弹框：图片缩小显示，下面是 下载 / 复制到剪贴板 */
+  .planner .preview {
+    max-width: min(90vw, 760px); /* 比表格窄，图片缩小显示当预览 */
+    padding: 1rem;
+    border: 0;
+    border-radius: 8px;
+    box-shadow: 0 8px 32px rgb(0 0 0 / 0.3);
+  }
+  .planner .preview::backdrop {
+    background: rgb(38 42 63 / 0.5);
+  }
+  .planner .preview img {
+    display: block;
+    max-width: 100%;
+    max-height: 60vh;
+    margin: 0 auto;
+    border: 1px solid var(--line);
+  }
+  .planner .preview-actions {
+    justify-content: flex-end;
+    margin-top: 0.75rem;
+  }
+  .planner .preview-actions .msg {
+    margin-right: auto;
   }
   /* 表格下方的「＋」：加一行空行 */
   .planner .add-row {
