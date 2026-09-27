@@ -1,0 +1,363 @@
+---
+import { getCollection } from "astro:content";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import NavLayout from "../../components/NavLayout.astro";
+import ChapterNode, { type Node } from "../../components/ChapterNode.astro";
+
+const byOrder = (a: { data: { order: number } }, b: { data: { order: number } }) => a.data.order - b.data.order;
+const chapters = (await getCollection("chapters")).sort(byOrder);
+const characters = (await getCollection("characters")).sort(byOrder);
+const emblems = (await getCollection("emblems")).sort(byOrder);
+
+// 引用要能对上，对不上就让构建失败，免得有人悄悄从页面上消失
+const ids = new Set(chapters.map((c) => c.id));
+const check = (what: string, ref: string) => {
+  if (!ids.has(ref)) throw new Error(`chapters.csv 里没有「${ref}」（${what}）`);
+};
+chapters.forEach((c) => c.data["父节点"] && check(`${c.id} 的父节点`, c.data["父节点"]));
+characters.forEach((c) => check(`角色 ${c.id} 的章节id`, c.data["章节id"]));
+emblems.forEach((e) => check(`纹章士 ${e.id} 的章节id`, e.data["章节id"]));
+
+// 纹章士头像按人名存放，共用戒指的（如「库洛武/鲁弗莱」）取第一人（同纹章士页）
+const nodes = new Map<string, Node>(
+  chapters.map((c) => [
+    c.id,
+    {
+      id: c.id,
+      type: c.data["类型"],
+      no: c.data["编号"],
+      name: c.data["名称"],
+      chars: characters
+        .filter((ch) => ch.data["章节id"] === c.id)
+        .map((ch) => ({ id: ch.id, name: ch.data["角色名称_简中"], img: ch.data["头像"] })),
+      emblems: emblems
+        .filter((e) => e.data["章节id"] === c.id)
+        .map((e) => ({ name: e.data["纹章士"], img: `src/assets/emblems/${e.data["纹章士"].split("/")[0]}.webp` })),
+      children: [],
+      chain: [],
+    },
+  ]),
+);
+// 有父节点的挂到父节点下（行序 = 时间顺序）；没有父节点的是主线，连成主干
+chapters.forEach((c) => c.data["父节点"] && nodes.get(c.data["父节点"])!.children.push(nodes.get(c.id)!));
+// 侧枝里「只有一个同类型子节点」的是依次进行的章节（邪龙之章 1→6），收成一条链；
+// 同一个父节点下有多个同类型子节点（神龙之章的五个外传）则仍是并列的侧枝
+for (const n of nodes.values()) {
+  let cur = n;
+  while (n.type !== "主线" && cur.children.length === 1 && cur.children[0].type === n.type) {
+    const next = cur.children[0];
+    cur.children = [];
+    n.chain.push(next);
+    cur = next;
+  }
+}
+const trunk = chapters.filter((c) => !c.data["父节点"]).map((c) => nodes.get(c.id)!);
+---
+
+<BaseLayout
+  title="章节流程"
+  description="火焰纹章结合全部章节流程：主线序章到第26章，外传与神龙之章、邪龙之章 DLC 在哪一章解锁，以及每一章加入的角色和纹章士。"
+>
+  <NavLayout>
+    <div class="chapters">
+      <h1>章节流程</h1>
+      <p class="lead">主线从上到下；外传和 DLC 从解锁它的章节向右分出。</p>
+      <ol class="trunk">
+        {
+          trunk.map((node) => (
+            <li>
+              <ChapterNode node={node} main />
+            </li>
+          ))
+        }
+      </ol>
+    </div>
+  </NavLayout>
+</BaseLayout>
+
+<style is:global>
+  .chapters {
+    --axis: #262a3f; /* 主线轴 */
+    --side: #9aa7b0; /* 支线轴（默认） */
+    --line: #d4dde2; /* 卡片、胶囊边框 */
+    --gap: 10rem; /* 圆点到卡片的距离 = 虚线长度 */
+    --label: 5rem; /* 圆点左边编号的宽度（主线） */
+    --curve: 16px; /* 支线离开主干时的圆角半径 */
+    --label-s: 4.25rem; /* 支线编号较长（「邪龙之章 第2章」），折成两行刚好 */
+    --mid: 20px; /* 卡片标题行中线，圆点和虚线都对准它 */
+    color: #22263a;
+  }
+  .chapters h1 {
+    margin: 1rem 0 0.25rem;
+    font-size: 1.4rem;
+  }
+  .chapters .lead {
+    margin: 0 0 1.25rem;
+    color: #5d6478;
+    font-size: 0.85rem;
+  }
+  .chapters ol,
+  .chapters ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  /*
+   * 时间轴：li 左边一条竖线（轴），li::after 是轴上的圆点，li::before 是圆点到卡片的虚线。
+   * 圆点和虚线都对准卡片标题行的中线（--mid），所以轴、编号、标题三者在一条水平线上。
+   */
+  .chapters .trunk > li,
+  .chapters .chain > li,
+  .chapters .branches > li {
+    position: relative;
+    padding-left: var(--gap);
+  }
+  .chapters .trunk > li::before,
+  .chapters .chain > li::before,
+  .chapters .branches > li::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    width: calc(var(--gap) - 1.15rem);
+    border-top: 2px dashed var(--side);
+  }
+  .chapters .trunk > li::after,
+  .chapters .chain > li::after,
+  .chapters .branches > li::after {
+    content: "";
+    position: absolute;
+    border-radius: 50%;
+    background: #fff;
+  }
+
+  /* 主线：粗实线轴 + 实心圆点；整条轴右移，给左边的编号腾地方 */
+  .chapters .trunk {
+    padding-left: var(--label);
+  }
+  .chapters .trunk > li {
+    padding-bottom: 1rem;
+    border-left: 3px solid var(--axis);
+  }
+  .chapters .trunk > li:first-child {
+    /* 轴从第一个圆点开始，不要多出一截 */
+    background: linear-gradient(#fff, #fff) left top / 3px 0 no-repeat;
+  }
+  .chapters .trunk > li:last-child {
+    border-left-color: transparent;
+    background: linear-gradient(var(--axis), var(--axis)) left top / 3px 0 no-repeat;
+  }
+  .chapters .trunk > li::before {
+    left: 0.9rem;
+  }
+  .chapters .trunk > li::after {
+    left: -7px;
+    top: -6px;
+    width: 11px;
+    height: 11px;
+    border: 3px solid var(--axis);
+  }
+
+  /* 每种支线一个颜色（按 CSV 的「类型」，不在代码里做映射表） */
+  .chapters [data-type="外传"] {
+    --side: #3b6fd6;
+  }
+  .chapters [data-type="神龙之章"] {
+    --side: #d99400;
+  }
+  .chapters [data-type="邪龙之章"] {
+    --side: #7d4bc7;
+  }
+
+  /* 支线（外传 / DLC）：缩进的轴，线宽和圆点同主线 */
+  .chapters .branches,
+  .chapters .chain {
+    position: relative;
+    margin: 0.35rem 0 0.25rem calc(var(--label-s) + 0.5rem);
+  }
+  /* 神龙之章、邪龙之章的后续关卡不再往右拐，直接接在上一级的轴上继续往下排 */
+  .chapters .branches .branches,
+  .chapters .chain {
+    margin-left: calc(-1 * (var(--gap) + 3px));
+  }
+  .chapters .branches > li,
+  .chapters .chain > li {
+    padding-bottom: 0.75rem;
+    border-left: 3px solid var(--side);
+  }
+  /* 一组的最后一个：轴画到自己的圆点为止，圆点以下用白色盖掉上一级延伸下来的线 */
+  .chapters .branches > li:last-child,
+  .chapters .chain > li:last-child {
+    border-left-color: transparent;
+    background:
+      linear-gradient(var(--side), var(--side)) 0 0 / 3px 0 no-repeat,
+      linear-gradient(#fff, #fff) 0 var(--mid) / 3px 100% no-repeat;
+    background-origin: border-box;
+  }
+  .chapters .branches > li::before,
+  .chapters .chain > li::before {
+    left: 0.9rem;
+  }
+  .chapters .branches > li::after,
+  .chapters .chain > li::after {
+    left: -7px;
+    top: -6px;
+    width: 11px;
+    height: 11px;
+    border: 3px solid var(--side);
+  }
+
+  /*
+   * 直接挂在主干上的支线（外传2 / 神龙之章 / 邪龙之章第1章…）：不共用一条轴，
+   * 每条各自从主干拐出来，弯道就是这条支线自己的颜色。
+   */
+  .chapters .trunk > li > .branches > li {
+    border-left-color: transparent;
+    background: none;
+  }
+  /* 自己下面还有一层（神龙之章的外传、邪龙之章后续章节）：轴从圆点继续往下，接住下一级的弯道 */
+  .chapters .trunk > li > .branches > li:has(> ul, > ol) {
+    /* 画到下一级列表的底边为止（减掉列表的下外边距和本行的下内边距），不要拖出一小截 */
+    background: linear-gradient(var(--side), var(--side)) 0 0 / 3px
+      calc(100% - 1rem) no-repeat;
+    background-origin: border-box;
+  }
+  .chapters .trunk > li > .branches > li > .event::before {
+    content: "";
+    position: absolute;
+    box-sizing: border-box;
+    top: calc(-1 * var(--curve));
+    left: calc(-1 * (var(--gap) + var(--label-s) + 0.5rem + 3px));
+    width: calc(var(--gap) + var(--label-s) + 0.5rem + 3px);
+    height: var(--curve);
+    border-top: 3px solid var(--side);
+    border-right: 3px solid var(--side);
+    border-top-right-radius: var(--curve);
+  }
+
+  /* 事件：圆点左边的编号 + 右侧卡片 */
+  .chapters .event {
+    display: grid;
+  }
+  /* 编号排在圆点左边（轴外），和卡片标题行居中对齐；太长的自动折行 */
+  .chapters .marker {
+    position: absolute;
+    right: calc(100% + 0.7rem);
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    width: var(--label-s);
+    top: 0;
+    height: 0;
+    color: #5d6478;
+    font-size: 0.85rem;
+    line-height: 1.25;
+    text-align: right;
+  }
+  .chapters .trunk > li > .event > .marker {
+    width: var(--label);
+    color: #262a3f;
+    font-size: 1.5rem;
+    font-weight: 700;
+  }
+  .chapters .card {
+    padding: 0.5rem 0.8rem 0.6rem;
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    background: #fff;
+  }
+  .chapters .dlc .card {
+    border-left: 3px solid #f4c542;
+  }
+  .chapters .card-title {
+    margin: 0;
+    font-size: 1.5rem;
+    line-height: calc(var(--mid) * 2 - 1.1rem);
+    font-weight: 700;
+  }
+  .chapters .tag {
+    margin-left: 0.4rem;
+    padding: 0 5px;
+    border-radius: 4px;
+    background: #f4c542;
+    color: #22263a;
+    font-size: 0.7rem;
+    font-weight: 700;
+    vertical-align: middle;
+  }
+
+  /* 加入的角色 / 纹章士：小头像 + 名字 */
+  .chapters .joins {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.35rem;
+    margin-top: 0.5rem;
+  }
+  .chapters .joins li,
+  .chapters .joins a {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+    font-size: 0.85rem;
+  }
+  .chapters .joins li {
+    padding: 1px 8px 1px 1px;
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    background: #fff;
+  }
+  .chapters .joins a {
+    color: #2a64b8;
+    text-decoration: none;
+  }
+  .chapters .joins a:hover {
+    text-decoration: underline;
+  }
+  .chapters .joins .thumb {
+    border-radius: 50%;
+  }
+  .chapters .joins .emblem {
+    border-color: #f4c542;
+    background: #fff8e1;
+  }
+
+  /* 手机：缩短虚线和缩进，给卡片留宽度；编号移到卡片标题上方 */
+  @media (max-width: 640px) {
+    .chapters {
+      --gap: 1.25rem;
+    }
+    .chapters .trunk > li::before,
+    .chapters .chain > li::before,
+    .chapters .branches > li::before {
+      width: 0.6rem;
+    }
+    .chapters .trunk > li::before,
+    .chapters .branches > li::before,
+    .chapters .chain > li::before {
+      left: 0.35rem;
+    }
+    .chapters .trunk {
+      padding-left: 0;
+    }
+    .chapters .branches,
+    .chapters .chain {
+      margin-left: 0.4rem;
+    }
+    .chapters .trunk > li > .branches > li > .event::before {
+      left: calc(-1 * (var(--gap) + 0.4rem + 3px));
+      width: calc(var(--gap) + 0.4rem + 3px);
+    }
+    /* 窄屏没有左侧空位，编号回到卡片标题上方 */
+    .chapters .marker,
+    .chapters .trunk > li > .event > .marker {
+      position: static;
+      display: block;
+      width: auto;
+      height: auto;
+      line-height: 1.6;
+      text-align: left;
+      font-size: 0.9rem;
+    }
+  }
+</style>

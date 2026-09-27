@@ -1,0 +1,80 @@
+---
+/**
+ * 时间轴上的一个事件：轴上的圆点 + 编号，虚线连到右边的卡片（章节名 + 在这里加入的人物）。
+ * 圆点和虚线由外层 li 的伪元素画（见 chapters 页样式）；li 带 data-type，样式按类型给轴和圆点上色。
+ * 下面挂着接着它进行的章节（chain，如邪龙之章 1→6）和从它分出的支线（children，外传 / DLC）。
+ */
+import Thumb from "./Thumb.astro";
+
+export interface Node {
+  id: string;
+  type: string;
+  no: string;
+  name: string;
+  chars: { id: string; name: string; img: string }[];
+  emblems: { name: string; img: string }[];
+  children: Node[];
+  /** 接在这个节点后面依次进行的章节（如邪龙之章第2–6章），画成一条小轴而不是层层支线 */
+  chain: Node[];
+}
+
+interface Props {
+  node: Node;
+  main?: boolean; // 主线节点用 h2，支线用 h3
+}
+const { node, main = false } = Astro.props;
+const Heading = main ? "h2" : "h3";
+const dlc = node.type === "神龙之章" || node.type === "邪龙之章";
+---
+
+<div class:list={["event", { dlc }]} id={node.id}>
+  <span class="marker">{node.no}</span>
+  <div class="card">
+    <Heading class="card-title">
+      {node.name}
+      {dlc && <span class="tag">DLC</span>}
+    </Heading>
+    {
+      (node.chars.length > 0 || node.emblems.length > 0) && (
+        <ul class="joins">
+          {node.chars.map((c) => (
+            <li>
+              <a href={`/characters/${c.id}`}>
+                <Thumb src={c.img} alt="" size={22} />
+                {c.name}
+              </a>
+            </li>
+          ))}
+          {node.emblems.map((e) => (
+            <li class="emblem">
+              <Thumb src={e.img} alt="" size={22} />
+              {e.name}
+            </li>
+          ))}
+        </ul>
+      )
+    }
+  </div>
+</div>
+{
+  node.chain.length > 0 && (
+    <ol class="chain">
+      {node.chain.map((next) => (
+        <li data-type={next.type}>
+          <Astro.self node={next} />
+        </li>
+      ))}
+    </ol>
+  )
+}
+{
+  node.children.length > 0 && (
+    <ul class="branches">
+      {node.children.map((child) => (
+        <li data-type={child.type}>
+          <Astro.self node={child} />
+        </li>
+      ))}
+    </ul>
+  )
+}

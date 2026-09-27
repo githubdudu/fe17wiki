@@ -12,6 +12,7 @@ const hasSidebar = Astro.slots.has("sidebar");
     <a href="/classes" aria-current={path.startsWith("/classes") ? "page" : undefined}>兵种</a>
     <a href="/emblems" aria-current={path.startsWith("/emblems") ? "page" : undefined}>纹章士</a>
     <a href="/team" aria-current={path.startsWith("/team") ? "page" : undefined}>阵容搭配</a>
+    <a href="/chapters" aria-current={path.startsWith("/chapters") ? "page" : undefined}>章节流程</a>
   </nav>
   {hasSidebar && <aside><slot name="sidebar" /></aside>}
   <main><slot /></main>
