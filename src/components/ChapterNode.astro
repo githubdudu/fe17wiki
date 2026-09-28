@@ -24,12 +24,14 @@ interface Props {
   main?: boolean; // 主线节点：标题用 h2、编号更大
 }
 const { node, main = false } = Astro.props;
-const Heading = main ? "h2" : "h3";
 const dlc = node.type === "神龙之章" || node.type === "邪龙之章";
 ---
 
 <div
-  class:list={["event", { main, dlc, grouped: node.children.length + node.chain.length > 0 }]}
+  class:list={[
+    "event",
+    { main, dlc, grouped: node.children.length + node.chain.length > 0 },
+  ]}
   id={node.id}
 >
   <div class="marker">
@@ -38,9 +40,9 @@ const dlc = node.type === "神龙之章" || node.type === "邪龙之章";
   </div>
 
   <div class="card">
-    <Heading class="card-title">
+    <h3 class="card-title">
       {node.name}
-    </Heading>
+    </h3>
     {
       (node.chars.length > 0 || node.emblems.length > 0) && (
         <ul class="joins">
@@ -91,6 +93,7 @@ const dlc = node.type === "神龙之章" || node.type === "邪龙之章";
   .event {
     position: relative;
     display: grid;
+    justify-items: start;
   }
   /* 下面还挂着一层（神龙之章 / 邪龙之章第1章）：自己的轴从圆点往下画满这一行，接住下一级 */
   .event.grouped::after {
@@ -99,7 +102,7 @@ const dlc = node.type === "神龙之章" || node.type === "邪龙之章";
     top: 0;
     bottom: 0;
     left: calc(-1 * var(--gap));
-    border-left: 3px solid var(--side);
+    border-left: 3px solid var(--axis);
   }
   /* 编号排在圆点左边（轴外），和圆点同高；太长的自动折行 */
   .marker {
@@ -113,25 +116,28 @@ const dlc = node.type === "神龙之章" || node.type === "邪龙之章";
     width: var(--label);
     height: 0;
     color: #262a3f;
-    font-size: 1.5rem;
+    font-size: 1rem;
     line-height: 1.25;
     text-align: right;
     font-weight: 700;
   }
 
   .card {
-    padding: 1rem 0.8rem 1rem;
-    margin-bottom: 3rem;
-    border: 2px solid var(--line);
-    border-radius: 8px;
+    padding: 0rem 0.8rem 0rem;
+    margin-bottom: 1rem;
+    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+    /* border-radius: 4px; */
     background: #fff;
-    border-left: 3px solid var(--side);
+    display: flex;
+    gap: 1rem;
+    min-width: 12rem;
   }
 
   .card-title {
     margin: 0;
-    font-size: 1.3rem;
+    font-size: 1rem;
     font-weight: 400;
+    color: #5d6478
   }
   .tag {
     margin-left: 0.4rem;
@@ -149,7 +155,6 @@ const dlc = node.type === "神龙之章" || node.type === "邪龙之章";
     display: flex;
     flex-wrap: wrap;
     gap: 0.35rem;
-    margin: 1rem 0 0;
     padding: 0;
     list-style: none;
   }
@@ -223,7 +228,7 @@ const dlc = node.type === "神龙之章" || node.type === "邪龙之章";
     top: 0;
     left: calc(var(--indent) + 0.9rem);
     width: calc(var(--gap) - 1.15rem);
-    border-top: 2px dashed var(--side);
+    border-top: 2px dashed var(--axis);
   }
   /* 轴上的圆点 */
   .branches > li::after,
@@ -249,8 +254,8 @@ const dlc = node.type === "神龙之章" || node.type === "邪龙之章";
     left: calc(-1 * (var(--gap) + var(--indent) + 3px));
     width: calc(var(--indent) + 3px);
     height: var(--curve);
-    border-top: 3px solid var(--side);
-    border-right: 3px solid var(--side);
+    border-top: 3px solid var(--axis);
+    border-right: 3px solid var(--axis);
     border-top-right-radius: var(--curve);
   }
 

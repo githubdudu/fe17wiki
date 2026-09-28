@@ -86,11 +86,12 @@ const trunk = chapters.filter(isTrunk).map((c) => nodes.get(c.id)!);
    */
   .chapters {
     --axis: #262a3f; /* 主线轴 */
-    --side: #262a3f; /* 支线轴（默认，实际颜色按 data-type 取） */
+    --side: #5d6478; /* 支线轴（默认，实际颜色按 data-type 取） */
+    --shadow: #262a3f26; /* 对应主色的阴影 */
     --line: #d4dde2; /* 卡片、胶囊边框 */
     --gap: 10rem; /* 圆点到卡片的距离 = 虚线长度 */
-    --label: 6rem; /* 圆点左边编号的宽度（主线） */
-    --label-s: 6rem; /* 支线编号较长（「邪龙之章 第2章」），折成两行刚好 */
+    --label: 4rem; /* 圆点左边编号的宽度（主线） */
+    --label-s: 7rem; /* 支线编号较长（「邪龙之章 第2章」），折成两行刚好 */
     --curve: 32px; /* 支线离开主干时的圆角半径 */
     color: #22263a;
   }
@@ -108,13 +109,13 @@ const trunk = chapters.filter(isTrunk).map((c) => nodes.get(c.id)!);
 
   /* ---- 轴的颜色：每种类型一个（按 CSV 的「类型」，不在代码里做映射表）；往下继承给分支内部的章节 ---- */
   .trunk > li[data-type="外传"] {
-    --side: #3b6fd6;
+    --axis: #3b6fd6;
   }
   .trunk > li[data-type="神龙之章"] {
-    --side: #d99400;
+    --axis: #d99400;
   }
   .trunk > li[data-type="邪龙之章"] {
-    --side: #7d4bc7;
+    --axis: #7d4bc7;
   }
 
   /*
@@ -148,7 +149,7 @@ const trunk = chapters.filter(isTrunk).map((c) => nodes.get(c.id)!);
     top: 0;
     left: calc(var(--indent) + 0.9rem);
     width: calc(var(--gap) - 1.15rem);
-    border-top: 2px dashed var(--side);
+    border-top: 2px dashed var(--axis);
   }
   .trunk > li::after {
     content: "";
@@ -171,8 +172,8 @@ const trunk = chapters.filter(isTrunk).map((c) => nodes.get(c.id)!);
     left: calc(-1 * (var(--gap) + var(--indent) + 3px));
     width: calc(var(--indent) + 3px);
     height: var(--curve);
-    border-top: 3px solid var(--side);
-    border-right: 3px solid var(--side);
+    border-top: 3px solid var(--axis);
+    border-right: 3px solid var(--axis);
     border-top-right-radius: var(--curve);
   }
 
