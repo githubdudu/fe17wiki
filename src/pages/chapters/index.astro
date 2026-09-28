@@ -38,8 +38,12 @@ const nodes = new Map<string, Node>(
     },
   ]),
 );
-// 有父节点的挂到父节点下（行序 = 时间顺序）；没有父节点的是主线，连成主干
-chapters.forEach((c) => c.data["父节点"] && nodes.get(c.data["父节点"])!.children.push(nodes.get(c.id)!));
+// 主干收「没有父节点的主线章节」+「父节点是主线的分支根节点」（外传 / 神龙之章 / 邪龙之章第1章），
+// 一条分支整体是主干上的一个 li，排在解锁它的章节后面（CSV 行序 = 时间顺序）
+const isTrunk = (c: (typeof chapters)[number]) =>
+  !c.data["父节点"] || nodes.get(c.data["父节点"])!.type === "主线";
+// 分支内部的章节才挂到父节点下（神龙之章的五章、邪龙之章第2–6章）
+chapters.forEach((c) => !isTrunk(c) && nodes.get(c.data["父节点"])!.children.push(nodes.get(c.id)!));
 // 侧枝里「只有一个同类型子节点」的是依次进行的章节（邪龙之章 1→6），收成一条链；
 // 同一个父节点下有多个同类型子节点（神龙之章的五个外传）则仍是并列的侧枝
 for (const n of nodes.values()) {
@@ -51,7 +55,7 @@ for (const n of nodes.values()) {
     cur = next;
   }
 }
-const trunk = chapters.filter((c) => !c.data["父节点"]).map((c) => nodes.get(c.id)!);
+const trunk = chapters.filter(isTrunk).map((c) => nodes.get(c.id)!);
 ---
 
 <BaseLayout
@@ -65,8 +69,8 @@ const trunk = chapters.filter((c) => !c.data["父节点"]).map((c) => nodes.get(
       <ol class="trunk">
         {
           trunk.map((node) => (
-            <li>
-              <ChapterNode node={node} main />
+            <li data-type={node.type}>
+              <ChapterNode node={node} main={node.type === "主线"} />
             </li>
           ))
         }
@@ -82,13 +86,12 @@ const trunk = chapters.filter((c) => !c.data["父节点"]).map((c) => nodes.get(
    */
   .chapters {
     --axis: #262a3f; /* 主线轴 */
-    --side: #9aa7b0; /* 支线轴（默认，实际颜色按 data-type 取） */
+    --side: #262a3f; /* 支线轴（默认，实际颜色按 data-type 取） */
     --line: #d4dde2; /* 卡片、胶囊边框 */
     --gap: 10rem; /* 圆点到卡片的距离 = 虚线长度 */
-    --label: 5rem; /* 圆点左边编号的宽度（主线） */
-    --label-s: 4.25rem; /* 支线编号较长（「邪龙之章 第2章」），折成两行刚好 */
+    --label: 6rem; /* 圆点左边编号的宽度（主线） */
+    --label-s: 6rem; /* 支线编号较长（「邪龙之章 第2章」），折成两行刚好 */
     --curve: 32px; /* 支线离开主干时的圆角半径 */
-    --mid: 20px; /* 卡片标题行的半高，卡片标题行高按它算 */
     color: #22263a;
   }
   .chapters h1 {
@@ -103,10 +106,22 @@ const trunk = chapters.filter((c) => !c.data["父节点"]).map((c) => nodes.get(
     text-align: center;
   }
 
+  /* ---- 轴的颜色：每种类型一个（按 CSV 的「类型」，不在代码里做映射表）；往下继承给分支内部的章节 ---- */
+  .trunk > li[data-type="外传"] {
+    --side: #3b6fd6;
+  }
+  .trunk > li[data-type="神龙之章"] {
+    --side: #d99400;
+  }
+  .trunk > li[data-type="邪龙之章"] {
+    --side: #7d4bc7;
+  }
+
   /*
-   * 主干：li 左边一条竖线（轴），li::after 是轴上的圆点，li::before 是圆点到卡片的虚线。
+   * 主干：每个 li 左边一条竖线（主干轴，本行这一段），li::after 是轴上的圆点，li::before 是圆点到卡片的虚线。
    * 圆点、虚线、编号都在每一行的顶边，所以轴从圆点起画，最后一行不画线即可。
-   * 整条轴右移 --label，给左边的编号腾地方。
+   * 分支（外传 / DLC）也是主干上的一行，只是 --indent 把它整行往右挪一档、再用弯道从主干拐出来；
+   * 主干轴照旧穿过这一行（所以缩进走 padding 而不是 margin）。整条轴右移 --label，给左边的编号腾地方。
    */
   .trunk {
     margin: 0;
@@ -114,10 +129,15 @@ const trunk = chapters.filter((c) => !c.data["父节点"]).map((c) => nodes.get(
     list-style: none;
   }
   .trunk > li {
+    --indent: 0px;
     position: relative;
-    padding-left: var(--gap);
-    padding-bottom: 3rem;
+    padding-left: calc(var(--indent) + var(--gap));
     border-left: 3px solid var(--axis);
+  }
+  .trunk > li:not([data-type="主线"]) {
+    /* 分支自己的轴（圆点）再往右让出一整段虚线的宽度，卡片跟着右移，虚线长度不变 */
+    --indent: calc(var(--gap));
+    --label: var(--label-s); /* 支线编号窄一档（只用于 .marker 的宽度） */
   }
   .trunk > li:last-child {
     border-left-color: transparent;
@@ -126,23 +146,37 @@ const trunk = chapters.filter((c) => !c.data["父节点"]).map((c) => nodes.get(
     content: "";
     position: absolute;
     top: 0;
-    left: 0.9rem;
+    left: calc(var(--indent) + 0.9rem);
     width: calc(var(--gap) - 1.15rem);
     border-top: 2px dashed var(--side);
   }
   .trunk > li::after {
     content: "";
     position: absolute;
-    left: -9.5px; 
+    left: calc(var(--indent) - 9.5px);
     top: -7px;
     width: 11px;
     height: 11px;
-    border: 3px solid var(--axis);
+    border: 3px solid var(--side);
     border-radius: 50%;
     background: #fff;
   }
+  /* 分支：从主干的轴拐出来，弯道是这条分支自己的颜色（.event 是 ChapterNode 的元素，要 :global 才选得到） */
+  .trunk > li:not([data-type="主线"]) > :global(.event)::before {
+    content: "";
+    position: absolute;
+    box-sizing: border-box;
+    top: calc(-1 * var(--curve));
+    /* 从主干轴横过来，在自己的圆点上拐下去：宽度只到自己的轴，不含虚线那一段 --gap */
+    left: calc(-1 * (var(--gap) + var(--indent) + 3px));
+    width: calc(var(--indent) + 3px);
+    height: var(--curve);
+    border-top: 3px solid var(--side);
+    border-right: 3px solid var(--side);
+    border-top-right-radius: var(--curve);
+  }
 
-  /* 手机：没有左侧空位，轴贴到最左边，虚线缩短 */
+  /* 手机：没有左侧空位，轴贴到最左边，虚线和缩进都缩短 */
   @media (max-width: 640px) {
     .chapters {
       --gap: 1.25rem;
@@ -150,8 +184,11 @@ const trunk = chapters.filter((c) => !c.data["父节点"]).map((c) => nodes.get(
     .trunk {
       padding-left: 0;
     }
+    .trunk > li:not([data-type="主线"]) {
+      --indent: calc(0.4rem + var(--gap));
+    }
     .trunk > li::before {
-      left: 0.35rem;
+      left: calc(var(--indent) + 0.35rem);
       width: 0.6rem;
     }
   }

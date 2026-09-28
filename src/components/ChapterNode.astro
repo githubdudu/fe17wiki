@@ -1,8 +1,8 @@
 ---
 /**
  * 时间轴上的一个事件：轴上的圆点 + 编号，虚线连到右边的卡片（章节名 + 在这里加入的人物）。
- * 下面挂着接着它进行的章节（chain，如邪龙之章 1→6）和从它分出的支线（children，外传 / DLC）。
- * 支线的轴、圆点、虚线、弯道都在这里画；主干的那一套在 chapters 页里（它的 li 属于那个文件）。
+ * 下面挂着接着它进行的章节（chain，如邪龙之章 1→6）和从它分出的支线（children，外传 / 神龙之章各章）。
+ * 支线的轴、圆点、虚线、弯道都在这里画（每层支线都各自拐出来）；主干的那一套在 chapters 页里（它的 li 属于那个文件）。
  * 颜色由 li 上的 data-type 决定，尺寸用页面定义的 --gap / --label-s / --curve。
  */
 import Thumb from "./Thumb.astro";
@@ -21,19 +21,25 @@ export interface Node {
 
 interface Props {
   node: Node;
-  main?: boolean; // 主线节点：标题用 h2、编号更大；它的支线直接从主干拐出来
+  main?: boolean; // 主线节点：标题用 h2、编号更大
 }
 const { node, main = false } = Astro.props;
 const Heading = main ? "h2" : "h3";
 const dlc = node.type === "神龙之章" || node.type === "邪龙之章";
 ---
 
-<div class:list={["event", { main, dlc }]} id={node.id}>
-  <span class="marker">{node.no}</span>
+<div
+  class:list={["event", { main, dlc, grouped: node.children.length + node.chain.length > 0 }]}
+  id={node.id}
+>
+  <div class="marker">
+    <span>{node.no}</span>
+    {dlc && <span class="tag">DLC</span>}
+  </div>
+
   <div class="card">
     <Heading class="card-title">
       {node.name}
-      {dlc && <span class="tag">DLC</span>}
     </Heading>
     {
       (node.chars.length > 0 || node.emblems.length > 0) && (
@@ -70,7 +76,7 @@ const dlc = node.type === "神龙之章" || node.type === "邪龙之章";
 }
 {
   node.children.length > 0 && (
-    <ul class:list={["branches", { "from-trunk": main }]}>
+    <ul class="branches">
       {node.children.map((child) => (
         <li data-type={child.type}>
           <Astro.self node={child} />
@@ -83,14 +89,25 @@ const dlc = node.type === "神龙之章" || node.type === "邪龙之章";
 <style>
   /* ---- 事件本身：圆点左边的编号 + 右侧卡片 ---- */
   .event {
+    position: relative;
     display: grid;
-    }
+  }
+  /* 下面还挂着一层（神龙之章 / 邪龙之章第1章）：自己的轴从圆点往下画满这一行，接住下一级 */
+  .event.grouped::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: calc(-1 * var(--gap));
+    border-left: 3px solid var(--side);
+  }
   /* 编号排在圆点左边（轴外），和圆点同高；太长的自动折行 */
   .marker {
     position: absolute;
-    right: calc(100% + 0.7rem);
+    right: calc(100% + var(--gap) + 0.7rem);
     top: 1rem;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: flex-end;
     width: var(--label);
@@ -104,17 +121,16 @@ const dlc = node.type === "神龙之章" || node.type === "邪龙之章";
 
   .card {
     padding: 1rem 0.8rem 1rem;
-    border: 1px solid var(--line);
+    margin-bottom: 3rem;
+    border: 2px solid var(--line);
     border-radius: 8px;
     background: #fff;
+    border-left: 3px solid var(--side);
   }
-  .dlc .card {
-    border-left: 3px solid #f4c542;
-  }
+
   .card-title {
     margin: 0;
-    font-size: 1.5rem;
-    line-height: calc(var(--mid) * 2 - 1.1rem);
+    font-size: 1.3rem;
     font-weight: 400;
   }
   .tag {
@@ -124,7 +140,7 @@ const dlc = node.type === "神龙之章" || node.type === "邪龙之章";
     background: #f4c542;
     color: #22263a;
     font-size: 0.7rem;
-    font-weight: 700;
+    font-weight: 500;
     vertical-align: middle;
   }
 
@@ -165,41 +181,39 @@ const dlc = node.type === "神龙之章" || node.type === "邪龙之章";
     background: #fff8e1;
   }
 
-  /* ---- 支线的轴：每种类型一个颜色（按 CSV 的「类型」，不在代码里做映射表） ---- */
-  [data-type="外传"] {
-    --side: #3b6fd6;
-  }
-  [data-type="神龙之章"] {
-    --side: #d99400;
-  }
-  [data-type="邪龙之章"] {
-    --side: #7d4bc7;
-  }
-
+  /*
+   * ---- 下一级的行 ----
+   * 两种：.chain（邪龙之章 2–6 章，依次进行，接着上一级的轴往下，--indent: 0）
+   * 和 .branches（神龙之章打完第1章后一起解锁的五章，各自往右拐出来）。
+   * 列表左移 --gap 贴到上一级的轴上，缩进走每个 li 的 padding，画法和主干上的行完全一样。
+   */
   .branches,
   .chain {
     position: relative;
-    margin: 0.35rem 0 0.25rem calc(var(--label-s) + 0.5rem);
+    /* 不留上外边距：上一级的 .event 到这里正好接上，轴不断开（行距由卡片的 margin-bottom 给） */
+    margin: 0 0 0.25rem calc(-1 * var(--gap));
     padding: 0;
     list-style: none;
   }
-  /* 神龙之章、邪龙之章的后续关卡不再往右拐，直接接在上一级的轴上继续往下排 */
-  .branches .branches,
   .chain {
-    margin-left: calc(-1 * (var(--gap) + 3px));
+    --indent: 0px;
   }
+  .branches {
+    /* 分支自己的轴（圆点）再往右让出一整段虚线的宽度，卡片跟着右移，虚线长度不变 */
+    --indent: calc(var(--label-s) + 0.5rem + var(--gap));
+    --label: var(--label-s); /* 支线编号窄一档（只用于 .marker 的宽度） */
+  }
+
   .branches > li,
   .chain > li {
     position: relative;
-    padding-left: var(--gap);
-    padding-bottom: 0.75rem;
+    padding-left: calc(var(--indent) + var(--gap));
     border-left: 3px solid var(--side);
   }
   /* 一组的最后一个：圆点在顶边，自己这一行不画线，轴到这里为止 */
   .branches > li:last-child,
   .chain > li:last-child {
     border-left-color: transparent;
-    background: none;
   }
   /* 圆点到卡片的虚线 */
   .branches > li::before,
@@ -207,7 +221,7 @@ const dlc = node.type === "神龙之章" || node.type === "邪龙之章";
     content: "";
     position: absolute;
     top: 0;
-    left: 0.9rem;
+    left: calc(var(--indent) + 0.9rem);
     width: calc(var(--gap) - 1.15rem);
     border-top: 2px dashed var(--side);
   }
@@ -216,8 +230,8 @@ const dlc = node.type === "神龙之章" || node.type === "邪龙之章";
   .chain > li::after {
     content: "";
     position: absolute;
-    left: -7px;
-    top: -6px;
+    left: calc(var(--indent) - 9.5px);
+    top: -7px;
     width: 11px;
     height: 11px;
     border: 3px solid var(--side);
@@ -225,27 +239,15 @@ const dlc = node.type === "神龙之章" || node.type === "邪龙之章";
     background: #fff;
   }
 
-  /*
-   * 直接挂在主干上的支线（外传2 / 神龙之章 / 邪龙之章第1章…）：不共用一条轴，
-   * 每条各自从主干拐出来，弯道就是这条支线自己的颜色。
-   */
-  .branches.from-trunk > li {
-    border-left-color: transparent;
-    background: none;
-  }
-  /* 自己下面还有一层（神龙之章的外传、邪龙之章后续章节）：轴从圆点继续往下，接住下一级 */
-  .branches.from-trunk > li:has(> ul, > ol) {
-    /* 画到下一级列表的底边为止（减掉列表的下外边距和本行的下内边距），不要拖出一小截 */
-    background: linear-gradient(var(--side), var(--side)) 0 0 / 3px calc(100% - 1rem) no-repeat;
-    background-origin: border-box;
-  }
-  .branches.from-trunk > li > .event::before {
+  /* 有缩进的行：从上一级的轴拐出来（神龙之章五章各一条弯道） */
+  .branches > li > .event::before {
     content: "";
     position: absolute;
     box-sizing: border-box;
     top: calc(-1 * var(--curve));
-    left: calc(-1 * (var(--gap) + var(--label-s) + 0.5rem + 3px));
-    width: calc(var(--gap) + var(--label-s) + 0.5rem + 3px);
+    /* 从上一级的轴（左边缘）横过来，在自己的圆点上拐下去：宽度只到自己的轴，不含虚线那一段 --gap */
+    left: calc(-1 * (var(--gap) + var(--indent) + 3px));
+    width: calc(var(--indent) + 3px);
     height: var(--curve);
     border-top: 3px solid var(--side);
     border-right: 3px solid var(--side);
@@ -256,16 +258,11 @@ const dlc = node.type === "神龙之章" || node.type === "邪龙之章";
   @media (max-width: 640px) {
     .branches > li::before,
     .chain > li::before {
-      left: 0.35rem;
+      left: calc(var(--indent) + 0.35rem);
       width: 0.6rem;
     }
-    .branches,
-    .chain {
-      margin-left: 0.4rem;
-    }
-    .branches.from-trunk > li > .event::before {
-      left: calc(-1 * (var(--gap) + 0.4rem + 3px));
-      width: calc(var(--gap) + 0.4rem + 3px);
+    .branches {
+      --indent: calc(0.4rem + var(--gap));
     }
     .marker,
     .event.main > .marker {
