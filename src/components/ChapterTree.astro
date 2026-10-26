@@ -1,0 +1,21 @@
+---
+import ChapterNode, { type Node } from "./ChapterNode.astro";
+
+interface Props {
+  trunk: Node[];
+}
+
+const { trunk } = Astro.props;
+---
+
+<ol class="trunk">
+  {
+    // TODO: What node type and node is for?
+    // What is main for?
+    trunk.map((node) => (
+      <li class:list={[node.type, "node"]}>
+        <ChapterNode node={node} main={node.type === "main"} />
+      </li>
+    ))
+  }
+</ol>

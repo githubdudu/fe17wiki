@@ -5,15 +5,16 @@
  * 支线的轴、圆点、虚线、弯道都在这里画（每层支线都各自拐出来）；主干的那一套在 chapters 页里（它的 li 属于那个文件）。
  * 颜色由 li 上的 data-type 决定，尺寸用页面定义的 --gap / --label-s / --curve。
  */
-import Thumb from "./Thumb.astro";
+import ChapterCard from "./ChapterCard.astro";
 
 export interface Node {
   id: string;
   type: string;
-  no: string;
   name: string;
-  chars: { id: string; name: string; img: string }[];
-  emblems: { name: string; img: string }[];
+  title: string;
+  isBranch: boolean;
+  newChars: { id: string; name: string; img: string }[];
+  newEmblems: { name: string; img: string }[];
   children: Node[];
   /** 接在这个节点后面依次进行的章节（如邪龙之章第2–6章），画成一条小轴而不是层层支线 */
   chain: Node[];
@@ -24,10 +25,9 @@ interface Props {
   main?: boolean; // 主线节点：标题用 h2、编号更大
 }
 const { node, main = false } = Astro.props;
-const dlc = node.type === "神龙之章" || node.type === "邪龙之章";
+const dlc = node.type === "divine" || node.type === "xenologue";
 ---
 
-{node.type !== "main" && <div class="branch-curve" />}
 <div
   class:list={[
     "event",
@@ -36,35 +36,11 @@ const dlc = node.type === "神龙之章" || node.type === "邪龙之章";
   id={node.id}
 >
   <div class="marker">
-    <span>{node.no}</span>
+    <span>{node.name}</span>
     {dlc && <span class="tag">DLC</span>}
   </div>
 
-  <div class="card">
-    <h3 class="card-title">
-      {node.name}
-    </h3>
-    {
-      (node.chars.length > 0 || node.emblems.length > 0) && (
-        <ul class="joins">
-          {node.chars.map((c) => (
-            <li>
-              <a href={`/characters/${c.id}`}>
-                <Thumb src={c.img} alt="" size={22} />
-                {c.name}
-              </a>
-            </li>
-          ))}
-          {node.emblems.map((e) => (
-            <li class="emblem">
-              <Thumb src={e.img} alt="" size={22} />
-              {e.name}
-            </li>
-          ))}
-        </ul>
-      )
-    }
-  </div>
+  <ChapterCard node={node} />
 </div>
 {
   node.chain.length > 0 && (
@@ -90,68 +66,13 @@ const dlc = node.type === "神龙之章" || node.type === "邪龙之章";
 }
 
 <style>
-  /* 曲线 */
-
-  .branch-curve {
-    width: calc(var(--gap) + 2px);
-    height: var(--curve);
-    border-top: 3px solid red;
-    border-right: 3px solid var(--axis);
-    border-top-right-radius: var(--curve);
-  }
   /* ---- 事件本身：圆点左边的编号 + 右侧卡片 ---- */
   .event {
     position: relative;
     display: grid;
     justify-items: start;
   }
-  /* 下面还挂着一层（神龙之章 / 邪龙之章第1章）：自己的轴从圆点往下画满这一行，接住下一级 */
-  .event.grouped::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: calc(-1 * var(--gap));
-    border-left: 3px solid var(--axis);
-  }
-  /* 编号排在圆点左边（轴外），和圆点同高；太长的自动折行 */
-  .marker {
-    position: absolute;
-    right: calc(100% + var(--gap) + 0.7rem);
-    top: 1rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-end;
-    width: var(--label);
-    height: 0;
-    color: #262a3f;
-    font-size: 0.85rem;
-    line-height: 1.25;
-    text-align: right;
-    font-weight: 700;
-  }
 
-  .card {
-    padding: 0.25rem 0.8rem 0.25rem;
-    margin-bottom: 1rem;
-    box-shadow:
-      0 0 6px 0px rgb(0 0 0 / 0.1),
-      0 2px 4px -2px rgb(0 0 0 / 0.1);
-    border-radius: 4px;
-    border-left: 3px solid var(--axis);
-    background: #fff;
-    display: flex;
-    gap: 1rem;
-    min-width: 12rem;
-  }
-
-  .card-title {
-    margin: 0;
-    font-size: 0.85rem;
-    font-weight: 400;
-    color: #5d6478;
-  }
   .tag {
     margin-left: 0.4rem;
     padding: 0 5px;
@@ -161,42 +82,6 @@ const dlc = node.type === "神龙之章" || node.type === "邪龙之章";
     font-size: 0.7rem;
     font-weight: 500;
     vertical-align: middle;
-  }
-
-  /* ---- 在这一章加入的角色 / 纹章士：小头像 + 名字 ---- */
-  .joins {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.35rem;
-    padding: 0;
-    list-style: none;
-  }
-  .joins li,
-  .joins a {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.3rem;
-    font-size: 0.85rem;
-  }
-  .joins li {
-    padding: 1px 8px 1px 1px;
-    border: 1px solid var(--line);
-    border-radius: 999px;
-    background: #fff;
-  }
-  .joins a {
-    color: #2a64b8;
-    text-decoration: none;
-  }
-  .joins a:hover {
-    text-decoration: underline;
-  }
-  .joins :global(.thumb) {
-    border-radius: 50%;
-  }
-  .joins .emblem {
-    border-color: #f4c542;
-    background: #fff8e1;
   }
 
   /*

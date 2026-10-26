@@ -1,0 +1,94 @@
+---
+import { type Node } from "./ChapterNode.astro";
+import Thumb from "./Thumb.astro";
+
+interface Props {
+  node: Node;
+}
+
+const { node } = Astro.props;
+---
+
+<div class="card">
+  <h3 class="card-title">
+    {node.title}
+  </h3>
+  {
+    (node.newChars.length > 0 || node.newEmblems.length > 0) && (
+      <ul class="joins">
+        {node.newChars.map((c) => (
+          <li>
+            <a href={`/characters/${c.id}`}>
+              <Thumb src={c.img} alt="" size={22} />
+              {c.name}
+            </a>
+          </li>
+        ))}
+        {node.newEmblems.map((e) => (
+          <li class="emblem">
+            <Thumb src={e.img} alt="" size={22} />
+            {e.name}
+          </li>
+        ))}
+      </ul>
+    )
+  }
+</div>
+<style>
+  .card {
+    padding: 0.25rem 0.8rem 0.25rem;
+    margin-bottom: 1rem;
+    box-shadow:
+      0 0 6px 0px rgb(0 0 0 / 0.1),
+      0 2px 4px -2px rgb(0 0 0 / 0.1);
+    border-radius: 4px;
+    border-left: 3px solid var(--axis);
+    background: #fff;
+    display: flex;
+    gap: 1rem;
+    min-width: 12rem;
+  }
+
+  .card-title {
+    margin: 0;
+    font-size: 0.85rem;
+    font-weight: 400;
+    color: #5d6478;
+  }
+
+  /* ---- 在这一章加入的角色 / 纹章士：小头像 + 名字 ---- */
+  .joins {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.35rem;
+    padding: 0;
+    list-style: none;
+  }
+  .joins li,
+  .joins a {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+    font-size: 0.85rem;
+  }
+  .joins li {
+    padding: 1px 8px 1px 1px;
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    background: #fff;
+  }
+  .joins a {
+    color: #2a64b8;
+    text-decoration: none;
+  }
+  .joins a:hover {
+    text-decoration: underline;
+  }
+  .joins :global(.thumb) {
+    border-radius: 50%;
+  }
+  .joins .emblem {
+    border-color: #f4c542;
+    background: #fff8e1;
+  }
+</style>

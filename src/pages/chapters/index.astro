@@ -3,6 +3,7 @@ import { getCollection } from "astro:content";
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import NavLayout from "../../components/NavLayout.astro";
 import ChapterNode, { type Node } from "../../components/ChapterNode.astro";
+import ChapterTree from "../../components/ChapterTree.astro";
 
 const byOrder = (
   a: { data: { order: number } },
@@ -12,11 +13,10 @@ const chapters = (await getCollection("chapters")).sort(byOrder);
 const characters = (await getCollection("characters")).sort(byOrder);
 const emblems = (await getCollection("emblems")).sort(byOrder);
 
-// 引用要能对上，对不上就让构建失败，免得有人悄悄从页面上消失
+// 1. Check the references of chapters ids. If the parent node is not found, print the error message.
 const ids = new Set(chapters.map((c) => c.id));
 const check = (what: string, ref: string) => {
-  if (!ids.has(ref))
-    throw new Error(`chapters.csv 里没有「${ref}」（${what}）`);
+  if (!ids.has(ref)) console.error(`chapters.csv 里没有「${ref}」（${what})`);
 };
 chapters.forEach(
   (c) => c.data["父节点"] && check(`${c.id} 的父节点`, c.data["父节点"]),
@@ -26,64 +26,62 @@ emblems.forEach((e) => check(`纹章士 ${e.id} 的章节id`, e.data["章节id"]
 
 // Convert type
 const typeTrans: Record<string, string> = {
-  "主线": "main",
-  "外传": "paralogue",
-  "神龙之章": "divine",
-  "邪龙之章": "xenologue",
-}
+  主线: "main",
+  外传: "paralogue",
+  神龙之章: "divine",
+  邪龙之章: "xenologue",
+};
 
-// 纹章士头像按人名存放，共用戒指的（如「库洛武/鲁弗莱」）取第一人（同纹章士页）
-const nodes = new Map<string, Node>(
-  chapters.map((c) => [
-    c.id,
-    {
-      id: c.id,
-      type: typeTrans[c.data["类型"]],
-      no: c.data["编号"],
-      name: c.data["名称"],
-      chars: characters
-        .filter((ch) => ch.data["章节id"] === c.id)
-        .map((ch) => ({
-          id: ch.id,
-          name: ch.data["角色名称_简中"],
-          img: ch.data["头像"],
-        })),
-      emblems: emblems
-        .filter((e) => e.data["章节id"] === c.id)
-        .map((e) => ({
-          name: e.data["纹章士"],
-          img: `src/assets/emblems/${e.data["纹章士"].split("/")[0]}.webp`,
-        })),
-      children: [],
-      chain: [],
-    },
-  ]),
-);
-// 主干收「没有父节点的主线章节」+「父节点是主线的分支根节点」（外传 / 神龙之章 / 邪龙之章第1章），
-// 一条分支整体是主干上的一个 li，排在解锁它的章节后面（CSV 行序 = 时间顺序）
-const isTrunk = (c: (typeof chapters)[number]) =>
-  !c.data["父节点"] || nodes.get(c.data["父节点"])!.type === "main";
-// 分支内部的章节才挂到父节点下（神龙之章的五章、邪龙之章第2–6章）
-chapters.forEach(
-  (c) =>
-    !isTrunk(c) && nodes.get(c.data["父节点"])!.children.push(nodes.get(c.id)!),
-);
-// 侧枝里「只有一个同类型子节点」的是依次进行的章节（邪龙之章 1→6），收成一条链；
-// 同一个父节点下有多个同类型子节点（神龙之章的五个外传）则仍是并列的侧枝
-for (const n of nodes.values()) {
-  let cur = n;
-  while (
-    n.type !== "main" &&
-    cur.children.length === 1 &&
-    cur.children[0].type === n.type
-  ) {
-    const next = cur.children[0];
-    cur.children = [];
-    n.chain.push(next);
-    cur = next;
-  }
-}
-const trunk = chapters.filter(isTrunk).map((c) => nodes.get(c.id)!);
+// 2. Create a map of chapter id which helps build the tree faster.
+// The Emblems avatars img are stored by character name. If they share a ring (e.g., "Kurobu/Rufurei"), take the first character.
+const mapFunc = (c: (typeof chapters)[number]): [string, Node] => [
+  c.id,
+  {
+    id: c.id,
+    type: typeTrans[c.data["类型"]],
+    name: c.data["章节名称"],
+    title: c.data["章节标题"],
+    isBranch: typeTrans[c.data["类型"]] !== "main",
+    newChars: characters
+      .filter((ch) => ch.data["章节id"] === c.id)
+      .map((ch) => ({
+        id: ch.id,
+        name: ch.data["角色名称_简中"],
+        img: ch.data["头像"],
+      })),
+    newEmblems: emblems
+      .filter((e) => e.data["章节id"] === c.id)
+      .map((e) => ({
+        name: e.data["纹章士"],
+        img: `src/assets/emblems/${e.data["纹章士"].split("/")[0]}.webp`,
+      })),
+    children: [],
+    chain: [],
+  },
+];
+const chaptersMap = new Map<string, Node>(chapters.map(mapFunc));
+
+// 3. Attach the paralogue to its parent node as children
+// Attach the divine chapters to its parent node as children
+// Attach the xenologue chapters to its parent node as chain
+chapters.forEach((c) => {
+  if (c.data["类型"] === "外传")
+    chaptersMap.get(c.data["父节点"])!.children.push(chaptersMap.get(c.id)!);
+  // Attach the divine chapters.
+  else if (c.data["类型"] === "神龙之章")
+    chaptersMap.get(c.data["父节点"])!.children.push(chaptersMap.get(c.id)!);
+  // Attach the xenologue chapters as chain which is displayed as a list.
+  else if (c.data["类型"] === "邪龙之章")
+    chaptersMap.get(c.data["父节点"])!.chain.push(chaptersMap.get(c.id)!);
+});
+
+// 4. Select the main chapters as the main list from the map.
+// Others are childrens or chains. The way of displaying them is like treating them as comments.
+const mainList = chapters
+  .filter((c) => c.data["类型"] === "主线")
+  .map((c) => chaptersMap.get(c.id)!);
+
+console.dir({ mainList }, { depth: 10 });
 ---
 
 <BaseLayout
@@ -99,15 +97,7 @@ const trunk = chapters.filter(isTrunk).map((c) => nodes.get(c.id)!);
         <span class="color-divine">&nbsp;神龙之章</span>
         <span class="color-xenologue">&nbsp;邪龙之章</span>
       </p>
-      <ol class="trunk">
-        {
-          trunk.map((node) => (
-            <li class:list={[node.type, "node"]}>
-              <ChapterNode node={node} main={node.type === "main"} />
-            </li>
-          ))
-        }
-      </ol>
+      <ChapterTree trunk={mainList} />
     </div>
   </NavLayout>
 </BaseLayout>
@@ -168,7 +158,7 @@ const trunk = chapters.filter(isTrunk).map((c) => nodes.get(c.id)!);
   }
 
   /* ---- 轴的颜色：每种类型一个（按 CSV 的「类型」，不在代码里做映射表）；往下继承给分支内部的章节 ---- */
-  .trunk > .paralogue {
+  /* .trunk > .paralogue {
     --axis: #3b6fd6;
   }
   .trunk > .divine {
@@ -184,13 +174,13 @@ const trunk = chapters.filter(isTrunk).map((c) => nodes.get(c.id)!);
    * 分支（外传 / DLC）也是主干上的一行，只是 --indent 把它整行往右挪一档、再用弯道从主干拐出来；
    * 主干轴照旧穿过这一行（所以缩进走 padding 而不是 margin）。整条轴右移 --label，给左边的编号腾地方。
    */
-  .trunk {
+  /* .trunk {
     margin: 0;
     padding-left: var(--label);
     list-style: none;
-  }
+  } */
   /* The first level of nodes */
-  .node {
+  /* .node {
     --indent: 0px;
     position: relative;
     border-left: 2px solid var(--side);
@@ -199,7 +189,9 @@ const trunk = chapters.filter(isTrunk).map((c) => nodes.get(c.id)!);
   .trunk > .main {
     padding-left: var(--gap);
   }
-  .trunk > .divine, .trunk > .paralogue, .trunk > .xenologue {
+  .trunk > .divine,
+  .trunk > .paralogue,
+  .trunk > .xenologue {
     padding-left: 0;
   }
 
@@ -225,30 +217,29 @@ const trunk = chapters.filter(isTrunk).map((c) => nodes.get(c.id)!);
     border: 3px solid var(--axis);
     border-radius: 50%;
     background: #fff;
-  }
-
+  } */
 
   /* 分支：从主干的轴拐出来，弯道是这条分支自己的颜色（.event 是 ChapterNode 的元素，要 :global 才选得到） */
-  .trunk > not(.main) > :global(.event)::before {
+  /* .trunk > not(.main) > :global(.event)::before {
     content: "";
     position: absolute;
     box-sizing: border-box;
     top: calc(-1 * var(--curve));
     /* 从主干轴横过来，在自己的圆点上拐下去：宽度只到自己的轴，不含虚线那一段 --gap */
-    left: calc(-1 * (var(--gap) + var(--indent) + 2px));
+  /* left: calc(-1 * (var(--gap) + var(--indent) + 2px));
     width: calc(var(--indent) + 2px);
     height: var(--curve);
     border-top: 3px solid var(--axis);
     border-right: 3px solid var(--axis);
     border-top-right-radius: var(--curve);
-  }
+  } */
 
   /* 手机：没有左侧空位，轴贴到最左边，虚线和缩进都缩短 */
   @media (max-width: 640px) {
     .chapters {
       --gap: 1.25rem;
     }
-    .trunk {
+    /* .trunk {
       padding-left: 0;
     }
     .trunk > li:not([data-type="主线"]) {
@@ -257,6 +248,6 @@ const trunk = chapters.filter(isTrunk).map((c) => nodes.get(c.id)!);
     .trunk > li::before {
       left: calc(var(--indent) + 0.35rem);
       width: 0.6rem;
-    }
+    } */
   }
 </style>
