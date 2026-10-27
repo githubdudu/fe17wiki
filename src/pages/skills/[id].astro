@@ -61,7 +61,7 @@ const fields = FIELDS.filter((k) => d[k] && d[k] !== "--").map((k) => [
       owner && (
         <section class="my-4">
           <h2 class="mb-1.5 font-bold text-brand-gray text-sm">拥有此特技的角色</h2>
-          <a class="owner flex items-center gap-2 font-bold" href={`/characters/${owner.id}`}>
+          <a class="owner inline-flex items-center gap-2 font-bold text-brand-blue focus-visible:outline-brand-orange focus-visible:outline-offset-4" href={`/characters/${owner.id}`}>
             <Thumb src={owner.data["头像"]} alt="" size={40} />
             <span class="hover:underline">{owner.data["角色名称_简中"]}</span>
           </a>
