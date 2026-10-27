@@ -5,7 +5,9 @@ import NavLayout from "../../components/NavLayout.astro";
 import SkillSummary from "../../components/SkillSummary.astro";
 import InfoTip from "../../components/InfoTip.astro";
 
-const skills = (await getCollection("skills")).sort((a, b) => a.data.order - b.data.order);
+const skills = (await getCollection("skills")).sort(
+  (a, b) => a.data.order - b.data.order,
+);
 // 分组和组的先后都来自 CSV：「特技类型」列 + 行序
 const groups = [...Map.groupBy(skills, (s) => s.data["特技类型"])];
 
@@ -25,7 +27,9 @@ const TYPE_TIPS: Record<string, string[]> = {
     "学会后即使不佩戴该纹章士的戒指也能装备，每个角色最多同时装备 2 个继承特技。",
   ],
   "纹章士-结合特技": ["和纹章士「结合」时才生效的特技，不能继承。"],
-  "纹章士-结合指令技": ["和纹章士「结合」时才能使用的指令，大多是威力很强的结合技，不能继承。"],
+  "纹章士-结合指令技": [
+    "和纹章士「结合」时才能使用的指令，大多是威力很强的结合技，不能继承。",
+  ],
   牵绊戒指特技: ["佩戴对应的牵绊戒指时才生效的特技。"],
 };
 ---
@@ -33,14 +37,16 @@ const TYPE_TIPS: Record<string, string[]> = {
 <BaseLayout>
   <NavLayout>
     <div slot="sidebar">Sidebar</div>
-    <h1>特技</h1>
+    <h1 class="text-2xl font-bold my-4">特技</h1>
 
-    <nav class="types" aria-label="特技类型">
+    <nav class="flex flex-wrap gap-2 mb-4" aria-label="特技类型">
       {
         groups.map(([type, list], i) => (
-          <a href={`#type-${i}`}>
+          <a
+            href={`#type-${i}`}
+            class="text-brand-blue focus-visible:outline-brand-orange focus-visible:outline-offset-4 text-xs underline"
+          >
             {type}
-            <span>{list.length}</span>
           </a>
         ))
       }
@@ -48,10 +54,12 @@ const TYPE_TIPS: Record<string, string[]> = {
 
     {
       groups.map(([type, list], i) => (
-        <section id={`type-${i}`}>
-          <h2>
+        <section class="mb-6 scroll-mt-4" id={`type-${i}`}>
+          <h2 class="py-2 px-3 font-bold border border-brand-border bg-brand-lightblue text-[0.9rem]">
             {type}
-            <span>{list.length}</span>
+            <span class="ml-2 font-medium text-black/70">
+              共{list.length}个
+            </span>
             {TYPE_TIPS[type] && (
               <InfoTip id={`info-type-${i}`} label={type}>
                 {TYPE_TIPS[type].map((t) => (
@@ -63,14 +71,18 @@ const TYPE_TIPS: Record<string, string[]> = {
           <ul>
             {list.map((s) => {
               const d = s.data;
-              const tags = [d["纹章士"], d["角色要求"], d["兵种要求"]].filter(Boolean);
+              const tags = [d["纹章士"], d["角色要求"], d["兵种要求"]].filter(
+                Boolean,
+              );
               return (
-                <li>
+                <li class="py-2 px-3 border border-brand-border hover:bg-brand-hover">
                   <SkillSummary skill={s}>
                     {tags.length > 0 && (
-                      <p class="tags">
+                      <p class="tags flex flex-wrap justify-end gap-1 max-w-[40%]">
                         {tags.map((t) => (
-                          <span>{t}</span>
+                          <span class="px-2 rounded-sm bg-brand-lightblue text-brand-gray text-xs">
+                            {t}
+                          </span>
                         ))}
                       </p>
                     )}
@@ -84,85 +96,3 @@ const TYPE_TIPS: Record<string, string[]> = {
     }
   </NavLayout>
 </BaseLayout>
-
-<style>
-  h1 {
-    margin: 1rem 0 0.75rem;
-    font-size: 1.4rem;
-  }
-
-  /* 顶部类型导航：点击跳到对应分组 */
-  .types {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.35rem;
-    margin-bottom: 1rem;
-  }
-  .types a {
-    padding: 0.2rem 0.75rem;
-    border: 1px solid #2a64b8;
-    border-radius: 999px;
-    color: #2a64b8;
-    font-size: 0.8rem;
-    font-weight: 700;
-    text-decoration: none;
-  }
-  .types a:hover,
-  .types a:focus-visible {
-    background: #2a64b8;
-    color: #fff;
-  }
-  .types a:focus-visible {
-    outline: 3px solid #f4c542;
-    outline-offset: 2px;
-  }
-  .types span,
-  h2 span {
-    margin-left: 0.3rem;
-    font-weight: 400;
-    opacity: 0.7;
-  }
-
-  section {
-    margin-bottom: 1.5rem;
-    scroll-margin-top: 1rem;
-  }
-  h2 {
-    margin: 0;
-    padding: 0.4rem 0.75rem;
-    border: 1px solid #d4dde2;
-    background: #f1f5f7;
-    font-size: 0.9rem;
-  }
-
-  ul {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-  }
-  li {
-    padding: 0.6rem 0.75rem;
-    border: 1px solid #d4dde2;
-    border-top: 0;
-    background: #fff;
-  }
-  li:hover {
-    background: #eef3fb;
-  }
-  /* 标签放在 SkillSummary 的插槽里，位于右侧；标签多时在右侧换行，最多占 40% 宽 */
-  .tags {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: flex-end;
-    gap: 0.25rem;
-    max-width: 40%;
-    margin: 0;
-  }
-  .tags span {
-    padding: 0 0.4rem;
-    border-radius: 3px;
-    background: #f1f5f7;
-    color: #5d6478;
-    font-size: 0.7rem;
-  }
-</style>
