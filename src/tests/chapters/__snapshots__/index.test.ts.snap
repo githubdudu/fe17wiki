@@ -1,0 +1,1980 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`built chapters page snapshots > matches the full HTML snapshot for the chapters page 1`] = `
+"<!DOCTYPE html>
+<html lang="zh-CN" data-astro-cid-z4jru4n3>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" href="/favicon.ico" />
+    <meta name="generator" content="Astro v7.4.2" />
+    <!-- 数字字体：Barlow 数字窄而清楚、有等宽数字，用于表格里的数值 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Barlow:wght@500;700&display=swap"
+    />
+    <title>章节流程 - 火焰纹章结合 Engage Wiki</title>
+    <meta
+      name="description"
+      content="火焰纹章结合全部章节流程：主线序章到第26章，外传与神龙之章、邪龙之章 DLC 在哪一章解锁，以及每一章加入的角色和纹章士。"
+    />
+    <style>
+      html,
+      body {
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        font-family: system-ui, sans-serif;
+      }
+      .nav-layout[data-astro-cid-entc4gyn] {
+        grid-template-columns: minmax(0, 1fr);
+        grid-template-areas: "menu" "main";
+        display: grid;
+      }
+      .nav-layout[data-astro-cid-entc4gyn] > .menu[data-astro-cid-entc4gyn] {
+        grid-area: menu;
+      }
+      .menu[data-astro-cid-entc4gyn] {
+        background: #262a3f;
+        border-bottom: 4px solid #e0735a;
+        display: flex;
+      }
+      .menu[data-astro-cid-entc4gyn] a[data-astro-cid-entc4gyn] {
+        color: #fff;
+        padding: 0.6rem 1rem;
+        font-weight: 700;
+        text-decoration: none;
+      }
+      .menu[data-astro-cid-entc4gyn] a[data-astro-cid-entc4gyn]:hover {
+        background: #353a57;
+      }
+      .menu[data-astro-cid-entc4gyn]
+        a[data-astro-cid-entc4gyn][aria-current="page"] {
+        background: #e0735a;
+      }
+      .menu[data-astro-cid-entc4gyn] a[data-astro-cid-entc4gyn]:focus-visible {
+        outline-offset: -3px;
+        outline: 3px solid #f4c542;
+      }
+      .nav-layout[data-astro-cid-entc4gyn] > aside[data-astro-cid-entc4gyn] {
+        display: none;
+      }
+      .nav-layout[data-astro-cid-entc4gyn] > main[data-astro-cid-entc4gyn] {
+        box-sizing: border-box;
+        grid-area: main;
+        justify-self: center;
+        width: 100%;
+        max-width: 720px;
+        padding: 0 12px 24px;
+      }
+      @media (width>=960px) {
+        .nav-layout[data-astro-cid-entc4gyn] {
+          grid-template-columns: 240px minmax(0, 720px);
+          grid-template-areas: "menu menu" "aside main";
+          justify-content: center;
+          column-gap: 24px;
+        }
+        .nav-layout[data-astro-cid-entc4gyn] > aside[data-astro-cid-entc4gyn] {
+          grid-area: aside;
+          display: block;
+        }
+        .nav-layout[data-astro-cid-entc4gyn].no-sidebar {
+          grid-template-areas: "menu menu" "main main";
+        }
+        .nav-layout[data-astro-cid-entc4gyn].no-sidebar
+          > main[data-astro-cid-entc4gyn] {
+          max-width: none;
+        }
+      }
+      .nav-layout:has(.widen:checked) > main {
+        max-width: 1320px;
+      }
+      @media (width>=960px) {
+        .nav-layout:has(.widen:checked) {
+          grid-template-columns: 240px minmax(0, 1320px);
+        }
+      }
+    </style>
+    <link rel="stylesheet" href="/_astro/index.BwcNJ14R.css" />
+    <style>
+      .thumb[data-astro-cid-zennbdu3] {
+        aspect-ratio: 1;
+        border-radius: 6px;
+        flex: none;
+        max-width: 100%;
+        height: auto;
+        display: block;
+      }
+      .placeholder[data-astro-cid-zennbdu3] {
+        background: #e5e5e5;
+      }
+    </style>
+  </head>
+  <body data-astro-cid-z4jru4n3>
+    <div class="nav-layout no-sidebar" data-astro-cid-entc4gyn>
+      <nav class="menu" aria-label="主菜单" data-astro-cid-entc4gyn>
+        <a href="/" data-astro-cid-entc4gyn>首页</a
+        ><a href="/characters" data-astro-cid-entc4gyn>角色</a
+        ><a href="/skills" data-astro-cid-entc4gyn>特技</a
+        ><a href="/classes" data-astro-cid-entc4gyn>兵种</a
+        ><a href="/emblems" data-astro-cid-entc4gyn>纹章士</a
+        ><a href="/team" data-astro-cid-entc4gyn>阵容搭配</a
+        ><a href="/chapters" aria-current="page" data-astro-cid-entc4gyn
+          >章节流程</a
+        >
+      </nav>
+      <main data-astro-cid-entc4gyn>
+        <div class="chapters" data-astro-cid-eh6el2uw>
+          <h1 data-astro-cid-eh6el2uw>章节流程</h1>
+          <p class="lead" data-astro-cid-eh6el2uw>
+            <span class="color-main" data-astro-cid-eh6el2uw>&nbsp;主线</span
+            ><span class="color-paralogue" data-astro-cid-eh6el2uw
+              >&nbsp;外传</span
+            ><span class="color-divine" data-astro-cid-eh6el2uw
+              >&nbsp;神龙之章</span
+            ><span class="color-xenologue" data-astro-cid-eh6el2uw
+              >&nbsp;邪龙之章</span
+            >
+          </p>
+          <ol class="trunk">
+            <li class="main node">
+              <div class="event main" id="ch0" data-astro-cid-mloacws5>
+                <div class="marker" data-astro-cid-mloacws5>
+                  <span data-astro-cid-mloacws5>序章</span>
+                </div>
+                <div class="card" data-astro-cid-t6t7a36n>
+                  <h3 class="card-title" data-astro-cid-t6t7a36n>纹章士</h3>
+                  <ul class="joins" data-astro-cid-t6t7a36n>
+                    <li data-astro-cid-t6t7a36n>
+                      <a href="/characters/alear" data-astro-cid-t6t7a36n
+                        ><img
+                          src="/_astro/alear.D0o6GltF_1aS0bo.webp"
+                          srcset="
+                            /_astro/alear.D0o6GltF_1aS0bo.webp 1x,
+                            /_astro/alear.D0o6GltF_1aTMc6.webp 2x
+                          "
+                          alt
+                          data-astro-cid-zennbdu3="true"
+                          loading="lazy"
+                          decoding="async"
+                          width="22"
+                          height="22"
+                          class="thumb"
+                        />琉尔</a
+                      >
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </li>
+            <li class="main node">
+              <div class="event main" id="ch1" data-astro-cid-mloacws5>
+                <div class="marker" data-astro-cid-mloacws5>
+                  <span data-astro-cid-mloacws5>第1章</span>
+                </div>
+                <div class="card" data-astro-cid-t6t7a36n>
+                  <h3 class="card-title" data-astro-cid-t6t7a36n>苏醒</h3>
+                  <ul class="joins" data-astro-cid-t6t7a36n>
+                    <li data-astro-cid-t6t7a36n>
+                      <a href="/characters/vander" data-astro-cid-t6t7a36n
+                        ><img
+                          src="/_astro/vander.IWN6ZmoA_Z1Mt7L.webp"
+                          srcset="
+                            /_astro/vander.IWN6ZmoA_Z1Mt7L.webp  1x,
+                            /_astro/vander.IWN6ZmoA_Z26W0ES.webp 2x
+                          "
+                          alt
+                          data-astro-cid-zennbdu3="true"
+                          loading="lazy"
+                          decoding="async"
+                          width="22"
+                          height="22"
+                          class="thumb"
+                        />凡德雷</a
+                      >
+                    </li>
+                    <li class="emblem" data-astro-cid-t6t7a36n>
+                      <img
+                        src="/_astro/%E9%A9%AC%E5%B0%94%E6%96%AF.B2SL3fuy_12P3an.webp"
+                        srcset="
+                          /_astro/%E9%A9%AC%E5%B0%94%E6%96%AF.B2SL3fuy_12P3an.webp 1x,
+                          /_astro/%E9%A9%AC%E5%B0%94%E6%96%AF.B2SL3fuy_fNnRu.webp  2x
+                        "
+                        alt
+                        data-astro-cid-zennbdu3="true"
+                        loading="lazy"
+                        decoding="async"
+                        width="22"
+                        height="22"
+                        class="thumb"
+                      />马尔斯
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </li>
+            <li class="main node">
+              <div class="event main" id="ch2" data-astro-cid-mloacws5>
+                <div class="marker" data-astro-cid-mloacws5>
+                  <span data-astro-cid-mloacws5>第2章</span>
+                </div>
+                <div class="card" data-astro-cid-t6t7a36n>
+                  <h3 class="card-title" data-astro-cid-t6t7a36n>
+                    神龙王琉弥艾尔
+                  </h3>
+                  <ul class="joins" data-astro-cid-t6t7a36n>
+                    <li data-astro-cid-t6t7a36n>
+                      <a href="/characters/clanne" data-astro-cid-t6t7a36n
+                        ><img
+                          src="/_astro/clanne.DvnngJFi_ZdjIrD.webp"
+                          srcset="
+                            /_astro/clanne.DvnngJFi_ZdjIrD.webp  1x,
+                            /_astro/clanne.DvnngJFi_Z2itfYK.webp 2x
+                          "
+                          alt
+                          data-astro-cid-zennbdu3="true"
+                          loading="lazy"
+                          decoding="async"
+                          width="22"
+                          height="22"
+                          class="thumb"
+                        />柯岚</a
+                      >
+                    </li>
+                    <li data-astro-cid-t6t7a36n>
+                      <a href="/characters/framme" data-astro-cid-t6t7a36n
+                        ><img
+                          src="/_astro/framme.ClXDbBjV_2Acao.webp"
+                          srcset="
+                            /_astro/framme.ClXDbBjV_2Acao.webp   1x,
+                            /_astro/framme.ClXDbBjV_Z22ykmI.webp 2x
+                          "
+                          alt
+                          data-astro-cid-zennbdu3="true"
+                          loading="lazy"
+                          decoding="async"
+                          width="22"
+                          height="22"
+                          class="thumb"
+                        />芙岚</a
+                      >
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </li>
+            <li class="main node">
+              <div class="event main" id="ch3" data-astro-cid-mloacws5>
+                <div class="marker" data-astro-cid-mloacws5>
+                  <span data-astro-cid-mloacws5>第3章</span>
+                </div>
+                <div class="card" data-astro-cid-t6t7a36n>
+                  <h3 class="card-title" data-astro-cid-t6t7a36n>袭击者</h3>
+                  <ul class="joins" data-astro-cid-t6t7a36n>
+                    <li data-astro-cid-t6t7a36n>
+                      <a href="/characters/alfred" data-astro-cid-t6t7a36n
+                        ><img
+                          src="/_astro/alfred.C_OTbDZi_ZI4e89.webp"
+                          srcset="
+                            /_astro/alfred.C_OTbDZi_ZI4e89.webp 1x,
+                            /_astro/alfred.C_OTbDZi_2gXn8F.webp 2x
+                          "
+                          alt
+                          data-astro-cid-zennbdu3="true"
+                          loading="lazy"
+                          decoding="async"
+                          width="22"
+                          height="22"
+                          class="thumb"
+                        />阿尔弗雷德</a
+                      >
+                    </li>
+                    <li data-astro-cid-t6t7a36n>
+                      <a href="/characters/etie" data-astro-cid-t6t7a36n
+                        ><img
+                          src="/_astro/etie.Cb8OSJT3_Z1IExtx.webp"
+                          srcset="
+                            /_astro/etie.Cb8OSJT3_Z1IExtx.webp 1x,
+                            /_astro/etie.Cb8OSJT3_2gBTqE.webp  2x
+                          "
+                          alt
+                          data-astro-cid-zennbdu3="true"
+                          loading="lazy"
+                          decoding="async"
+                          width="22"
+                          height="22"
+                          class="thumb"
+                        />艾媞耶</a
+                      >
+                    </li>
+                    <li data-astro-cid-t6t7a36n>
+                      <a href="/characters/boucheron" data-astro-cid-t6t7a36n
+                        ><img
+                          src="/_astro/boucheron.BCNr7IjN_jh0x.webp"
+                          srcset="
+                            /_astro/boucheron.BCNr7IjN_jh0x.webp  1x,
+                            /_astro/boucheron.BCNr7IjN_Qhx3M.webp 2x
+                          "
+                          alt
+                          data-astro-cid-zennbdu3="true"
+                          loading="lazy"
+                          decoding="async"
+                          width="22"
+                          height="22"
+                          class="thumb"
+                        />布修隆</a
+                      >
+                    </li>
+                    <li class="emblem" data-astro-cid-t6t7a36n>
+                      <img
+                        src="/_astro/%E8%A5%BF%E6%A0%BC%E5%B0%94%E7%89%B9.Dx6V8xOE_Z1wnDXJ.webp"
+                        srcset="
+                          /_astro/%E8%A5%BF%E6%A0%BC%E5%B0%94%E7%89%B9.Dx6V8xOE_Z1wnDXJ.webp 1x,
+                          /_astro/%E8%A5%BF%E6%A0%BC%E5%B0%94%E7%89%B9.Dx6V8xOE_2sSMVs.webp  2x
+                        "
+                        alt
+                        data-astro-cid-zennbdu3="true"
+                        loading="lazy"
+                        decoding="async"
+                        width="22"
+                        height="22"
+                        class="thumb"
+                      />西格尔特
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </li>
+            <li class="main node">
+              <div class="event main" id="ch4" data-astro-cid-mloacws5>
+                <div class="marker" data-astro-cid-mloacws5>
+                  <span data-astro-cid-mloacws5>第4章</span>
+                </div>
+                <div class="card" data-astro-cid-t6t7a36n>
+                  <h3 class="card-title" data-astro-cid-t6t7a36n>花之风车村</h3>
+                  <ul class="joins" data-astro-cid-t6t7a36n>
+                    <li data-astro-cid-t6t7a36n>
+                      <a href="/characters/celine" data-astro-cid-t6t7a36n
+                        ><img
+                          src="/_astro/celine.B_abHfDp_1Lc3RT.webp"
+                          srcset="
+                            /_astro/celine.B_abHfDp_1Lc3RT.webp 1x,
+                            /_astro/celine.B_abHfDp_ZiWsEd.webp 2x
+                          "
+                          alt
+                          data-astro-cid-zennbdu3="true"
+                          loading="lazy"
+                          decoding="async"
+                          width="22"
+                          height="22"
+                          class="thumb"
+                        />锡莉奴</a
+                      >
+                    </li>
+                    <li data-astro-cid-t6t7a36n>
+                      <a href="/characters/chloe" data-astro-cid-t6t7a36n
+                        ><img
+                          src="/_astro/chloe.oEjp4sj1_Z1bD7TB.webp"
+                          srcset="
+                            /_astro/chloe.oEjp4sj1_Z1bD7TB.webp 1x,
+                            /_astro/chloe.oEjp4sj1_Z1bBkST.webp 2x
+                          "
+                          alt
+                          data-astro-cid-zennbdu3="true"
+                          loading="lazy"
+                          decoding="async"
+                          width="22"
+                          height="22"
+                          class="thumb"
+                        />克萝艾</a
+                      >
+                    </li>
+                    <li data-astro-cid-t6t7a36n>
+                      <a href="/characters/louis" data-astro-cid-t6t7a36n
+                        ><img
+                          src="/_astro/louis.CvsRb13S_1A3FeL.webp"
+                          srcset="
+                            /_astro/louis.CvsRb13S_1A3FeL.webp 1x,
+                            /_astro/louis.CvsRb13S_1A5sft.webp 2x
+                          "
+                          alt
+                          data-astro-cid-zennbdu3="true"
+                          loading="lazy"
+                          decoding="async"
+                          width="22"
+                          height="22"
+                          class="thumb"
+                        />路易</a
+                      >
+                    </li>
+                    <li class="emblem" data-astro-cid-t6t7a36n>
+                      <img
+                        src="/_astro/%E8%B5%9B%E8%8E%89%E5%8D%A1.Jw-Kv7Nq_1PgYgj.webp"
+                        srcset="
+                          /_astro/%E8%B5%9B%E8%8E%89%E5%8D%A1.Jw-Kv7Nq_1PgYgj.webp 1x,
+                          /_astro/%E8%B5%9B%E8%8E%89%E5%8D%A1.Jw-Kv7Nq_13fjXq.webp 2x
+                        "
+                        alt
+                        data-astro-cid-zennbdu3="true"
+                        loading="lazy"
+                        decoding="async"
+                        width="22"
+                        height="22"
+                        class="thumb"
+                      />赛莉卡
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </li>
+            <li class="main node">
+              <div class="event main grouped" id="ch5" data-astro-cid-mloacws5>
+                <div class="marker" data-astro-cid-mloacws5>
+                  <span data-astro-cid-mloacws5>第5章</span>
+                </div>
+                <div class="card" data-astro-cid-t6t7a36n>
+                  <h3 class="card-title" data-astro-cid-t6t7a36n>夺回王城</h3>
+                </div>
+              </div>
+              <ul class="branches" data-astro-cid-mloacws5>
+                <li data-type="paralogue" data-astro-cid-mloacws5>
+                  <div class="event" id="p1" data-astro-cid-mloacws5>
+                    <div class="marker" data-astro-cid-mloacws5>
+                      <span data-astro-cid-mloacws5>外传1</span>
+                    </div>
+                    <div class="card" data-astro-cid-t6t7a36n>
+                      <h3 class="card-title" data-astro-cid-t6t7a36n>
+                        大器晚成
+                      </h3>
+                      <ul class="joins" data-astro-cid-t6t7a36n>
+                        <li data-astro-cid-t6t7a36n>
+                          <a href="/characters/jean" data-astro-cid-t6t7a36n
+                            ><img
+                              src="/_astro/jean.CSC5gi_A_Z21QdF8.webp"
+                              srcset="
+                                /_astro/jean.CSC5gi_A_Z21QdF8.webp 1x,
+                                /_astro/jean.CSC5gi_A_1Xqef4.webp  2x
+                              "
+                              alt
+                              data-astro-cid-zennbdu3="true"
+                              loading="lazy"
+                              decoding="async"
+                              width="22"
+                              height="22"
+                              class="thumb"
+                            />贾恩</a
+                          >
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </li>
+            <li class="main node">
+              <div class="event main grouped" id="ch6" data-astro-cid-mloacws5>
+                <div class="marker" data-astro-cid-mloacws5>
+                  <span data-astro-cid-mloacws5>第6章</span>
+                </div>
+                <div class="card" data-astro-cid-t6t7a36n>
+                  <h3 class="card-title" data-astro-cid-t6t7a36n>
+                    被夺走的戒指
+                  </h3>
+                  <ul class="joins" data-astro-cid-t6t7a36n>
+                    <li data-astro-cid-t6t7a36n>
+                      <a href="/characters/yunaka" data-astro-cid-t6t7a36n
+                        ><img
+                          src="/_astro/yunaka.Byr5_MEK_Z4aaMY.webp"
+                          srcset="
+                            /_astro/yunaka.Byr5_MEK_Z4aaMY.webp  1x,
+                            /_astro/yunaka.Byr5_MEK_Z29jHl6.webp 2x
+                          "
+                          alt
+                          data-astro-cid-zennbdu3="true"
+                          loading="lazy"
+                          decoding="async"
+                          width="22"
+                          height="22"
+                          class="thumb"
+                        />尤娜卡</a
+                      >
+                    </li>
+                    <li class="emblem" data-astro-cid-t6t7a36n>
+                      <img
+                        src="/_astro/%E7%B1%B3%E5%8D%A1%E9%9B%85.CESRusiq_16ciYe.webp"
+                        srcset="
+                          /_astro/%E7%B1%B3%E5%8D%A1%E9%9B%85.CESRusiq_16ciYe.webp 1x,
+                          /_astro/%E7%B1%B3%E5%8D%A1%E9%9B%85.CESRusiq_jaDGl.webp  2x
+                        "
+                        alt
+                        data-astro-cid-zennbdu3="true"
+                        loading="lazy"
+                        decoding="async"
+                        width="22"
+                        height="22"
+                        class="thumb"
+                      />米卡雅
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <ol class="chain" data-astro-cid-mloacws5>
+                <li data-type="xenologue" data-astro-cid-mloacws5>
+                  <div
+                    class="event dlc grouped"
+                    id="x1"
+                    data-astro-cid-mloacws5
+                  >
+                    <div class="marker" data-astro-cid-mloacws5>
+                      <span data-astro-cid-mloacws5>邪龙之章1</span
+                      ><span class="tag" data-astro-cid-mloacws5>DLC</span>
+                    </div>
+                    <div class="card" data-astro-cid-t6t7a36n>
+                      <h3 class="card-title" data-astro-cid-t6t7a36n>
+                        异国双龙
+                      </h3>
+                    </div>
+                  </div>
+                  <ol class="chain" data-astro-cid-mloacws5>
+                    <li data-type="xenologue" data-astro-cid-mloacws5>
+                      <div
+                        class="event dlc grouped"
+                        id="x2"
+                        data-astro-cid-mloacws5
+                      >
+                        <div class="marker" data-astro-cid-mloacws5>
+                          <span data-astro-cid-mloacws5>邪龙之章2</span
+                          ><span class="tag" data-astro-cid-mloacws5>DLC</span>
+                        </div>
+                        <div class="card" data-astro-cid-t6t7a36n>
+                          <h3 class="card-title" data-astro-cid-t6t7a36n>
+                            动荡不安的花城
+                          </h3>
+                        </div>
+                      </div>
+                      <ol class="chain" data-astro-cid-mloacws5>
+                        <li data-type="xenologue" data-astro-cid-mloacws5>
+                          <div
+                            class="event dlc grouped"
+                            id="x3"
+                            data-astro-cid-mloacws5
+                          >
+                            <div class="marker" data-astro-cid-mloacws5>
+                              <span data-astro-cid-mloacws5>邪龙之章3</span
+                              ><span class="tag" data-astro-cid-mloacws5
+                                >DLC</span
+                              >
+                            </div>
+                            <div class="card" data-astro-cid-t6t7a36n>
+                              <h3 class="card-title" data-astro-cid-t6t7a36n>
+                                士兵们的作战之道
+                              </h3>
+                            </div>
+                          </div>
+                          <ol class="chain" data-astro-cid-mloacws5>
+                            <li data-type="xenologue" data-astro-cid-mloacws5>
+                              <div
+                                class="event dlc grouped"
+                                id="x4"
+                                data-astro-cid-mloacws5
+                              >
+                                <div class="marker" data-astro-cid-mloacws5>
+                                  <span data-astro-cid-mloacws5>邪龙之章4</span
+                                  ><span class="tag" data-astro-cid-mloacws5
+                                    >DLC</span
+                                  >
+                                </div>
+                                <div class="card" data-astro-cid-t6t7a36n>
+                                  <h3
+                                    class="card-title"
+                                    data-astro-cid-t6t7a36n
+                                  >
+                                    王者之战
+                                  </h3>
+                                </div>
+                              </div>
+                              <ol class="chain" data-astro-cid-mloacws5>
+                                <li
+                                  data-type="xenologue"
+                                  data-astro-cid-mloacws5
+                                >
+                                  <div
+                                    class="event dlc grouped"
+                                    id="x5"
+                                    data-astro-cid-mloacws5
+                                  >
+                                    <div class="marker" data-astro-cid-mloacws5>
+                                      <span data-astro-cid-mloacws5
+                                        >邪龙之章5</span
+                                      ><span class="tag" data-astro-cid-mloacws5
+                                        >DLC</span
+                                      >
+                                    </div>
+                                    <div class="card" data-astro-cid-t6t7a36n>
+                                      <h3
+                                        class="card-title"
+                                        data-astro-cid-t6t7a36n
+                                      >
+                                        邪龙继承者
+                                      </h3>
+                                    </div>
+                                  </div>
+                                  <ol class="chain" data-astro-cid-mloacws5>
+                                    <li
+                                      data-type="xenologue"
+                                      data-astro-cid-mloacws5
+                                    >
+                                      <div
+                                        class="event dlc"
+                                        id="x6"
+                                        data-astro-cid-mloacws5
+                                      >
+                                        <div
+                                          class="marker"
+                                          data-astro-cid-mloacws5
+                                        >
+                                          <span data-astro-cid-mloacws5
+                                            >邪龙之章6</span
+                                          ><span
+                                            class="tag"
+                                            data-astro-cid-mloacws5
+                                            >DLC</span
+                                          >
+                                        </div>
+                                        <div
+                                          class="card"
+                                          data-astro-cid-t6t7a36n
+                                        >
+                                          <h3
+                                            class="card-title"
+                                            data-astro-cid-t6t7a36n
+                                          >
+                                            七手镯
+                                          </h3>
+                                          <ul
+                                            class="joins"
+                                            data-astro-cid-t6t7a36n
+                                          >
+                                            <li data-astro-cid-t6t7a36n>
+                                              <a
+                                                href="/characters/zelestia"
+                                                data-astro-cid-t6t7a36n
+                                                ><img
+                                                  src="/_astro/zelestia.mqHLNm-Y_Z1376rx.webp"
+                                                  srcset="
+                                                    /_astro/zelestia.mqHLNm-Y_Z1376rx.webp 1x,
+                                                    /_astro/zelestia.mqHLNm-Y_Z1LkMNs.webp 2x
+                                                  "
+                                                  alt
+                                                  data-astro-cid-zennbdu3="true"
+                                                  loading="lazy"
+                                                  decoding="async"
+                                                  width="22"
+                                                  height="22"
+                                                  class="thumb"
+                                                />赛勒斯提雅</a
+                                              >
+                                            </li>
+                                            <li data-astro-cid-t6t7a36n>
+                                              <a
+                                                href="/characters/gregory"
+                                                data-astro-cid-t6t7a36n
+                                                ><img
+                                                  src="/_astro/gregory.BnO20XRS_ZQwm9R.webp"
+                                                  srcset="
+                                                    /_astro/gregory.BnO20XRS_ZQwm9R.webp  1x,
+                                                    /_astro/gregory.BnO20XRS_Z1sPWff.webp 2x
+                                                  "
+                                                  alt
+                                                  data-astro-cid-zennbdu3="true"
+                                                  loading="lazy"
+                                                  decoding="async"
+                                                  width="22"
+                                                  height="22"
+                                                  class="thumb"
+                                                />孤雷葛里</a
+                                              >
+                                            </li>
+                                            <li data-astro-cid-t6t7a36n>
+                                              <a
+                                                href="/characters/madeline"
+                                                data-astro-cid-t6t7a36n
+                                                ><img
+                                                  src="/_astro/madeline.CsuYdZHV_Z1z5mrQ.webp"
+                                                  srcset="
+                                                    /_astro/madeline.CsuYdZHV_Z1z5mrQ.webp 1x,
+                                                    /_astro/madeline.CsuYdZHV_Z2ij3NL.webp 2x
+                                                  "
+                                                  alt
+                                                  data-astro-cid-zennbdu3="true"
+                                                  loading="lazy"
+                                                  decoding="async"
+                                                  width="22"
+                                                  height="22"
+                                                  class="thumb"
+                                                />玛德琳</a
+                                              >
+                                            </li>
+                                            <li data-astro-cid-t6t7a36n>
+                                              <a
+                                                href="/characters/nel"
+                                                data-astro-cid-t6t7a36n
+                                                ><img
+                                                  src="/_astro/nel.DXv5ARLT_27XRU5.webp"
+                                                  srcset="
+                                                    /_astro/nel.DXv5ARLT_27XRU5.webp 1x,
+                                                    /_astro/nel.DXv5ARLT_22byMt.webp 2x
+                                                  "
+                                                  alt
+                                                  data-astro-cid-zennbdu3="true"
+                                                  loading="lazy"
+                                                  decoding="async"
+                                                  width="22"
+                                                  height="22"
+                                                  class="thumb"
+                                                />爱尔</a
+                                              >
+                                            </li>
+                                            <li data-astro-cid-t6t7a36n>
+                                              <a
+                                                href="/characters/rafal"
+                                                data-astro-cid-t6t7a36n
+                                                ><img
+                                                  src="/_astro/rafal.DiaHm7AT_g11cE.webp"
+                                                  srcset="
+                                                    /_astro/rafal.DiaHm7AT_g11cE.webp  1x,
+                                                    /_astro/rafal.DiaHm7AT_Zw0D5e.webp 2x
+                                                  "
+                                                  alt
+                                                  data-astro-cid-zennbdu3="true"
+                                                  loading="lazy"
+                                                  decoding="async"
+                                                  width="22"
+                                                  height="22"
+                                                  class="thumb"
+                                                />拉法尔</a
+                                              >
+                                            </li>
+                                          </ul>
+                                        </div>
+                                      </div>
+                                    </li>
+                                  </ol>
+                                </li>
+                              </ol>
+                            </li>
+                          </ol>
+                        </li>
+                      </ol>
+                    </li>
+                  </ol>
+                </li>
+              </ol>
+              <ul class="branches" data-astro-cid-mloacws5>
+                <li data-type="paralogue" data-astro-cid-mloacws5>
+                  <div class="event" id="p2" data-astro-cid-mloacws5>
+                    <div class="marker" data-astro-cid-mloacws5>
+                      <span data-astro-cid-mloacws5>外传2</span>
+                    </div>
+                    <div class="card" data-astro-cid-t6t7a36n>
+                      <h3 class="card-title" data-astro-cid-t6t7a36n>
+                        秘密的旅行商人
+                      </h3>
+                      <ul class="joins" data-astro-cid-t6t7a36n>
+                        <li data-astro-cid-t6t7a36n>
+                          <a href="/characters/anna" data-astro-cid-t6t7a36n
+                            ><img
+                              src="/_astro/anna.Dexv5UCp_ZD0UM0.webp"
+                              srcset="
+                                /_astro/anna.Dexv5UCp_ZD0UM0.webp  1x,
+                                /_astro/anna.Dexv5UCp_Z1HUBFJ.webp 2x
+                              "
+                              alt
+                              data-astro-cid-zennbdu3="true"
+                              loading="lazy"
+                              decoding="async"
+                              width="22"
+                              height="22"
+                              class="thumb"
+                            />安娜</a
+                          >
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </li>
+                <li data-type="divine" data-astro-cid-mloacws5>
+                  <div
+                    class="event dlc grouped"
+                    id="d1"
+                    data-astro-cid-mloacws5
+                  >
+                    <div class="marker" data-astro-cid-mloacws5>
+                      <span data-astro-cid-mloacws5>神龙之章</span
+                      ><span class="tag" data-astro-cid-mloacws5>DLC</span>
+                    </div>
+                    <div class="card" data-astro-cid-t6t7a36n>
+                      <h3 class="card-title" data-astro-cid-t6t7a36n>
+                        先祖神龙
+                      </h3>
+                      <ul class="joins" data-astro-cid-t6t7a36n>
+                        <li class="emblem" data-astro-cid-t6t7a36n>
+                          <img
+                            src="/_astro/%E7%90%AA%E5%A7%AC.DT-baRyV_Z14155M.webp"
+                            srcset="
+                              /_astro/%E7%90%AA%E5%A7%AC.DT-baRyV_Z14155M.webp 1x,
+                              /_astro/%E7%90%AA%E5%A7%AC.DT-baRyV_Z11qA2C.webp 2x
+                            "
+                            alt
+                            data-astro-cid-zennbdu3="true"
+                            loading="lazy"
+                            decoding="async"
+                            width="22"
+                            height="22"
+                            class="thumb"
+                          />琪姬
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                  <ul class="branches" data-astro-cid-mloacws5>
+                    <li data-type="divine" data-astro-cid-mloacws5>
+                      <div class="event dlc" id="d2" data-astro-cid-mloacws5>
+                        <div class="marker" data-astro-cid-mloacws5>
+                          <span data-astro-cid-mloacws5>神龙之章</span
+                          ><span class="tag" data-astro-cid-mloacws5>DLC</span>
+                        </div>
+                        <div class="card" data-astro-cid-t6t7a36n>
+                          <h3 class="card-title" data-astro-cid-t6t7a36n>
+                            热血猛将
+                          </h3>
+                          <ul class="joins" data-astro-cid-t6t7a36n>
+                            <li class="emblem" data-astro-cid-t6t7a36n>
+                              <img
+                                src="/_astro/%E6%B5%B7%E5%85%8B%E6%89%98%E5%B0%94.CC-WXcdE_1xImfQ.webp"
+                                srcset="
+                                  /_astro/%E6%B5%B7%E5%85%8B%E6%89%98%E5%B0%94.CC-WXcdE_1xImfQ.webp 1x,
+                                  /_astro/%E6%B5%B7%E5%85%8B%E6%89%98%E5%B0%94.CC-WXcdE_sNFm7.webp  2x
+                                "
+                                alt
+                                data-astro-cid-zennbdu3="true"
+                                loading="lazy"
+                                decoding="async"
+                                width="22"
+                                height="22"
+                                class="thumb"
+                              />海克托尔
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                    </li>
+                    <li data-type="divine" data-astro-cid-mloacws5>
+                      <div class="event dlc" id="d3" data-astro-cid-mloacws5>
+                        <div class="marker" data-astro-cid-mloacws5>
+                          <span data-astro-cid-mloacws5>神龙之章</span
+                          ><span class="tag" data-astro-cid-mloacws5>DLC</span>
+                        </div>
+                        <div class="card" data-astro-cid-t6t7a36n>
+                          <h3 class="card-title" data-astro-cid-t6t7a36n>
+                            苍色参谋
+                          </h3>
+                          <ul class="joins" data-astro-cid-t6t7a36n>
+                            <li class="emblem" data-astro-cid-t6t7a36n>
+                              <img
+                                src="/_astro/%E5%A1%9E%E6%B6%85%E9%87%8C%E6%AC%A7.RL0c0Kx2_Z1Tq6sr.webp"
+                                srcset="
+                                  /_astro/%E5%A1%9E%E6%B6%85%E9%87%8C%E6%AC%A7.RL0c0Kx2_Z1Tq6sr.webp 1x,
+                                  /_astro/%E5%A1%9E%E6%B6%85%E9%87%8C%E6%AC%A7.RL0c0Kx2_25QlrK.webp  2x
+                                "
+                                alt
+                                data-astro-cid-zennbdu3="true"
+                                loading="lazy"
+                                decoding="async"
+                                width="22"
+                                height="22"
+                                class="thumb"
+                              />塞涅里欧
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                    </li>
+                    <li data-type="divine" data-astro-cid-mloacws5>
+                      <div class="event dlc" id="d4" data-astro-cid-mloacws5>
+                        <div class="marker" data-astro-cid-mloacws5>
+                          <span data-astro-cid-mloacws5>神龙之章</span
+                          ><span class="tag" data-astro-cid-mloacws5>DLC</span>
+                        </div>
+                        <div class="card" data-astro-cid-t6t7a36n>
+                          <h3 class="card-title" data-astro-cid-t6t7a36n>
+                            黑暗妖艳
+                          </h3>
+                          <ul class="joins" data-astro-cid-t6t7a36n>
+                            <li class="emblem" data-astro-cid-t6t7a36n>
+                              <img
+                                src="/_astro/%E5%8D%A1%E7%BE%8E%E6%8B%89.DCyjfOX9_9qySO.webp"
+                                srcset="
+                                  /_astro/%E5%8D%A1%E7%BE%8E%E6%8B%89.DCyjfOX9_9qySO.webp  1x,
+                                  /_astro/%E5%8D%A1%E7%BE%8E%E6%8B%89.DCyjfOX9_ZCA5o4.webp 2x
+                                "
+                                alt
+                                data-astro-cid-zennbdu3="true"
+                                loading="lazy"
+                                decoding="async"
+                                width="22"
+                                height="22"
+                                class="thumb"
+                              />卡美拉
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                    </li>
+                    <li data-type="divine" data-astro-cid-mloacws5>
+                      <div class="event dlc" id="d5" data-astro-cid-mloacws5>
+                        <div class="marker" data-astro-cid-mloacws5>
+                          <span data-astro-cid-mloacws5>神龙之章</span
+                          ><span class="tag" data-astro-cid-mloacws5>DLC</span>
+                        </div>
+                        <div class="card" data-astro-cid-t6t7a36n>
+                          <h3 class="card-title" data-astro-cid-t6t7a36n>
+                            圣王
+                          </h3>
+                          <ul class="joins" data-astro-cid-t6t7a36n>
+                            <li class="emblem" data-astro-cid-t6t7a36n>
+                              <img
+                                src="/_astro/%E5%BA%93%E6%B4%9B%E6%AD%A6.0TRcJ9my_Z6zCbd.webp"
+                                srcset="
+                                  /_astro/%E5%BA%93%E6%B4%9B%E6%AD%A6.0TRcJ9my_Z6zCbd.webp 1x,
+                                  /_astro/%E5%BA%93%E6%B4%9B%E6%AD%A6.0TRcJ9my_ZSBht6.webp 2x
+                                "
+                                alt
+                                data-astro-cid-zennbdu3="true"
+                                loading="lazy"
+                                decoding="async"
+                                width="22"
+                                height="22"
+                                class="thumb"
+                              />库洛武/鲁弗莱
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                    </li>
+                    <li data-type="divine" data-astro-cid-mloacws5>
+                      <div class="event dlc" id="d6" data-astro-cid-mloacws5>
+                        <div class="marker" data-astro-cid-mloacws5>
+                          <span data-astro-cid-mloacws5>神龙之章</span
+                          ><span class="tag" data-astro-cid-mloacws5>DLC</span>
+                        </div>
+                        <div class="card" data-astro-cid-t6t7a36n>
+                          <h3 class="card-title" data-astro-cid-t6t7a36n>
+                            年幼皇女
+                          </h3>
+                          <ul class="joins" data-astro-cid-t6t7a36n>
+                            <li class="emblem" data-astro-cid-t6t7a36n>
+                              <img
+                                src="/_astro/%E7%BB%B4%E6%B4%9B%E5%A6%AE%E5%8D%A1.JBY0aKSb_Z2vYrtg.webp"
+                                srcset="
+                                  /_astro/%E7%BB%B4%E6%B4%9B%E5%A6%AE%E5%8D%A1.JBY0aKSb_Z2vYrtg.webp 1x,
+                                  /_astro/%E7%BB%B4%E6%B4%9B%E5%A6%AE%E5%8D%A1.JBY0aKSb_1ti0qV.webp  2x
+                                "
+                                alt
+                                data-astro-cid-zennbdu3="true"
+                                loading="lazy"
+                                decoding="async"
+                                width="22"
+                                height="22"
+                                class="thumb"
+                              />维洛妮卡
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+            <li class="main node">
+              <div class="event main" id="ch7" data-astro-cid-mloacws5>
+                <div class="marker" data-astro-cid-mloacws5>
+                  <span data-astro-cid-mloacws5>第7章</span>
+                </div>
+                <div class="card" data-astro-cid-t6t7a36n>
+                  <h3 class="card-title" data-astro-cid-t6t7a36n>黑暗纹章士</h3>
+                  <ul class="joins" data-astro-cid-t6t7a36n>
+                    <li data-astro-cid-t6t7a36n>
+                      <a href="/characters/alcryst" data-astro-cid-t6t7a36n
+                        ><img
+                          src="/_astro/alcryst.Bc8PRCt-_Z1yWMNq.webp"
+                          srcset="
+                            /_astro/alcryst.Bc8PRCt-_Z1yWMNq.webp 1x,
+                            /_astro/alcryst.Bc8PRCt-_Z2bhnSN.webp 2x
+                          "
+                          alt
+                          data-astro-cid-zennbdu3="true"
+                          loading="lazy"
+                          decoding="async"
+                          width="22"
+                          height="22"
+                          class="thumb"
+                        />史塔卢克</a
+                      >
+                    </li>
+                    <li data-astro-cid-t6t7a36n>
+                      <a href="/characters/citrinne" data-astro-cid-t6t7a36n
+                        ><img
+                          src="/_astro/citrinne.CpW7Ei3r_Z1Y3XYc.webp"
+                          srcset="
+                            /_astro/citrinne.CpW7Ei3r_Z1Y3XYc.webp 1x,
+                            /_astro/citrinne.CpW7Ei3r_2mTssO.webp  2x
+                          "
+                          alt
+                          data-astro-cid-zennbdu3="true"
+                          loading="lazy"
+                          decoding="async"
+                          width="22"
+                          height="22"
+                          class="thumb"
+                        />希特丽妮卡</a
+                      >
+                    </li>
+                    <li data-astro-cid-t6t7a36n>
+                      <a href="/characters/lapis" data-astro-cid-t6t7a36n
+                        ><img
+                          src="/_astro/lapis.Dj8djGDD_Z1eIC7n.webp"
+                          srcset="
+                            /_astro/lapis.Dj8djGDD_Z1eIC7n.webp 1x,
+                            /_astro/lapis.Dj8djGDD_Z1eGP6F.webp 2x
+                          "
+                          alt
+                          data-astro-cid-zennbdu3="true"
+                          loading="lazy"
+                          decoding="async"
+                          width="22"
+                          height="22"
+                          class="thumb"
+                        />菈琵思</a
+                      >
+                    </li>
+                    <li class="emblem" data-astro-cid-t6t7a36n>
+                      <img
+                        src="/_astro/%E8%89%BE%E9%BB%9B%E5%B0%94%E8%B4%BE%E7%89%B9.BBBHXKNq_nDRTL.webp"
+                        srcset="
+                          /_astro/%E8%89%BE%E9%BB%9B%E5%B0%94%E8%B4%BE%E7%89%B9.BBBHXKNq_nDRTL.webp 1x,
+                          /_astro/%E8%89%BE%E9%BB%9B%E5%B0%94%E8%B4%BE%E7%89%B9.BBBHXKNq_nFEUt.webp 2x
+                        "
+                        alt
+                        data-astro-cid-zennbdu3="true"
+                        loading="lazy"
+                        decoding="async"
+                        width="22"
+                        height="22"
+                        class="thumb"
+                      />艾黛尔贾特/帝弥托利/库罗德
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </li>
+            <li class="main node">
+              <div class="event main" id="ch8" data-astro-cid-mloacws5>
+                <div class="marker" data-astro-cid-mloacws5>
+                  <span data-astro-cid-mloacws5>第8章</span>
+                </div>
+                <div class="card" data-astro-cid-t6t7a36n>
+                  <h3 class="card-title" data-astro-cid-t6t7a36n>
+                    英勇尚武的王国
+                  </h3>
+                  <ul class="joins" data-astro-cid-t6t7a36n>
+                    <li data-astro-cid-t6t7a36n>
+                      <a href="/characters/diamant" data-astro-cid-t6t7a36n
+                        ><img
+                          src="/_astro/diamant.C5XSmYqm_ZMXU7a.webp"
+                          srcset="
+                            /_astro/diamant.C5XSmYqm_ZMXU7a.webp  1x,
+                            /_astro/diamant.C5XSmYqm_Z1pivcx.webp 2x
+                          "
+                          alt
+                          data-astro-cid-zennbdu3="true"
+                          loading="lazy"
+                          decoding="async"
+                          width="22"
+                          height="22"
+                          class="thumb"
+                        />帝亚曼德</a
+                      >
+                    </li>
+                    <li data-astro-cid-t6t7a36n>
+                      <a href="/characters/amber" data-astro-cid-t6t7a36n
+                        ><img
+                          src="/_astro/amber.CsU4qBbN_Z1NVYCV.webp"
+                          srcset="
+                            /_astro/amber.CsU4qBbN_Z1NVYCV.webp 1x,
+                            /_astro/amber.CsU4qBbN_Z1NUcCe.webp 2x
+                          "
+                          alt
+                          data-astro-cid-zennbdu3="true"
+                          loading="lazy"
+                          decoding="async"
+                          width="22"
+                          height="22"
+                          class="thumb"
+                        />安巴</a
+                      >
+                    </li>
+                    <li class="emblem" data-astro-cid-t6t7a36n>
+                      <img
+                        src="/_astro/%E9%87%8C%E5%BC%97.DXAPMz1k_Zgr4sb.webp"
+                        srcset="
+                          /_astro/%E9%87%8C%E5%BC%97.DXAPMz1k_Zgr4sb.webp 1x,
+                          /_astro/%E9%87%8C%E5%BC%97.DXAPMz1k_ZdQzp1.webp 2x
+                        "
+                        alt
+                        data-astro-cid-zennbdu3="true"
+                        loading="lazy"
+                        decoding="async"
+                        width="22"
+                        height="22"
+                        class="thumb"
+                      />里弗
+                    </li>
+                    <li class="emblem" data-astro-cid-t6t7a36n>
+                      <img
+                        src="/_astro/%E7%BD%97%E4%BC%8A.Ox63akQ9_Z1JlNzR.webp"
+                        srcset="
+                          /_astro/%E7%BD%97%E4%BC%8A.Ox63akQ9_Z1JlNzR.webp 1x,
+                          /_astro/%E7%BD%97%E4%BC%8A.Ox63akQ9_Z1GLjwH.webp 2x
+                        "
+                        alt
+                        data-astro-cid-zennbdu3="true"
+                        loading="lazy"
+                        decoding="async"
+                        width="22"
+                        height="22"
+                        class="thumb"
+                      />罗伊
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </li>
+            <li class="main node">
+              <div class="event main" id="ch9" data-astro-cid-mloacws5>
+                <div class="marker" data-astro-cid-mloacws5>
+                  <span data-astro-cid-mloacws5>第9章</span>
+                </div>
+                <div class="card" data-astro-cid-t6t7a36n>
+                  <h3 class="card-title" data-astro-cid-t6t7a36n>冲突</h3>
+                  <ul class="joins" data-astro-cid-t6t7a36n>
+                    <li data-astro-cid-t6t7a36n>
+                      <a href="/characters/jade" data-astro-cid-t6t7a36n
+                        ><img
+                          src="/_astro/jade.hl2dc11I_1PVmew.webp"
+                          srcset="
+                            /_astro/jade.hl2dc11I_1PVmew.webp 1x,
+                            /_astro/jade.hl2dc11I_L1FkM.webp  2x
+                          "
+                          alt
+                          data-astro-cid-zennbdu3="true"
+                          loading="lazy"
+                          decoding="async"
+                          width="22"
+                          height="22"
+                          class="thumb"
+                        />洁德</a
+                      >
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </li>
+            <li class="main node">
+              <div class="event main" id="ch10" data-astro-cid-mloacws5>
+                <div class="marker" data-astro-cid-mloacws5>
+                  <span data-astro-cid-mloacws5>第10章</span>
+                </div>
+                <div class="card" data-astro-cid-t6t7a36n>
+                  <h3 class="card-title" data-astro-cid-t6t7a36n>邪龙尚卜尔</h3>
+                </div>
+              </div>
+            </li>
+            <li class="main node">
+              <div class="event main grouped" id="ch11" data-astro-cid-mloacws5>
+                <div class="marker" data-astro-cid-mloacws5>
+                  <span data-astro-cid-mloacws5>第11章</span>
+                </div>
+                <div class="card" data-astro-cid-t6t7a36n>
+                  <h3 class="card-title" data-astro-cid-t6t7a36n>撤退</h3>
+                  <ul class="joins" data-astro-cid-t6t7a36n>
+                    <li data-astro-cid-t6t7a36n>
+                      <a href="/characters/ivy" data-astro-cid-t6t7a36n
+                        ><img
+                          src="/_astro/ivy.CUynVUfN_1z3d7G.webp"
+                          srcset="
+                            /_astro/ivy.CUynVUfN_1z3d7G.webp 1x,
+                            /_astro/ivy.CUynVUfN_M1xON.webp  2x
+                          "
+                          alt
+                          data-astro-cid-zennbdu3="true"
+                          loading="lazy"
+                          decoding="async"
+                          width="22"
+                          height="22"
+                          class="thumb"
+                        />艾比</a
+                      >
+                    </li>
+                    <li data-astro-cid-t6t7a36n>
+                      <a href="/characters/kagetsu" data-astro-cid-t6t7a36n
+                        ><img
+                          src="/_astro/kagetsu.CAFIJNs__Z1vYJM7.webp"
+                          srcset="
+                            /_astro/kagetsu.CAFIJNs__Z1vYJM7.webp 1x,
+                            /_astro/kagetsu.CAFIJNs__Z28jkRu.webp 2x
+                          "
+                          alt
+                          data-astro-cid-zennbdu3="true"
+                          loading="lazy"
+                          decoding="async"
+                          width="22"
+                          height="22"
+                          class="thumb"
+                        />花月</a
+                      >
+                    </li>
+                    <li data-astro-cid-t6t7a36n>
+                      <a href="/characters/zelkov" data-astro-cid-t6t7a36n
+                        ><img
+                          src="/_astro/zelkov.D9LMLuf2_1rXuFx.webp"
+                          srcset="
+                            /_astro/zelkov.D9LMLuf2_1rXuFx.webp 1x,
+                            /_astro/zelkov.D9LMLuf2_ZCb1Qz.webp 2x
+                          "
+                          alt
+                          data-astro-cid-zennbdu3="true"
+                          loading="lazy"
+                          decoding="async"
+                          width="22"
+                          height="22"
+                          class="thumb"
+                        />杰尔科巴</a
+                      >
+                    </li>
+                    <li class="emblem" data-astro-cid-t6t7a36n>
+                      <img
+                        src="/_astro/%E7%90%B3.DQMiuETL_1qBm5C.webp"
+                        srcset="
+                          /_astro/%E7%90%B3.DQMiuETL_1qBm5C.webp 1x,
+                          /_astro/%E7%90%B3.DQMiuETL_1kO2X1.webp 2x
+                        "
+                        alt
+                        data-astro-cid-zennbdu3="true"
+                        loading="lazy"
+                        decoding="async"
+                        width="22"
+                        height="22"
+                        class="thumb"
+                      />琳
+                    </li>
+                    <li class="emblem" data-astro-cid-t6t7a36n>
+                      <img
+                        src="/_astro/%E9%9C%B2%E7%90%AA%E5%A8%9C.CHTpsBNs_Z1JwVoj.webp"
+                        srcset="
+                          /_astro/%E9%9C%B2%E7%90%AA%E5%A8%9C.CHTpsBNs_Z1JwVoj.webp 1x,
+                          /_astro/%E9%9C%B2%E7%90%AA%E5%A8%9C.CHTpsBNs_Z2wyAGc.webp 2x
+                        "
+                        alt
+                        data-astro-cid-zennbdu3="true"
+                        loading="lazy"
+                        decoding="async"
+                        width="22"
+                        height="22"
+                        class="thumb"
+                      />露琪娜
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <ul class="branches" data-astro-cid-mloacws5>
+                <li data-type="paralogue" data-astro-cid-mloacws5>
+                  <div class="event" id="p3" data-astro-cid-mloacws5>
+                    <div class="marker" data-astro-cid-mloacws5>
+                      <span data-astro-cid-mloacws5>外传3</span>
+                    </div>
+                    <div class="card" data-astro-cid-t6t7a36n>
+                      <h3 class="card-title" data-astro-cid-t6t7a36n>圣公主</h3>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </li>
+            <li class="main node">
+              <div class="event main grouped" id="ch12" data-astro-cid-mloacws5>
+                <div class="marker" data-astro-cid-mloacws5>
+                  <span data-astro-cid-mloacws5>第12章</span>
+                </div>
+                <div class="card" data-astro-cid-t6t7a36n>
+                  <h3 class="card-title" data-astro-cid-t6t7a36n>沙漠自卫团</h3>
+                  <ul class="joins" data-astro-cid-t6t7a36n>
+                    <li data-astro-cid-t6t7a36n>
+                      <a href="/characters/fogato" data-astro-cid-t6t7a36n
+                        ><img
+                          src="/_astro/fogato.DBkOp4qK_1OI1Aj.webp"
+                          srcset="
+                            /_astro/fogato.DBkOp4qK_1OI1Aj.webp 1x,
+                            /_astro/fogato.DBkOp4qK_ZfquVN.webp 2x
+                          "
+                          alt
+                          data-astro-cid-zennbdu3="true"
+                          loading="lazy"
+                          decoding="async"
+                          width="22"
+                          height="22"
+                          class="thumb"
+                        />佛贾特</a
+                      >
+                    </li>
+                    <li data-astro-cid-t6t7a36n>
+                      <a href="/characters/pandreo" data-astro-cid-t6t7a36n
+                        ><img
+                          src="/_astro/pandreo.lPM_m8PM_1iQcob.webp"
+                          srcset="
+                            /_astro/pandreo.lPM_m8PM_1iQcob.webp 1x,
+                            /_astro/pandreo.lPM_m8PM_GwBiN.webp  2x
+                          "
+                          alt
+                          data-astro-cid-zennbdu3="true"
+                          loading="lazy"
+                          decoding="async"
+                          width="22"
+                          height="22"
+                          class="thumb"
+                        />庞德罗</a
+                      >
+                    </li>
+                    <li data-astro-cid-t6t7a36n>
+                      <a href="/characters/bunet" data-astro-cid-t6t7a36n
+                        ><img
+                          src="/_astro/bunet.D2s99OQN_1FC2Wm.webp"
+                          srcset="
+                            /_astro/bunet.D2s99OQN_1FC2Wm.webp 1x,
+                            /_astro/bunet.D2s99OQN_1FDOX4.webp 2x
+                          "
+                          alt
+                          data-astro-cid-zennbdu3="true"
+                          loading="lazy"
+                          decoding="async"
+                          width="22"
+                          height="22"
+                          class="thumb"
+                        />波聂</a
+                      >
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <ul class="branches" data-astro-cid-mloacws5>
+                <li data-type="paralogue" data-astro-cid-mloacws5>
+                  <div class="event" id="p4" data-astro-cid-mloacws5>
+                    <div class="marker" data-astro-cid-mloacws5>
+                      <span data-astro-cid-mloacws5>外传4</span>
+                    </div>
+                    <div class="card" data-astro-cid-t6t7a36n>
+                      <h3 class="card-title" data-astro-cid-t6t7a36n>
+                        草原女爵
+                      </h3>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </li>
+            <li class="main node">
+              <div class="event main grouped" id="ch13" data-astro-cid-mloacws5>
+                <div class="marker" data-astro-cid-mloacws5>
+                  <span data-astro-cid-mloacws5>第13章</span>
+                </div>
+                <div class="card" data-astro-cid-t6t7a36n>
+                  <h3 class="card-title" data-astro-cid-t6t7a36n>绿洲勇者</h3>
+                  <ul class="joins" data-astro-cid-t6t7a36n>
+                    <li data-astro-cid-t6t7a36n>
+                      <a href="/characters/timerra" data-astro-cid-t6t7a36n
+                        ><img
+                          src="/_astro/timerra.KOIKG7ci_nyg5x.webp"
+                          srcset="
+                            /_astro/timerra.KOIKG7ci_nyg5x.webp  1x,
+                            /_astro/timerra.KOIKG7ci_ZdKjYP.webp 2x
+                          "
+                          alt
+                          data-astro-cid-zennbdu3="true"
+                          loading="lazy"
+                          decoding="async"
+                          width="22"
+                          height="22"
+                          class="thumb"
+                        />蜜丝提拉</a
+                      >
+                    </li>
+                    <li data-astro-cid-t6t7a36n>
+                      <a href="/characters/panette" data-astro-cid-t6t7a36n
+                        ><img
+                          src="/_astro/panette.CVIzBhZE_Zb4QCI.webp"
+                          srcset="
+                            /_astro/panette.CVIzBhZE_Zb4QCI.webp 1x,
+                            /_astro/panette.CVIzBhZE_ZMorI6.webp 2x
+                          "
+                          alt
+                          data-astro-cid-zennbdu3="true"
+                          loading="lazy"
+                          decoding="async"
+                          width="22"
+                          height="22"
+                          class="thumb"
+                        />帕涅托涅</a
+                      >
+                    </li>
+                    <li data-astro-cid-t6t7a36n>
+                      <a href="/characters/merrin" data-astro-cid-t6t7a36n
+                        ><img
+                          src="/_astro/merrin.BsCmDjQZ_ZYhHj5.webp"
+                          srcset="
+                            /_astro/merrin.BsCmDjQZ_ZYhHj5.webp 1x,
+                            /_astro/merrin.BsCmDjQZ_20JSWJ.webp 2x
+                          "
+                          alt
+                          data-astro-cid-zennbdu3="true"
+                          loading="lazy"
+                          decoding="async"
+                          width="22"
+                          height="22"
+                          class="thumb"
+                        />玫琳</a
+                      >
+                    </li>
+                    <li class="emblem" data-astro-cid-t6t7a36n>
+                      <img
+                        src="/_astro/%E8%89%BE%E5%85%8B.gVuX0IlM_Z1At7qv.webp"
+                        srcset="
+                          /_astro/%E8%89%BE%E5%85%8B.gVuX0IlM_Z1At7qv.webp 1x,
+                          /_astro/%E8%89%BE%E5%85%8B.gVuX0IlM_Z1xSCnl.webp 2x
+                        "
+                        alt
+                        data-astro-cid-zennbdu3="true"
+                        loading="lazy"
+                        decoding="async"
+                        width="22"
+                        height="22"
+                        class="thumb"
+                      />艾克
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <ul class="branches" data-astro-cid-mloacws5>
+                <li data-type="paralogue" data-astro-cid-mloacws5>
+                  <div class="event" id="p5" data-astro-cid-mloacws5>
+                    <div class="marker" data-astro-cid-mloacws5>
+                      <span data-astro-cid-mloacws5>外传5</span>
+                    </div>
+                    <div class="card" data-astro-cid-t6t7a36n>
+                      <h3 class="card-title" data-astro-cid-t6t7a36n>
+                        苍炎勇者
+                      </h3>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </li>
+            <li class="main node">
+              <div class="event main grouped" id="ch14" data-astro-cid-mloacws5>
+                <div class="marker" data-astro-cid-mloacws5>
+                  <span data-astro-cid-mloacws5>第14章</span>
+                </div>
+                <div class="card" data-astro-cid-t6t7a36n>
+                  <h3 class="card-title" data-astro-cid-t6t7a36n>
+                    索尔姆攻防战
+                  </h3>
+                  <ul class="joins" data-astro-cid-t6t7a36n>
+                    <li data-astro-cid-t6t7a36n>
+                      <a href="/characters/hortensia" data-astro-cid-t6t7a36n
+                        ><img
+                          src="/_astro/hortensia.B1CiY6f7_Z1uxa9w.webp"
+                          srcset="
+                            /_astro/hortensia.B1CiY6f7_Z1uxa9w.webp 1x,
+                            /_astro/hortensia.B1CiY6f7_ZDyT6h.webp  2x
+                          "
+                          alt
+                          data-astro-cid-zennbdu3="true"
+                          loading="lazy"
+                          decoding="async"
+                          width="22"
+                          height="22"
+                          class="thumb"
+                        />奥尔坦希亚</a
+                      >
+                    </li>
+                    <li class="emblem" data-astro-cid-t6t7a36n>
+                      <img
+                        src="/_astro/%E8%B4%9D%E9%9B%B7%E7%89%B9.BV3zHhC8_Z2uD3xz.webp"
+                        srcset="
+                          /_astro/%E8%B4%9D%E9%9B%B7%E7%89%B9.BV3zHhC8_Z2uD3xz.webp 1x,
+                          /_astro/%E8%B4%9D%E9%9B%B7%E7%89%B9.BV3zHhC8_1MwpXt.webp  2x
+                        "
+                        alt
+                        data-astro-cid-zennbdu3="true"
+                        loading="lazy"
+                        decoding="async"
+                        width="22"
+                        height="22"
+                        class="thumb"
+                      />贝雷特
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <ul class="branches" data-astro-cid-mloacws5>
+                <li data-type="paralogue" data-astro-cid-mloacws5>
+                  <div class="event" id="p6" data-astro-cid-mloacws5>
+                    <div class="marker" data-astro-cid-mloacws5>
+                      <span data-astro-cid-mloacws5>外传6</span>
+                    </div>
+                    <div class="card" data-astro-cid-t6t7a36n>
+                      <h3 class="card-title" data-astro-cid-t6t7a36n>引领者</h3>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </li>
+            <li class="main node">
+              <div class="event main grouped" id="ch15" data-astro-cid-mloacws5>
+                <div class="marker" data-astro-cid-mloacws5>
+                  <span data-astro-cid-mloacws5>第15章</span>
+                </div>
+                <div class="card" data-astro-cid-t6t7a36n>
+                  <h3 class="card-title" data-astro-cid-t6t7a36n>
+                    废墟的舞蹈家
+                  </h3>
+                  <ul class="joins" data-astro-cid-t6t7a36n>
+                    <li data-astro-cid-t6t7a36n>
+                      <a href="/characters/seadall" data-astro-cid-t6t7a36n
+                        ><img
+                          src="/_astro/seadall.DesGnE_s_Z22DfNC.webp"
+                          srcset="
+                            /_astro/seadall.DesGnE_s_Z22DfNC.webp 1x,
+                            /_astro/seadall.DesGnE_s_2qehTV.webp  2x
+                          "
+                          alt
+                          data-astro-cid-zennbdu3="true"
+                          loading="lazy"
+                          decoding="async"
+                          width="22"
+                          height="22"
+                          class="thumb"
+                        />赛安达斯</a
+                      >
+                    </li>
+                    <li class="emblem" data-astro-cid-t6t7a36n>
+                      <img
+                        src="/_astro/%E7%A5%9E%E5%A8%81.tpFAvUuR_ZhrfIU.webp"
+                        srcset="
+                          /_astro/%E7%A5%9E%E5%A8%81.tpFAvUuR_ZhrfIU.webp 1x,
+                          /_astro/%E7%A5%9E%E5%A8%81.tpFAvUuR_ZeQKFK.webp 2x
+                        "
+                        alt
+                        data-astro-cid-zennbdu3="true"
+                        loading="lazy"
+                        decoding="async"
+                        width="22"
+                        height="22"
+                        class="thumb"
+                      />神威
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <ul class="branches" data-astro-cid-mloacws5>
+                <li data-type="paralogue" data-astro-cid-mloacws5>
+                  <div class="event" id="p7" data-astro-cid-mloacws5>
+                    <div class="marker" data-astro-cid-mloacws5>
+                      <span data-astro-cid-mloacws5>外传7</span>
+                    </div>
+                    <div class="card" data-astro-cid-t6t7a36n>
+                      <h3 class="card-title" data-astro-cid-t6t7a36n>
+                        选择未来之人
+                      </h3>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </li>
+            <li class="main node">
+              <div class="event main grouped" id="ch16" data-astro-cid-mloacws5>
+                <div class="marker" data-astro-cid-mloacws5>
+                  <span data-astro-cid-mloacws5>第16章</span>
+                </div>
+                <div class="card" data-astro-cid-t6t7a36n>
+                  <h3 class="card-title" data-astro-cid-t6t7a36n>穿越海岸线</h3>
+                  <ul class="joins" data-astro-cid-t6t7a36n>
+                    <li data-astro-cid-t6t7a36n>
+                      <a href="/characters/rosado" data-astro-cid-t6t7a36n
+                        ><img
+                          src="/_astro/rosado.DIa6FUie_Z5mhm.webp"
+                          srcset="
+                            /_astro/rosado.DIa6FUie_Z5mhm.webp   1x,
+                            /_astro/rosado.DIa6FUie_Z25eSOt.webp 2x
+                          "
+                          alt
+                          data-astro-cid-zennbdu3="true"
+                          loading="lazy"
+                          decoding="async"
+                          width="22"
+                          height="22"
+                          class="thumb"
+                        />罗萨德</a
+                      >
+                    </li>
+                    <li data-astro-cid-t6t7a36n>
+                      <a href="/characters/goldmary" data-astro-cid-t6t7a36n
+                        ><img
+                          src="/_astro/goldmary.Psko70CW_Z1qBgjl.webp"
+                          srcset="
+                            /_astro/goldmary.Psko70CW_Z1qBgjl.webp 1x,
+                            /_astro/goldmary.Psko70CW_Z29OWFg.webp 2x
+                          "
+                          alt
+                          data-astro-cid-zennbdu3="true"
+                          loading="lazy"
+                          decoding="async"
+                          width="22"
+                          height="22"
+                          class="thumb"
+                        />戈尔德玛莉</a
+                      >
+                    </li>
+                    <li class="emblem" data-astro-cid-t6t7a36n>
+                      <img
+                        src="/_astro/%E8%89%BE%E8%8E%89%E5%8F%AF.DGuU3Twk_1aitAt.webp"
+                        srcset="
+                          /_astro/%E8%89%BE%E8%8E%89%E5%8F%AF.DGuU3Twk_1aitAt.webp 1x,
+                          /_astro/%E8%89%BE%E8%8E%89%E5%8F%AF.DGuU3Twk_ngOiA.webp  2x
+                        "
+                        alt
+                        data-astro-cid-zennbdu3="true"
+                        loading="lazy"
+                        decoding="async"
+                        width="22"
+                        height="22"
+                        class="thumb"
+                      />艾莉可
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <ul class="branches" data-astro-cid-mloacws5>
+                <li data-type="paralogue" data-astro-cid-mloacws5>
+                  <div class="event" id="p8" data-astro-cid-mloacws5>
+                    <div class="marker" data-astro-cid-mloacws5>
+                      <span data-astro-cid-mloacws5>外传8</span>
+                    </div>
+                    <div class="card" data-astro-cid-t6t7a36n>
+                      <h3 class="card-title" data-astro-cid-t6t7a36n>
+                        碧绿风空
+                      </h3>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </li>
+            <li class="main node">
+              <div class="event main grouped" id="ch17" data-astro-cid-mloacws5>
+                <div class="marker" data-astro-cid-mloacws5>
+                  <span data-astro-cid-mloacws5>第17章</span>
+                </div>
+                <div class="card" data-astro-cid-t6t7a36n>
+                  <h3 class="card-title" data-astro-cid-t6t7a36n>粉碎的和平</h3>
+                </div>
+              </div>
+              <ul class="branches" data-astro-cid-mloacws5>
+                <li data-type="paralogue" data-astro-cid-mloacws5>
+                  <div class="event" id="p9" data-astro-cid-mloacws5>
+                    <div class="marker" data-astro-cid-mloacws5>
+                      <span data-astro-cid-mloacws5>外传9</span>
+                    </div>
+                    <div class="card" data-astro-cid-t6t7a36n>
+                      <h3 class="card-title" data-astro-cid-t6t7a36n>
+                        圣战骑士
+                      </h3>
+                    </div>
+                  </div>
+                </li>
+                <li data-type="paralogue" data-astro-cid-mloacws5>
+                  <div class="event" id="p10" data-astro-cid-mloacws5>
+                    <div class="marker" data-astro-cid-mloacws5>
+                      <span data-astro-cid-mloacws5>外传10</span>
+                    </div>
+                    <div class="card" data-astro-cid-t6t7a36n>
+                      <h3 class="card-title" data-astro-cid-t6t7a36n>贤王</h3>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </li>
+            <li class="main node">
+              <div class="event main" id="ch18" data-astro-cid-mloacws5>
+                <div class="marker" data-astro-cid-mloacws5>
+                  <span data-astro-cid-mloacws5>第18章</span>
+                </div>
+                <div class="card" data-astro-cid-t6t7a36n>
+                  <h3 class="card-title" data-astro-cid-t6t7a36n>冰冷的航线</h3>
+                  <ul class="joins" data-astro-cid-t6t7a36n>
+                    <li data-astro-cid-t6t7a36n>
+                      <a href="/characters/linden" data-astro-cid-t6t7a36n
+                        ><img
+                          src="/_astro/linden.0QGYI2gk_ZCFFVu.webp"
+                          srcset="
+                            /_astro/linden.0QGYI2gk_ZCFFVu.webp 1x,
+                            /_astro/linden.0QGYI2gk_2mlUkk.webp 2x
+                          "
+                          alt
+                          data-astro-cid-zennbdu3="true"
+                          loading="lazy"
+                          decoding="async"
+                          width="22"
+                          height="22"
+                          class="thumb"
+                        />霖丹</a
+                      >
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </li>
+            <li class="main node">
+              <div class="event main grouped" id="ch19" data-astro-cid-mloacws5>
+                <div class="marker" data-astro-cid-mloacws5>
+                  <span data-astro-cid-mloacws5>第19章</span>
+                </div>
+                <div class="card" data-astro-cid-t6t7a36n>
+                  <h3 class="card-title" data-astro-cid-t6t7a36n>死之海港</h3>
+                  <ul class="joins" data-astro-cid-t6t7a36n>
+                    <li data-astro-cid-t6t7a36n>
+                      <a href="/characters/saphir" data-astro-cid-t6t7a36n
+                        ><img
+                          src="/_astro/saphir.CbK0o_aH_Z2cnwHD.webp"
+                          srcset="
+                            /_astro/saphir.CbK0o_aH_Z2cnwHD.webp 1x,
+                            /_astro/saphir.CbK0o_aH_ME4yb.webp   2x
+                          "
+                          alt
+                          data-astro-cid-zennbdu3="true"
+                          loading="lazy"
+                          decoding="async"
+                          width="22"
+                          height="22"
+                          class="thumb"
+                        />札菲亚</a
+                      >
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <ul class="branches" data-astro-cid-mloacws5>
+                <li data-type="paralogue" data-astro-cid-mloacws5>
+                  <div class="event" id="p11" data-astro-cid-mloacws5>
+                    <div class="marker" data-astro-cid-mloacws5>
+                      <span data-astro-cid-mloacws5>外传11</span>
+                    </div>
+                    <div class="card" data-astro-cid-t6t7a36n>
+                      <h3 class="card-title" data-astro-cid-t6t7a36n>
+                        拂晓巫女
+                      </h3>
+                    </div>
+                  </div>
+                </li>
+                <li data-type="paralogue" data-astro-cid-mloacws5>
+                  <div class="event" id="p12" data-astro-cid-mloacws5>
+                    <div class="marker" data-astro-cid-mloacws5>
+                      <span data-astro-cid-mloacws5>外传12</span>
+                    </div>
+                    <div class="card" data-astro-cid-t6t7a36n>
+                      <h3 class="card-title" data-astro-cid-t6t7a36n>幼狮</h3>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </li>
+            <li class="main node">
+              <div class="event main grouped" id="ch20" data-astro-cid-mloacws5>
+                <div class="marker" data-astro-cid-mloacws5>
+                  <span data-astro-cid-mloacws5>第20章</span>
+                </div>
+                <div class="card" data-astro-cid-t6t7a36n>
+                  <h3 class="card-title" data-astro-cid-t6t7a36n>无王之城</h3>
+                </div>
+              </div>
+              <ul class="branches" data-astro-cid-mloacws5>
+                <li data-type="paralogue" data-astro-cid-mloacws5>
+                  <div class="event" id="p13" data-astro-cid-mloacws5>
+                    <div class="marker" data-astro-cid-mloacws5>
+                      <span data-astro-cid-mloacws5>外传13</span>
+                    </div>
+                    <div class="card" data-astro-cid-t6t7a36n>
+                      <h3 class="card-title" data-astro-cid-t6t7a36n>
+                        慈悲公主
+                      </h3>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </li>
+            <li class="main node">
+              <div class="event main" id="ch21" data-astro-cid-mloacws5>
+                <div class="marker" data-astro-cid-mloacws5>
+                  <span data-astro-cid-mloacws5>第21章</span>
+                </div>
+                <div class="card" data-astro-cid-t6t7a36n>
+                  <h3 class="card-title" data-astro-cid-t6t7a36n>归来</h3>
+                  <ul class="joins" data-astro-cid-t6t7a36n>
+                    <li data-astro-cid-t6t7a36n>
+                      <a href="/characters/mauvier" data-astro-cid-t6t7a36n
+                        ><img
+                          src="/_astro/mauvier.CWF5VUvt_Z9GUd8.webp"
+                          srcset="
+                            /_astro/mauvier.CWF5VUvt_Z9GUd8.webp 1x,
+                            /_astro/mauvier.CWF5VUvt_ZL1viv.webp 2x
+                          "
+                          alt
+                          data-astro-cid-zennbdu3="true"
+                          loading="lazy"
+                          decoding="async"
+                          width="22"
+                          height="22"
+                          class="thumb"
+                        />莫布</a
+                      >
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </li>
+            <li class="main node">
+              <div class="event main grouped" id="ch22" data-astro-cid-mloacws5>
+                <div class="marker" data-astro-cid-mloacws5>
+                  <span data-astro-cid-mloacws5>第22章</span>
+                </div>
+                <div class="card" data-astro-cid-t6t7a36n>
+                  <h3 class="card-title" data-astro-cid-t6t7a36n>神龙与邪龙</h3>
+                  <ul class="joins" data-astro-cid-t6t7a36n>
+                    <li data-astro-cid-t6t7a36n>
+                      <a href="/characters/veyle" data-astro-cid-t6t7a36n
+                        ><img
+                          src="/_astro/veyle.BnFUUUPK_Z7MYf2.webp"
+                          srcset="
+                            /_astro/veyle.BnFUUUPK_Z7MYf2.webp 1x,
+                            /_astro/veyle.BnFUUUPK_Z7Lcek.webp 2x
+                          "
+                          alt
+                          data-astro-cid-zennbdu3="true"
+                          loading="lazy"
+                          decoding="async"
+                          width="22"
+                          height="22"
+                          class="thumb"
+                        />贝珥</a
+                      >
+                    </li>
+                    <li class="emblem" data-astro-cid-t6t7a36n>
+                      <img
+                        src="/_astro/alear.D0o6GltF_1aS0bo.webp"
+                        srcset="
+                          /_astro/alear.D0o6GltF_1aS0bo.webp 1x,
+                          /_astro/alear.D0o6GltF_1aTMc6.webp 2x
+                        "
+                        alt
+                        data-astro-cid-zennbdu3="true"
+                        loading="lazy"
+                        decoding="async"
+                        width="22"
+                        height="22"
+                        class="thumb"
+                      />琉尔
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <ul class="branches" data-astro-cid-mloacws5>
+                <li data-type="paralogue" data-astro-cid-mloacws5>
+                  <div class="event" id="p14" data-astro-cid-mloacws5>
+                    <div class="marker" data-astro-cid-mloacws5>
+                      <span data-astro-cid-mloacws5>外传14</span>
+                    </div>
+                    <div class="card" data-astro-cid-t6t7a36n>
+                      <h3 class="card-title" data-astro-cid-t6t7a36n>英雄王</h3>
+                    </div>
+                  </div>
+                </li>
+                <li data-type="paralogue" data-astro-cid-mloacws5>
+                  <div class="event" id="p15" data-astro-cid-mloacws5>
+                    <div class="marker" data-astro-cid-mloacws5>
+                      <span data-astro-cid-mloacws5>外传15</span>
+                    </div>
+                    <div class="card" data-astro-cid-t6t7a36n>
+                      <h3 class="card-title" data-astro-cid-t6t7a36n>编织者</h3>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </li>
+            <li class="main node">
+              <div class="event main" id="ch23" data-astro-cid-mloacws5>
+                <div class="marker" data-astro-cid-mloacws5>
+                  <span data-astro-cid-mloacws5>第23章</span>
+                </div>
+                <div class="card" data-astro-cid-t6t7a36n>
+                  <h3 class="card-title" data-astro-cid-t6t7a36n>四狗</h3>
+                </div>
+              </div>
+            </li>
+            <li class="main node">
+              <div class="event main" id="ch24" data-astro-cid-mloacws5>
+                <div class="marker" data-astro-cid-mloacws5>
+                  <span data-astro-cid-mloacws5>第24章</span>
+                </div>
+                <div class="card" data-astro-cid-t6t7a36n>
+                  <h3 class="card-title" data-astro-cid-t6t7a36n>回忆</h3>
+                </div>
+              </div>
+            </li>
+            <li class="main node">
+              <div class="event main" id="ch25" data-astro-cid-mloacws5>
+                <div class="marker" data-astro-cid-mloacws5>
+                  <span data-astro-cid-mloacws5>第25章</span>
+                </div>
+                <div class="card" data-astro-cid-t6t7a36n>
+                  <h3 class="card-title" data-astro-cid-t6t7a36n>最后的门卫</h3>
+                </div>
+              </div>
+            </li>
+            <li class="main node">
+              <div class="event main" id="ch26" data-astro-cid-mloacws5>
+                <div class="marker" data-astro-cid-mloacws5>
+                  <span data-astro-cid-mloacws5>第26章</span>
+                </div>
+                <div class="card" data-astro-cid-t6t7a36n>
+                  <h3 class="card-title" data-astro-cid-t6t7a36n>最终结合</h3>
+                </div>
+              </div>
+            </li>
+          </ol>
+        </div>
+      </main>
+    </div>
+  </body>
+</html>
+"
+`;
