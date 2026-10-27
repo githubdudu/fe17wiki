@@ -1,0 +1,430 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`built team page snapshots > matches the full HTML snapshot for the team page 1`] = `
+"<!DOCTYPE html>
+<html lang="zh-CN" data-astro-cid-z4jru4n3>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" href="/favicon.ico" />
+    <meta name="generator" content="Astro v7.4.2" />
+    <!-- 数字字体：Barlow 数字窄而清楚、有等宽数字，用于表格里的数值 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Barlow:wght@500;700&display=swap"
+    />
+    <title>火焰纹章结合 Engage Wiki</title>
+    <style>
+      html,
+      body {
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        font-family: system-ui, sans-serif;
+      }
+      .nav-layout[data-astro-cid-entc4gyn] {
+        grid-template-columns: minmax(0, 1fr);
+        grid-template-areas: "menu" "main";
+        display: grid;
+      }
+      .nav-layout[data-astro-cid-entc4gyn] > .menu[data-astro-cid-entc4gyn] {
+        grid-area: menu;
+      }
+      .menu[data-astro-cid-entc4gyn] {
+        background: #262a3f;
+        border-bottom: 4px solid #e0735a;
+        display: flex;
+      }
+      .menu[data-astro-cid-entc4gyn] a[data-astro-cid-entc4gyn] {
+        color: #fff;
+        padding: 0.6rem 1rem;
+        font-weight: 700;
+        text-decoration: none;
+      }
+      .menu[data-astro-cid-entc4gyn] a[data-astro-cid-entc4gyn]:hover {
+        background: #353a57;
+      }
+      .menu[data-astro-cid-entc4gyn]
+        a[data-astro-cid-entc4gyn][aria-current="page"] {
+        background: #e0735a;
+      }
+      .menu[data-astro-cid-entc4gyn] a[data-astro-cid-entc4gyn]:focus-visible {
+        outline-offset: -3px;
+        outline: 3px solid #f4c542;
+      }
+      .nav-layout[data-astro-cid-entc4gyn] > aside[data-astro-cid-entc4gyn] {
+        display: none;
+      }
+      .nav-layout[data-astro-cid-entc4gyn] > main[data-astro-cid-entc4gyn] {
+        box-sizing: border-box;
+        grid-area: main;
+        justify-self: center;
+        width: 100%;
+        max-width: 720px;
+        padding: 0 12px 24px;
+      }
+      @media (width>=960px) {
+        .nav-layout[data-astro-cid-entc4gyn] {
+          grid-template-columns: 240px minmax(0, 720px);
+          grid-template-areas: "menu menu" "aside main";
+          justify-content: center;
+          column-gap: 24px;
+        }
+        .nav-layout[data-astro-cid-entc4gyn] > aside[data-astro-cid-entc4gyn] {
+          grid-area: aside;
+          display: block;
+        }
+        .nav-layout[data-astro-cid-entc4gyn].no-sidebar {
+          grid-template-areas: "menu menu" "main main";
+        }
+        .nav-layout[data-astro-cid-entc4gyn].no-sidebar
+          > main[data-astro-cid-entc4gyn] {
+          max-width: none;
+        }
+      }
+      .nav-layout:has(.widen:checked) > main {
+        max-width: 1320px;
+      }
+      @media (width>=960px) {
+        .nav-layout:has(.widen:checked) {
+          grid-template-columns: 240px minmax(0, 1320px);
+        }
+      }
+    </style>
+    <link rel="stylesheet" href="/_astro/index.ClB_dKuh.css" />
+  </head>
+  <body data-astro-cid-z4jru4n3>
+    <div class="nav-layout no-sidebar" data-astro-cid-entc4gyn>
+      <nav class="menu" aria-label="主菜单" data-astro-cid-entc4gyn>
+        <a href="/" data-astro-cid-entc4gyn>首页</a
+        ><a href="/characters" data-astro-cid-entc4gyn>角色</a
+        ><a href="/skills" data-astro-cid-entc4gyn>特技</a
+        ><a href="/classes" data-astro-cid-entc4gyn>兵种</a
+        ><a href="/emblems" data-astro-cid-entc4gyn>纹章士</a
+        ><a href="/team" aria-current="page" data-astro-cid-entc4gyn>阵容搭配</a
+        ><a href="/chapters" data-astro-cid-entc4gyn>章节流程</a>
+      </nav>
+      <main data-astro-cid-entc4gyn>
+        <style>
+          astro-island,
+          astro-slot,
+          astro-static-slot {
+            display: contents;
+          }
+        </style>
+        <script>
+          (function () {
+            let e = async (e) => {
+              await (
+                await e()
+              )();
+            };
+            (((self.Astro || (self.Astro = {})).only = e),
+              window.dispatchEvent(new Event(\`astro:only\`)));
+          })();
+        </script>
+        <script>
+          (function () {
+            function e(t) {
+              "@babel/helpers - typeof";
+              return (
+                (e =
+                  typeof Symbol == \`function\` &&
+                  typeof Symbol.iterator == \`symbol\`
+                    ? function (e) {
+                        return typeof e;
+                      }
+                    : function (e) {
+                        return e &&
+                          typeof Symbol == \`function\` &&
+                          e.constructor === Symbol &&
+                          e !== Symbol.prototype
+                          ? \`symbol\`
+                          : typeof e;
+                      }),
+                e(t)
+              );
+            }
+            function t(t, n) {
+              if (e(t) != \`object\` || !t) return t;
+              var r = t[Symbol.toPrimitive];
+              if (r !== void 0) {
+                var i = r.call(t, n || \`default\`);
+                if (e(i) != \`object\`) return i;
+                throw TypeError(\`@@toPrimitive must return a primitive value.\`);
+              }
+              return (n === \`string\` ? String : Number)(t);
+            }
+            function n(n) {
+              var r = t(n, \`string\`);
+              return e(r) == \`symbol\` ? r : r + \`\`;
+            }
+            function r(e, t, r) {
+              return (
+                (t = n(t)) in e
+                  ? Object.defineProperty(e, t, {
+                      value: r,
+                      enumerable: !0,
+                      configurable: !0,
+                      writable: !0,
+                    })
+                  : (e[t] = r),
+                e
+              );
+            }
+            let i = /* @__PURE__ */ new Set([
+              \`__proto__\`,
+              \`constructor\`,
+              \`prototype\`,
+            ]);
+            {
+              let e = {
+                  0: (e) => a(e),
+                  1: (e) => n(e),
+                  2: (e) => new RegExp(e),
+                  3: (e) => new Date(e),
+                  4: (e) => new Map(n(e)),
+                  5: (e) => new Set(n(e)),
+                  6: (e) => BigInt(e),
+                  7: (e) => new URL(e),
+                  8: (e) => new Uint8Array(e),
+                  9: (e) => new Uint16Array(e),
+                  10: (e) => new Uint32Array(e),
+                  11: (e) => (1 / 0) * e,
+                },
+                t = (t) => {
+                  let [n, r] = t;
+                  return n in e ? e[n](r) : void 0;
+                },
+                n = (e) => e.map(t),
+                a = (e) =>
+                  typeof e != \`object\` || !e
+                    ? e
+                    : Object.fromEntries(
+                        Object.entries(e).map(([e, n]) => [e, t(n)]),
+                      );
+              class o extends HTMLElement {
+                constructor(...e) {
+                  (super(...e),
+                    r(this, \`Component\`, void 0),
+                    r(this, \`hydrator\`, void 0),
+                    r(this, \`hydrate\`, async () => {
+                      var e;
+                      if (!this.hydrator || !this.isConnected) return;
+                      let t =
+                        (e = this.parentElement) == null
+                          ? void 0
+                          : e.closest(\`astro-island[ssr]\`);
+                      if (t) {
+                        t.addEventListener(\`astro:hydrate\`, this.hydrate, {
+                          once: !0,
+                        });
+                        return;
+                      }
+                      let n = this.querySelectorAll(\`astro-slot\`),
+                        r = {},
+                        i = this.querySelectorAll(
+                          \`template[data-astro-template]\`,
+                        );
+                      for (let e of i) {
+                        let t = e.closest(this.tagName);
+                        t != null &&
+                          t.isSameNode(this) &&
+                          ((r[
+                            e.getAttribute(\`data-astro-template\`) || \`default\`
+                          ] = e.innerHTML),
+                          e.remove());
+                      }
+                      for (let e of n) {
+                        let t = e.closest(this.tagName);
+                        t != null &&
+                          t.isSameNode(this) &&
+                          (r[e.getAttribute(\`name\`) || \`default\`] =
+                            e.innerHTML);
+                      }
+                      let o;
+                      try {
+                        o = this.hasAttribute(\`props\`)
+                          ? a(JSON.parse(this.getAttribute(\`props\`)))
+                          : {};
+                      } catch (e) {
+                        let t =
+                            this.getAttribute(\`component-url\`) || \`<unknown>\`,
+                          n = this.getAttribute(\`component-export\`);
+                        throw (
+                          n && (t += \` (export \${n})\`),
+                          console.error(
+                            \`[hydrate] Error parsing props for component \${t}\`,
+                            this.getAttribute(\`props\`),
+                            e,
+                          ),
+                          e
+                        );
+                      }
+                      (await this.hydrator(this)(this.Component, o, r, {
+                        client: this.getAttribute(\`client\`),
+                      }),
+                        this.removeAttribute(\`ssr\`),
+                        this.dispatchEvent(new CustomEvent(\`astro:hydrate\`)));
+                    }),
+                    r(this, \`unmount\`, () => {
+                      this.isConnected ||
+                        this.dispatchEvent(new CustomEvent(\`astro:unmount\`));
+                    }));
+                }
+                disconnectedCallback() {
+                  (document.removeEventListener(
+                    \`astro:after-swap\`,
+                    this.unmount,
+                  ),
+                    document.addEventListener(
+                      \`astro:after-swap\`,
+                      this.unmount,
+                      { once: !0 },
+                    ));
+                }
+                connectedCallback() {
+                  if (
+                    !this.hasAttribute(\`await-children\`) ||
+                    document.readyState === \`interactive\` ||
+                    document.readyState === \`complete\`
+                  )
+                    this.childrenConnectedCallback();
+                  else {
+                    let e = () => {
+                        (document.removeEventListener(\`DOMContentLoaded\`, e),
+                          t.disconnect(),
+                          this.childrenConnectedCallback());
+                      },
+                      t = new MutationObserver(() => {
+                        var t;
+                        ((t = this.lastChild) == null ? void 0 : t.nodeType) ===
+                          Node.COMMENT_NODE &&
+                          this.lastChild.nodeValue === \`astro:end\` &&
+                          (this.lastChild.remove(), e());
+                      });
+                    (t.observe(this, { childList: !0 }),
+                      document.addEventListener(\`DOMContentLoaded\`, e));
+                  }
+                }
+                async childrenConnectedCallback() {
+                  let e = this.getAttribute(\`before-hydration-url\`);
+                  (e && (await import(e)), this.start());
+                }
+                getRetryImportUrl(e) {
+                  let t = new URL(e, document.baseURI);
+                  return (
+                    t.searchParams.set(\`astro-retry\`, Date.now().toString()),
+                    t.toString()
+                  );
+                }
+                async importWithRetry(e) {
+                  try {
+                    return await import(e);
+                  } catch (t) {
+                    return (
+                      await new Promise((e) => setTimeout(e, 1e3)),
+                      import(this.getRetryImportUrl(e))
+                    );
+                  }
+                }
+                handleHydrationError(e) {
+                  let t = this.getAttribute(\`component-url\`),
+                    n = new CustomEvent(\`astro:hydration-error\`, {
+                      cancelable: !0,
+                      bubbles: !0,
+                      composed: !0,
+                      detail: { error: e, componentUrl: t },
+                    });
+                  this.dispatchEvent(n) &&
+                    console.error(\`[astro-island] Error hydrating \${t}\`, e);
+                }
+                async start() {
+                  let e = JSON.parse(this.getAttribute(\`opts\`)),
+                    t = this.getAttribute(\`client\`);
+                  if (Astro[t] === void 0)
+                    window.addEventListener(\`astro:\${t}\`, () => this.start(), {
+                      once: !0,
+                    });
+                  else
+                    try {
+                      await Astro[t](
+                        async () => {
+                          let e = this.getAttribute(\`renderer-url\`);
+                          try {
+                            let [t, { default: n }] = await Promise.all([
+                                this.importWithRetry(
+                                  this.getAttribute(\`component-url\`),
+                                ),
+                                e
+                                  ? this.importWithRetry(e)
+                                  : Promise.resolve({
+                                      default: () => () => {},
+                                    }),
+                              ]),
+                              r =
+                                this.getAttribute(\`component-export\`) ||
+                                \`default\`;
+                            if (r.includes(\`.\`)) {
+                              this.Component = t;
+                              for (let e of r.split(\`.\`)) {
+                                if (
+                                  i.has(e) ||
+                                  !this.Component ||
+                                  (typeof this.Component != \`object\` &&
+                                    typeof this.Component != \`function\`) ||
+                                  !Object.hasOwn(this.Component, e)
+                                )
+                                  throw Error(
+                                    \`Invalid component export path: \${r}\`,
+                                  );
+                                this.Component = this.Component[e];
+                              }
+                            } else {
+                              if (i.has(r))
+                                throw Error(
+                                  \`Invalid component export path: \${r}\`,
+                                );
+                              this.Component = t[r];
+                            }
+                            return ((this.hydrator = n), this.hydrate);
+                          } catch (e) {
+                            return (this.handleHydrationError(e), () => {});
+                          }
+                        },
+                        e,
+                        this,
+                      );
+                    } catch (e) {
+                      this.handleHydrationError(e);
+                    }
+                }
+                attributeChangedCallback() {
+                  this.hydrate();
+                }
+              }
+              (r(o, \`observedAttributes\`, [\`props\`]),
+                customElements.get(\`astro-island\`) ||
+                  customElements.define(\`astro-island\`, o));
+            }
+          })();
+        </script>
+        <astro-island
+          uid="ZQKinR"
+          component-url="/_astro/TeamPlanner.kn1ubn2L.js"
+          component-export="default"
+          renderer-url="/_astro/client.DUTuQ7h5.js"
+          props='{"characters":[1,[[0,{"id":[0,"alear"],"name":[0,"琉尔"],"img":[0,"/_astro/alear.D0o6GltF.webp"],"initClass":[0,"神龙之子【龙族】"]}],[0,{"id":[0,"vander"],"name":[0,"凡德雷"],"img":[0,"/_astro/vander.IWN6ZmoA.webp"],"initClass":[0,"圣骑士（斧）【骑马】"]}],[0,{"id":[0,"clanne"],"name":[0,"柯岚"],"img":[0,"/_astro/clanne.DvnngJFi.webp"],"initClass":[0,"魔法师【魔道】"]}],[0,{"id":[0,"framme"],"name":[0,"芙岚"],"img":[0,"/_astro/framme.ClXDbBjV.webp"],"initClass":[0,"僧侣【气功】"]}],[0,{"id":[0,"alfred"],"name":[0,"阿尔弗雷德"],"img":[0,"/_astro/alfred.C_OTbDZi.webp"],"initClass":[0,"王室贵族（枪）【骑马】"]}],[0,{"id":[0,"etie"],"name":[0,"艾媞耶"],"img":[0,"/_astro/etie.Cb8OSJT3.webp"],"initClass":[0,"弓箭手【隐密】"]}],[0,{"id":[0,"boucheron"],"name":[0,"布修隆"],"img":[0,"/_astro/boucheron.BCNr7IjN.webp"],"initClass":[0,"斧战士【连携】"]}],[0,{"id":[0,"celine"],"name":[0,"锡莉奴"],"img":[0,"/_astro/celine.B_abHfDp.webp"],"initClass":[0,"王室贵族（剑+魔）【魔道】"]}],[0,{"id":[0,"chloe"],"name":[0,"克萝艾"],"img":[0,"/_astro/chloe.oEjp4sj1.webp"],"initClass":[0,"枪飞马骑士【飞行】"]}],[0,{"id":[0,"louis"],"name":[0,"路易"],"img":[0,"/_astro/louis.CvsRb13S.webp"],"initClass":[0,"重枪兵【重装】"]}],[0,{"id":[0,"jean"],"name":[0,"贾恩"],"img":[0,"/_astro/jean.CSC5gi_A.webp"],"initClass":[0,"僧侣【气功】"]}],[0,{"id":[0,"diamant"],"name":[0,"帝亚曼德"],"img":[0,"/_astro/diamant.C5XSmYqm.webp"],"initClass":[0,"领主（剑）【连携】"]}],[0,{"id":[0,"amber"],"name":[0,"安巴"],"img":[0,"/_astro/amber.CsU4qBbN.webp"],"initClass":[0,"枪骑士【骑马】"]}],[0,{"id":[0,"jade"],"name":[0,"洁德"],"img":[0,"/_astro/jade.hl2dc11I.webp"],"initClass":[0,"重斧兵【重装】"]}],[0,{"id":[0,"alcryst"],"name":[0,"史塔卢克"],"img":[0,"/_astro/alcryst.Bc8PRCt-.webp"],"initClass":[0,"领主（弓）【隐密】"]}],[0,{"id":[0,"citrinne"],"name":[0,"希特丽妮卡"],"img":[0,"/_astro/citrinne.CpW7Ei3r.webp"],"initClass":[0,"魔法师【魔道】"]}],[0,{"id":[0,"lapis"],"name":[0,"菈琵思"],"img":[0,"/_astro/lapis.Dj8djGDD.webp"],"initClass":[0,"刀剑战士【连携】"]}],[0,{"id":[0,"yunaka"],"name":[0,"尤娜卡"],"img":[0,"/_astro/yunaka.Byr5_MEK.webp"],"initClass":[0,"小偷【隐密】"]}],[0,{"id":[0,"saphir"],"name":[0,"札菲亚"],"img":[0,"/_astro/saphir.CbK0o_aH.webp"],"initClass":[0,"勇士（斧+弓）【连携】"]}],[0,{"id":[0,"ivy"],"name":[0,"艾比"],"img":[0,"/_astro/ivy.CUynVUfN.webp"],"initClass":[0,"驯兽师（魔+杖）【飞行】"]}],[0,{"id":[0,"kagetsu"],"name":[0,"花月"],"img":[0,"/_astro/kagetsu.CAFIJNs_.webp"],"initClass":[0,"刀剑将领【连携】"]}],[0,{"id":[0,"zelkov"],"name":[0,"杰尔科巴"],"img":[0,"/_astro/zelkov.D9LMLuf2.webp"],"initClass":[0,"小偷【隐密】"]}],[0,{"id":[0,"hortensia"],"name":[0,"奥尔坦希亚"],"img":[0,"/_astro/hortensia.B1CiY6f7.webp"],"initClass":[0,"驯兽师（魔+杖）【飞行】"]}],[0,{"id":[0,"rosado"],"name":[0,"罗萨德"],"img":[0,"/_astro/rosado.DIa6FUie.webp"],"initClass":[0,"飞龙骑士（枪+斧）【飞行】"]}],[0,{"id":[0,"goldmary"],"name":[0,"戈尔德玛莉"],"img":[0,"/_astro/goldmary.Psko70CW.webp"],"initClass":[0,"无畏英雄（剑+枪）【连携】"]}],[0,{"id":[0,"anna"],"name":[0,"安娜"],"img":[0,"/_astro/anna.Dexv5UCp.webp"],"initClass":[0,"斧战士【连携】"]}],[0,{"id":[0,"linden"],"name":[0,"霖丹"],"img":[0,"/_astro/linden.0QGYI2gk.webp"],"initClass":[0,"圣者【魔道】"]}],[0,{"id":[0,"timerra"],"name":[0,"蜜丝提拉"],"img":[0,"/_astro/timerra.KOIKG7ci.webp"],"initClass":[0,"义警队（枪）【连携】"]}],[0,{"id":[0,"panette"],"name":[0,"帕涅托涅"],"img":[0,"/_astro/panette.CVIzBhZE.webp"],"initClass":[0,"狂斗士【连携】"]}],[0,{"id":[0,"merrin"],"name":[0,"玫琳"],"img":[0,"/_astro/merrin.BsCmDjQZ.webp"],"initClass":[0,"狼骑士【骑马】"]}],[0,{"id":[0,"fogato"],"name":[0,"佛贾特"],"img":[0,"/_astro/fogato.DBkOp4qK.webp"],"initClass":[0,"义警队（弓）【骑马】"]}],[0,{"id":[0,"pandreo"],"name":[0,"庞德罗"],"img":[0,"/_astro/pandreo.lPM_m8PM.webp"],"initClass":[0,"主教【魔道】"]}],[0,{"id":[0,"bunet"],"name":[0,"波聂"],"img":[0,"/_astro/bunet.D2s99OQN.webp"],"initClass":[0,"英勇骑士（剑+斧）【骑马】"]}],[0,{"id":[0,"seadall"],"name":[0,"赛安达斯"],"img":[0,"/_astro/seadall.DesGnE_s.webp"],"initClass":[0,"舞蹈家【气功】"]}],[0,{"id":[0,"mauvier"],"name":[0,"莫布"],"img":[0,"/_astro/mauvier.CWF5VUvt.webp"],"initClass":[0,"皇家骑士【骑马】"]}],[0,{"id":[0,"veyle"],"name":[0,"贝珥"],"img":[0,"/_astro/veyle.BnFUUUPK.webp"],"initClass":[0,"邪龙之女（魔+短剑）【龙族】"]}],[0,{"id":[0,"zelestia"],"name":[0,"赛勒斯提雅"],"img":[0,"/_astro/zelestia.mqHLNm-Y.webp"],"initClass":[0,"美露莘（剑+魔）【飞行】"]}],[0,{"id":[0,"gregory"],"name":[0,"孤雷葛里"],"img":[0,"/_astro/gregory.BnO20XRS.webp"],"initClass":[0,"圣者【魔道】"]}],[0,{"id":[0,"madeline"],"name":[0,"玛德琳"],"img":[0,"/_astro/madeline.CsuYdZHV.webp"],"initClass":[0,"将军（斧）【重装】"]}],[0,{"id":[0,"nel"],"name":[0,"爱尔"],"img":[0,"/_astro/nel.DXv5ARLT.webp"],"initClass":[0,"邪龙之女（枪+龙石）【龙族】"]}],[0,{"id":[0,"rafal"],"name":[0,"拉法尔"],"img":[0,"/_astro/rafal.DiaHm7AT.webp"],"initClass":[0,"邪龙之子（斧+龙石）【龙族】"]}]]],"classes":[1,[[0,{"name":[0,"神龙之子（主角琉尔）"],"group":[0,"专属职业"],"img":[0,"/_astro/神龙之子（主角琉尔）.nues5CPm.webp"]}],[0,{"name":[0,"神龙之王"],"group":[0,"专属职业"],"img":[0,"/_astro/神龙之王.CpQq1caG.webp"]}],[0,{"name":[0,"王室贵族（锡莉奴）"],"group":[0,"专属职业"],"img":[0,"/_astro/王室贵族（锡莉奴）.BSyGHz-t.webp"]}],[0,{"name":[0,"弗罗剌祝"],"group":[0,"专属职业"],"img":[0,"/_astro/弗罗剌祝.DyVKyn6D.webp"]}],[0,{"name":[0,"王室贵族（阿尔弗雷德）"],"group":[0,"专属职业"],"img":[0,"/_astro/王室贵族（阿尔弗雷德）.EuKufTCe.webp"]}],[0,{"name":[0,"阿巴尼尔"],"group":[0,"专属职业"],"img":[0,"/_astro/阿巴尼尔.HfLICHNr.webp"]}],[0,{"name":[0,"领主（史塔卢克）"],"group":[0,"专属职业"],"img":[0,"/_astro/领主（史塔卢克）.CSsLAese.webp"]}],[0,{"name":[0,"狙击兵"],"group":[0,"专属职业"],"img":[0,"/_astro/狙击兵.DzaUexDj.webp"]}],[0,{"name":[0,"领主（帝亚曼德）"],"group":[0,"专属职业"],"img":[0,"/_astro/领主（帝亚曼德）.DvocUEzO.webp"]}],[0,{"name":[0,"继承者"],"group":[0,"专属职业"],"img":[0,"/_astro/继承者.D0CPSXyL.webp"]}],[0,{"name":[0,"驯兽师（艾比）"],"group":[0,"专属职业"],"img":[0,"/_astro/驯兽师（艾比）.BttRm3mJ.webp"]}],[0,{"name":[0,"林德普尔姆"],"group":[0,"专属职业"],"img":[0,"/_astro/林德普尔姆.Csydt945.webp"]}],[0,{"name":[0,"驯兽师（奥尔坦希亚）"],"group":[0,"专属职业"],"img":[0,"/_astro/驯兽师（奥尔坦希亚）.CDwbVFpT.webp"]}],[0,{"name":[0,"斯雷普尼尔"],"group":[0,"专属职业"],"img":[0,"/_astro/斯雷普尼尔.CLn55HyN.webp"]}],[0,{"name":[0,"义警队（蜜丝提拉）"],"group":[0,"专属职业"],"img":[0,"/_astro/义警队（蜜丝提拉）.DzZvr12b.webp"]}],[0,{"name":[0,"草叉枪兵"],"group":[0,"专属职业"],"img":[0,"/_astro/草叉枪兵.jvG17CQi.webp"]}],[0,{"name":[0,"义警队（佛贾特）"],"group":[0,"专属职业"],"img":[0,"/_astro/义警队（佛贾特）.B0eiL5-t.webp"]}],[0,{"name":[0,"邱比特"],"group":[0,"专属职业"],"img":[0,"/_astro/邱比特.x1fsHfFY.webp"]}],[0,{"name":[0,"舞蹈家（赛安达斯）"],"group":[0,"专属职业"],"img":[0,"/_astro/舞蹈家（赛安达斯）.CmsBhgtq.webp"]}],[0,{"name":[0,"邪龙之女（贝珥）"],"group":[0,"专属职业"],"img":[0,"/_astro/邪龙之女（贝珥）.DAyuN_Lk.webp"]}],[0,{"name":[0,"邪龙之女（爱尔）"],"group":[0,"专属职业"],"img":[0,"/_astro/邪龙之女（爱尔）.nmxEWWhq.webp"]}],[0,{"name":[0,"邪龙之子（拉法尔）"],"group":[0,"专属职业"],"img":[0,"/_astro/邪龙之子（拉法尔）.DmCsXVMM.webp"]}],[0,{"name":[0,"美露莘（赛勒斯提雅）"],"group":[0,"专属职业"],"img":[0,"/_astro/美露莘（赛勒斯提雅）.DgvCzB6_.webp"]}],[0,{"name":[0,"刀剑战士"],"group":[0,"通用职业"],"img":[0,"/_astro/刀剑战士.Bxm9vuUv.webp"]}],[0,{"name":[0,"刀剑将领"],"group":[0,"通用职业"],"img":[0,"/_astro/刀剑将领.BV98jTrC.webp"]}],[0,{"name":[0,"无畏英雄"],"group":[0,"通用职业"],"img":[0,"/_astro/无畏英雄.Bul4uhRx.webp"]}],[0,{"name":[0,"枪战士"],"group":[0,"通用职业"],"img":[0,"/_astro/枪战士.CbxOVu3-.webp"]}],[0,{"name":[0,"枪斗士"],"group":[0,"通用职业"],"img":[0,"/_astro/枪斗士.BEsonp8B.webp"]}],[0,{"name":[0,"皇家骑士"],"group":[0,"通用职业"],"img":[0,"/_astro/皇家骑士.TtfWSSz7.webp"]}],[0,{"name":[0,"斧战士"],"group":[0,"通用职业"],"img":[0,"/_astro/斧战士.Dyh16FBW.webp"]}],[0,{"name":[0,"狂斗士"],"group":[0,"通用职业"],"img":[0,"/_astro/狂斗士.Dx-AKr9z.webp"]}],[0,{"name":[0,"勇士"],"group":[0,"通用职业"],"img":[0,"/_astro/勇士.BvMUd8ds.webp"]}],[0,{"name":[0,"弓箭手"],"group":[0,"通用职业"],"img":[0,"/_astro/弓箭手.C5DUSn7B.webp"]}],[0,{"name":[0,"狙击手"],"group":[0,"通用职业"],"img":[0,"/_astro/狙击手.vXUXgKAw.webp"]}],[0,{"name":[0,"弓骑士"],"group":[0,"通用职业"],"img":[0,"/_astro/弓骑士.C-NVoUg4.webp"]}],[0,{"name":[0,"重剑兵"],"group":[0,"通用职业"],"img":[0,"/_astro/重剑兵.Co4pniwV.webp"]}],[0,{"name":[0,"重枪兵"],"group":[0,"通用职业"],"img":[0,"/_astro/重枪兵.CvUXmyNW.webp"]}],[0,{"name":[0,"重斧兵"],"group":[0,"通用职业"],"img":[0,"/_astro/重斧兵.Dlr2SVgX.webp"]}],[0,{"name":[0,"将军"],"group":[0,"通用职业"],"img":[0,"/_astro/将军.C9wBE8F3.webp"]}],[0,{"name":[0,"英勇骑士"],"group":[0,"通用职业"],"img":[0,"/_astro/英勇骑士.Bhx73ZMo.webp"]}],[0,{"name":[0,"剑骑士"],"group":[0,"通用职业"],"img":[0,"/_astro/剑骑士.DOmQMsLy.webp"]}],[0,{"name":[0,"枪骑士"],"group":[0,"通用职业"],"img":[0,"/_astro/枪骑士.c1bli2Uu.webp"]}],[0,{"name":[0,"斧骑士"],"group":[0,"通用职业"],"img":[0,"/_astro/斧骑士.W8U4Ie8B.webp"]}],[0,{"name":[0,"圣骑士"],"group":[0,"通用职业"],"img":[0,"/_astro/圣骑士.CU9IyfLT.webp"]}],[0,{"name":[0,"狼骑士"],"group":[0,"通用职业"],"img":[0,"/_astro/狼骑士.CKNe54Pu.webp"]}],[0,{"name":[0,"剑飞马骑士"],"group":[0,"通用职业"],"img":[0,"/_astro/剑飞马骑士.BYRNVysO.webp"]}],[0,{"name":[0,"枪飞马骑士"],"group":[0,"通用职业"],"img":[0,"/_astro/枪飞马骑士.BPPnRwu7.webp"]}],[0,{"name":[0,"斧飞马骑士"],"group":[0,"通用职业"],"img":[0,"/_astro/斧飞马骑士.Cb_SkOFc.webp"]}],[0,{"name":[0,"格里芬骑士"],"group":[0,"通用职业"],"img":[0,"/_astro/格里芬骑士.BHUKNtwr.webp"]}],[0,{"name":[0,"飞龙骑士"],"group":[0,"通用职业"],"img":[0,"/_astro/飞龙骑士.BzWjbnhh.webp"]}],[0,{"name":[0,"魔法师"],"group":[0,"通用职业"],"img":[0,"/_astro/魔法师.DiHQ6FXn.webp"]}],[0,{"name":[0,"圣者"],"group":[0,"通用职业"],"img":[0,"/_astro/圣者.B0p2x5-q.webp"]}],[0,{"name":[0,"魔法师骑士"],"group":[0,"通用职业"],"img":[0,"/_astro/魔法师骑士.DYwW7VjZ.webp"]}],[0,{"name":[0,"僧侣"],"group":[0,"通用职业"],"img":[0,"/_astro/僧侣.yLI9OTew.webp"]}],[0,{"name":[0,"僧侣大师"],"group":[0,"通用职业"],"img":[0,"/_astro/僧侣大师.CiIelAQE.webp"]}],[0,{"name":[0,"主教"],"group":[0,"通用职业"],"img":[0,"/_astro/主教.C40SD0IU.webp"]}],[0,{"name":[0,"小偷"],"group":[0,"通用职业"],"img":[0,"/_astro/小偷.DiEdrzRK.webp"]}],[0,{"name":[0,"附魔师"],"group":[0,"通用职业"],"img":[0,"/_astro/附魔师.C6vUBqtE.webp"]}],[0,{"name":[0,"魔法加农炮兵"],"group":[0,"通用职业"],"img":[0,"/_astro/魔法加农炮兵.D94rKSP3.webp"]}]]],"emblems":[1,[[0,{"name":[0,"马尔斯"],"img":[0,"/_astro/马尔斯.B2SL3fuy.webp"]}],[0,{"name":[0,"赛莉卡"],"img":[0,"/_astro/赛莉卡.Jw-Kv7Nq.webp"]}],[0,{"name":[0,"西格尔特"],"img":[0,"/_astro/西格尔特.Dx6V8xOE.webp"]}],[0,{"name":[0,"里弗"],"img":[0,"/_astro/里弗.DXAPMz1k.webp"]}],[0,{"name":[0,"罗伊"],"img":[0,"/_astro/罗伊.Ox63akQ9.webp"]}],[0,{"name":[0,"琳"],"img":[0,"/_astro/琳.DQMiuETL.webp"]}],[0,{"name":[0,"艾莉可"],"img":[0,"/_astro/艾莉可.DGuU3Twk.webp"]}],[0,{"name":[0,"艾克"],"img":[0,"/_astro/艾克.gVuX0IlM.webp"]}],[0,{"name":[0,"米卡雅"],"img":[0,"/_astro/米卡雅.CESRusiq.webp"]}],[0,{"name":[0,"露琪娜"],"img":[0,"/_astro/露琪娜.CHTpsBNs.webp"]}],[0,{"name":[0,"神威"],"img":[0,"/_astro/神威.tpFAvUuR.webp"]}],[0,{"name":[0,"贝雷特"],"img":[0,"/_astro/贝雷特.BV3zHhC8.webp"]}],[0,{"name":[0,"琉尔"],"img":[0,"/_astro/alear.D0o6GltF.webp"]}],[0,{"name":[0,"艾黛尔贾特/帝弥托利/库罗德"],"img":[0,"/_astro/艾黛尔贾特.BBBHXKNq.webp"]}],[0,{"name":[0,"琪姬"],"img":[0,"/_astro/琪姬.DT-baRyV.webp"]}],[0,{"name":[0,"海克托尔"],"img":[0,"/_astro/海克托尔.CC-WXcdE.webp"]}],[0,{"name":[0,"塞涅里欧"],"img":[0,"/_astro/塞涅里欧.RL0c0Kx2.webp"]}],[0,{"name":[0,"卡美拉"],"img":[0,"/_astro/卡美拉.DCyjfOX9.webp"]}],[0,{"name":[0,"库洛武/鲁弗莱"],"img":[0,"/_astro/库洛武.0TRcJ9my.webp"]}],[0,{"name":[0,"维洛妮卡"],"img":[0,"/_astro/维洛妮卡.JBY0aKSb.webp"]}]]]}'
+          ssr
+          client="only"
+          opts='{"name":"TeamPlanner","value":"react"}'
+        ></astro-island>
+      </main>
+    </div>
+  </body>
+</html>
+"
+`;

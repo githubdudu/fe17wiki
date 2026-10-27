@@ -10,6 +10,7 @@
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro",
+    "pretest": "npm run build",
     "test": "vitest run"
   },
   "dependencies": {
@@ -24,6 +25,8 @@
     "react-dom": "^19.3.0"
   },
   "devDependencies": {
+    "@types/node": "^26.6.5",
+    "prettier": "^3.9.10",
     "vitest": "^4.1.1"
   },
   "allowScripts": {
