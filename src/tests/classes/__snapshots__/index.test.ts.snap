@@ -17,82 +17,8 @@ exports[`built classes page snapshots > matches the full HTML snapshot for the c
       href="https://fonts.googleapis.com/css2?family=Barlow:wght@500;700&display=swap"
     />
     <title>火焰纹章结合 Engage Wiki</title>
+    <link rel="stylesheet" href="/_astro/NavLayout.BZwOrqKx.css" />
     <style>
-      html,
-      body {
-        width: 100%;
-        height: 100%;
-        margin: 0;
-        font-family: system-ui, sans-serif;
-      }
-      .nav-layout[data-astro-cid-entc4gyn] {
-        grid-template-columns: minmax(0, 1fr);
-        grid-template-areas: "menu" "main";
-        display: grid;
-      }
-      .nav-layout[data-astro-cid-entc4gyn] > .menu[data-astro-cid-entc4gyn] {
-        grid-area: menu;
-      }
-      .menu[data-astro-cid-entc4gyn] {
-        background: #262a3f;
-        border-bottom: 4px solid #e0735a;
-        display: flex;
-      }
-      .menu[data-astro-cid-entc4gyn] a[data-astro-cid-entc4gyn] {
-        color: #fff;
-        padding: 0.6rem 1rem;
-        font-weight: 700;
-        text-decoration: none;
-      }
-      .menu[data-astro-cid-entc4gyn] a[data-astro-cid-entc4gyn]:hover {
-        background: #353a57;
-      }
-      .menu[data-astro-cid-entc4gyn]
-        a[data-astro-cid-entc4gyn][aria-current="page"] {
-        background: #e0735a;
-      }
-      .menu[data-astro-cid-entc4gyn] a[data-astro-cid-entc4gyn]:focus-visible {
-        outline-offset: -3px;
-        outline: 3px solid #f4c542;
-      }
-      .nav-layout[data-astro-cid-entc4gyn] > aside[data-astro-cid-entc4gyn] {
-        display: none;
-      }
-      .nav-layout[data-astro-cid-entc4gyn] > main[data-astro-cid-entc4gyn] {
-        box-sizing: border-box;
-        grid-area: main;
-        justify-self: center;
-        width: 100%;
-        max-width: 720px;
-        padding: 0 12px 24px;
-      }
-      @media (width>=960px) {
-        .nav-layout[data-astro-cid-entc4gyn] {
-          grid-template-columns: 240px minmax(0, 720px);
-          grid-template-areas: "menu menu" "aside main";
-          justify-content: center;
-          column-gap: 24px;
-        }
-        .nav-layout[data-astro-cid-entc4gyn] > aside[data-astro-cid-entc4gyn] {
-          grid-area: aside;
-          display: block;
-        }
-        .nav-layout[data-astro-cid-entc4gyn].no-sidebar {
-          grid-template-areas: "menu menu" "main main";
-        }
-        .nav-layout[data-astro-cid-entc4gyn].no-sidebar
-          > main[data-astro-cid-entc4gyn] {
-          max-width: none;
-        }
-      }
-      .nav-layout:has(.widen:checked) > main {
-        max-width: 1320px;
-      }
-      @media (width>=960px) {
-        .nav-layout:has(.widen:checked) {
-          grid-template-columns: 240px minmax(0, 1320px);
-        }
-      }
       .skill[data-astro-cid-bdgybu7g] {
         align-items: flex-start;
         gap: 0.75rem;
