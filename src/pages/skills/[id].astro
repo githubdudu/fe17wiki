@@ -13,45 +13,57 @@ const { skill } = Astro.props;
 const d = skill.data;
 
 // 个人特技：找到拥有它的角色（characters.csv 的「个人特技」列）
-const owner = (await getCollection("characters")).find((c) => c.data["个人特技"] === skill.id);
+const owner = (await getCollection("characters")).find(
+  (c) => c.data["个人特技"] === skill.id,
+);
 
 // 只列出有值的字段；「--」表示不适用
 const FIELDS = ["角色要求", "兵种要求", "纹章士", "牵绊等级", "继承SP", "备注"];
-const fields = FIELDS.filter((k) => d[k] && d[k] !== "--").map((k) => [k, d[k]]);
+const fields = FIELDS.filter((k) => d[k] && d[k] !== "--").map((k) => [
+  k,
+  d[k],
+]);
 ---
 
 <BaseLayout>
   <NavLayout>
     <div slot="sidebar">Sidebar</div>
 
-    <p class="back"><a href="/skills">← 全部特技</a></p>
+    <p class="my-4 text-xs">
+      <a
+        class="text-brand-blue focus-visible:outline-orange focus-visible:outline-offset-4 underline"
+        href="/skills"
+      >
+        ← 全部特技
+      </a>
+    </p>
 
-    <header>
+    <header class="flex items-stretch gap-4">
       <Thumb src={d["图标"]} alt="" size={64} />
-      <div>
-        <p class="type">{d["特技类型"]}</p>
-        <h1>{d["特技名称"]}</h1>
+      <div class="flex flex-col justify-around">
+        <p class="text-brand-gray text-[0.8rem]">{d["特技类型"]}</p>
+        <h1 class="text-2xl font-bold">{d["特技名称"]}</h1>
       </div>
     </header>
 
-    <p class="desc">{d["详细效果说明"]}</p>
+    <p class="desc my-4 px-4 py-4 border-l-4 border-brand-orange text-brand-black bg-brand-bg  ">{d["详细效果说明"]}</p>
 
     {
       d["战斗类型加成"] && (
-        <section>
-          <h2>战斗类型加成</h2>
-          <p class="bonus">{d["战斗类型加成"]}</p>
+        <section class="my-4">
+          <h2 class="mb-1.5 font-bold text-brand-gray text-sm">战斗类型加成</h2>
+          <p class="text-[0.9rem]/[1.7] whitespace-pre-line">{d["战斗类型加成"]}</p>
         </section>
       )
     }
 
     {
       owner && (
-        <section>
-          <h2>拥有此特技的角色</h2>
-          <a class="owner" href={`/characters/${owner.id}`}>
+        <section class="my-4">
+          <h2 class="mb-1.5 font-bold text-brand-gray text-sm">拥有此特技的角色</h2>
+          <a class="owner flex items-center gap-2 font-bold" href={`/characters/${owner.id}`}>
             <Thumb src={owner.data["头像"]} alt="" size={40} />
-            <span>{owner.data["角色名称_简中"]}</span>
+            <span class="hover:underline">{owner.data["角色名称_简中"]}</span>
           </a>
         </section>
       )
@@ -59,11 +71,11 @@ const fields = FIELDS.filter((k) => d[k] && d[k] !== "--").map((k) => [k, d[k]])
 
     {
       fields.length > 0 && (
-        <dl>
+        <dl class="my-4">
           {fields.map(([k, v]) => (
-            <div>
-              <dt>{k}</dt>
-              <dd>{v}</dd>
+            <div class="grid grid-cols-[6rem_minmax(0,1fr)] gap-3 border border-brand-border py-2 px-3">
+              <dt class="text-brand-gray text-[0.8rem]">{k}</dt>
+              <dd class="text-[0.9rem] whitespace-pre-line">{v}</dd>
             </div>
           ))}
         </dl>
@@ -71,94 +83,3 @@ const fields = FIELDS.filter((k) => d[k] && d[k] !== "--").map((k) => [k, d[k]])
     }
   </NavLayout>
 </BaseLayout>
-
-<style>
-  p {
-    margin: 0;
-  }
-  a {
-    color: #2a64b8;
-  }
-  a:focus-visible {
-    outline: 3px solid #f4c542;
-    outline-offset: 2px;
-  }
-  .back {
-    margin: 1rem 0;
-    font-size: 0.8rem;
-  }
-  .back a {
-    text-decoration: none;
-  }
-
-  header {
-    display: flex;
-    align-items: center;
-    gap: 0.9rem;
-  }
-  .type {
-    color: #5d6478;
-    font-size: 0.8rem;
-  }
-  h1 {
-    margin: 0;
-    font-size: 1.5rem;
-  }
-
-  .desc {
-    margin: 1rem 0;
-    padding: 0.75rem 1rem;
-    border-left: 4px solid #f4c542;
-    background: #fbf8ee;
-    color: #22263a;
-    line-height: 1.7;
-  }
-
-  section {
-    margin: 1rem 0;
-  }
-  h2 {
-    margin: 0 0 0.4rem;
-    color: #5d6478;
-    font-size: 0.85rem;
-  }
-  /* 原文用换行分隔不同战斗类型 */
-  .bonus {
-    font-size: 0.9rem;
-    line-height: 1.7;
-    white-space: pre-line;
-  }
-  .owner {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    font-weight: 700;
-    text-decoration: none;
-  }
-  .owner:hover span {
-    text-decoration: underline;
-  }
-
-  dl {
-    margin: 1rem 0 0;
-    border: 1px solid #d4dde2;
-  }
-  dl div {
-    display: grid;
-    grid-template-columns: 6rem minmax(0, 1fr);
-    gap: 0.75rem;
-    padding: 0.5rem 0.75rem;
-  }
-  dl div + div {
-    border-top: 1px solid #d4dde2;
-  }
-  dt {
-    color: #5d6478;
-    font-size: 0.8rem;
-  }
-  dd {
-    margin: 0;
-    font-size: 0.9rem;
-    white-space: pre-line;
-  }
-</style>

@@ -1,1 +1,10 @@
 @import "tailwindcss";
+
+@theme {
+  --color-brand-blue: #2a64b8;
+  --color-brand-orange: #f4c542;
+  --color-brand-gray: #5d6478;
+  --color-brand-black: #22263a;
+  --color-brand-bg: #fbf8ee;
+  --color-brand-border: #d4dde2
+}
