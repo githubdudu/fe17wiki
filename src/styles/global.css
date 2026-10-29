@@ -19,11 +19,11 @@
   --text-sm: 0.8125rem; /* 13px */
   --text-sm--line-height: calc(1.25 / 0.8125); /* Same */
 
-  /* for h4, or paragraph text or most of the common content */
+  /* for h3 or h4, or paragraph text or most of the common content */
   --text-base: 0.875rem; /* 14px */
   --text-base--line-height: calc(1.25 / 0.875);
 
-  /* for h3 of the page */
+  /* for h2, or h3 of the page */
   --text-lg: 0.9375rem; /* 15px */
   --text-lg--line-height: calc(1.25 / 0.9375);
 

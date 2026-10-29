@@ -15,59 +15,18 @@ const { skill, compact = false } = Astro.props;
 const d = skill.data;
 ---
 
-<div class:list={["skill", { compact }]}>
+<div class=`flex items-start ${compact ? "gap-2" : "gap-3"}`>
   <Thumb src={d["图标"]} alt="" size={compact ? 24 : 40} />
-  <div class="body">
-    <p class="name"><a href={`/skills/${skill.id}`}>{d["特技名称"]}</a></p>
-    <p class="desc">{d["详细效果说明"]}</p>
+  <div class="flex-1 min-w-0">
+    <p class=`name ${compact ? "text-sm" : "text-base"} font-bold`>
+      <a
+        class="text-brand-blue hover:underline focus-visible:outline-brand-orange focus-visible:outline-3 focus-visible:outline-offset-2 no-underline"
+        href={`/skills/${skill.id}`}>{d["特技名称"]}</a
+      >
+    </p>
+    <p class=`text-brand-gray ${compact ? "text-xs" : "text-sm"}`>
+      {d["详细效果说明"]}
+    </p>
   </div>
   <slot />
 </div>
-
-<style>
-  .skill {
-    display: flex;
-    align-items: flex-start;
-    gap: 0.75rem;
-  }
-  .compact {
-    gap: 0.5rem;
-  }
-  /* 说明占满中间，插槽内容靠右 */
-  .body {
-    flex: 1;
-    min-width: 0;
-  }
-  p {
-    margin: 0;
-  }
-  .name {
-    font-size: 0.9rem;
-    font-weight: 700;
-  }
-  .name a {
-    color: #2a64b8;
-    text-decoration: none;
-  }
-  .name a:hover {
-    text-decoration: underline;
-  }
-  .name a:focus-visible {
-    outline: 3px solid #f4c542;
-    outline-offset: 2px;
-  }
-  .desc {
-    margin-top: 0.1rem;
-    color: #22263a;
-    font-size: 0.8rem;
-    line-height: 1.5;
-  }
-  /* 表格格子里：和同一行其他列统一的两级文字（主文字 0.8rem 粗体 + 10px 灰色说明） */
-  .compact .name {
-    font-size: 0.8rem;
-  }
-  .compact .desc {
-    color: #5d6478;
-    font-size: 10px;
-  }
-</style>
