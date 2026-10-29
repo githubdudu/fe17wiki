@@ -18,18 +18,25 @@ const owner = (await getCollection("characters")).find(
 );
 
 // 只列出有值的字段；「--」表示不适用
-const FIELDS = ["角色要求", "兵种要求", "纹章士", "牵绊等级", "继承SP", "备注"];
-const fields = FIELDS.filter((k) => d[k] && d[k] !== "--").map((k) => [
-  k,
-  d[k],
-]);
+const FIELDS = [
+  "特技名称",
+  "特技类型",
+  "详细效果说明",
+  "角色要求",
+  "兵种要求",
+  "纹章士",
+  "牵绊等级",
+  "继承SP",
+  "备注",
+];
+const fields = FIELDS.map((k) => [k, d[k] || "--"]);
 ---
 
 <BaseLayout>
   <NavLayout>
     <div slot="sidebar">Sidebar</div>
 
-    <p class="my-4 text-xs">
+    <p class="my-4 text-sm">
       <a
         class="text-brand-blue focus-visible:outline-brand-orange focus-visible:outline-offset-4 underline"
         href="/skills"
@@ -41,27 +48,38 @@ const fields = FIELDS.filter((k) => d[k] && d[k] !== "--").map((k) => [
     <header class="flex items-stretch gap-4">
       <Thumb src={d["图标"]} alt="" size={64} />
       <div class="flex flex-col justify-around">
-        <p class="text-brand-gray text-[0.8rem]">{d["特技类型"]}</p>
+        <p class="text-brand-gray text-sm">{d["特技类型"]}</p>
         <h1 class="text-2xl font-bold">{d["特技名称"]}</h1>
       </div>
     </header>
 
-    <p class="desc my-4 px-4 py-4 border-l-4 border-brand-orange text-brand-black bg-brand-bg  ">{d["详细效果说明"]}</p>
+    <p
+      class="desc my-4 px-4 py-4 border-l-4 border-brand-orange text-brand-black bg-brand-bg text-xl"
+    >
+      {d["详细效果说明"]}
+    </p>
 
     {
       d["战斗类型加成"] && (
         <section class="my-4">
-          <h2 class="mb-1.5 font-bold text-brand-gray text-sm">战斗类型加成</h2>
-          <p class="text-[0.9rem]/[1.7] whitespace-pre-line">{d["战斗类型加成"]}</p>
+          <h2 class="mb-1.5 font-bold text-brand-gray text-lg">战斗类型加成</h2>
+          <p class="text-base whitespace-pre-line">
+            {d["战斗类型加成"]}
+          </p>
         </section>
       )
     }
 
     {
       owner && (
-        <section class="my-4">
-          <h2 class="mb-1.5 font-bold text-brand-gray text-sm">拥有此特技的角色</h2>
-          <a class="owner inline-flex items-center gap-2 font-bold text-brand-blue focus-visible:outline-brand-orange focus-visible:outline-offset-4" href={`/characters/${owner.id}`}>
+        <section class="my-4 ">
+          <h2 class="mb-1.5 font-bold text-brand-gray text-lg">
+            拥有此特技的角色
+          </h2>
+          <a
+            class="owner inline-flex items-center gap-2 font-bold text-brand-blue text-base focus-visible:outline-brand-orange focus-visible:outline-offset-4"
+            href={`/characters/${owner.id}`}
+          >
             <Thumb src={owner.data["头像"]} alt="" size={40} />
             <span class="hover:underline">{owner.data["角色名称_简中"]}</span>
           </a>
@@ -71,14 +89,17 @@ const fields = FIELDS.filter((k) => d[k] && d[k] !== "--").map((k) => [
 
     {
       fields.length > 0 && (
-        <dl class="my-4">
-          {fields.map(([k, v]) => (
-            <div class="grid grid-cols-[6rem_minmax(0,1fr)] gap-3 border border-brand-border py-2 px-3">
-              <dt class="text-brand-gray text-[0.8rem]">{k}</dt>
-              <dd class="text-[0.9rem] whitespace-pre-line">{v}</dd>
-            </div>
-          ))}
-        </dl>
+        <section class="my-4">
+          <h2 class="mb-1.5 font-bold text-brand-gray text-lg">特技信息</h2>
+          <dl class="my-4">
+            {fields.map(([k, v]) => (
+              <div class="grid grid-cols-[6rem_minmax(0,1fr)] gap-3 border border-brand-border py-2 px-3">
+                <dt class="text-brand-gray text-sm">{k}</dt>
+                <dd class="text-sm whitespace-pre-line">{v}</dd>
+              </div>
+            ))}
+          </dl>
+        </section>
       )
     }
   </NavLayout>
