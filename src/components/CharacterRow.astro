@@ -29,7 +29,17 @@ const d = character.data;
       <div>
         <p class="name">
           <a href={`/characters/${character.id}`}>{d["角色名称_简中"]}</a>
-          {d["评级"] && <span class="tier" data-tier={d["评级"]} title={`评级 ${d["评级"]}`}>{d["评级"]}</span>}
+          {
+            d["评级"] && (
+              <span
+                class="tier"
+                data-tier={d["评级"]}
+                title={`评级 ${d["评级"]}`}
+              >
+                {d["评级"]}
+              </span>
+            )
+          }
         </p>
         <p class="sub">{d["初始职业"]}</p>
       </div>
@@ -42,7 +52,9 @@ const d = character.data;
   <td class="col skill-col" tabindex="-1" title="个人特技">
     <SkillSummary skill={skill} compact />
   </td>
-  <td class="col weapons-col" tabindex="-1" title="初始武器资质"><WeaponIcons list={d["初始武器资质"]} /></td>
+  <td class="col weapons-col" tabindex="-1" title="初始武器资质"
+    ><WeaponIcons list={d["初始武器资质"]} /></td
+  >
   {
     growth.map((g, i) => (
       <td
@@ -50,7 +62,10 @@ const d = character.data;
         tabindex="-1"
         title={`个人成长率·${g.stat}：${g.value}%${g.rank ? `（第 ${g.rank} 名）` : ""}`}
       >
-        <span class="chip" data-rank={g.rank}>{g.value}<small class="pct">%</small></span>
+        <span class="chip" data-rank={g.rank}>
+          {g.value}
+          <small class="pct">%</small>
+        </span>
       </td>
     ))
   }
@@ -60,13 +75,17 @@ const d = character.data;
         class={`col base-col stat b${i}`}
         tabindex="-1"
         title={
-          i === 0 ? `初始等级：Lv ${b.value}`
-          : i === 1 ? `内置等级：${Number.isNaN(Number(b.value)) ? "无" : `Lv ${b.value}`}`
-          : `初始能力值·${b.stat}：${b.value}`
+          i === 0
+            ? `初始等级：Lv ${b.value}`
+            : i === 1
+              ? `内置等级：${Number.isNaN(Number(b.value)) ? "无" : `Lv ${b.value}`}`
+              : `初始能力值·${b.stat}：${b.value}`
         }
       >
         <span class="chip">
-          {i < 2 && !Number.isNaN(Number(b.value)) && <small class="lv">Lv</small>}
+          {i < 2 && !Number.isNaN(Number(b.value)) && (
+            <small class="lv">Lv</small>
+          )}
           {b.value}
         </span>
       </td>
@@ -129,11 +148,21 @@ const d = character.data;
     font-size: 0.85rem;
     font-weight: 700;
   }
-  .tier[data-tier="S"] { color: #a8431f; }
-  .tier[data-tier="A"] { color: #a3304e; }
-  .tier[data-tier="B"] { color: #57459a; }
-  .tier[data-tier="C"] { color: #2c6e48; }
-  .tier[data-tier="D"] { color: #35628f; }
+  .tier[data-tier="S"] {
+    color: #a8431f;
+  }
+  .tier[data-tier="A"] {
+    color: #a3304e;
+  }
+  .tier[data-tier="B"] {
+    color: #57459a;
+  }
+  .tier[data-tier="C"] {
+    color: #2c6e48;
+  }
+  .tier[data-tier="D"] {
+    color: #35628f;
+  }
 
   /* 成长率、初始能力值的数值：默认无底色、灰色常规字 */
   .chip {
@@ -155,9 +184,15 @@ const d = character.data;
     color: #22263a;
     font-weight: 700;
   }
-  .growth-col .chip[data-rank="1"] { background: #c98a00; }
-  .growth-col .chip[data-rank="2"] { background: #f4c542; }
-  .growth-col .chip[data-rank="3"] { background: #fbe9b0; }
+  .growth-col .chip[data-rank="1"] {
+    background: #c98a00;
+  }
+  .growth-col .chip[data-rank="2"] {
+    background: #f4c542;
+  }
+  .growth-col .chip[data-rank="3"] {
+    background: #fbe9b0;
+  }
   /* 初始等级、内置等级：数字大一号 */
   /* 初始等级、内置等级是「等级」不是能力值：数字前加小号 Lv，数字略大、深色（区分主要靠底色带和分隔线） */
   /* 数字旁的小号单位：等级前的 Lv、成长率后的 %（% 颜色跟随色块文字色） */

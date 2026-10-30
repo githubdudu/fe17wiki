@@ -11,7 +11,12 @@ interface Props {
 const { id, label } = Astro.props;
 ---
 
-<button class="info" type="button" popovertarget={id} aria-label={`${label}：说明`}>i</button>
+<button
+  class="info"
+  type="button"
+  popovertarget={id}
+  aria-label={`${label}：说明`}>i</button
+>
 <div class="tip" id={id} popover>
   <p class="title">{label}</p>
   <div class="body"><slot /></div>

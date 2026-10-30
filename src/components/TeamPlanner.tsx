@@ -10,8 +10,23 @@
  * rules.ts（数据和拖放规则）、dnd.tsx（dnd-kit 接线）、storage.ts（保存 / 分享链接）、exportImage.ts（导出图片）。
  */
 import { useEffect, useRef, useState, type ReactNode } from "react";
-import { DndContext, DragOverlay, MouseSensor, TouchSensor, useSensor, useSensors } from "@dnd-kit/core";
-import { EMPTY, accepts, drop, type Drag, type Row, type Tab, type Target } from "./team/rules";
+import {
+  DndContext,
+  DragOverlay,
+  MouseSensor,
+  TouchSensor,
+  useSensor,
+  useSensors,
+} from "@dnd-kit/core";
+import {
+  EMPTY,
+  accepts,
+  drop,
+  type Drag,
+  type Row,
+  type Tab,
+  type Target,
+} from "./team/rules";
 import { Draggable, Ghost, Zone, collision, zoneId } from "./team/dnd";
 import { load, loadLink, save, shareLink } from "./team/storage";
 import { renderImage } from "./team/exportImage";
@@ -28,7 +43,18 @@ const TABS: [Tab, string][] = [
 ];
 
 function Avatar({ src, size }: { src?: string; size: number }) {
-  return src && <img className="avatar" src={src} alt="" width={size} height={size} draggable={false} />;
+  return (
+    src && (
+      <img
+        className="avatar"
+        src={src}
+        alt=""
+        width={size}
+        height={size}
+        draggable={false}
+      />
+    )
+  );
 }
 
 export default function TeamPlanner({
@@ -46,18 +72,28 @@ export default function TeamPlanner({
   const [rows, setRows] = useState<Row[]>(() => load(new Set(byId.keys())));
   const [tab, setTab] = useState<Tab>("character");
   // 拖动中：拖的是什么、指针在哪个目标上；拖整行时另记各列宽度，残影按原宽度排
-  const [dnd, setDnd] = useState<{ drag: Drag; over: string; widths?: number[] } | null>(null);
+  const [dnd, setDnd] = useState<{
+    drag: Drag;
+    over: string;
+    widths?: number[];
+  } | null>(null);
   const [msg, setMsg] = useState("");
   const tableRef = useRef<HTMLTableElement>(null);
   // 鼠标移动 5px 才算拖（点击照常）；触屏长按 200ms 才拖（不影响滑动页面）
   const sensors = useSensors(
     useSensor(MouseSensor, { activationConstraint: { distance: 5 } }),
-    useSensor(TouchSensor, { activationConstraint: { delay: 200, tolerance: 5 } }),
+    useSensor(TouchSensor, {
+      activationConstraint: { delay: 200, tolerance: 5 },
+    }),
   );
 
   useEffect(() => save(rows), [rows]);
   // 分享链接里的序号按 CSV 行序对应到 id / 名字
-  const dict = { chars: characters.map((c) => c.id), classes: classes.map((c) => c.name), emblems: emblems.map((e) => e.name) };
+  const dict = {
+    chars: characters.map((c) => c.id),
+    classes: classes.map((c) => c.name),
+    emblems: emblems.map((e) => e.name),
+  };
   // 打开的是分享链接：解压是异步的，先显示本地保存，读完再换成链接里的队伍
   useEffect(() => {
     loadLink(dict).then((r) => r && setRows(r));
@@ -65,11 +101,17 @@ export default function TeamPlanner({
 
   const inTeam = new Set(rows.map((r) => r.id));
   const usedEmblems = new Set(rows.flatMap((r) => r.emblems));
-  const usedEngraves = new Set(rows.flatMap((r) => r.weapons.map((w) => w.engrave)));
+  const usedEngraves = new Set(
+    rows.flatMap((r) => r.weapons.map((w) => w.engrave)),
+  );
 
   /** 高亮提示：能放 = can-drop，指针所在 = over。 */
   const hint = (t: Target) =>
-    dnd && accepts(dnd.drag, t) ? (dnd.over === zoneId(t) ? " can-drop over" : " can-drop") : "";
+    dnd && accepts(dnd.drag, t)
+      ? dnd.over === zoneId(t)
+        ? " can-drop over"
+        : " can-drop"
+      : "";
   /** 表头提示：正在拖的东西放进这一列。 */
   const head = (cell: Tab) => (dnd?.drag.kind === cell ? "can-drop" : "");
 
@@ -99,7 +141,9 @@ export default function TeamPlanner({
   const copyImage = async () => {
     try {
       // Safari 要求在点击时同步创建 ClipboardItem，所以传 Promise 而不是先 await 出 Blob
-      await navigator.clipboard.write([new ClipboardItem({ "image/png": fetch(image).then((r) => r.blob()) })]);
+      await navigator.clipboard.write([
+        new ClipboardItem({ "image/png": fetch(image).then((r) => r.blob()) }),
+      ]);
       setCopyMsg("已复制到剪贴板");
     } catch {
       setCopyMsg("复制失败，请用下载");
@@ -123,7 +167,11 @@ export default function TeamPlanner({
     );
 
   const newWeapon = (
-    <Draggable key="tbd" d={{ kind: "weapon", value: "" }} className="chip tbd k-weapon">
+    <Draggable
+      key="tbd"
+      d={{ kind: "weapon", value: "" }}
+      className="chip tbd k-weapon"
+    >
       武器（待定）
     </Draggable>
   );
@@ -131,14 +179,21 @@ export default function TeamPlanner({
   const pool: Record<Tab, ReactNode> = {
     character: group(
       "",
-      characters.filter((c) => !inTeam.has(c.id)).map((c) => chip({ kind: "character", value: c.id }, c.img)),
+      characters
+        .filter((c) => !inTeam.has(c.id))
+        .map((c) => chip({ kind: "character", value: c.id }, c.img)),
     ),
     class: [...Map.groupBy(classes, (c) => c.group ?? "")].map(([g, list]) =>
-      group(g, list.map((c) => chip({ kind: "class", value: c.name }, c.img))),
+      group(
+        g,
+        list.map((c) => chip({ kind: "class", value: c.name }, c.img)),
+      ),
     ),
     emblem: group(
       "",
-      emblems.filter((e) => !usedEmblems.has(e.name)).map((e) => chip({ kind: "emblem", value: e.name }, e.img)),
+      emblems
+        .filter((e) => !usedEmblems.has(e.name))
+        .map((e) => chip({ kind: "emblem", value: e.name }, e.img)),
     ),
     weapon: group("", [newWeapon]),
     engrave: group(
@@ -152,11 +207,18 @@ export default function TeamPlanner({
   const weaponSlot = (w: Row["weapons"][number], i: number, k: number) => {
     const slot: Target = { row: i, cell: "engrave", slot: k };
     return (
-      <Draggable key={k} d={{ kind: "weapon", value: w.engrave, row: i, slot: k }} className="slot">
+      <Draggable
+        key={k}
+        d={{ kind: "weapon", value: w.engrave, row: i, slot: k }}
+        className="slot"
+      >
         <Zone as="span" t={slot} className={`slot-in k-weapon${hint(slot)}`}>
           武器（待定）
           {w.engrave ? (
-            chip({ kind: "engrave", value: w.engrave, row: i, slot: k }, emblemImg.get(w.engrave))
+            chip(
+              { kind: "engrave", value: w.engrave, row: i, slot: k },
+              emblemImg.get(w.engrave),
+            )
           ) : (
             <span className="hint">无刻印</span>
           )}
@@ -169,7 +231,8 @@ export default function TeamPlanner({
     const c = byId.get(r.id); // 空行没有角色
     const name = c?.name ?? "空行";
     const t: Target = { row: i };
-    const moving = dnd?.drag.kind === "row" && dnd.drag.row === i ? " dragging" : "";
+    const moving =
+      dnd?.drag.kind === "row" && dnd.drag.row === i ? " dragging" : "";
     /** 一列的格子，也是这一列的放置目标。 */
     const cell = (kind: Tab, children: ReactNode) => {
       const ct: Target = { row: i, cell: kind };
@@ -182,9 +245,17 @@ export default function TeamPlanner({
     return (
       <Zone key={i} as="tr" t={t} className={hint(t) + moving}>
         <td className="grip-cell no-export">
-          <Draggable d={{ kind: "row", value: r.id, row: i }} className="grip" label={`拖动整行（${name}）`}>
+          <Draggable
+            d={{ kind: "row", value: r.id, row: i }}
+            className="grip"
+            label={`拖动整行（${name}）`}
+          >
             <svg width="10" height="16" viewBox="0 0 10 16" aria-hidden="true">
-              {[2, 8].flatMap((x) => [3, 8, 13].map((y) => <circle key={`${x}${y}`} cx={x} cy={y} r="1.5" />))}
+              {[2, 8].flatMap((x) =>
+                [3, 8, 13].map((y) => (
+                  <circle key={`${x}${y}`} cx={x} cy={y} r="1.5" />
+                )),
+              )}
             </svg>
           </Draggable>
         </td>
@@ -195,21 +266,45 @@ export default function TeamPlanner({
             value={r.role}
             placeholder="输入定位"
             aria-label={`${name}的定位`}
-            onChange={(e) => setRows(rows.with(i, { ...r, role: e.target.value }))}
+            onChange={(e) =>
+              setRows(rows.with(i, { ...r, role: e.target.value }))
+            }
           />
         </td>
         {cell(
           "character",
-          c ? chip({ kind: "character", value: r.id, row: i }, c.img) : <span className="hint">拖入角色</span>,
+          c ? (
+            chip({ kind: "character", value: r.id, row: i }, c.img)
+          ) : (
+            <span className="hint">拖入角色</span>
+          ),
         )}
         {cell(
           "class",
-          r.cls ? chip({ kind: "class", value: r.cls, row: i }, classImg.get(r.cls)) : c && <span className="hint">初始：{c.initClass}</span>,
+          r.cls
+            ? chip({ kind: "class", value: r.cls, row: i }, classImg.get(r.cls))
+            : c && <span className="hint">初始：{c.initClass}</span>,
         )}
-        {cell("emblem", <div className="cell">{r.emblems.map((e) => chip({ kind: "emblem", value: e, row: i }, emblemImg.get(e)))}</div>)}
-        {cell("weapon", <div className="cell one-line">{r.weapons.map((w, k) => weaponSlot(w, i, k))}</div>)}
+        {cell(
+          "emblem",
+          <div className="cell">
+            {r.emblems.map((e) =>
+              chip({ kind: "emblem", value: e, row: i }, emblemImg.get(e)),
+            )}
+          </div>,
+        )}
+        {cell(
+          "weapon",
+          <div className="cell one-line">
+            {r.weapons.map((w, k) => weaponSlot(w, i, k))}
+          </div>,
+        )}
         <td className="no-export">
-          <button className="x" aria-label={`删除${name}这一行`} onClick={() => setRows(rows.toSpliced(i, 1))}>
+          <button
+            className="x"
+            aria-label={`删除${name}这一行`}
+            onClick={() => setRows(rows.toSpliced(i, 1))}
+          >
             ×
           </button>
         </td>
@@ -222,7 +317,10 @@ export default function TeamPlanner({
     if (d.kind === "row") {
       const widths = dnd?.widths ?? [];
       return (
-        <table className="team ghost" style={{ width: widths.reduce((a, b) => a + b, 0) }}>
+        <table
+          className="team ghost"
+          style={{ width: widths.reduce((a, b) => a + b, 0) }}
+        >
           <colgroup>
             {widths.map((w, k) => (
               <col key={k} style={{ width: w }} />
@@ -232,9 +330,15 @@ export default function TeamPlanner({
         </table>
       );
     }
-    if (d.kind === "weapon" && d.row !== undefined) return weaponSlot(rows[d.row].weapons[d.slot!], d.row, d.slot!);
+    if (d.kind === "weapon" && d.row !== undefined)
+      return weaponSlot(rows[d.row].weapons[d.slot!], d.row, d.slot!);
     if (d.kind === "weapon") return newWeapon;
-    const img = { character: byId.get(d.value)?.img, class: classImg.get(d.value), emblem: emblemImg.get(d.value), engrave: emblemImg.get(d.value) }[d.kind];
+    const img = {
+      character: byId.get(d.value)?.img,
+      class: classImg.get(d.value),
+      emblem: emblemImg.get(d.value),
+      engrave: emblemImg.get(d.value),
+    }[d.kind];
     return chip(d, img);
   };
 
@@ -244,12 +348,24 @@ export default function TeamPlanner({
       collisionDetection={collision}
       onDragStart={({ active }) => {
         const drag = active.data.current as Drag;
-        const tr = drag.kind === "row" ? tableRef.current?.tBodies[0].rows[drag.row!] : undefined;
-        setDnd({ drag, over: "", widths: tr && [...tr.cells].map((td) => td.offsetWidth) });
+        const tr =
+          drag.kind === "row"
+            ? tableRef.current?.tBodies[0].rows[drag.row!]
+            : undefined;
+        setDnd({
+          drag,
+          over: "",
+          widths: tr && [...tr.cells].map((td) => td.offsetWidth),
+        });
       }}
-      onDragOver={({ over }) => setDnd((s) => s && { ...s, over: String(over?.id ?? "") })}
+      onDragOver={({ over }) =>
+        setDnd((s) => s && { ...s, over: String(over?.id ?? "") })
+      }
       onDragEnd={({ active, over }) => {
-        if (over) setRows((rows) => drop(rows, active.data.current as Drag, over.data.current!.target));
+        if (over)
+          setRows((rows) =>
+            drop(rows, active.data.current as Drag, over.data.current!.target),
+          );
         setDnd(null);
       }}
       onDragCancel={() => setDnd(null)}
@@ -258,10 +374,21 @@ export default function TeamPlanner({
         <div className="top">
           <h1>阵容搭配</h1>
           <div className="actions">
-            <button onClick={share} disabled={!rows.length}>复制分享链接</button>
-            <button onClick={openPreview} disabled={!rows.length}>导出图片</button>
-            <button onClick={() => confirm("清空队伍？") && setRows([])} disabled={!rows.length}>清空</button>
-            <span className="msg" role="status">{msg}</span>
+            <button onClick={share} disabled={!rows.length}>
+              复制分享链接
+            </button>
+            <button onClick={openPreview} disabled={!rows.length}>
+              导出图片
+            </button>
+            <button
+              onClick={() => confirm("清空队伍？") && setRows([])}
+              disabled={!rows.length}
+            >
+              清空
+            </button>
+            <span className="msg" role="status">
+              {msg}
+            </span>
           </div>
         </div>
 
@@ -282,14 +409,24 @@ export default function TeamPlanner({
             <tbody>{rows.map(teamRow)}</tbody>
           </table>
         </div>
-        <button className="add-row" aria-label="加一行" onClick={() => setRows([...rows, EMPTY])}>
+        <button
+          className="add-row"
+          aria-label="加一行"
+          onClick={() => setRows([...rows, EMPTY])}
+        >
           ＋
         </button>
 
         <Zone as="div" t="pool" className={`pool${hint("pool")}`}>
           <div className="tabs" role="tablist">
             {TABS.map(([k, label]) => (
-              <button key={k} role="tab" className={`k-${k}`} aria-selected={tab === k} onClick={() => setTab(k)}>
+              <button
+                key={k}
+                role="tab"
+                className={`k-${k}`}
+                aria-selected={tab === k}
+                onClick={() => setTab(k)}
+              >
                 {label}
               </button>
             ))}
@@ -302,7 +439,9 @@ export default function TeamPlanner({
 
         {/* 放下后被拖的元素常会消失（离开标签页 / 换到别处），不做回弹动画 */}
         <DragOverlay dropAnimation={null}>
-          {dnd && <Ghost.Provider value={true}>{ghost(dnd.drag)}</Ghost.Provider>}
+          {dnd && (
+            <Ghost.Provider value={true}>{ghost(dnd.drag)}</Ghost.Provider>
+          )}
         </DragOverlay>
 
         {/* 导出预览；点遮罩或按 Esc 关闭 */}
@@ -310,12 +449,18 @@ export default function TeamPlanner({
           ref={previewRef}
           className="preview"
           aria-label="导出图片"
-          onClick={(e) => e.target === e.currentTarget && e.currentTarget.close()}
+          onClick={(e) =>
+            e.target === e.currentTarget && e.currentTarget.close()
+          }
         >
           <img src={image} alt="火焰文章结合阵容搭配图片预览" />
           <div className="actions preview-actions">
-            <span className="msg" role="status">{copyMsg}</span>
-            <a href={image} download="火焰文章结合阵容搭配.png">下载</a>
+            <span className="msg" role="status">
+              {copyMsg}
+            </span>
+            <a href={image} download="火焰文章结合阵容搭配.png">
+              下载
+            </a>
             <button onClick={copyImage}>复制到剪贴板</button>
             <button onClick={() => previewRef.current!.close()}>关闭</button>
           </div>

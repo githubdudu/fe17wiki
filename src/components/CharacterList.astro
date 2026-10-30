@@ -39,7 +39,10 @@ const baseOf = (c: CollectionEntry<"characters">) =>
 const skills = new Map((await getCollection("skills")).map((s) => [s.id, s]));
 const skillOf = (c: CollectionEntry<"characters">) => {
   const skill = skills.get(c.data["个人特技"]);
-  if (!skill) throw new Error(`skills.csv 里找不到 ${c.id} 的个人特技「${c.data["个人特技"]}」`);
+  if (!skill)
+    throw new Error(
+      `skills.csv 里找不到 ${c.id} 的个人特技「${c.data["个人特技"]}」`,
+    );
   return skill;
 };
 
@@ -50,12 +53,22 @@ const sorted = [...characters].sort((a, b) => a.data.order - b.data.order);
   <div class="toolbar">
     <fieldset class="cols">
       <legend>显示列</legend>
-      <input type="checkbox" id="col-join" checked /><label for="col-join">加入时间和条件</label>
-      <input type="checkbox" id="col-skill" checked /><label for="col-skill">个人特技</label>
-      <input type="checkbox" id="col-weapons" checked /><label for="col-weapons">初始武器资质</label>
+      <input type="checkbox" id="col-join" checked /><label for="col-join"
+        >加入时间和条件</label
+      >
+      <input type="checkbox" id="col-skill" checked /><label for="col-skill"
+        >个人特技</label
+      >
+      <input type="checkbox" id="col-weapons" checked /><label for="col-weapons"
+        >初始武器资质</label
+      >
       <!-- .widen：勾选成长率或初始能力值时 NavLayout 把主内容加宽 -->
-      <input type="checkbox" id="col-growth" class="widen" checked /><label for="col-growth">个人成长率</label>
-      <input type="checkbox" id="col-base" class="widen" checked /><label for="col-base">初始能力值</label>
+      <input type="checkbox" id="col-growth" class="widen" checked /><label
+        for="col-growth">个人成长率</label
+      >
+      <input type="checkbox" id="col-base" class="widen" checked /><label
+        for="col-base">初始能力值</label
+      >
     </fieldset>
   </div>
 
@@ -67,7 +80,9 @@ const sorted = [...characters].sort((a, b) => a.data.order - b.data.order);
             角色
             <InfoTip id="info-who" label="角色">
               <p>头像、名字和初始职业，【】里是兵种。点击名字进入角色页面。</p>
-              <p>名字后的字母是评级，S 最高、D 最低；邪龙之章 DLC 角色暂无评级。</p>
+              <p>
+                名字后的字母是评级，S 最高、D 最低；邪龙之章 DLC 角色暂无评级。
+              </p>
               <p>评级仅供参考。实际强弱还取决于难度、职业路线和纹章士搭配。</p>
             </InfoTip>
           </th>
@@ -87,17 +102,35 @@ const sorted = [...characters].sort((a, b) => a.data.order - b.data.order);
           <th scope="col" rowspan="2" class="col weapons-col">
             初始武器资质
             <InfoTip id="info-weapons" label="初始武器资质">
-              <p>角色天生拥有的武器资质。在使用这类武器的职业中，天生资质可以提高该武器的熟练度上限。</p>
-              <p>转职时，角色必须拥有新职业所用全部武器的资质。天生资质以外的资质，可以通过提升与纹章士的羁绊等级获得。</p>
+              <p>
+                角色天生拥有的武器资质。在使用这类武器的职业中，天生资质可以提高该武器的熟练度上限。
+              </p>
+              <p>
+                转职时，角色必须拥有新职业所用全部武器的资质。天生资质以外的资质，可以通过提升与纹章士的羁绊等级获得。
+              </p>
               <p>鼠标悬停在图标上可以看到武器名。</p>
             </InfoTip>
           </th>
-          <th scope="colgroup" colspan={STATS.length} class="col growth-col group">
+          <th
+            scope="colgroup"
+            colspan={STATS.length}
+            class="col growth-col group"
+          >
             个人成长率（颜色标记为各项前三）
             <InfoTip id="info-growth" label="个人成长率">
-              <p>角色自身的成长率。实际成长率 = 个人成长率 + 当前职业的成长率修正。</p>
-              <p>随机成长模式下，实际成长率就是升级时该项 +1 的概率；固定成长模式下，每次升级累加实际成长率，累计满 100% 该项 +1。</p>
-              <p>金色由深到浅：该项在全部角色中排第 1 / 2 / 3 名，数值相同的并列同色。</p>
+              <p>
+                角色自身的成长率。实际成长率 = 个人成长率 +
+                当前职业的成长率修正。
+              </p>
+              <p>
+                随机成长模式下，实际成长率就是升级时该项 +1
+                的概率；固定成长模式下，每次升级累加实际成长率，累计满 100% 该项
+                +1。
+              </p>
+              <p>
+                金色由深到浅：该项在全部角色中排第 1 / 2 / 3
+                名，数值相同的并列同色。
+              </p>
               <p class="legend">
                 <span class="swatch" data-rank="1"></span>第 1 名
                 <span class="swatch" data-rank="2"></span>第 2 名
@@ -109,21 +142,38 @@ const sorted = [...characters].sort((a, b) => a.data.order - b.data.order);
             初始能力值
             <InfoTip id="info-base" label="初始能力值">
               <p>角色加入时的等级和各项能力值。</p>
-              <p>内置等级：已是高级职业的角色，在此之前累计的等级；「--」表示没有。</p>
+              <p>
+                内置等级：已是高级职业的角色，在此之前累计的等级；「--」表示没有。
+              </p>
             </InfoTip>
           </th>
         </tr>
         <tr>
-          {STATS.map((s, i) => <th scope="col" class={`col growth-col stat g${i}`}>{s}</th>)}
-          {BASE.map((s, i) => (
-            <th scope="col" class={`col base-col stat b${i}`}>{s === "LV" ? "初始等级" : s}</th>
-          ))}
+          {
+            STATS.map((s, i) => (
+              <th scope="col" class={`col growth-col stat g${i}`}>
+                {s}
+              </th>
+            ))
+          }
+          {
+            BASE.map((s, i) => (
+              <th scope="col" class={`col base-col stat b${i}`}>
+                {s === "LV" ? "初始等级" : s}
+              </th>
+            ))
+          }
         </tr>
       </thead>
       <tbody>
         {
           sorted.map((c) => (
-            <CharacterRow character={c} skill={skillOf(c)} growth={growthOf(c)} base={baseOf(c)} />
+            <CharacterRow
+              character={c}
+              skill={skillOf(c)}
+              growth={growthOf(c)}
+              base={baseOf(c)}
+            />
           ))
         }
       </tbody>
@@ -195,9 +245,15 @@ const sorted = [...characters].sort((a, b) => a.data.order - b.data.order);
   .swatch:not(:first-child) {
     margin-left: 0.6rem;
   }
-  .swatch[data-rank="1"] { background: #c98a00; }
-  .swatch[data-rank="2"] { background: #f4c542; }
-  .swatch[data-rank="3"] { background: #fbe9b0; }
+  .swatch[data-rank="1"] {
+    background: #c98a00;
+  }
+  .swatch[data-rank="2"] {
+    background: #f4c542;
+  }
+  .swatch[data-rank="3"] {
+    background: #fbe9b0;
+  }
   /* 没勾选的列隐藏（列在 CharacterRow 里，所以用 :global） */
   .character-list:has(#col-weapons:not(:checked)) :global(.weapons-col),
   .character-list:has(#col-join:not(:checked)) :global(.join-col),
@@ -207,7 +263,7 @@ const sorted = [...characters].sort((a, b) => a.data.order - b.data.order);
     display: none;
   }
 
-    /*
+  /*
    * 表格在自己的框里上下、左右滚动，表头才能吸顶（外层不是滚动容器时 sticky 不生效）。
    * 两行表头整体吸顶；左上角「角色」格同时吸左，thead 的层级高于数据行里吸左的角色格。
    */
@@ -236,7 +292,9 @@ const sorted = [...characters].sort((a, b) => a.data.order - b.data.order);
     border-bottom: 1px solid #d4dde2;
     background: #fff;
     vertical-align: top;
-    transition: background-color 0.15s, border-color 0.15s;
+    transition:
+      background-color 0.15s,
+      border-color 0.15s;
   }
   table :global(.col) {
     border-left: 1px dashed #d4dde2;
@@ -278,10 +336,18 @@ const sorted = [...characters].sort((a, b) => a.data.order - b.data.order);
     text-align: center;
   }
   /* 需要控制换行的列给个最小宽度，其余由内容决定 */
-  table :global(.who) { min-width: 10rem; }
-  table :global(.join-col) { min-width: 9rem; }
-  table :global(.skill-col) { min-width: 15rem; }
-  table :global(.weapons-col) { white-space: nowrap; }
+  table :global(.who) {
+    min-width: 10rem;
+  }
+  table :global(.join-col) {
+    min-width: 9rem;
+  }
+  table :global(.skill-col) {
+    min-width: 15rem;
+  }
+  table :global(.weapons-col) {
+    white-space: nowrap;
+  }
 
   /* 横向滚动时角色列固定在左边 */
   table :global(.who) {
@@ -302,7 +368,9 @@ const sorted = [...characters].sort((a, b) => a.data.order - b.data.order);
   }
   table :global(tbody tr:focus-within > *) {
     background: #dce7f8;
-    box-shadow: inset 0 2px #2a64b8, inset 0 -2px #2a64b8;
+    box-shadow:
+      inset 0 2px #2a64b8,
+      inset 0 -2px #2a64b8;
   }
 
   /*
@@ -407,7 +475,9 @@ const sorted = [...characters].sort((a, b) => a.data.order - b.data.order);
   .table:has(:global(.b8:focus-within)) :global(.b8),
   .table:has(:global(.b9:focus-within)) :global(.b9) {
     background: #dce7f8;
-    box-shadow: inset 2px 0 #2a64b8, inset -2px 0 #2a64b8;
+    box-shadow:
+      inset 2px 0 #2a64b8,
+      inset -2px 0 #2a64b8;
   }
 
   /* 被点的格子同时属于选中行和选中列：四边都画（排在列规则之后才能胜出） */

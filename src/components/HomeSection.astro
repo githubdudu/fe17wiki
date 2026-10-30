@@ -19,9 +19,24 @@ const { title, moreHref, moreLabel = "查看全部" } = Astro.props;
         {moreLabel}
         <svg viewBox="0 0 32 32" aria-hidden="true">
           <circle cx="16" cy="18" r="12" fill="#fff" />
-          <path d="M16 8 A10 10 0 0 0 16 28" fill="none" stroke="#d6334a" stroke-width="4" />
-          <path d="M16 8 A10 10 0 0 1 16 28" fill="none" stroke="#3b6fd6" stroke-width="4" />
-          <path d="M16 2 L20.5 7 L16 12 L11.5 7 Z" fill="#f4c542" stroke="#6b4a00" stroke-width="1.2" />
+          <path
+            d="M16 8 A10 10 0 0 0 16 28"
+            fill="none"
+            stroke="#d6334a"
+            stroke-width="4"
+          />
+          <path
+            d="M16 8 A10 10 0 0 1 16 28"
+            fill="none"
+            stroke="#3b6fd6"
+            stroke-width="4"
+          />
+          <path
+            d="M16 2 L20.5 7 L16 12 L11.5 7 Z"
+            fill="#f4c542"
+            stroke="#6b4a00"
+            stroke-width="1.2"
+          />
         </svg>
       </a>
     )
@@ -64,7 +79,9 @@ const { title, moreHref, moreLabel = "查看全部" } = Astro.props;
     font-size: 0.85rem;
     font-weight: 700;
     text-decoration: none;
-    transition: background-size 0.35s ease, color 0.2s 0.1s;
+    transition:
+      background-size 0.35s ease,
+      color 0.2s 0.1s;
   }
   .more svg {
     position: absolute;
@@ -78,7 +95,10 @@ const { title, moreHref, moreLabel = "查看全部" } = Astro.props;
   .more:hover,
   .more:focus-visible {
     color: #fff;
-    background-size: 0% 100%, auto, auto;
+    background-size:
+      0% 100%,
+      auto,
+      auto;
   }
   .more:hover svg,
   .more:focus-visible svg {

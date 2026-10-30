@@ -13,9 +13,12 @@ interface Props {
 }
 const { list, size = 22 } = Astro.props;
 
-const icons = import.meta.glob<{ default: ImageMetadata }>("/src/assets/weapons/*.webp", {
-  eager: true,
-});
+const icons = import.meta.glob<{ default: ImageMetadata }>(
+  "/src/assets/weapons/*.webp",
+  {
+    eager: true,
+  },
+);
 const weapons = list.split("、").filter(Boolean);
 ---
 
@@ -24,7 +27,14 @@ const weapons = list.split("、").filter(Boolean);
     weapons.map((w) => {
       const icon = icons[`/src/assets/weapons/${w}.webp`]?.default;
       return icon ? (
-        <Image src={icon} alt={w} title={w} width={size} height={size} densities={[1, 2]} />
+        <Image
+          src={icon}
+          alt={w}
+          title={w}
+          width={size}
+          height={size}
+          densities={[1, 2]}
+        />
       ) : (
         <span class="text">{w}</span>
       );

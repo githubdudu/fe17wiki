@@ -13,15 +13,25 @@ interface Props {
 }
 const { src, alt, size } = Astro.props;
 
-const images = import.meta.glob<{ default: ImageMetadata }>("/src/assets/**/*.webp", {
-  eager: true,
-});
+const images = import.meta.glob<{ default: ImageMetadata }>(
+  "/src/assets/**/*.webp",
+  {
+    eager: true,
+  },
+);
 const image = images[`/${src}`]?.default;
 ---
 
 {
   image ? (
-    <Image class="thumb" src={image} alt={alt} width={size} height={size} densities={[1, 2]} />
+    <Image
+      class="thumb"
+      src={image}
+      alt={alt}
+      width={size}
+      height={size}
+      densities={[1, 2]}
+    />
   ) : (
     <span class="thumb placeholder" style={`width: ${size}px`} />
   )
