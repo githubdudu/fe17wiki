@@ -12,16 +12,18 @@ const { id, label } = Astro.props;
 ---
 
 <button
-  class="info inline-grid place-items-center cursor-pointer inset-ring rounded-full size-4 mx-1 hover:bg-brand-gray hover:text-white focus-visible:outline-3 focus-visible:outline-brand-orange focus-visible:outline-offset-2 text-brand-gray font-[Barlow] font-bold text-xs"
+  class="inline-grid place-items-center cursor-pointer inset-ring rounded-full size-4 mx-1 hover:bg-brand-gray hover:text-white focus-visible:outline-3 focus-visible:outline-brand-orange focus-visible:outline-offset-2 text-brand-gray font-[Barlow] font-bold text-xs"
   type="button"
   popovertarget={id}
   aria-label={`${label}：说明`}>i</button
 >
 <div
-  class="tip backdrop:bg-brand-black/15 shadow-lg m-auto max-w-[min(90vw,22rem)] border border-brand-border rounded-md py-3 px-4 text-brand-black font-normal text-base whitespace-normal"
+  class="backdrop:bg-brand-black/15 shadow-lg m-auto max-w-[min(90vw,22rem)] border border-brand-border rounded-md py-3 px-4 text-brand-black font-normal text-base whitespace-normal"
   id={id}
   popover
 >
   <p class="mb-1 font-bold">{label}</p>
-  <div class="body"><slot /></div>
+  <div>
+    <slot />
+  </div>
 </div>

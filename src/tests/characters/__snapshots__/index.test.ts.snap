@@ -17,105 +17,7 @@ exports[`built characters page snapshots > matches the full HTML snapshot for ch
       href="https://fonts.googleapis.com/css2?family=Barlow:wght@500;700&display=swap"
     />
     <title>火焰纹章结合 Engage Wiki</title>
-    <link rel="stylesheet" href="/_astro/NavLayout.Oj6l46us.css" />
-    <style>
-      .skill[data-astro-cid-bdgybu7g] {
-        align-items: flex-start;
-        gap: 0.75rem;
-        display: flex;
-      }
-      .compact[data-astro-cid-bdgybu7g] {
-        gap: 0.5rem;
-      }
-      .body[data-astro-cid-bdgybu7g] {
-        flex: 1;
-        min-width: 0;
-      }
-      p[data-astro-cid-bdgybu7g] {
-        margin: 0;
-      }
-      .name[data-astro-cid-bdgybu7g] {
-        font-size: 0.9rem;
-        font-weight: 700;
-      }
-      .name[data-astro-cid-bdgybu7g] a[data-astro-cid-bdgybu7g] {
-        color: #2a64b8;
-        text-decoration: none;
-      }
-      .name[data-astro-cid-bdgybu7g] a[data-astro-cid-bdgybu7g]:hover {
-        text-decoration: underline;
-      }
-      .name[data-astro-cid-bdgybu7g] a[data-astro-cid-bdgybu7g]:focus-visible {
-        outline-offset: 2px;
-        outline: 3px solid #f4c542;
-      }
-      .desc[data-astro-cid-bdgybu7g] {
-        color: #22263a;
-        margin-top: 0.1rem;
-        font-size: 0.8rem;
-        line-height: 1.5;
-      }
-      .compact[data-astro-cid-bdgybu7g] .name[data-astro-cid-bdgybu7g] {
-        font-size: 0.8rem;
-      }
-      .compact[data-astro-cid-bdgybu7g] .desc[data-astro-cid-bdgybu7g] {
-        color: #5d6478;
-        font-size: 10px;
-      }
-      .info[data-astro-cid-6as2p63z] {
-        color: #5d6478;
-        vertical-align: 0.1em;
-        cursor: pointer;
-        background: 0 0;
-        border: 1px solid;
-        border-radius: 50%;
-        place-items: center;
-        width: 1rem;
-        height: 1rem;
-        margin-left: 0.3rem;
-        padding: 0;
-        font-family: Barlow, system-ui, sans-serif;
-        font-size: 0.65rem;
-        font-weight: 700;
-        line-height: 1;
-        display: inline-grid;
-      }
-      .info[data-astro-cid-6as2p63z]:hover {
-        color: #fff;
-        background: #5d6478;
-      }
-      .info[data-astro-cid-6as2p63z]:focus-visible {
-        outline-offset: 2px;
-        outline: 3px solid #f4c542;
-      }
-      .tip[data-astro-cid-6as2p63z] {
-        color: #22263a;
-        text-align: left;
-        background: #fff;
-        border: 1px solid #d4dde2;
-        border-radius: 8px;
-        max-width: min(90vw, 22rem);
-        margin: auto;
-        padding: 0.75rem 1rem;
-        font-size: 0.85rem;
-        font-weight: 400;
-        line-height: 1.6;
-        box-shadow: 0 8px 24px #22263a2e;
-      }
-      .tip[data-astro-cid-6as2p63z]::backdrop {
-        background: #22263a26;
-      }
-      .title[data-astro-cid-6as2p63z] {
-        margin: 0 0 0.3rem;
-        font-weight: 700;
-      }
-      .body[data-astro-cid-6as2p63z] p {
-        margin: 0;
-      }
-      .body[data-astro-cid-6as2p63z] p + p {
-        margin-top: 0.35rem;
-      }
-    </style>
+    <link rel="stylesheet" href="/_astro/NavLayout.eFLma_ow.css" />
     <link rel="stylesheet" href="/_astro/index.DGR5Hbf1.css" />
     <style>
       .weapons[data-astro-cid-ngxrrfe2] {
@@ -210,22 +112,20 @@ exports[`built characters page snapshots > matches the full HTML snapshot for ch
                     data-astro-cid-l554ny24
                   >
                     角色<button
-                      class="info"
+                      class="inline-grid place-items-center cursor-pointer inset-ring rounded-full size-4 mx-1 hover:bg-brand-gray hover:text-white focus-visible:outline-3 focus-visible:outline-brand-orange focus-visible:outline-offset-2 text-brand-gray font-[Barlow] font-bold text-xs"
                       type="button"
                       popovertarget="info-who"
                       aria-label="角色：说明"
-                      data-astro-cid-6as2p63z
                     >
                       i
                     </button>
                     <div
-                      class="tip"
+                      class="backdrop:bg-brand-black/15 shadow-lg m-auto max-w-[min(90vw,22rem)] border border-brand-border rounded-md py-3 px-4 text-brand-black font-normal text-base whitespace-normal"
                       id="info-who"
                       popover
-                      data-astro-cid-6as2p63z
                     >
-                      <p class="title" data-astro-cid-6as2p63z>角色</p>
-                      <div class="body" data-astro-cid-6as2p63z>
+                      <p class="mb-1 font-bold">角色</p>
+                      <div>
                         <p data-astro-cid-l554ny24>
                           头像、名字和初始职业，【】里是兵种。点击名字进入角色页面。
                         </p>
@@ -246,24 +146,20 @@ exports[`built characters page snapshots > matches the full HTML snapshot for ch
                     data-astro-cid-l554ny24
                   >
                     加入时间和条件<button
-                      class="info"
+                      class="inline-grid place-items-center cursor-pointer inset-ring rounded-full size-4 mx-1 hover:bg-brand-gray hover:text-white focus-visible:outline-3 focus-visible:outline-brand-orange focus-visible:outline-offset-2 text-brand-gray font-[Barlow] font-bold text-xs"
                       type="button"
                       popovertarget="info-join"
                       aria-label="加入时间和条件：说明"
-                      data-astro-cid-6as2p63z
                     >
                       i
                     </button>
                     <div
-                      class="tip"
+                      class="backdrop:bg-brand-black/15 shadow-lg m-auto max-w-[min(90vw,22rem)] border border-brand-border rounded-md py-3 px-4 text-brand-black font-normal text-base whitespace-normal"
                       id="info-join"
                       popover
-                      data-astro-cid-6as2p63z
                     >
-                      <p class="title" data-astro-cid-6as2p63z>
-                        加入时间和条件
-                      </p>
-                      <div class="body" data-astro-cid-6as2p63z>
+                      <p class="mb-1 font-bold">加入时间和条件</p>
+                      <div>
                         <p data-astro-cid-l554ny24>加入的章节及加入条件。</p>
                         <p data-astro-cid-l554ny24>
                           需要对话说得或保证存活的角色，错过就无法加入。
@@ -278,22 +174,20 @@ exports[`built characters page snapshots > matches the full HTML snapshot for ch
                     data-astro-cid-l554ny24
                   >
                     个人特技<button
-                      class="info"
+                      class="inline-grid place-items-center cursor-pointer inset-ring rounded-full size-4 mx-1 hover:bg-brand-gray hover:text-white focus-visible:outline-3 focus-visible:outline-brand-orange focus-visible:outline-offset-2 text-brand-gray font-[Barlow] font-bold text-xs"
                       type="button"
                       popovertarget="info-skill"
                       aria-label="个人特技：说明"
-                      data-astro-cid-6as2p63z
                     >
                       i
                     </button>
                     <div
-                      class="tip"
+                      class="backdrop:bg-brand-black/15 shadow-lg m-auto max-w-[min(90vw,22rem)] border border-brand-border rounded-md py-3 px-4 text-brand-black font-normal text-base whitespace-normal"
                       id="info-skill"
                       popover
-                      data-astro-cid-6as2p63z
                     >
-                      <p class="title" data-astro-cid-6as2p63z>个人特技</p>
-                      <div class="body" data-astro-cid-6as2p63z>
+                      <p class="mb-1 font-bold">个人特技</p>
+                      <div>
                         <p data-astro-cid-l554ny24>
                           每个角色独有、无法继承的特技。点击特技名查看详情。
                         </p>
@@ -307,22 +201,20 @@ exports[`built characters page snapshots > matches the full HTML snapshot for ch
                     data-astro-cid-l554ny24
                   >
                     初始武器资质<button
-                      class="info"
+                      class="inline-grid place-items-center cursor-pointer inset-ring rounded-full size-4 mx-1 hover:bg-brand-gray hover:text-white focus-visible:outline-3 focus-visible:outline-brand-orange focus-visible:outline-offset-2 text-brand-gray font-[Barlow] font-bold text-xs"
                       type="button"
                       popovertarget="info-weapons"
                       aria-label="初始武器资质：说明"
-                      data-astro-cid-6as2p63z
                     >
                       i
                     </button>
                     <div
-                      class="tip"
+                      class="backdrop:bg-brand-black/15 shadow-lg m-auto max-w-[min(90vw,22rem)] border border-brand-border rounded-md py-3 px-4 text-brand-black font-normal text-base whitespace-normal"
                       id="info-weapons"
                       popover
-                      data-astro-cid-6as2p63z
                     >
-                      <p class="title" data-astro-cid-6as2p63z>初始武器资质</p>
-                      <div class="body" data-astro-cid-6as2p63z>
+                      <p class="mb-1 font-bold">初始武器资质</p>
+                      <div>
                         <p data-astro-cid-l554ny24>
                           角色天生拥有的武器资质。在使用这类武器的职业中，天生资质可以提高该武器的熟练度上限。
                         </p>
@@ -342,22 +234,20 @@ exports[`built characters page snapshots > matches the full HTML snapshot for ch
                     data-astro-cid-l554ny24
                   >
                     个人成长率（颜色标记为各项前三）<button
-                      class="info"
+                      class="inline-grid place-items-center cursor-pointer inset-ring rounded-full size-4 mx-1 hover:bg-brand-gray hover:text-white focus-visible:outline-3 focus-visible:outline-brand-orange focus-visible:outline-offset-2 text-brand-gray font-[Barlow] font-bold text-xs"
                       type="button"
                       popovertarget="info-growth"
                       aria-label="个人成长率：说明"
-                      data-astro-cid-6as2p63z
                     >
                       i
                     </button>
                     <div
-                      class="tip"
+                      class="backdrop:bg-brand-black/15 shadow-lg m-auto max-w-[min(90vw,22rem)] border border-brand-border rounded-md py-3 px-4 text-brand-black font-normal text-base whitespace-normal"
                       id="info-growth"
                       popover
-                      data-astro-cid-6as2p63z
                     >
-                      <p class="title" data-astro-cid-6as2p63z>个人成长率</p>
-                      <div class="body" data-astro-cid-6as2p63z>
+                      <p class="mb-1 font-bold">个人成长率</p>
+                      <div>
                         <p data-astro-cid-l554ny24>
                           角色自身的成长率。实际成长率 = 个人成长率 +
                           当前职业的成长率修正。
@@ -399,22 +289,20 @@ exports[`built characters page snapshots > matches the full HTML snapshot for ch
                     data-astro-cid-l554ny24
                   >
                     初始能力值<button
-                      class="info"
+                      class="inline-grid place-items-center cursor-pointer inset-ring rounded-full size-4 mx-1 hover:bg-brand-gray hover:text-white focus-visible:outline-3 focus-visible:outline-brand-orange focus-visible:outline-offset-2 text-brand-gray font-[Barlow] font-bold text-xs"
                       type="button"
                       popovertarget="info-base"
                       aria-label="初始能力值：说明"
-                      data-astro-cid-6as2p63z
                     >
                       i
                     </button>
                     <div
-                      class="tip"
+                      class="backdrop:bg-brand-black/15 shadow-lg m-auto max-w-[min(90vw,22rem)] border border-brand-border rounded-md py-3 px-4 text-brand-black font-normal text-base whitespace-normal"
                       id="info-base"
                       popover
-                      data-astro-cid-6as2p63z
                     >
-                      <p class="title" data-astro-cid-6as2p63z>初始能力值</p>
-                      <div class="body" data-astro-cid-6as2p63z>
+                      <p class="mb-1 font-bold">初始能力值</p>
+                      <div>
                         <p data-astro-cid-l554ny24>
                           角色加入时的等级和各项能力值。
                         </p>
@@ -610,7 +498,7 @@ exports[`built characters page snapshots > matches the full HTML snapshot for ch
                     title="个人特技"
                     data-astro-cid-ptuzctor
                   >
-                    <div class="skill compact" data-astro-cid-bdgybu7g>
+                    <div class="flex items-start gap-2">
                       <img
                         src="/_astro/%E7%A5%9E%E9%BE%99%E5%9B%A2%E7%BB%93.Bv-7jsZL_4B5yw.webp"
                         srcset="
@@ -625,13 +513,15 @@ exports[`built characters page snapshots > matches the full HTML snapshot for ch
                         height="24"
                         class="thumb"
                       />
-                      <div class="body" data-astro-cid-bdgybu7g>
-                        <p class="name" data-astro-cid-bdgybu7g>
-                          <a href="/skills/神龙团结" data-astro-cid-bdgybu7g
+                      <div class="flex-1 min-w-0">
+                        <p class="name text-sm font-bold">
+                          <a
+                            class="text-brand-blue hover:underline focus-visible:outline-brand-orange focus-visible:outline-3 focus-visible:outline-offset-2 no-underline"
+                            href="/skills/神龙团结"
                             >神龙团结</a
                           >
                         </p>
-                        <p class="desc" data-astro-cid-bdgybu7g>
+                        <p class="text-brand-gray text-xs">
                           相邻我方单位的造成伤害+3，所受伤害-1。
                         </p>
                       </div>
@@ -906,7 +796,7 @@ exports[`built characters page snapshots > matches the full HTML snapshot for ch
                     title="个人特技"
                     data-astro-cid-ptuzctor
                   >
-                    <div class="skill compact" data-astro-cid-bdgybu7g>
+                    <div class="flex items-start gap-2">
                       <img
                         src="/_astro/%E7%99%BD%E4%B9%8B%E5%BF%A0%E8%AF%9A.B5RkzpJY_mICg8.webp"
                         srcset="
@@ -921,13 +811,15 @@ exports[`built characters page snapshots > matches the full HTML snapshot for ch
                         height="24"
                         class="thumb"
                       />
-                      <div class="body" data-astro-cid-bdgybu7g>
-                        <p class="name" data-astro-cid-bdgybu7g>
-                          <a href="/skills/白之忠诚" data-astro-cid-bdgybu7g
+                      <div class="flex-1 min-w-0">
+                        <p class="name text-sm font-bold">
+                          <a
+                            class="text-brand-blue hover:underline focus-visible:outline-brand-orange focus-visible:outline-3 focus-visible:outline-offset-2 no-underline"
+                            href="/skills/白之忠诚"
                             >白之忠诚</a
                           >
                         </p>
-                        <p class="desc" data-astro-cid-bdgybu7g>
+                        <p class="text-brand-gray text-xs">
                           与主角相邻时，主角与自身的必杀+5。
                         </p>
                       </div>
@@ -1193,7 +1085,7 @@ exports[`built characters page snapshots > matches the full HTML snapshot for ch
                     title="个人特技"
                     data-astro-cid-ptuzctor
                   >
-                    <div class="skill compact" data-astro-cid-bdgybu7g>
+                    <div class="flex items-start gap-2">
                       <img
                         src="/_astro/%E7%A2%A7%E4%B9%8B%E4%BF%A1%E4%BB%B0.CGe5T0HY_ZhuwnF.webp"
                         srcset="
@@ -1208,13 +1100,15 @@ exports[`built characters page snapshots > matches the full HTML snapshot for ch
                         height="24"
                         class="thumb"
                       />
-                      <div class="body" data-astro-cid-bdgybu7g>
-                        <p class="name" data-astro-cid-bdgybu7g>
-                          <a href="/skills/碧之信仰" data-astro-cid-bdgybu7g
+                      <div class="flex-1 min-w-0">
+                        <p class="name text-sm font-bold">
+                          <a
+                            class="text-brand-blue hover:underline focus-visible:outline-brand-orange focus-visible:outline-3 focus-visible:outline-offset-2 no-underline"
+                            href="/skills/碧之信仰"
                             >碧之信仰</a
                           >
                         </p>
-                        <p class="desc" data-astro-cid-bdgybu7g>
+                        <p class="text-brand-gray text-xs">
                           与主角相邻时，主角与自身的命中+10。
                         </p>
                       </div>
@@ -1487,7 +1381,7 @@ exports[`built characters page snapshots > matches the full HTML snapshot for ch
                     title="个人特技"
                     data-astro-cid-ptuzctor
                   >
-                    <div class="skill compact" data-astro-cid-bdgybu7g>
+                    <div class="flex items-start gap-2">
                       <img
                         src="/_astro/%E7%BB%AF%E7%BA%A2%E5%A3%B0%E6%8F%B4.stRFn28a_1r7r9L.webp"
                         srcset="
@@ -1502,13 +1396,15 @@ exports[`built characters page snapshots > matches the full HTML snapshot for ch
                         height="24"
                         class="thumb"
                       />
-                      <div class="body" data-astro-cid-bdgybu7g>
-                        <p class="name" data-astro-cid-bdgybu7g>
-                          <a href="/skills/绯红声援" data-astro-cid-bdgybu7g
+                      <div class="flex-1 min-w-0">
+                        <p class="name text-sm font-bold">
+                          <a
+                            class="text-brand-blue hover:underline focus-visible:outline-brand-orange focus-visible:outline-3 focus-visible:outline-offset-2 no-underline"
+                            href="/skills/绯红声援"
                             >绯红声援</a
                           >
                         </p>
-                        <p class="desc" data-astro-cid-bdgybu7g>
+                        <p class="text-brand-gray text-xs">
                           与主角相邻时，主角与自身的回避+10。
                         </p>
                       </div>
@@ -1783,7 +1679,7 @@ exports[`built characters page snapshots > matches the full HTML snapshot for ch
                     title="个人特技"
                     data-astro-cid-ptuzctor
                   >
-                    <div class="skill compact" data-astro-cid-bdgybu7g>
+                    <div class="flex items-start gap-2">
                       <img
                         src="/_astro/%E8%87%AA%E5%B7%B1%E9%92%BB%E7%A0%94.8StLiNri_Z1K4ErQ.webp"
                         srcset="
@@ -1798,13 +1694,15 @@ exports[`built characters page snapshots > matches the full HTML snapshot for ch
                         height="24"
                         class="thumb"
                       />
-                      <div class="body" data-astro-cid-bdgybu7g>
-                        <p class="name" data-astro-cid-bdgybu7g>
-                          <a href="/skills/自己钻研" data-astro-cid-bdgybu7g
+                      <div class="flex-1 min-w-0">
+                        <p class="name text-sm font-bold">
+                          <a
+                            class="text-brand-blue hover:underline focus-visible:outline-brand-orange focus-visible:outline-3 focus-visible:outline-offset-2 no-underline"
+                            href="/skills/自己钻研"
                             >自己钻研</a
                           >
                         </p>
-                        <p class="desc" data-astro-cid-bdgybu7g>
+                        <p class="text-brand-gray text-xs">
                           不展开战斗及不使用道具便待命时力量+2，效果持续1回合。
                         </p>
                       </div>
@@ -2079,7 +1977,7 @@ exports[`built characters page snapshots > matches the full HTML snapshot for ch
                     title="个人特技"
                     data-astro-cid-ptuzctor
                   >
-                    <div class="skill compact" data-astro-cid-bdgybu7g>
+                    <div class="flex items-start gap-2">
                       <img
                         src="/_astro/%E8%82%8C%E8%82%89%E5%A2%9E%E5%BC%BA%E5%89%82.CGxWAhcc_JHu4a.webp"
                         srcset="
@@ -2094,13 +1992,15 @@ exports[`built characters page snapshots > matches the full HTML snapshot for ch
                         height="24"
                         class="thumb"
                       />
-                      <div class="body" data-astro-cid-bdgybu7g>
-                        <p class="name" data-astro-cid-bdgybu7g>
-                          <a href="/skills/肌肉增强剂" data-astro-cid-bdgybu7g
+                      <div class="flex-1 min-w-0">
+                        <p class="name text-sm font-bold">
+                          <a
+                            class="text-brand-blue hover:underline focus-visible:outline-brand-orange focus-visible:outline-3 focus-visible:outline-offset-2 no-underline"
+                            href="/skills/肌肉增强剂"
                             >肌肉增强剂</a
                           >
                         </p>
-                        <p class="desc" data-astro-cid-bdgybu7g>
+                        <p class="text-brand-gray text-xs">
                           使用HP回复道具时力量+2，效果持续1回合。
                         </p>
                       </div>
@@ -2365,7 +2265,7 @@ exports[`built characters page snapshots > matches the full HTML snapshot for ch
                     title="个人特技"
                     data-astro-cid-ptuzctor
                   >
-                    <div class="skill compact" data-astro-cid-bdgybu7g>
+                    <div class="flex items-start gap-2">
                       <img
                         src="/_astro/%E6%B3%AA%E8%85%BA%E5%B4%A9%E5%9D%8F.UeUPKQs6_8Gb2u.webp"
                         srcset="
@@ -2380,13 +2280,15 @@ exports[`built characters page snapshots > matches the full HTML snapshot for ch
                         height="24"
                         class="thumb"
                       />
-                      <div class="body" data-astro-cid-bdgybu7g>
-                        <p class="name" data-astro-cid-bdgybu7g>
-                          <a href="/skills/泪腺崩坏" data-astro-cid-bdgybu7g
+                      <div class="flex-1 min-w-0">
+                        <p class="name text-sm font-bold">
+                          <a
+                            class="text-brand-blue hover:underline focus-visible:outline-brand-orange focus-visible:outline-3 focus-visible:outline-offset-2 no-underline"
+                            href="/skills/泪腺崩坏"
                             >泪腺崩坏</a
                           >
                         </p>
-                        <p class="desc" data-astro-cid-bdgybu7g>
+                        <p class="text-brand-gray text-xs">
                           自身的战斗中，若有我方单位参与连锁攻击，自身的造成伤害+2。
                         </p>
                       </div>
@@ -2649,7 +2551,7 @@ exports[`built characters page snapshots > matches the full HTML snapshot for ch
                     title="个人特技"
                     data-astro-cid-ptuzctor
                   >
-                    <div class="skill compact" data-astro-cid-bdgybu7g>
+                    <div class="flex items-start gap-2">
                       <img
                         src="/_astro/%E5%92%8C%E5%B9%B3%E4%B9%8B%E8%8A%B1.DAvK8Hor_2oWtr7.webp"
                         srcset="
@@ -2664,13 +2566,15 @@ exports[`built characters page snapshots > matches the full HTML snapshot for ch
                         height="24"
                         class="thumb"
                       />
-                      <div class="body" data-astro-cid-bdgybu7g>
-                        <p class="name" data-astro-cid-bdgybu7g>
-                          <a href="/skills/和平之花" data-astro-cid-bdgybu7g
+                      <div class="flex-1 min-w-0">
+                        <p class="name text-sm font-bold">
+                          <a
+                            class="text-brand-blue hover:underline focus-visible:outline-brand-orange focus-visible:outline-3 focus-visible:outline-offset-2 no-underline"
+                            href="/skills/和平之花"
                             >和平之花</a
                           >
                         </p>
-                        <p class="desc" data-astro-cid-bdgybu7g>
+                        <p class="text-brand-gray text-xs">
                           周围2格内的我方单位使用HP回复道具时，回复量为150%。
                         </p>
                       </div>
@@ -2957,7 +2861,7 @@ exports[`built characters page snapshots > matches the full HTML snapshot for ch
                     title="个人特技"
                     data-astro-cid-ptuzctor
                   >
-                    <div class="skill compact" data-astro-cid-bdgybu7g>
+                    <div class="flex items-start gap-2">
                       <img
                         src="/_astro/%E4%BA%8C%E4%BA%BA%E5%A6%82%E7%94%BB.BrlD1rG2_1sVoLj.webp"
                         srcset="
@@ -2972,13 +2876,15 @@ exports[`built characters page snapshots > matches the full HTML snapshot for ch
                         height="24"
                         class="thumb"
                       />
-                      <div class="body" data-astro-cid-bdgybu7g>
-                        <p class="name" data-astro-cid-bdgybu7g>
-                          <a href="/skills/二人如画" data-astro-cid-bdgybu7g
+                      <div class="flex-1 min-w-0">
+                        <p class="name text-sm font-bold">
+                          <a
+                            class="text-brand-blue hover:underline focus-visible:outline-brand-orange focus-visible:outline-3 focus-visible:outline-offset-2 no-underline"
+                            href="/skills/二人如画"
                             >二人如画</a
                           >
                         </p>
-                        <p class="desc" data-astro-cid-bdgybu7g>
+                        <p class="text-brand-gray text-xs">
                           若自身周围2格内有我方男女单位相邻，造成伤害+2。
                         </p>
                       </div>
@@ -3253,7 +3159,7 @@ exports[`built characters page snapshots > matches the full HTML snapshot for ch
                     title="个人特技"
                     data-astro-cid-ptuzctor
                   >
-                    <div class="skill compact" data-astro-cid-bdgybu7g>
+                    <div class="flex items-start gap-2">
                       <img
                         src="/_astro/%E8%8A%B1%E5%9B%AD%E9%97%A8%E5%8D%AB.ChI8aDvC_ZtiAhI.webp"
                         srcset="
@@ -3268,13 +3174,15 @@ exports[`built characters page snapshots > matches the full HTML snapshot for ch
                         height="24"
                         class="thumb"
                       />
-                      <div class="body" data-astro-cid-bdgybu7g>
-                        <p class="name" data-astro-cid-bdgybu7g>
-                          <a href="/skills/花园门卫" data-astro-cid-bdgybu7g
+                      <div class="flex-1 min-w-0">
+                        <p class="name text-sm font-bold">
+                          <a
+                            class="text-brand-blue hover:underline focus-visible:outline-brand-orange focus-visible:outline-3 focus-visible:outline-offset-2 no-underline"
+                            href="/skills/花园门卫"
                             >花园门卫</a
                           >
                         </p>
-                        <p class="desc" data-astro-cid-bdgybu7g>
+                        <p class="text-brand-gray text-xs">
                           若自身周围2格内有2位我方女性单位相邻，所受伤害-2。
                         </p>
                       </div>
@@ -3539,7 +3447,7 @@ exports[`built characters page snapshots > matches the full HTML snapshot for ch
                     title="个人特技"
                     data-astro-cid-ptuzctor
                   >
-                    <div class="skill compact" data-astro-cid-bdgybu7g>
+                    <div class="flex items-start gap-2">
                       <img
                         src="/_astro/%E5%8A%AA%E5%8A%9B%E6%89%8D%E8%83%BD.Bu9Rf8e8_1VUmRi.webp"
                         srcset="
@@ -3554,13 +3462,15 @@ exports[`built characters page snapshots > matches the full HTML snapshot for ch
                         height="24"
                         class="thumb"
                       />
-                      <div class="body" data-astro-cid-bdgybu7g>
-                        <p class="name" data-astro-cid-bdgybu7g>
-                          <a href="/skills/努力才能" data-astro-cid-bdgybu7g
+                      <div class="flex-1 min-w-0">
+                        <p class="name text-sm font-bold">
+                          <a
+                            class="text-brand-blue hover:underline focus-visible:outline-brand-orange focus-visible:outline-3 focus-visible:outline-offset-2 no-underline"
+                            href="/skills/努力才能"
                             >努力才能</a
                           >
                         </p>
-                        <p class="desc" data-astro-cid-bdgybu7g>
+                        <p class="text-brand-gray text-xs">
                           等级提升时，基本能力值较容易上升。（职业成长率翻倍）
                         </p>
                       </div>
@@ -3847,7 +3757,7 @@ exports[`built characters page snapshots > matches the full HTML snapshot for ch
                     title="个人特技"
                     data-astro-cid-ptuzctor
                   >
-                    <div class="skill compact" data-astro-cid-bdgybu7g>
+                    <div class="flex items-start gap-2">
                       <img
                         src="/_astro/%E6%AD%A3%E9%9D%A2%E5%AF%B9%E5%86%B3.B-6cIQL0_ZiXBuO.webp"
                         srcset="
@@ -3862,13 +3772,15 @@ exports[`built characters page snapshots > matches the full HTML snapshot for ch
                         height="24"
                         class="thumb"
                       />
-                      <div class="body" data-astro-cid-bdgybu7g>
-                        <p class="name" data-astro-cid-bdgybu7g>
-                          <a href="/skills/正面对决" data-astro-cid-bdgybu7g
+                      <div class="flex-1 min-w-0">
+                        <p class="name text-sm font-bold">
+                          <a
+                            class="text-brand-blue hover:underline focus-visible:outline-brand-orange focus-visible:outline-3 focus-visible:outline-offset-2 no-underline"
+                            href="/skills/正面对决"
                             >正面对决</a
                           >
                         </p>
-                        <p class="desc" data-astro-cid-bdgybu7g>
+                        <p class="text-brand-gray text-xs">
                           自身发动攻击时，若对方可反击，则双方的命中+15。
                         </p>
                       </div>
@@ -4143,7 +4055,7 @@ exports[`built characters page snapshots > matches the full HTML snapshot for ch
                     title="个人特技"
                     data-astro-cid-ptuzctor
                   >
-                    <div class="skill compact" data-astro-cid-bdgybu7g>
+                    <div class="flex items-start gap-2">
                       <img
                         src="/_astro/%E6%8A%A5%E4%B8%8A%E5%90%8D%E5%8F%B7.DdtCZfHZ_XXO6j.webp"
                         srcset="
@@ -4158,13 +4070,15 @@ exports[`built characters page snapshots > matches the full HTML snapshot for ch
                         height="24"
                         class="thumb"
                       />
-                      <div class="body" data-astro-cid-bdgybu7g>
-                        <p class="name" data-astro-cid-bdgybu7g>
-                          <a href="/skills/报上名号" data-astro-cid-bdgybu7g
+                      <div class="flex-1 min-w-0">
+                        <p class="name text-sm font-bold">
+                          <a
+                            class="text-brand-blue hover:underline focus-visible:outline-brand-orange focus-visible:outline-3 focus-visible:outline-offset-2 no-underline"
+                            href="/skills/报上名号"
                             >报上名号</a
                           >
                         </p>
-                        <p class="desc" data-astro-cid-bdgybu7g>
+                        <p class="text-brand-gray text-xs">
                           若自身和敌人周围1格内无其他单位，命中+20、回避-10。
                         </p>
                       </div>
@@ -4429,7 +4343,7 @@ exports[`built characters page snapshots > matches the full HTML snapshot for ch
                     title="个人特技"
                     data-astro-cid-ptuzctor
                   >
-                    <div class="skill compact" data-astro-cid-bdgybu7g>
+                    <div class="flex items-start gap-2">
                       <img
                         src="/_astro/%E5%86%A5%E6%83%B3.B1Nhs5XO_Zy6BF3.webp"
                         srcset="
@@ -4444,13 +4358,15 @@ exports[`built characters page snapshots > matches the full HTML snapshot for ch
                         height="24"
                         class="thumb"
                       />
-                      <div class="body" data-astro-cid-bdgybu7g>
-                        <p class="name" data-astro-cid-bdgybu7g>
-                          <a href="/skills/冥想" data-astro-cid-bdgybu7g
+                      <div class="flex-1 min-w-0">
+                        <p class="name text-sm font-bold">
+                          <a
+                            class="text-brand-blue hover:underline focus-visible:outline-brand-orange focus-visible:outline-3 focus-visible:outline-offset-2 no-underline"
+                            href="/skills/冥想"
                             >冥想</a
                           >
                         </p>
-                        <p class="desc" data-astro-cid-bdgybu7g>
+                        <p class="text-brand-gray text-xs">
                           不展开战斗及不使用道具便待命时，魔防+2，效果持续一回合。
                         </p>
                       </div>
@@ -4713,7 +4629,7 @@ exports[`built characters page snapshots > matches the full HTML snapshot for ch
                     title="个人特技"
                     data-astro-cid-ptuzctor
                   >
-                    <div class="skill compact" data-astro-cid-bdgybu7g>
+                    <div class="flex items-start gap-2">
                       <img
                         src="/_astro/%E7%94%B1%E6%88%91%E5%AE%88%E6%8A%A4%EF%BC%81.BGp28v9U_2wGNr7.webp"
                         srcset="
@@ -4728,13 +4644,15 @@ exports[`built characters page snapshots > matches the full HTML snapshot for ch
                         height="24"
                         class="thumb"
                       />
-                      <div class="body" data-astro-cid-bdgybu7g>
-                        <p class="name" data-astro-cid-bdgybu7g>
-                          <a href="/skills/由我守护！" data-astro-cid-bdgybu7g
+                      <div class="flex-1 min-w-0">
+                        <p class="name text-sm font-bold">
+                          <a
+                            class="text-brand-blue hover:underline focus-visible:outline-brand-orange focus-visible:outline-3 focus-visible:outline-offset-2 no-underline"
+                            href="/skills/由我守护！"
                             >由我守护！</a
                           >
                         </p>
-                        <p class="desc" data-astro-cid-bdgybu7g>
+                        <p class="text-brand-gray text-xs">
                           周围2格内的我方单位受到攻击时，力量+3，效果持续一回合。
                         </p>
                       </div>
@@ -4997,7 +4915,7 @@ exports[`built characters page snapshots > matches the full HTML snapshot for ch
                     title="个人特技"
                     data-astro-cid-ptuzctor
                   >
-                    <div class="skill compact" data-astro-cid-bdgybu7g>
+                    <div class="flex items-start gap-2">
                       <img
                         src="/_astro/%E7%9B%9B%E5%AE%B4%E6%AC%BE%E5%BE%85.5nIZ0af2_Msn5y.webp"
                         srcset="
@@ -5012,13 +4930,15 @@ exports[`built characters page snapshots > matches the full HTML snapshot for ch
                         height="24"
                         class="thumb"
                       />
-                      <div class="body" data-astro-cid-bdgybu7g>
-                        <p class="name" data-astro-cid-bdgybu7g>
-                          <a href="/skills/盛宴款待" data-astro-cid-bdgybu7g
+                      <div class="flex-1 min-w-0">
+                        <p class="name text-sm font-bold">
+                          <a
+                            class="text-brand-blue hover:underline focus-visible:outline-brand-orange focus-visible:outline-3 focus-visible:outline-offset-2 no-underline"
+                            href="/skills/盛宴款待"
                             >盛宴款待</a
                           >
                         </p>
-                        <p class="desc" data-astro-cid-bdgybu7g>
+                        <p class="text-brand-gray text-xs">
                           使用回复道具时，周围1格内的我方单位也能获得等量HP。
                         </p>
                       </div>
@@ -5293,7 +5213,7 @@ exports[`built characters page snapshots > matches the full HTML snapshot for ch
                     title="个人特技"
                     data-astro-cid-ptuzctor
                   >
-                    <div class="skill compact" data-astro-cid-bdgybu7g>
+                    <div class="flex items-start gap-2">
                       <img
                         src="/_astro/%E6%88%98%E6%9E%9C%E8%BD%AC%E8%AE%A9.9soLgTgK_Zcax5a.webp"
                         srcset="
@@ -5308,13 +5228,15 @@ exports[`built characters page snapshots > matches the full HTML snapshot for ch
                         height="24"
                         class="thumb"
                       />
-                      <div class="body" data-astro-cid-bdgybu7g>
-                        <p class="name" data-astro-cid-bdgybu7g>
-                          <a href="/skills/战果转让" data-astro-cid-bdgybu7g
+                      <div class="flex-1 min-w-0">
+                        <p class="name text-sm font-bold">
+                          <a
+                            class="text-brand-blue hover:underline focus-visible:outline-brand-orange focus-visible:outline-3 focus-visible:outline-offset-2 no-underline"
+                            href="/skills/战果转让"
                             >战果转让</a
                           >
                         </p>
-                        <p class="desc" data-astro-cid-bdgybu7g>
+                        <p class="text-brand-gray text-xs">
                           周围1格内有我方单位时，命中+10、回避+10、必杀-10。
                         </p>
                       </div>
@@ -5575,7 +5497,7 @@ exports[`built characters page snapshots > matches the full HTML snapshot for ch
                     title="个人特技"
                     data-astro-cid-ptuzctor
                   >
-                    <div class="skill compact" data-astro-cid-bdgybu7g>
+                    <div class="flex items-start gap-2">
                       <img
                         src="/_astro/%E6%9D%80%E4%BA%BA%E6%8A%80%E6%9C%AF.BuAYJ_zT_Zlu9rt.webp"
                         srcset="
@@ -5590,13 +5512,15 @@ exports[`built characters page snapshots > matches the full HTML snapshot for ch
                         height="24"
                         class="thumb"
                       />
-                      <div class="body" data-astro-cid-bdgybu7g>
-                        <p class="name" data-astro-cid-bdgybu7g>
-                          <a href="/skills/杀人技术" data-astro-cid-bdgybu7g
+                      <div class="flex-1 min-w-0">
+                        <p class="name text-sm font-bold">
+                          <a
+                            class="text-brand-blue hover:underline focus-visible:outline-brand-orange focus-visible:outline-3 focus-visible:outline-offset-2 no-underline"
+                            href="/skills/杀人技术"
                             >杀人技术</a
                           >
                         </p>
-                        <p class="desc" data-astro-cid-bdgybu7g>
+                        <p class="text-brand-gray text-xs">
                           于回避地形发动攻击时必杀+15。
                         </p>
                       </div>
@@ -5861,7 +5785,7 @@ exports[`built characters page snapshots > matches the full HTML snapshot for ch
                     title="个人特技"
                     data-astro-cid-ptuzctor
                   >
-                    <div class="skill compact" data-astro-cid-bdgybu7g>
+                    <div class="flex items-start gap-2">
                       <img
                         src="/_astro/%E6%B1%82%E8%83%9C%E6%84%8F%E5%BF%97.CsTni41w_2qbqEP.webp"
                         srcset="
@@ -5876,13 +5800,15 @@ exports[`built characters page snapshots > matches the full HTML snapshot for ch
                         height="24"
                         class="thumb"
                       />
-                      <div class="body" data-astro-cid-bdgybu7g>
-                        <p class="name" data-astro-cid-bdgybu7g>
-                          <a href="/skills/求胜意志" data-astro-cid-bdgybu7g
+                      <div class="flex-1 min-w-0">
+                        <p class="name text-sm font-bold">
+                          <a
+                            class="text-brand-blue hover:underline focus-visible:outline-brand-orange focus-visible:outline-3 focus-visible:outline-offset-2 no-underline"
+                            href="/skills/求胜意志"
                             >求胜意志</a
                           >
                         </p>
-                        <p class="desc" data-astro-cid-bdgybu7g>
+                        <p class="text-brand-gray text-xs">
                           HP为50%以下时命中、回避+20。
                         </p>
                       </div>
@@ -6162,7 +6088,7 @@ exports[`built characters page snapshots > matches the full HTML snapshot for ch
                     title="个人特技"
                     data-astro-cid-ptuzctor
                   >
-                    <div class="skill compact" data-astro-cid-bdgybu7g>
+                    <div class="flex items-start gap-2">
                       <img
                         src="/_astro/%E6%89%A7%E7%9D%80.DdTdpZfQ_SETcq.webp"
                         srcset="
@@ -6177,13 +6103,15 @@ exports[`built characters page snapshots > matches the full HTML snapshot for ch
                         height="24"
                         class="thumb"
                       />
-                      <div class="body" data-astro-cid-bdgybu7g>
-                        <p class="name" data-astro-cid-bdgybu7g>
-                          <a href="/skills/执着" data-astro-cid-bdgybu7g
+                      <div class="flex-1 min-w-0">
+                        <p class="name text-sm font-bold">
+                          <a
+                            class="text-brand-blue hover:underline focus-visible:outline-brand-orange focus-visible:outline-3 focus-visible:outline-offset-2 no-underline"
+                            href="/skills/执着"
                             >执着</a
                           >
                         </p>
-                        <p class="desc" data-astro-cid-bdgybu7g>
+                        <p class="text-brand-gray text-xs">
                           与相同敌人连续战斗时命中+20。
                         </p>
                       </div>
@@ -6460,7 +6388,7 @@ exports[`built characters page snapshots > matches the full HTML snapshot for ch
                     title="个人特技"
                     data-astro-cid-ptuzctor
                   >
-                    <div class="skill compact" data-astro-cid-bdgybu7g>
+                    <div class="flex items-start gap-2">
                       <img
                         src="/_astro/%E5%85%89%E5%BD%A9%E5%A4%BA%E7%9B%AE%EF%BC%81.CZ3K3Qw1_Z22XLSv.webp"
                         srcset="
@@ -6475,13 +6403,15 @@ exports[`built characters page snapshots > matches the full HTML snapshot for ch
                         height="24"
                         class="thumb"
                       />
-                      <div class="body" data-astro-cid-bdgybu7g>
-                        <p class="name" data-astro-cid-bdgybu7g>
-                          <a href="/skills/光彩夺目！" data-astro-cid-bdgybu7g
+                      <div class="flex-1 min-w-0">
+                        <p class="name text-sm font-bold">
+                          <a
+                            class="text-brand-blue hover:underline focus-visible:outline-brand-orange focus-visible:outline-3 focus-visible:outline-offset-2 no-underline"
+                            href="/skills/光彩夺目！"
                             >光彩夺目！</a
                           >
                         </p>
-                        <p class="desc" data-astro-cid-bdgybu7g>
+                        <p class="text-brand-gray text-xs">
                           自身发动攻击时，敌人的回避-10。
                         </p>
                       </div>
@@ -6747,7 +6677,7 @@ exports[`built characters page snapshots > matches the full HTML snapshot for ch
                     title="个人特技"
                     data-astro-cid-ptuzctor
                   >
-                    <div class="skill compact" data-astro-cid-bdgybu7g>
+                    <div class="flex items-start gap-2">
                       <img
                         src="/_astro/%E6%B2%A1%E6%9C%89%E2%80%9C%E4%B8%8B%E6%AC%A1%E2%80%9D.DBDtWntI_Z2wbbUm.webp"
                         srcset="
@@ -6762,13 +6692,15 @@ exports[`built characters page snapshots > matches the full HTML snapshot for ch
                         height="24"
                         class="thumb"
                       />
-                      <div class="body" data-astro-cid-bdgybu7g>
-                        <p class="name" data-astro-cid-bdgybu7g>
-                          <a href="/skills/没有“下次”" data-astro-cid-bdgybu7g
+                      <div class="flex-1 min-w-0">
+                        <p class="name text-sm font-bold">
+                          <a
+                            class="text-brand-blue hover:underline focus-visible:outline-brand-orange focus-visible:outline-3 focus-visible:outline-offset-2 no-underline"
+                            href="/skills/没有“下次”"
                             >没有“下次”</a
                           >
                         </p>
-                        <p class="desc" data-astro-cid-bdgybu7g>
+                        <p class="text-brand-gray text-xs">
                           受到敌人攻击时，敌人的命中-10。
                         </p>
                       </div>
@@ -7035,7 +6967,7 @@ exports[`built characters page snapshots > matches the full HTML snapshot for ch
                     title="个人特技"
                     data-astro-cid-ptuzctor
                   >
-                    <div class="skill compact" data-astro-cid-bdgybu7g>
+                    <div class="flex items-start gap-2">
                       <img
                         src="/_astro/%E8%BE%89%E7%85%8C%E5%8E%9F%E5%8A%9B.DJY0c1XL_MJ4dF.webp"
                         srcset="
@@ -7050,13 +6982,15 @@ exports[`built characters page snapshots > matches the full HTML snapshot for ch
                         height="24"
                         class="thumb"
                       />
-                      <div class="body" data-astro-cid-bdgybu7g>
-                        <p class="name" data-astro-cid-bdgybu7g>
-                          <a href="/skills/辉煌原力" data-astro-cid-bdgybu7g
+                      <div class="flex-1 min-w-0">
+                        <p class="name text-sm font-bold">
+                          <a
+                            class="text-brand-blue hover:underline focus-visible:outline-brand-orange focus-visible:outline-3 focus-visible:outline-offset-2 no-underline"
+                            href="/skills/辉煌原力"
                             >辉煌原力</a
                           >
                         </p>
-                        <p class="desc" data-astro-cid-bdgybu7g>
+                        <p class="text-brand-gray text-xs">
                           使用回复杖时，射程+1。
                         </p>
                       </div>
@@ -7331,7 +7265,7 @@ exports[`built characters page snapshots > matches the full HTML snapshot for ch
                     title="个人特技"
                     data-astro-cid-ptuzctor
                   >
-                    <div class="skill compact" data-astro-cid-bdgybu7g>
+                    <div class="flex items-start gap-2">
                       <img
                         src="/_astro/%E5%BE%AE%E7%AC%91.B6XsINie_Z251bMR.webp"
                         srcset="
@@ -7346,13 +7280,15 @@ exports[`built characters page snapshots > matches the full HTML snapshot for ch
                         height="24"
                         class="thumb"
                       />
-                      <div class="body" data-astro-cid-bdgybu7g>
-                        <p class="name" data-astro-cid-bdgybu7g>
-                          <a href="/skills/微笑" data-astro-cid-bdgybu7g
+                      <div class="flex-1 min-w-0">
+                        <p class="name text-sm font-bold">
+                          <a
+                            class="text-brand-blue hover:underline focus-visible:outline-brand-orange focus-visible:outline-3 focus-visible:outline-offset-2 no-underline"
+                            href="/skills/微笑"
                             >微笑</a
                           >
                         </p>
-                        <p class="desc" data-astro-cid-bdgybu7g>
+                        <p class="text-brand-gray text-xs">
                           若敌人为男性单位，敌人的回避-20。
                         </p>
                       </div>
@@ -7630,7 +7566,7 @@ exports[`built characters page snapshots > matches the full HTML snapshot for ch
                     title="个人特技"
                     data-astro-cid-ptuzctor
                   >
-                    <div class="skill compact" data-astro-cid-bdgybu7g>
+                    <div class="flex items-start gap-2">
                       <img
                         src="/_astro/%E5%8F%B9%E6%81%AF.CkGJI3z8_Z1dFvHv.webp"
                         srcset="
@@ -7645,13 +7581,15 @@ exports[`built characters page snapshots > matches the full HTML snapshot for ch
                         height="24"
                         class="thumb"
                       />
-                      <div class="body" data-astro-cid-bdgybu7g>
-                        <p class="name" data-astro-cid-bdgybu7g>
-                          <a href="/skills/叹息" data-astro-cid-bdgybu7g
+                      <div class="flex-1 min-w-0">
+                        <p class="name text-sm font-bold">
+                          <a
+                            class="text-brand-blue hover:underline focus-visible:outline-brand-orange focus-visible:outline-3 focus-visible:outline-offset-2 no-underline"
+                            href="/skills/叹息"
                             >叹息</a
                           >
                         </p>
-                        <p class="desc" data-astro-cid-bdgybu7g>
+                        <p class="text-brand-gray text-xs">
                           若敌人为男性单位，敌人的命中-20。
                         </p>
                       </div>
@@ -7933,7 +7871,7 @@ exports[`built characters page snapshots > matches the full HTML snapshot for ch
                     title="个人特技"
                     data-astro-cid-ptuzctor
                   >
-                    <div class="skill compact" data-astro-cid-bdgybu7g>
+                    <div class="flex items-start gap-2">
                       <img
                         src="/_astro/%E4%B8%80%E5%A4%95%E8%87%B4%E5%AF%8C.C1polHU6_2kg7hG.webp"
                         srcset="
@@ -7948,13 +7886,15 @@ exports[`built characters page snapshots > matches the full HTML snapshot for ch
                         height="24"
                         class="thumb"
                       />
-                      <div class="body" data-astro-cid-bdgybu7g>
-                        <p class="name" data-astro-cid-bdgybu7g>
-                          <a href="/skills/一夕致富" data-astro-cid-bdgybu7g
+                      <div class="flex-1 min-w-0">
+                        <p class="name text-sm font-bold">
+                          <a
+                            class="text-brand-blue hover:underline focus-visible:outline-brand-orange focus-visible:outline-3 focus-visible:outline-offset-2 no-underline"
+                            href="/skills/一夕致富"
                             >一夕致富</a
                           >
                         </p>
-                        <p class="desc" data-astro-cid-bdgybu7g>
+                        <p class="text-brand-gray text-xs">
                           打倒敌人时，一定几率获得500G。（几率为“幸运”%）
                         </p>
                       </div>
@@ -8229,7 +8169,7 @@ exports[`built characters page snapshots > matches the full HTML snapshot for ch
                     title="个人特技"
                     data-astro-cid-ptuzctor
                   >
-                    <div class="skill compact" data-astro-cid-bdgybu7g>
+                    <div class="flex items-start gap-2">
                       <img
                         src="/_astro/%E8%BA%AB%E7%BB%8F%E7%99%BE%E6%88%98%E7%9A%84%E7%9B%B4%E8%A7%89.j5Kt4wff_2j9ASL.webp"
                         srcset="
@@ -8244,15 +8184,15 @@ exports[`built characters page snapshots > matches the full HTML snapshot for ch
                         height="24"
                         class="thumb"
                       />
-                      <div class="body" data-astro-cid-bdgybu7g>
-                        <p class="name" data-astro-cid-bdgybu7g>
+                      <div class="flex-1 min-w-0">
+                        <p class="name text-sm font-bold">
                           <a
+                            class="text-brand-blue hover:underline focus-visible:outline-brand-orange focus-visible:outline-3 focus-visible:outline-offset-2 no-underline"
                             href="/skills/身经百战的直觉"
-                            data-astro-cid-bdgybu7g
                             >身经百战的直觉</a
                           >
                         </p>
-                        <p class="desc" data-astro-cid-bdgybu7g>
+                        <p class="text-brand-gray text-xs">
                           自身装备的武器等级低于对方时，必杀+20。
                         </p>
                       </div>
@@ -8530,7 +8470,7 @@ exports[`built characters page snapshots > matches the full HTML snapshot for ch
                     title="个人特技"
                     data-astro-cid-ptuzctor
                   >
-                    <div class="skill compact" data-astro-cid-bdgybu7g>
+                    <div class="flex items-start gap-2">
                       <img
                         src="/_astro/%E7%B4%A2%E5%B0%94%E5%A7%86%E7%9A%84%E5%99%AA%E9%9F%B3.g3r1cQBW_Zpcoex.webp"
                         srcset="
@@ -8545,13 +8485,15 @@ exports[`built characters page snapshots > matches the full HTML snapshot for ch
                         height="24"
                         class="thumb"
                       />
-                      <div class="body" data-astro-cid-bdgybu7g>
-                        <p class="name" data-astro-cid-bdgybu7g>
-                          <a href="/skills/索尔姆的噪音" data-astro-cid-bdgybu7g
+                      <div class="flex-1 min-w-0">
+                        <p class="name text-sm font-bold">
+                          <a
+                            class="text-brand-blue hover:underline focus-visible:outline-brand-orange focus-visible:outline-3 focus-visible:outline-offset-2 no-underline"
+                            href="/skills/索尔姆的噪音"
                             >索尔姆的噪音</a
                           >
                         </p>
-                        <p class="desc" data-astro-cid-bdgybu7g>
+                        <p class="text-brand-gray text-xs">
                           周围3格内，敌人的必杀-5。
                         </p>
                       </div>
@@ -8814,7 +8756,7 @@ exports[`built characters page snapshots > matches the full HTML snapshot for ch
                     title="个人特技"
                     data-astro-cid-ptuzctor
                   >
-                    <div class="skill compact" data-astro-cid-bdgybu7g>
+                    <div class="flex items-start gap-2">
                       <img
                         src="/_astro/%E6%88%98%E4%B9%8B%E8%A1%80.C9i1sBvh_ZwWf1F.webp"
                         srcset="
@@ -8829,13 +8771,15 @@ exports[`built characters page snapshots > matches the full HTML snapshot for ch
                         height="24"
                         class="thumb"
                       />
-                      <div class="body" data-astro-cid-bdgybu7g>
-                        <p class="name" data-astro-cid-bdgybu7g>
-                          <a href="/skills/战之血" data-astro-cid-bdgybu7g
+                      <div class="flex-1 min-w-0">
+                        <p class="name text-sm font-bold">
+                          <a
+                            class="text-brand-blue hover:underline focus-visible:outline-brand-orange focus-visible:outline-3 focus-visible:outline-offset-2 no-underline"
+                            href="/skills/战之血"
                             >战之血</a
                           >
                         </p>
-                        <p class="desc" data-astro-cid-bdgybu7g>
+                        <p class="text-brand-gray text-xs">
                           HP未达到最大值时，必杀+10。
                         </p>
                       </div>
@@ -9113,7 +9057,7 @@ exports[`built characters page snapshots > matches the full HTML snapshot for ch
                     title="个人特技"
                     data-astro-cid-ptuzctor
                   >
-                    <div class="skill compact" data-astro-cid-bdgybu7g>
+                    <div class="flex items-start gap-2">
                       <img
                         src="/_astro/%E6%8A%A4%E8%88%AA.DLncNTdl_Z2pKfkM.webp"
                         srcset="
@@ -9128,13 +9072,15 @@ exports[`built characters page snapshots > matches the full HTML snapshot for ch
                         height="24"
                         class="thumb"
                       />
-                      <div class="body" data-astro-cid-bdgybu7g>
-                        <p class="name" data-astro-cid-bdgybu7g>
-                          <a href="/skills/护航" data-astro-cid-bdgybu7g
+                      <div class="flex-1 min-w-0">
+                        <p class="name text-sm font-bold">
+                          <a
+                            class="text-brand-blue hover:underline focus-visible:outline-brand-orange focus-visible:outline-3 focus-visible:outline-offset-2 no-underline"
+                            href="/skills/护航"
                             >护航</a
                           >
                         </p>
-                        <p class="desc" data-astro-cid-bdgybu7g>
+                        <p class="text-brand-gray text-xs">
                           若自身周围2格内有2位以上的我方女性单位，该单位与自身的命中、回避+5。
                         </p>
                       </div>
@@ -9412,7 +9358,7 @@ exports[`built characters page snapshots > matches the full HTML snapshot for ch
                     title="个人特技"
                     data-astro-cid-ptuzctor
                   >
-                    <div class="skill compact" data-astro-cid-bdgybu7g>
+                    <div class="flex items-start gap-2">
                       <img
                         src="/_astro/%E5%85%AB%E9%9D%A2%E7%8E%B2%E7%8F%91.B9vSeOzp_Z18JPKQ.webp"
                         srcset="
@@ -9427,13 +9373,15 @@ exports[`built characters page snapshots > matches the full HTML snapshot for ch
                         height="24"
                         class="thumb"
                       />
-                      <div class="body" data-astro-cid-bdgybu7g>
-                        <p class="name" data-astro-cid-bdgybu7g>
-                          <a href="/skills/八面玲珑" data-astro-cid-bdgybu7g
+                      <div class="flex-1 min-w-0">
+                        <p class="name text-sm font-bold">
+                          <a
+                            class="text-brand-blue hover:underline focus-visible:outline-brand-orange focus-visible:outline-3 focus-visible:outline-offset-2 no-underline"
+                            href="/skills/八面玲珑"
                             >八面玲珑</a
                           >
                         </p>
-                        <p class="desc" data-astro-cid-bdgybu7g>
+                        <p class="text-brand-gray text-xs">
                           与相同敌人连续战斗时，敌人的必杀-10。
                         </p>
                       </div>
@@ -9706,7 +9654,7 @@ exports[`built characters page snapshots > matches the full HTML snapshot for ch
                     title="个人特技"
                     data-astro-cid-ptuzctor
                   >
-                    <div class="skill compact" data-astro-cid-bdgybu7g>
+                    <div class="flex items-start gap-2">
                       <img
                         src="/_astro/%E5%A4%A7%E9%9B%86%E4%BC%9A.TfgB8mEM_Z2jJMkw.webp"
                         srcset="
@@ -9721,13 +9669,15 @@ exports[`built characters page snapshots > matches the full HTML snapshot for ch
                         height="24"
                         class="thumb"
                       />
-                      <div class="body" data-astro-cid-bdgybu7g>
-                        <p class="name" data-astro-cid-bdgybu7g>
-                          <a href="/skills/大集会" data-astro-cid-bdgybu7g
+                      <div class="flex-1 min-w-0">
+                        <p class="name text-sm font-bold">
+                          <a
+                            class="text-brand-blue hover:underline focus-visible:outline-brand-orange focus-visible:outline-3 focus-visible:outline-offset-2 no-underline"
+                            href="/skills/大集会"
                             >大集会</a
                           >
                         </p>
-                        <p class="desc" data-astro-cid-bdgybu7g>
+                        <p class="text-brand-gray text-xs">
                           自身的命中、回避提升，幅度为周围2格内的敌我双方单位总数×3。
                         </p>
                       </div>
@@ -10017,7 +9967,7 @@ exports[`built characters page snapshots > matches the full HTML snapshot for ch
                     title="个人特技"
                     data-astro-cid-ptuzctor
                   >
-                    <div class="skill compact" data-astro-cid-bdgybu7g>
+                    <div class="flex items-start gap-2">
                       <img
                         src="/_astro/%E6%96%99%E7%90%86%E5%86%8D%E7%8E%B0.pxGIb8mx_Z22h8NE.webp"
                         srcset="
@@ -10032,13 +9982,15 @@ exports[`built characters page snapshots > matches the full HTML snapshot for ch
                         height="24"
                         class="thumb"
                       />
-                      <div class="body" data-astro-cid-bdgybu7g>
-                        <p class="name" data-astro-cid-bdgybu7g>
-                          <a href="/skills/料理再现" data-astro-cid-bdgybu7g
+                      <div class="flex-1 min-w-0">
+                        <p class="name text-sm font-bold">
+                          <a
+                            class="text-brand-blue hover:underline focus-visible:outline-brand-orange focus-visible:outline-3 focus-visible:outline-offset-2 no-underline"
+                            href="/skills/料理再现"
                             >料理再现</a
                           >
                         </p>
-                        <p class="desc" data-astro-cid-bdgybu7g>
+                        <p class="text-brand-gray text-xs">
                           食用便当时，一定几率获得相同的便当（几率为“幸运”%）
                         </p>
                       </div>
@@ -10318,7 +10270,7 @@ exports[`built characters page snapshots > matches the full HTML snapshot for ch
                     title="个人特技"
                     data-astro-cid-ptuzctor
                   >
-                    <div class="skill compact" data-astro-cid-bdgybu7g>
+                    <div class="flex items-start gap-2">
                       <img
                         src="/_astro/%E7%A5%9E%E7%A7%98%E8%88%9E%E8%B9%88.DwdsH0cV_Z24hprJ.webp"
                         srcset="
@@ -10333,13 +10285,15 @@ exports[`built characters page snapshots > matches the full HTML snapshot for ch
                         height="24"
                         class="thumb"
                       />
-                      <div class="body" data-astro-cid-bdgybu7g>
-                        <p class="name" data-astro-cid-bdgybu7g>
-                          <a href="/skills/神秘舞蹈" data-astro-cid-bdgybu7g
+                      <div class="flex-1 min-w-0">
+                        <p class="name text-sm font-bold">
+                          <a
+                            class="text-brand-blue hover:underline focus-visible:outline-brand-orange focus-visible:outline-3 focus-visible:outline-offset-2 no-underline"
+                            href="/skills/神秘舞蹈"
                             >神秘舞蹈</a
                           >
                         </p>
-                        <p class="desc" data-astro-cid-bdgybu7g>
+                        <p class="text-brand-gray text-xs">
                           回合开始时，回复自身周围2格内的我方单位，回复量为各单位HP最大值的10%。
                         </p>
                       </div>
@@ -10602,7 +10556,7 @@ exports[`built characters page snapshots > matches the full HTML snapshot for ch
                     title="个人特技"
                     data-astro-cid-ptuzctor
                   >
-                    <div class="skill compact" data-astro-cid-bdgybu7g>
+                    <div class="flex items-start gap-2">
                       <img
                         src="/_astro/%E8%93%84%E5%8A%BF%E5%BE%85%E5%8F%91.DxFniLVO_Z65OnY.webp"
                         srcset="
@@ -10617,13 +10571,15 @@ exports[`built characters page snapshots > matches the full HTML snapshot for ch
                         height="24"
                         class="thumb"
                       />
-                      <div class="body" data-astro-cid-bdgybu7g>
-                        <p class="name" data-astro-cid-bdgybu7g>
-                          <a href="/skills/蓄势待发" data-astro-cid-bdgybu7g
+                      <div class="flex-1 min-w-0">
+                        <p class="name text-sm font-bold">
+                          <a
+                            class="text-brand-blue hover:underline focus-visible:outline-brand-orange focus-visible:outline-3 focus-visible:outline-offset-2 no-underline"
+                            href="/skills/蓄势待发"
                             >蓄势待发</a
                           >
                         </p>
-                        <p class="desc" data-astro-cid-bdgybu7g>
+                        <p class="text-brand-gray text-xs">
                           不展开战斗及不使用道具便待命时防守+2，效果持续1回合。
                         </p>
                       </div>
@@ -10901,7 +10857,7 @@ exports[`built characters page snapshots > matches the full HTML snapshot for ch
                     title="个人特技"
                     data-astro-cid-ptuzctor
                   >
-                    <div class="skill compact" data-astro-cid-bdgybu7g>
+                    <div class="flex items-start gap-2">
                       <img
                         src="/_astro/%E9%82%AA%E9%BE%99%E7%9A%84%E6%95%91%E6%B5%8E.D3asazjr_1OGsAe.webp"
                         srcset="
@@ -10916,13 +10872,15 @@ exports[`built characters page snapshots > matches the full HTML snapshot for ch
                         height="24"
                         class="thumb"
                       />
-                      <div class="body" data-astro-cid-bdgybu7g>
-                        <p class="name" data-astro-cid-bdgybu7g>
-                          <a href="/skills/邪龙的救济" data-astro-cid-bdgybu7g
+                      <div class="flex-1 min-w-0">
+                        <p class="name text-sm font-bold">
+                          <a
+                            class="text-brand-blue hover:underline focus-visible:outline-brand-orange focus-visible:outline-3 focus-visible:outline-offset-2 no-underline"
+                            href="/skills/邪龙的救济"
                             >邪龙的救济</a
                           >
                         </p>
-                        <p class="desc" data-astro-cid-bdgybu7g>
+                        <p class="text-brand-gray text-xs">
                           相邻我方单位造成的伤害+1，所受伤害-3。
                         </p>
                       </div>
@@ -11193,7 +11151,7 @@ exports[`built characters page snapshots > matches the full HTML snapshot for ch
                     title="个人特技"
                     data-astro-cid-ptuzctor
                   >
-                    <div class="skill compact" data-astro-cid-bdgybu7g>
+                    <div class="flex items-start gap-2">
                       <img
                         src="/_astro/%E5%BC%80%E5%BF%83%E6%9E%9C.D53FuDTl_27hAVO.webp"
                         srcset="
@@ -11208,13 +11166,15 @@ exports[`built characters page snapshots > matches the full HTML snapshot for ch
                         height="24"
                         class="thumb"
                       />
-                      <div class="body" data-astro-cid-bdgybu7g>
-                        <p class="name" data-astro-cid-bdgybu7g>
-                          <a href="/skills/开心果" data-astro-cid-bdgybu7g
+                      <div class="flex-1 min-w-0">
+                        <p class="name text-sm font-bold">
+                          <a
+                            class="text-brand-blue hover:underline focus-visible:outline-brand-orange focus-visible:outline-3 focus-visible:outline-offset-2 no-underline"
+                            href="/skills/开心果"
                             >开心果</a
                           >
                         </p>
-                        <p class="desc" data-astro-cid-bdgybu7g>
+                        <p class="text-brand-gray text-xs">
                           打倒敌人时，周围2格内的我方单位命中+20，效果持续1回合。
                         </p>
                       </div>
@@ -11483,7 +11443,7 @@ exports[`built characters page snapshots > matches the full HTML snapshot for ch
                     title="个人特技"
                     data-astro-cid-ptuzctor
                   >
-                    <div class="skill compact" data-astro-cid-bdgybu7g>
+                    <div class="flex items-start gap-2">
                       <img
                         src="/_astro/%E7%94%9F%E5%AD%98%E6%88%98%E7%95%A5.DLtrwVIm_23GSWz.webp"
                         srcset="
@@ -11498,13 +11458,15 @@ exports[`built characters page snapshots > matches the full HTML snapshot for ch
                         height="24"
                         class="thumb"
                       />
-                      <div class="body" data-astro-cid-bdgybu7g>
-                        <p class="name" data-astro-cid-bdgybu7g>
-                          <a href="/skills/生存战略" data-astro-cid-bdgybu7g
+                      <div class="flex-1 min-w-0">
+                        <p class="name text-sm font-bold">
+                          <a
+                            class="text-brand-blue hover:underline focus-visible:outline-brand-orange focus-visible:outline-3 focus-visible:outline-offset-2 no-underline"
+                            href="/skills/生存战略"
                             >生存战略</a
                           >
                         </p>
-                        <p class="desc" data-astro-cid-bdgybu7g>
+                        <p class="text-brand-gray text-xs">
                           自身周围3格内的敌方单位多于我方单位时，回避+20。
                         </p>
                       </div>
@@ -11778,7 +11740,7 @@ exports[`built characters page snapshots > matches the full HTML snapshot for ch
                     title="个人特技"
                     data-astro-cid-ptuzctor
                   >
-                    <div class="skill compact" data-astro-cid-bdgybu7g>
+                    <div class="flex items-start gap-2">
                       <img
                         src="/_astro/%E7%90%86%E6%83%B3%E4%B8%AD%E7%9A%84%E9%AA%91%E5%A3%AB.BqXVSb_d_1g9o0U.webp"
                         srcset="
@@ -11793,13 +11755,15 @@ exports[`built characters page snapshots > matches the full HTML snapshot for ch
                         height="24"
                         class="thumb"
                       />
-                      <div class="body" data-astro-cid-bdgybu7g>
-                        <p class="name" data-astro-cid-bdgybu7g>
-                          <a href="/skills/理想中的骑士" data-astro-cid-bdgybu7g
+                      <div class="flex-1 min-w-0">
+                        <p class="name text-sm font-bold">
+                          <a
+                            class="text-brand-blue hover:underline focus-visible:outline-brand-orange focus-visible:outline-3 focus-visible:outline-offset-2 no-underline"
+                            href="/skills/理想中的骑士"
                             >理想中的骑士</a
                           >
                         </p>
-                        <p class="desc" data-astro-cid-bdgybu7g>
+                        <p class="text-brand-gray text-xs">
                           受到敌人攻击时，若有我方单位与自身相邻所受伤害-2。
                         </p>
                       </div>
@@ -12061,7 +12025,7 @@ exports[`built characters page snapshots > matches the full HTML snapshot for ch
                     title="个人特技"
                     data-astro-cid-ptuzctor
                   >
-                    <div class="skill compact" data-astro-cid-bdgybu7g>
+                    <div class="flex items-start gap-2">
                       <img
                         src="/_astro/%E5%AE%88%E6%8A%A4%E8%80%85.D2Eo3KUS_Z21bPGJ.webp"
                         srcset="
@@ -12076,13 +12040,15 @@ exports[`built characters page snapshots > matches the full HTML snapshot for ch
                         height="24"
                         class="thumb"
                       />
-                      <div class="body" data-astro-cid-bdgybu7g>
-                        <p class="name" data-astro-cid-bdgybu7g>
-                          <a href="/skills/守护者" data-astro-cid-bdgybu7g
+                      <div class="flex-1 min-w-0">
+                        <p class="name text-sm font-bold">
+                          <a
+                            class="text-brand-blue hover:underline focus-visible:outline-brand-orange focus-visible:outline-3 focus-visible:outline-offset-2 no-underline"
+                            href="/skills/守护者"
                             >守护者</a
                           >
                         </p>
-                        <p class="desc" data-astro-cid-bdgybu7g>
+                        <p class="text-brand-gray text-xs">
                           拉法尔受到敌人攻击时必杀+10，效果持续1回合。
                         </p>
                       </div>
@@ -12341,7 +12307,7 @@ exports[`built characters page snapshots > matches the full HTML snapshot for ch
                     title="个人特技"
                     data-astro-cid-ptuzctor
                   >
-                    <div class="skill compact" data-astro-cid-bdgybu7g>
+                    <div class="flex items-start gap-2">
                       <img
                         src="/_astro/%E4%BA%89%E5%BC%BA%E5%A5%BD%E8%83%9C.BzifUIpT_Z1OVtpm.webp"
                         srcset="
@@ -12356,13 +12322,15 @@ exports[`built characters page snapshots > matches the full HTML snapshot for ch
                         height="24"
                         class="thumb"
                       />
-                      <div class="body" data-astro-cid-bdgybu7g>
-                        <p class="name" data-astro-cid-bdgybu7g>
-                          <a href="/skills/争强好胜" data-astro-cid-bdgybu7g
+                      <div class="flex-1 min-w-0">
+                        <p class="name text-sm font-bold">
+                          <a
+                            class="text-brand-blue hover:underline focus-visible:outline-brand-orange focus-visible:outline-3 focus-visible:outline-offset-2 no-underline"
+                            href="/skills/争强好胜"
                             >争强好胜</a
                           >
                         </p>
-                        <p class="desc" data-astro-cid-bdgybu7g>
+                        <p class="text-brand-gray text-xs">
                           周围2格内的我方单位打倒敌人时必杀+10，效果持续1回合。
                         </p>
                       </div>
