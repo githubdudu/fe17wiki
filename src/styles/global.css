@@ -21,18 +21,22 @@
 
   /* for h3 or h4, or paragraph text or most of the common content */
   --text-base: 0.875rem; /* 14px */
-  --text-base--line-height: calc(1.25 / 0.875);
+  --text-base--line-height: calc(1.5 / 0.875);
 
   /* for h2, or h3 of the page */
   --text-lg: 0.9375rem; /* 15px */
-  --text-lg--line-height: calc(1.25 / 0.9375);
+  --text-lg--line-height: calc(1.5 / 0.9375);
 
   /* for h2 of the page or most important content in the page */
   --text-xl: 1rem; /* 16px */
-  --text-xl--line-height: calc(1.5 / 1);
+  --text-xl--line-height: calc(1.75 / 1);
 
   /* the rest untouched */
   /* for h1 of the page */
   --text-2xl: 1.5rem;  /* 24px Same */
   --text-2xl--line-height: calc(2 / 1.5); /* Same */
+
+  /* padding for table or block should be like py-4 px-4, or py-3 px-4, or py-2 px-3 */
+  /* Use rounded-md if needed */
+  /* The avatars has a default radius of about 8px to 10px */
 }
