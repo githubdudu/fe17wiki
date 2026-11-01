@@ -135,7 +135,7 @@ export default function TeamPlanner({
       onDragCancel={() => setDnd(null)}
     >
       <div className="planner [--line:#d4dde2]">
-        <h1 className="my-4 text-2xl font-bold">阵容搭配</h1>
+        <h1 className="my-4 text-2xl font-medium">阵容搭配</h1>
         <TeamToolbar
           rows={rows}
           dict={dict}

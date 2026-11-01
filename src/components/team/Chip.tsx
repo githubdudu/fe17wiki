@@ -5,7 +5,7 @@ function Avatar({ src, size }: { src?: string; size: number }) {
   return (
     src && (
       <img
-        className="block rounded-md bg-brand-gray object-cover"
+        className="block shrink-0 rounded-md bg-brand-gray object-cover"
         src={src}
         alt=""
         width={size}
@@ -40,7 +40,7 @@ export function Chip({
   return (
     <Draggable
       d={d}
-      className={`chip inline-flex items-center gap-1 py-px pr-2 pl-px align-middle rounded-md border text-base whitespace-nowrap ${COLOR_CLASSES[d.kind]}`}
+      className={`chip inline-flex max-w-full items-center gap-1 py-px pr-2 pl-px align-middle rounded-md border text-base whitespace-nowrap ${COLOR_CLASSES[d.kind]}`}
     >
       <Avatar src={img} size={22} />
       {label ?? d.value}

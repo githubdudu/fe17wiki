@@ -23,7 +23,7 @@ const COLS = 7 + STATS.length * 2;
 <BaseLayout>
   <NavLayout>
     <div slot="sidebar">Sidebar</div>
-    <h1>兵种</h1>
+    <h1 class="text-2xl font-medium my-4">兵种</h1>
 
     <div class="table">
       <table>
@@ -136,14 +136,6 @@ const COLS = 7 + STATS.length * 2;
 </BaseLayout>
 
 <style>
-  h1 {
-    margin: 1rem 0 0.75rem;
-    font-size: 1.4rem;
-  }
-  p {
-    margin: 0;
-  }
-
   /* 表格在自己的框里上下左右滚动，表头吸顶、兵种列吸左（同角色清单） */
   .table {
     overflow: auto;

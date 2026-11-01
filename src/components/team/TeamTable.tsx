@@ -260,7 +260,7 @@ function TeamRow({
       >
         {index + 1}
       </td>
-      <td title="角色定位">
+      <td className="text-base" title="角色定位">
         <input
           className="w-[7em] px-1 border border-transparent rounded bg-transparent [font:inherit] text-base hover:border-brand-border focus:border-brand-black focus:outline-none"
           value={row.role}
