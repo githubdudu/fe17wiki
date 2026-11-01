@@ -25,20 +25,23 @@ export function Pool({
     rows.flatMap((r) => r.weapons.map((w) => w.engrave)),
   );
   const content: Record<Tab, ReactNode> = {
-    character: (
-      <Group>
-        {characters
-          .filter((c) => !inTeam.has(c.id))
-          .map((c) => (
-            <Chip
-              key={c.id}
-              d={{ kind: "character", value: c.id }}
-              img={c.img}
-              label={c.name}
-            />
-          ))}
+    character: [
+      ...Map.groupBy(
+        characters.filter((c) => !inTeam.has(c.id)),
+        (c) => c.group ?? "",
+      ),
+    ].map(([g, list]) => (
+      <Group key={g} label={g}>
+        {list.map((c) => (
+          <Chip
+            key={c.id}
+            d={{ kind: "character", value: c.id }}
+            img={c.img}
+            label={c.name}
+          />
+        ))}
       </Group>
-    ),
+    )),
     class: [...Map.groupBy(classes, (c) => c.group ?? "")].map(([g, list]) => (
       <Group key={g} label={g}>
         {list.map((c) => (
@@ -46,38 +49,44 @@ export function Pool({
         ))}
       </Group>
     )),
-    emblem: (
-      <Group>
-        {emblems
-          .filter((e) => !usedEmblems.has(e.name))
-          .map((e) => (
-            <Chip
-              key={e.name}
-              d={{ kind: "emblem", value: e.name }}
-              img={e.img}
-            />
-          ))}
+    emblem: [
+      ...Map.groupBy(
+        emblems.filter((e) => !usedEmblems.has(e.name)),
+        (e) => e.group ?? "",
+      ),
+    ].map(([g, list]) => (
+      <Group key={g} label={g}>
+        {list.map((e) => (
+          <Chip
+            key={e.name}
+            d={{ kind: "emblem", value: e.name }}
+            img={e.img}
+          />
+        ))}
       </Group>
-    ),
+    )),
     weapon: (
       <Group>
         {/* 武器的 value 是它带的刻印，新武器没有刻印 */}
         <Chip d={{ kind: "weapon", value: "" }} label="武器待定" />
       </Group>
     ),
-    engrave: (
-      <Group>
-        {emblems
-          .filter((e) => !usedEngraves.has(e.name))
-          .map((e) => (
-            <Chip
-              key={e.name}
-              d={{ kind: "engrave", value: e.name }}
-              img={e.img}
-            />
-          ))}
+    engrave: [
+      ...Map.groupBy(
+        emblems.filter((e) => !usedEngraves.has(e.name)),
+        (e) => e.group ?? "",
+      ),
+    ].map(([g, list]) => (
+      <Group key={g} label={g}>
+        {list.map((e) => (
+          <Chip
+            key={e.name}
+            d={{ kind: "engrave", value: e.name }}
+            img={e.img}
+          />
+        ))}
       </Group>
-    ),
+    )),
   };
   return (
     <Zone

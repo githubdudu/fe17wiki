@@ -24,6 +24,7 @@ const characters = (await getCollection("characters"))
     name: c.data["角色名称_简中"],
     img: url(c.data["头像"]),
     initClass: c.data["初始职业"],
+    group: c.data["分组"],
   }));
 // 同名兵种在 CSV 里按变体分多行，这里每个名字只要一个。
 const classes = [
@@ -42,6 +43,7 @@ const classes = [
 const emblems = (await getCollection("emblems")).sort(byOrder).map((e) => ({
   name: e.data["纹章士"],
   img: url(`src/assets/emblems/${e.data["纹章士"].split("/")[0]}.webp`),
+  group: e.data["章节id"].includes("ch") ? "本篇纹章士" : "DLC纹章士"
 }));
 ---
 
