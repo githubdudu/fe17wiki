@@ -23,7 +23,7 @@ type DraggableProps = { d: Drag; className: string; onClick?: () => void; label?
 
 export function Draggable(props: DraggableProps) {
   return useContext(Ghost) ? (
-    <span className={`item ${props.className}`}>{props.children}</span>
+    <span className={`cursor-grab select-none touch-manipulation ${props.className}`}>{props.children}</span>
   ) : (
     <LiveDraggable {...props} />
   );
@@ -35,7 +35,7 @@ function LiveDraggable({ d, className, onClick, label, children }: DraggableProp
       ref={setNodeRef}
       {...listeners}
       {...attributes}
-      className={`item ${className}${isDragging ? " dragging" : ""}`}
+      className={`cursor-grab select-none touch-manipulation ${className} ${isDragging ? " opacity-40" : ""}`}
       onClick={onClick}
       aria-label={label}
       title={label}

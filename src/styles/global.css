@@ -33,10 +33,18 @@
 
   /* the rest untouched */
   /* for h1 of the page */
-  --text-2xl: 1.5rem;  /* 24px Same */
+  --text-2xl: 1.5rem; /* 24px Same */
   --text-2xl--line-height: calc(2 / 1.5); /* Same */
 
   /* padding for table or block should be like py-4 px-4, or py-3 px-4, or py-2 px-3 */
   /* Use rounded-md if needed */
   /* The avatars has a default radius of about 8px to 10px */
+
+  --color-kind-character: #3b6fd6;
+  --color-kind-class: #1baf7a;
+  --color-kind-emblem: #d6334a;
+  --color-kind-weapon: #eda100;
+  --color-kind-engrave: #885d00;
+  --color-kind-row: #5d6478;
+  --color-kind-pool: #5d6478;
 }
