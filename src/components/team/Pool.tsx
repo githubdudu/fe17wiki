@@ -100,7 +100,7 @@ export function Pool({
       >
         <button
           role="tab"
-          className={`px-[0.9rem] py-2 border-0 text-brand-gray cursor-pointer hover:text-[#262a3f] kind-character hover:bg-kind-character/22 bg-kind-character/8 ${tab === "character" ? "font-bold text-[#262a3f] inset-shadow-[0_-3px] inset-shadow-kind-character" : ""}`}
+          className={`px-[0.9rem] py-2 border-0 text-brand-gray cursor-pointer hover:text-[#262a3f] hover:bg-kind-character/22 bg-kind-character/8 ${tab === "character" ? "font-bold text-[#262a3f] inset-shadow-[0_-3px] inset-shadow-kind-character" : ""}`}
           aria-selected={tab === "character"}
           onClick={() => setTab("character")}
         >
@@ -108,7 +108,7 @@ export function Pool({
         </button>
         <button
           role="tab"
-          className={`px-[0.9rem] py-2 border-0 text-brand-gray cursor-pointer hover:text-[#262a3f] kind-class hover:bg-kind-class/22 bg-kind-class/8 ${tab === "class" ? "font-bold text-[#262a3f] inset-shadow-[0_-3px] inset-shadow-kind-class" : ""}`}
+          className={`px-[0.9rem] py-2 border-0 text-brand-gray cursor-pointer hover:text-[#262a3f] hover:bg-kind-class/22 bg-kind-class/8 ${tab === "class" ? "font-bold text-[#262a3f] inset-shadow-[0_-3px] inset-shadow-kind-class" : ""}`}
           aria-selected={tab === "class"}
           onClick={() => setTab("class")}
         >
@@ -116,7 +116,7 @@ export function Pool({
         </button>
         <button
           role="tab"
-          className={`px-[0.9rem] py-2 border-0 text-brand-gray cursor-pointer hover:text-[#262a3f] kind-emblem hover:bg-kind-emblem/22 bg-kind-emblem/8 ${tab === "emblem" ? "font-bold text-[#262a3f] inset-shadow-[0_-3px] inset-shadow-kind-emblem" : ""}`}
+          className={`px-[0.9rem] py-2 border-0 text-brand-gray cursor-pointer hover:text-[#262a3f] hover:bg-kind-emblem/22 bg-kind-emblem/8 ${tab === "emblem" ? "font-bold text-[#262a3f] inset-shadow-[0_-3px] inset-shadow-kind-emblem" : ""}`}
           aria-selected={tab === "emblem"}
           onClick={() => setTab("emblem")}
         >
@@ -124,7 +124,7 @@ export function Pool({
         </button>
         <button
           role="tab"
-          className={`px-[0.9rem] py-2 border-0 text-brand-gray cursor-pointer hover:text-[#262a3f] kind-weapon hover:bg-kind-weapon/22 bg-kind-weapon/8 ${tab === "weapon" ? "font-bold text-[#262a3f] inset-shadow-[0_-3px] inset-shadow-kind-weapon" : ""}`}
+          className={`px-[0.9rem] py-2 border-0 text-brand-gray cursor-pointer hover:text-[#262a3f] hover:bg-kind-weapon/22 bg-kind-weapon/8 ${tab === "weapon" ? "font-bold text-[#262a3f] inset-shadow-[0_-3px] inset-shadow-kind-weapon" : ""}`}
           aria-selected={tab === "weapon"}
           onClick={() => setTab("weapon")}
         >
@@ -132,7 +132,7 @@ export function Pool({
         </button>
         <button
           role="tab"
-          className={`px-[0.9rem] py-2 border-0 text-brand-gray cursor-pointer hover:text-[#262a3f] kind-weapon hover:bg-kind-weapon/40 bg-kind-weapon/22 ${tab === "engrave" ? "font-bold text-[#262a3f] inset-shadow-[0_-3px] inset-shadow-kind-weapon" : ""}`}
+          className={`px-[0.9rem] py-2 border-0 text-brand-gray cursor-pointer hover:text-[#262a3f] hover:bg-kind-weapon/40 bg-kind-weapon/22 ${tab === "engrave" ? "font-bold text-[#262a3f] inset-shadow-[0_-3px] inset-shadow-kind-weapon" : ""}`}
           aria-selected={tab === "engrave"}
           onClick={() => setTab("engrave")}
         >

@@ -27,7 +27,10 @@ const COLOR_CLASSES: Record<Kind, string> = {
   row: "",
 };
 
-/** 小图 + 名字的可拖胶囊（角色、职业、纹章士、刻印）。label 缺省显示 d.value（角色的 value 是 id，需传名字）。 */
+/** 小图 + 名字的可拖胶囊（角色、职业、纹章士、刻印）。label 缺省显示 d.value（角色的 value 是 id，需传名字）。
+ * A draggable capsule.
+ */
+
 export function Chip({
   d,
   img,
@@ -40,7 +43,7 @@ export function Chip({
   return (
     <Draggable
       d={d}
-      className={`chip inline-flex max-w-full items-center gap-1 py-px pr-2 pl-px align-middle rounded-md border text-base whitespace-nowrap ${COLOR_CLASSES[d.kind]}`}
+      className={`inline-flex max-w-full items-center gap-1 py-px pr-2 pl-px align-middle rounded-md border text-base whitespace-nowrap ${COLOR_CLASSES[d.kind]}`}
     >
       <Avatar src={img} size={22} />
       {label ?? d.value}

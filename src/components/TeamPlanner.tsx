@@ -103,8 +103,6 @@ export default function TeamPlanner({
     const drop_hint_style_key = `${dnd.drag.kind}-${can_drop}`;
     return DROP_HINT_STYLE[drop_hint_style_key] ?? "";
   };
-  /** 表头提示：正在拖的东西放进这一列。 */
-  const head = (cell: Tab) => (dnd?.drag.kind === cell ? "drop-can" : "");
 
   return (
     <DndContext
@@ -134,7 +132,7 @@ export default function TeamPlanner({
       }}
       onDragCancel={() => setDnd(null)}
     >
-      <div className="planner [--line:#d4dde2]">
+      <div data-description="Team Planner">
         <h1 className="my-4 text-2xl font-medium">阵容搭配</h1>
         <TeamToolbar
           rows={rows}
@@ -150,7 +148,6 @@ export default function TeamPlanner({
           classImg={classImg}
           emblemImg={emblemImg}
           hint={hint}
-          head={head}
           draggingRow={dnd?.drag.kind === "row" ? dnd.drag.row : undefined}
           onRowsChange={setRows}
         />

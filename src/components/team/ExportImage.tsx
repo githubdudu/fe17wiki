@@ -51,8 +51,9 @@ export function ExportImage({
           alt="火焰文章结合阵容搭配图片预览"
         />
         <div
-          className="actions flex flex-wrap gap-2 m-2 text-brand-blue text-xs [&_:is(button,a)]:cursor-pointer [&_:is(button,a):hover:not(:disabled)]:underline [&_button:disabled]:cursor-not-allowed [&_button:disabled]:text-brand-gray/50 "
+          className="flex flex-wrap gap-2 m-2 text-brand-blue text-xs [&_:is(button,a)]:cursor-pointer [&_:is(button,a):hover:not(:disabled)]:underline [&_button:disabled]:cursor-not-allowed [&_button:disabled]:text-brand-gray/50 "
           role="toolbar"
+          data-description="export image actions"
         >
           <a href={image} download="fe17wiki_阵容搭配.png">
             下载

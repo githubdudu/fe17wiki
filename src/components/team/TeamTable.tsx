@@ -11,7 +11,6 @@ type TeamTableProps = {
   classImg: Map<string, string | undefined>;
   emblemImg: Map<string, string | undefined>;
   hint: (target: Target) => string;
-  head: (cell: Tab) => string;
   draggingRow?: number;
   onRowsChange: (rows: Row[]) => void;
 };
@@ -23,7 +22,6 @@ export function TeamTable({
   classImg,
   emblemImg,
   hint,
-  head,
   draggingRow,
   onRowsChange,
 }: TeamTableProps) {
@@ -31,31 +29,24 @@ export function TeamTable({
     <main className="overflow-x-auto">
       <table
         ref={tableRef}
-        className="team w-full border-collapse [&_th]:text-left [&_th]:text-sm [&_th]:text-brand-gray [&_th]:bg-brand-lightblue [&_th,&_td]:border [&_th,&_td]:border-brand-border [&_th]:px-3 [&_th]:py-2 [&_td]:px-2 [&_td]:py-1"
+        className="w-full border-collapse [&_th]:text-left [&_th]:text-sm [&_th]:text-brand-gray [&_th]:bg-brand-lightblue [&_th,&_td]:border [&_th,&_td]:border-brand-border [&_th]:px-3 [&_th]:py-2 [&_td]:px-2 [&_td]:py-1"
+        data-description="Team Table"
       >
         <thead>
           <tr>
             <th className="w-1 px-1 border-none! bg-white! no-export" />
             <th className="whitespace-nowrap">序号</th>
             <th>定位</th>
-            <th
-              className={`kind-character inset-shadow-[0_-3px] inset-shadow-kind-character ${head("character")}`}
-            >
+            <th className={`inset-shadow-[0_-3px] inset-shadow-kind-character`}>
               角色
             </th>
-            <th
-              className={`kind-class inset-shadow-[0_-3px] inset-shadow-kind-class ${head("class")}`}
-            >
+            <th className={`inset-shadow-[0_-3px] inset-shadow-kind-class`}>
               职业
             </th>
-            <th
-              className={`kind-emblem inset-shadow-[0_-3px] inset-shadow-kind-emblem ${head("emblem")}`}
-            >
+            <th className={`inset-shadow-[0_-3px] inset-shadow-kind-emblem`}>
               纹章士
             </th>
-            <th
-              className={`kind-weapon inset-shadow-[0_-3px] inset-shadow-kind-weapon ${head("weapon")}`}
-            >
+            <th className={`inset-shadow-[0_-3px] inset-shadow-kind-weapon`}>
               武器 · 刻印
             </th>
             <th className="no-export border-none bg-transparent!" />
@@ -90,6 +81,11 @@ export function TeamTable({
   );
 }
 
+/*
+ * The dragged element which moves with the cursor during a drag operation
+ *
+ * Could be a row, or a capsule (character, class, emblem, weapon)
+ */
 export function DragGhost({
   drag,
   widths = [],
@@ -111,8 +107,9 @@ export function DragGhost({
     const row = rows[drag.row!];
     return (
       <table
-        className="team table-fixed shadow-md [&_tr]:outline-none [&_tr]:bg-white"
+        className="table-fixed shadow-md [&_tr]:outline-none [&_tr]:bg-white"
         style={{ width: widths.reduce((total, width) => total + width, 0) }}
+        data-description="dragged ghost"
       >
         <colgroup>
           {widths.map((width, index) => (
@@ -158,6 +155,10 @@ export function DragGhost({
   return <Chip d={drag} img={img} label={label} />;
 }
 
+/**
+ * The capsule of Weapon is special because it includes a engrave slot.
+ *
+ */
 function WeaponSlot({
   engrave,
   row,
@@ -179,7 +180,8 @@ function WeaponSlot({
       <Zone
         as="span"
         t={{ row, cell: "engrave", slot }}
-        className={`slot-in inline-flex items-center gap-2 ps-2 rounded-md text-base whitespace-nowrap border border-kind-weapon ${hint}`}
+        className={`inline-flex items-center gap-2 ps-2 rounded-md text-base whitespace-nowrap border border-kind-weapon ${hint}`}
+        data-description="engrave slot inside weapon"
       >
         武器（待定）
         {engrave ? (
@@ -192,6 +194,9 @@ function WeaponSlot({
   );
 }
 
+/**
+ * A cell is a td element that could place a draggable capsule inside.
+ */
 function Cell({
   row,
   kind,
@@ -210,6 +215,11 @@ function Cell({
   );
 }
 
+/**
+ * A row in the team table, representing a character and its associated slots.
+ *
+ * Contains lots of customized color for each column.
+ */
 function TeamRow({
   row,
   index,
