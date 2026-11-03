@@ -7,9 +7,14 @@ interface Props {
 }
 
 const { node } = Astro.props;
+const dlc = node.type === "divine" || node.type === "xenologue";
+
 ---
 
 <div class="card">
+  <h2>{node.name}</h2>
+  {dlc && <span class="tag">DLC</span>}
+
   <h3 class="card-title">
     {node.title}
   </h3>
@@ -55,7 +60,16 @@ const { node } = Astro.props;
     font-weight: 400;
     color: #5d6478;
   }
-
+  .tag {
+    margin-left: 0.4rem;
+    padding: 0 5px;
+    border-radius: 4px;
+    background: #f4c542;
+    color: #22263a;
+    font-size: 0.7rem;
+    font-weight: 500;
+    vertical-align: middle;
+  }
   /* ---- 在这一章加入的角色 / 纹章士：小头像 + 名字 ---- */
   .joins {
     display: flex;

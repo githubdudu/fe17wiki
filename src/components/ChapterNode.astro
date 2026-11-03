@@ -35,16 +35,20 @@ const dlc = node.type === "divine" || node.type === "xenologue";
   ]}
   id={node.id}
 >
-  <div class="marker">
-    <span>{node.name}</span>
-    {dlc && <span class="tag">DLC</span>}
+  <div class="grid grid-cols-[24px_1fr] sm:grid-cols-[32px_1fr] relative">
+    <div class="chapter-dot col-start-2 flex gap-4 text-xl">
+      <div class="font-bold">{node.name}</div>
+      <div>{node.title}</div>
+    </div>
   </div>
-
-  <ChapterCard node={node} />
+  <div class="grid grid-cols-[24px_1fr] sm:grid-cols-[32px_1fr] relative">
+    <div class="thread-line"></div>
+    <div class="col-start-2">content of chapter</div>
+  </div>
 </div>
 {
   node.chain.length > 0 && (
-    <ol class="chain">
+    <ol class="">
       {node.chain.map((next) => (
         <li data-type={next.type}>
           <Astro.self node={next} />
@@ -55,7 +59,7 @@ const dlc = node.type === "divine" || node.type === "xenologue";
 }
 {
   node.children.length > 0 && (
-    <ul class="branches">
+    <ul class="">
       {node.children.map((child) => (
         <li data-type={child.type}>
           <Astro.self node={child} />
@@ -66,22 +70,36 @@ const dlc = node.type === "divine" || node.type === "xenologue";
 }
 
 <style>
-  /* ---- 事件本身：圆点左边的编号 + 右侧卡片 ---- */
-  .event {
-    position: relative;
-    display: grid;
-    justify-items: start;
+  .chapter-dot::before {
+    content: "";
+    position: absolute;
+    left: 1rem;
+    top: 8px;
+    width: 8px;
+    height: 8px;
+    border: 2px solid var(--side);
+    border-radius: 50%;
+    background: #fff;
+    transform: translateX(-50%);
   }
 
-  .tag {
-    margin-left: 0.4rem;
-    padding: 0 5px;
-    border-radius: 4px;
-    background: #f4c542;
-    color: #22263a;
-    font-size: 0.7rem;
-    font-weight: 500;
-    vertical-align: middle;
+  .thread-line::before {
+    content: "";
+    display: block;
+    height: 100%;
+    width: 1px;
+    background: var(--color-brand-border);
+    margin-inline-start: 15.5px;
+    /* position: absolute; */
+    /* left: 0;
+    top: 0; */
+    /* border-left: 2px dashed var(--axis); */
+  }
+  /* ---- 事件本身：圆点左边的编号 + 右侧卡片 ---- */
+  .event {
+    /* position: relative;
+    display: grid;
+    justify-items: start; */
   }
 
   /*

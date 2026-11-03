@@ -90,12 +90,24 @@ console.dir({ mainList }, { depth: 10 });
 >
   <NavLayout>
     <div class="chapters">
-      <h1>章节流程</h1>
-      <p class="lead">
-        <span class="color-main">&nbsp;主线</span>
-        <span class="color-paralogue">&nbsp;外传</span>
-        <span class="color-divine">&nbsp;神龙之章</span>
-        <span class="color-xenologue">&nbsp;邪龙之章</span>
+      <h1 class="text-2xl font-medium my-4">章节流程</h1>
+      <p class="lead flex gap-2 text-brand-gray text-base">
+        <span
+          class="color-main before:inline-block before:w-4 before:border-b-4 before:border-brand-black"
+          >&nbsp;主线</span
+        >
+        <span
+          class="color-paralogue before:inline-block before:w-4 before:border-b-4 before:border-kind-character"
+          >&nbsp;外传</span
+        >
+        <span
+          class="color-divine before:inline-block before:w-4 before:border-b-4 before:border-kind-weapon"
+          >&nbsp;神龙之章</span
+        >
+        <span
+          class="color-xenologue before:inline-block before:w-4 before:border-b-4 before:border-kind-engrave"
+          >&nbsp;邪龙之章</span
+        >
       </p>
       <ChapterTree trunk={mainList} />
     </div>
@@ -117,137 +129,5 @@ console.dir({ mainList }, { depth: 10 });
     --label-s: 7rem; /* 支线编号较长（「邪龙之章 第2章」），折成两行刚好 */
     --curve: 32px; /* 支线离开主干时的圆角半径 */
     color: #22263a;
-  }
-  .chapters h1 {
-    margin: 1rem 0 0.25rem;
-    font-size: 1.4rem;
-    text-align: center;
-  }
-  .lead {
-    margin: 0 0 1.25rem;
-    color: #5d6478;
-    font-size: 0.85rem;
-    display: flex;
-    gap: 8px;
-    justify-content: center;
-  }
-
-  .lead .color-main::before {
-    display: inline-block;
-    content: "";
-    width: 1rem;
-    border-bottom: 4px solid #262a3f;
-  }
-  .lead .color-paralogue::before {
-    display: inline-block;
-    content: "";
-    width: 1rem;
-    border-bottom: 4px solid #3b6fd6;
-  }
-  .lead .color-divine::before {
-    display: inline-block;
-    content: "";
-    width: 1rem;
-    border-bottom: 4px solid #d99400;
-  }
-  .lead .color-xenologue::before {
-    display: inline-block;
-    content: "";
-    width: 1rem;
-    border-bottom: 4px solid #7d4bc7;
-  }
-
-  /* ---- 轴的颜色：每种类型一个（按 CSV 的「类型」，不在代码里做映射表）；往下继承给分支内部的章节 ---- */
-  /* .trunk > .paralogue {
-    --axis: #3b6fd6;
-  }
-  .trunk > .divine {
-    --axis: #d99400;
-  }
-  .trunk > .xenologue {
-    --axis: #7d4bc7;
-  }
-
-  /*
-   * 主干：每个 li 左边一条竖线（主干轴，本行这一段），li::after 是轴上的圆点，li::before 是圆点到卡片的虚线。
-   * 圆点、虚线、编号都在每一行的顶边，所以轴从圆点起画，最后一行不画线即可。
-   * 分支（外传 / DLC）也是主干上的一行，只是 --indent 把它整行往右挪一档、再用弯道从主干拐出来；
-   * 主干轴照旧穿过这一行（所以缩进走 padding 而不是 margin）。整条轴右移 --label，给左边的编号腾地方。
-   */
-  /* .trunk {
-    margin: 0;
-    padding-left: var(--label);
-    list-style: none;
-  } */
-  /* The first level of nodes */
-  /* .node {
-    --indent: 0px;
-    position: relative;
-    border-left: 2px solid var(--side);
-  }
-
-  .trunk > .main {
-    padding-left: var(--gap);
-  }
-  .trunk > .divine,
-  .trunk > .paralogue,
-  .trunk > .xenologue {
-    padding-left: 0;
-  }
-
-  .node:last-child {
-    border-left-color: transparent;
-  }
-
-  .main::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: calc(var(--indent) + 0.9rem);
-    width: calc(var(--gap) - 1.15rem);
-    border-top: 2px dashed var(--axis);
-  }
-  .main::after {
-    content: "";
-    position: absolute;
-    left: calc(var(--indent) - 9px);
-    top: -7px;
-    width: 11px;
-    height: 11px;
-    border: 3px solid var(--axis);
-    border-radius: 50%;
-    background: #fff;
-  } */
-
-  /* 分支：从主干的轴拐出来，弯道是这条分支自己的颜色（.event 是 ChapterNode 的元素，要 :global 才选得到） */
-  /* .trunk > not(.main) > :global(.event)::before {
-    content: "";
-    position: absolute;
-    box-sizing: border-box;
-    top: calc(-1 * var(--curve));
-    /* 从主干轴横过来，在自己的圆点上拐下去：宽度只到自己的轴，不含虚线那一段 --gap */
-  /* left: calc(-1 * (var(--gap) + var(--indent) + 2px));
-    width: calc(var(--indent) + 2px);
-    height: var(--curve);
-    border-top: 3px solid var(--axis);
-    border-right: 3px solid var(--axis);
-    border-top-right-radius: var(--curve);
-  } */
-
-  /* 手机：没有左侧空位，轴贴到最左边，虚线和缩进都缩短 */
-  @media (max-width: 640px) {
-    .chapters {
-      --gap: 1.25rem;
-    }
-    /* .trunk {
-      padding-left: 0;
-    }
-    .trunk > li:not([data-type="主线"]) {
-      --indent: calc(0.4rem + var(--gap));
-    }
-    .trunk > li::before {
-      left: calc(var(--indent) + 0.35rem);
-      width: 0.6rem;
-    } */
   }
 </style>
