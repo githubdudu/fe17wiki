@@ -17,114 +17,8 @@ exports[`built emblems page snapshots > matches the full HTML snapshot for the e
       href="https://fonts.googleapis.com/css2?family=Barlow:wght@500;700&display=swap"
     />
     <title>火焰纹章结合 Engage Wiki</title>
-    <link rel="stylesheet" href="/_astro/NavLayout.DJj6MyJj.css" />
+    <link rel="stylesheet" href="/_astro/NavLayout.CTFKBE2S.css" />
     <style>
-      h1[data-astro-cid-wbeb7hvx] {
-        margin: 1rem 0 0.75rem;
-        font-size: 1.4rem;
-      }
-      h1[data-astro-cid-wbeb7hvx] span[data-astro-cid-wbeb7hvx] {
-        color: #5d6478;
-        font-size: 1rem;
-        font-weight: 400;
-      }
-      p[data-astro-cid-wbeb7hvx] {
-        margin: 0;
-      }
-      .emblems[data-astro-cid-wbeb7hvx] {
-        grid-template-columns: repeat(auto-fill, minmax(min(100%, 20rem), 1fr));
-        gap: 0.75rem;
-        margin: 0;
-        padding: 0;
-        list-style: none;
-        display: grid;
-      }
-      .card[data-astro-cid-wbeb7hvx] {
-        color: #22263a;
-        background: #fff;
-        border: 1px solid #d4dde2;
-        border-radius: 8px;
-        flex-direction: column;
-        gap: 0.6rem;
-        padding: 0.9rem 1rem;
-        display: flex;
-      }
-      header[data-astro-cid-wbeb7hvx] {
-        border-bottom: 1px solid #d4dde2;
-        align-items: center;
-        gap: 0.75rem;
-        padding-bottom: 0.6rem;
-        display: flex;
-      }
-      .portraits[data-astro-cid-wbeb7hvx] {
-        flex: none;
-        display: flex;
-      }
-      .portraits[data-astro-cid-wbeb7hvx] > * + * {
-        margin-left: -0.75rem;
-      }
-      .portraits[data-astro-cid-wbeb7hvx] > * {
-        box-shadow: 0 0 0 2px #fff;
-      }
-      h2[data-astro-cid-wbeb7hvx] {
-        margin: 0;
-        font-size: 1.1rem;
-      }
-      .works[data-astro-cid-wbeb7hvx],
-      .intro[data-astro-cid-wbeb7hvx],
-      dd[data-astro-cid-wbeb7hvx] {
-        white-space: pre-line;
-      }
-      .works[data-astro-cid-wbeb7hvx] {
-        color: #5d6478;
-        margin-top: 0.15rem;
-        font-size: 0.75rem;
-      }
-      .intro[data-astro-cid-wbeb7hvx] {
-        font-size: 0.85rem;
-        line-height: 1.6;
-      }
-      dl[data-astro-cid-wbeb7hvx] {
-        gap: 0.4rem;
-        margin: 0;
-        display: grid;
-      }
-      dl[data-astro-cid-wbeb7hvx] div[data-astro-cid-wbeb7hvx] {
-        grid-template-columns: 4.5rem minmax(0, 1fr);
-        gap: 0.5rem;
-        display: grid;
-      }
-      dt[data-astro-cid-wbeb7hvx] {
-        color: #5d6478;
-        font-size: 0.75rem;
-      }
-      dd[data-astro-cid-wbeb7hvx] {
-        margin: 0;
-        font-size: 0.8rem;
-      }
-      .chapter[data-astro-cid-wbeb7hvx] {
-        font-weight: 700;
-        display: block;
-      }
-      .cond[data-astro-cid-wbeb7hvx] {
-        color: #5d6478;
-        font-size: 0.75rem;
-        display: block;
-      }
-      .bonus[data-astro-cid-wbeb7hvx] {
-        white-space: normal;
-        flex-wrap: wrap;
-        gap: 0.25rem;
-        display: flex;
-      }
-      .bonus[data-astro-cid-wbeb7hvx] span[data-astro-cid-wbeb7hvx] {
-        background: #f1f5f7;
-        border-radius: 3px;
-        padding: 0 0.4rem;
-        font-family: Barlow, system-ui, sans-serif;
-        font-size: 0.8rem;
-        font-weight: 500;
-      }
       .thumb[data-astro-cid-zennbdu3] {
         aspect-ratio: 1;
         border-radius: 6px;
@@ -150,17 +44,17 @@ exports[`built emblems page snapshots > matches the full HTML snapshot for the e
         ><a href="/team" data-astro-cid-entc4gyn>阵容搭配</a
         ><a href="/chapters" data-astro-cid-entc4gyn>章节流程</a>
       </nav>
-      <aside data-astro-cid-entc4gyn>
-        <div data-astro-cid-wbeb7hvx>Sidebar</div>
-      </aside>
+      <aside data-astro-cid-entc4gyn><div>Sidebar</div></aside>
       <main data-astro-cid-entc4gyn>
-        <h1 data-astro-cid-wbeb7hvx>
-          纹章士 <span data-astro-cid-wbeb7hvx>20</span>
+        <h1 class="my-4 text-2xl font-medium">
+          纹章士 <span class="text-brand-gray text-md font-medium">20</span>
         </h1>
-        <ul class="emblems" data-astro-cid-wbeb7hvx>
-          <li class="card" data-astro-cid-wbeb7hvx>
-            <header data-astro-cid-wbeb7hvx>
-              <div class="portraits" data-astro-cid-wbeb7hvx>
+        <ul class="emblems grid grid-cols-1 md:grid-cols-2 gap-3">
+          <li
+            class="card flex flex-col gap-3 p-4 border border-brand-border rounded-md text-brand-black"
+          >
+            <header class="flex whitespace-pre-line items-center gap-3">
+              <div class="portraits flex flex-none [&amp;&gt;*+*]:-ml-3">
                 <img
                   src="/_astro/%E9%A9%AC%E5%B0%94%E6%96%AF.B2SL3fuy_J6en.webp"
                   srcset="
@@ -176,43 +70,53 @@ exports[`built emblems page snapshots > matches the full HTML snapshot for the e
                   class="thumb"
                 />
               </div>
-              <div data-astro-cid-wbeb7hvx>
-                <h2 data-astro-cid-wbeb7hvx>马尔斯</h2>
-                <p class="works" data-astro-cid-wbeb7hvx>
+              <div class="self-stretch border-b border-brand-border">
+                <h2 class="text-xl font-medium">马尔斯</h2>
+                <p class="works text-xs text-brand-gray">
                   FE1《火焰之纹章 暗黑龙与光之剑》 FE3《火焰之纹章 纹章之谜》
                 </p>
               </div>
             </header>
-            <p class="intro" data-astro-cid-wbeb7hvx>
-              人称“初始纹章士”。为人高尚清廉 极具领袖魅力，是群雄之最。
+            <p class="intro whitespace-pre-line text-base">
+              人称“初始纹章士”。为人高尚清廉，极具领袖魅力，是群雄之最。
             </p>
-            <dl data-astro-cid-wbeb7hvx>
-              <div data-astro-cid-wbeb7hvx>
-                <dt data-astro-cid-wbeb7hvx>声优</dt>
-                <dd data-astro-cid-wbeb7hvx>绿川 光</dd>
+            <dl
+              class="whitespace-pre-line grid gap-1 [&amp;&gt;div]:grid [&amp;&gt;div]:grid-cols-[4.5rem_1fr] [&amp;&gt;div]:gap-2"
+            >
+              <div class="text-sm">
+                <dt class="text-brand-gray">声优</dt>
+                <dd class="font-medium">绿川 光</dd>
               </div>
-              <div data-astro-cid-wbeb7hvx>
-                <dt data-astro-cid-wbeb7hvx>加入</dt>
-                <dd data-astro-cid-wbeb7hvx>
-                  <span class="chapter" data-astro-cid-wbeb7hvx>第一章</span
-                  ><span class="cond" data-astro-cid-wbeb7hvx
+              <div class="text-sm">
+                <dt class="text-brand-gray">加入</dt>
+                <dd class="text-sm">
+                  <span class="block font-medium">第一章</span
+                  ><span class="text-xs text-brand-gray"
                     >中途剧情后自动加入；第十一章暂时失去；第二十二章结束时剧情回归</span
                   >
                 </dd>
               </div>
-              <div data-astro-cid-wbeb7hvx>
-                <dt data-astro-cid-wbeb7hvx>满级加成</dt>
-                <dd class="bonus" data-astro-cid-wbeb7hvx>
-                  <span data-astro-cid-wbeb7hvx>+3力量</span
-                  ><span data-astro-cid-wbeb7hvx>+4技巧</span
-                  ><span data-astro-cid-wbeb7hvx>+4速度</span>
+              <div class="text-sm">
+                <dt class="text-brand-gray">满级加成</dt>
+                <dd class="flex flex-wrap gap-1 whitespace-normal font-medium">
+                  <span class="px-2 rounded-md bg-brand-lightblue font-[Barlow]"
+                    >+3力量</span
+                  ><span
+                    class="px-2 rounded-md bg-brand-lightblue font-[Barlow]"
+                    >+4技巧</span
+                  ><span
+                    class="px-2 rounded-md bg-brand-lightblue font-[Barlow]"
+                    >+4速度</span
+                  >
                 </dd>
               </div>
             </dl>
           </li>
-          <li class="card" data-astro-cid-wbeb7hvx>
-            <header data-astro-cid-wbeb7hvx>
-              <div class="portraits" data-astro-cid-wbeb7hvx>
+          <li
+            class="card flex flex-col gap-3 p-4 border border-brand-border rounded-md text-brand-black"
+          >
+            <header class="flex whitespace-pre-line items-center gap-3">
+              <div class="portraits flex flex-none [&amp;&gt;*+*]:-ml-3">
                 <img
                   src="/_astro/%E8%B5%9B%E8%8E%89%E5%8D%A1.Jw-Kv7Nq_Nb2kj.webp"
                   srcset="
@@ -228,43 +132,53 @@ exports[`built emblems page snapshots > matches the full HTML snapshot for the e
                   class="thumb"
                 />
               </div>
-              <div data-astro-cid-wbeb7hvx>
-                <h2 data-astro-cid-wbeb7hvx>赛莉卡</h2>
-                <p class="works" data-astro-cid-wbeb7hvx>
+              <div class="self-stretch border-b border-brand-border">
+                <h2 class="text-xl font-medium">赛莉卡</h2>
+                <p class="works text-xs text-brand-gray">
                   FE2《火焰之纹章 外传/回声 另一位英雄王》
                 </p>
               </div>
             </header>
-            <p class="intro" data-astro-cid-wbeb7hvx>
+            <p class="intro whitespace-pre-line text-base">
               人称“声响纹章士”。是丰饶之国的公主，也是位神官战士。
             </p>
-            <dl data-astro-cid-wbeb7hvx>
-              <div data-astro-cid-wbeb7hvx>
-                <dt data-astro-cid-wbeb7hvx>声优</dt>
-                <dd data-astro-cid-wbeb7hvx>东山 奈央</dd>
+            <dl
+              class="whitespace-pre-line grid gap-1 [&amp;&gt;div]:grid [&amp;&gt;div]:grid-cols-[4.5rem_1fr] [&amp;&gt;div]:gap-2"
+            >
+              <div class="text-sm">
+                <dt class="text-brand-gray">声优</dt>
+                <dd class="font-medium">东山 奈央</dd>
               </div>
-              <div data-astro-cid-wbeb7hvx>
-                <dt data-astro-cid-wbeb7hvx>加入</dt>
-                <dd data-astro-cid-wbeb7hvx>
-                  <span class="chapter" data-astro-cid-wbeb7hvx>第四章</span
-                  ><span class="cond" data-astro-cid-wbeb7hvx
+              <div class="text-sm">
+                <dt class="text-brand-gray">加入</dt>
+                <dd class="text-sm">
+                  <span class="block font-medium">第四章</span
+                  ><span class="text-xs text-brand-gray"
                     >开始时剧情自动加入；第十一章暂时失去；第二十章结束时剧情回归</span
                   >
                 </dd>
               </div>
-              <div data-astro-cid-wbeb7hvx>
-                <dt data-astro-cid-wbeb7hvx>满级加成</dt>
-                <dd class="bonus" data-astro-cid-wbeb7hvx>
-                  <span data-astro-cid-wbeb7hvx>+3力量</span
-                  ><span data-astro-cid-wbeb7hvx>+5魔力</span
-                  ><span data-astro-cid-wbeb7hvx>+4魔防</span>
+              <div class="text-sm">
+                <dt class="text-brand-gray">满级加成</dt>
+                <dd class="flex flex-wrap gap-1 whitespace-normal font-medium">
+                  <span class="px-2 rounded-md bg-brand-lightblue font-[Barlow]"
+                    >+3力量</span
+                  ><span
+                    class="px-2 rounded-md bg-brand-lightblue font-[Barlow]"
+                    >+5魔力</span
+                  ><span
+                    class="px-2 rounded-md bg-brand-lightblue font-[Barlow]"
+                    >+4魔防</span
+                  >
                 </dd>
               </div>
             </dl>
           </li>
-          <li class="card" data-astro-cid-wbeb7hvx>
-            <header data-astro-cid-wbeb7hvx>
-              <div class="portraits" data-astro-cid-wbeb7hvx>
+          <li
+            class="card flex flex-col gap-3 p-4 border border-brand-border rounded-md text-brand-black"
+          >
+            <header class="flex whitespace-pre-line items-center gap-3">
+              <div class="portraits flex flex-none [&amp;&gt;*+*]:-ml-3">
                 <img
                   src="/_astro/%E8%A5%BF%E6%A0%BC%E5%B0%94%E7%89%B9.Dx6V8xOE_Z1b72NN.webp"
                   srcset="
@@ -280,44 +194,56 @@ exports[`built emblems page snapshots > matches the full HTML snapshot for the e
                   class="thumb"
                 />
               </div>
-              <div data-astro-cid-wbeb7hvx>
-                <h2 data-astro-cid-wbeb7hvx>西格尔特</h2>
-                <p class="works" data-astro-cid-wbeb7hvx>
+              <div class="self-stretch border-b border-brand-border">
+                <h2 class="text-xl font-medium">西格尔特</h2>
+                <p class="works text-xs text-brand-gray">
                   FE4《火焰之纹章 圣战之系谱》
                 </p>
               </div>
             </header>
-            <p class="intro" data-astro-cid-wbeb7hvx>
+            <p class="intro whitespace-pre-line text-base">
               人称“圣战纹章士”。是继承圣战士血脉的廉洁骑士。
             </p>
-            <dl data-astro-cid-wbeb7hvx>
-              <div data-astro-cid-wbeb7hvx>
-                <dt data-astro-cid-wbeb7hvx>声优</dt>
-                <dd data-astro-cid-wbeb7hvx>森川 智之</dd>
+            <dl
+              class="whitespace-pre-line grid gap-1 [&amp;&gt;div]:grid [&amp;&gt;div]:grid-cols-[4.5rem_1fr] [&amp;&gt;div]:gap-2"
+            >
+              <div class="text-sm">
+                <dt class="text-brand-gray">声优</dt>
+                <dd class="font-medium">森川 智之</dd>
               </div>
-              <div data-astro-cid-wbeb7hvx>
-                <dt data-astro-cid-wbeb7hvx>加入</dt>
-                <dd data-astro-cid-wbeb7hvx>
-                  <span class="chapter" data-astro-cid-wbeb7hvx>第三章</span
-                  ><span class="cond" data-astro-cid-wbeb7hvx
+              <div class="text-sm">
+                <dt class="text-brand-gray">加入</dt>
+                <dd class="text-sm">
+                  <span class="block font-medium">第三章</span
+                  ><span class="text-xs text-brand-gray"
                     >取得胜利后剧情加入；第十一章暂时失去；第十七章结束时剧情回归</span
                   >
                 </dd>
               </div>
-              <div data-astro-cid-wbeb7hvx>
-                <dt data-astro-cid-wbeb7hvx>满级加成</dt>
-                <dd class="bonus" data-astro-cid-wbeb7hvx>
-                  <span data-astro-cid-wbeb7hvx>+4技巧</span
-                  ><span data-astro-cid-wbeb7hvx>+3防守</span
-                  ><span data-astro-cid-wbeb7hvx>+3体格</span
-                  ><span data-astro-cid-wbeb7hvx>+1移动力</span>
+              <div class="text-sm">
+                <dt class="text-brand-gray">满级加成</dt>
+                <dd class="flex flex-wrap gap-1 whitespace-normal font-medium">
+                  <span class="px-2 rounded-md bg-brand-lightblue font-[Barlow]"
+                    >+4技巧</span
+                  ><span
+                    class="px-2 rounded-md bg-brand-lightblue font-[Barlow]"
+                    >+3防守</span
+                  ><span
+                    class="px-2 rounded-md bg-brand-lightblue font-[Barlow]"
+                    >+3体格</span
+                  ><span
+                    class="px-2 rounded-md bg-brand-lightblue font-[Barlow]"
+                    >+1移动力</span
+                  >
                 </dd>
               </div>
             </dl>
           </li>
-          <li class="card" data-astro-cid-wbeb7hvx>
-            <header data-astro-cid-wbeb7hvx>
-              <div class="portraits" data-astro-cid-wbeb7hvx>
+          <li
+            class="card flex flex-col gap-3 p-4 border border-brand-border rounded-md text-brand-black"
+          >
+            <header class="flex whitespace-pre-line items-center gap-3">
+              <div class="portraits flex flex-none [&amp;&gt;*+*]:-ml-3">
                 <img
                   src="/_astro/%E9%87%8C%E5%BC%97.DXAPMz1k_ZmdG6P.webp"
                   srcset="
@@ -333,43 +259,53 @@ exports[`built emblems page snapshots > matches the full HTML snapshot for the e
                   class="thumb"
                 />
               </div>
-              <div data-astro-cid-wbeb7hvx>
-                <h2 data-astro-cid-wbeb7hvx>里弗</h2>
-                <p class="works" data-astro-cid-wbeb7hvx>
+              <div class="self-stretch border-b border-brand-border">
+                <h2 class="text-xl font-medium">里弗</h2>
+                <p class="works text-xs text-brand-gray">
                   FE5《火焰之纹章 多拉基亚776》
                 </p>
               </div>
             </header>
-            <p class="intro" data-astro-cid-wbeb7hvx>
+            <p class="intro whitespace-pre-line text-base">
               人称“系谱纹章士”。继承了两位圣战士血脉，是位英勇的王子。
             </p>
-            <dl data-astro-cid-wbeb7hvx>
-              <div data-astro-cid-wbeb7hvx>
-                <dt data-astro-cid-wbeb7hvx>声优</dt>
-                <dd data-astro-cid-wbeb7hvx>铃村 健一</dd>
+            <dl
+              class="whitespace-pre-line grid gap-1 [&amp;&gt;div]:grid [&amp;&gt;div]:grid-cols-[4.5rem_1fr] [&amp;&gt;div]:gap-2"
+            >
+              <div class="text-sm">
+                <dt class="text-brand-gray">声优</dt>
+                <dd class="font-medium">铃村 健一</dd>
               </div>
-              <div data-astro-cid-wbeb7hvx>
-                <dt data-astro-cid-wbeb7hvx>加入</dt>
-                <dd data-astro-cid-wbeb7hvx>
-                  <span class="chapter" data-astro-cid-wbeb7hvx>第八章</span
-                  ><span class="cond" data-astro-cid-wbeb7hvx
+              <div class="text-sm">
+                <dt class="text-brand-gray">加入</dt>
+                <dd class="text-sm">
+                  <span class="block font-medium">第八章</span
+                  ><span class="text-xs text-brand-gray"
                     >取得胜利后剧情加入；第十一章暂时失去；第十七章结束时剧情回归</span
                   >
                 </dd>
               </div>
-              <div data-astro-cid-wbeb7hvx>
-                <dt data-astro-cid-wbeb7hvx>满级加成</dt>
-                <dd class="bonus" data-astro-cid-wbeb7hvx>
-                  <span data-astro-cid-wbeb7hvx>+7HP</span
-                  ><span data-astro-cid-wbeb7hvx>+3防守</span
-                  ><span data-astro-cid-wbeb7hvx>+5体格</span>
+              <div class="text-sm">
+                <dt class="text-brand-gray">满级加成</dt>
+                <dd class="flex flex-wrap gap-1 whitespace-normal font-medium">
+                  <span class="px-2 rounded-md bg-brand-lightblue font-[Barlow]"
+                    >+7HP</span
+                  ><span
+                    class="px-2 rounded-md bg-brand-lightblue font-[Barlow]"
+                    >+3防守</span
+                  ><span
+                    class="px-2 rounded-md bg-brand-lightblue font-[Barlow]"
+                    >+5体格</span
+                  >
                 </dd>
               </div>
             </dl>
           </li>
-          <li class="card" data-astro-cid-wbeb7hvx>
-            <header data-astro-cid-wbeb7hvx>
-              <div class="portraits" data-astro-cid-wbeb7hvx>
+          <li
+            class="card flex flex-col gap-3 p-4 border border-brand-border rounded-md text-brand-black"
+          >
+            <header class="flex whitespace-pre-line items-center gap-3">
+              <div class="portraits flex flex-none [&amp;&gt;*+*]:-ml-3">
                 <img
                   src="/_astro/%E7%BD%97%E4%BC%8A.Ox63akQ9_Z1P8qew.webp"
                   srcset="
@@ -385,43 +321,53 @@ exports[`built emblems page snapshots > matches the full HTML snapshot for the e
                   class="thumb"
                 />
               </div>
-              <div data-astro-cid-wbeb7hvx>
-                <h2 data-astro-cid-wbeb7hvx>罗伊</h2>
-                <p class="works" data-astro-cid-wbeb7hvx>
+              <div class="self-stretch border-b border-brand-border">
+                <h2 class="text-xl font-medium">罗伊</h2>
+                <p class="works text-xs text-brand-gray">
                   FE6《火焰之纹章 封印之剑》
                 </p>
               </div>
             </header>
-            <p class="intro" data-astro-cid-wbeb7hvx>
+            <p class="intro whitespace-pre-line text-base">
               人称“封印纹章士”。勇猛果敢、才智过人，是位大将风范的勋爵。
             </p>
-            <dl data-astro-cid-wbeb7hvx>
-              <div data-astro-cid-wbeb7hvx>
-                <dt data-astro-cid-wbeb7hvx>声优</dt>
-                <dd data-astro-cid-wbeb7hvx>福山 润</dd>
+            <dl
+              class="whitespace-pre-line grid gap-1 [&amp;&gt;div]:grid [&amp;&gt;div]:grid-cols-[4.5rem_1fr] [&amp;&gt;div]:gap-2"
+            >
+              <div class="text-sm">
+                <dt class="text-brand-gray">声优</dt>
+                <dd class="font-medium">福山 润</dd>
               </div>
-              <div data-astro-cid-wbeb7hvx>
-                <dt data-astro-cid-wbeb7hvx>加入</dt>
-                <dd data-astro-cid-wbeb7hvx>
-                  <span class="chapter" data-astro-cid-wbeb7hvx>第八章</span
-                  ><span class="cond" data-astro-cid-wbeb7hvx
+              <div class="text-sm">
+                <dt class="text-brand-gray">加入</dt>
+                <dd class="text-sm">
+                  <span class="block font-medium">第八章</span
+                  ><span class="text-xs text-brand-gray"
                     >开始时剧情自动加入；第十一章暂时失去；第十九章结束时剧情回归</span
                   >
                 </dd>
               </div>
-              <div data-astro-cid-wbeb7hvx>
-                <dt data-astro-cid-wbeb7hvx>满级加成</dt>
-                <dd class="bonus" data-astro-cid-wbeb7hvx>
-                  <span data-astro-cid-wbeb7hvx>+10HP</span
-                  ><span data-astro-cid-wbeb7hvx>+6力量</span
-                  ><span data-astro-cid-wbeb7hvx>+3魔防</span>
+              <div class="text-sm">
+                <dt class="text-brand-gray">满级加成</dt>
+                <dd class="flex flex-wrap gap-1 whitespace-normal font-medium">
+                  <span class="px-2 rounded-md bg-brand-lightblue font-[Barlow]"
+                    >+10HP</span
+                  ><span
+                    class="px-2 rounded-md bg-brand-lightblue font-[Barlow]"
+                    >+6力量</span
+                  ><span
+                    class="px-2 rounded-md bg-brand-lightblue font-[Barlow]"
+                    >+3魔防</span
+                  >
                 </dd>
               </div>
             </dl>
           </li>
-          <li class="card" data-astro-cid-wbeb7hvx>
-            <header data-astro-cid-wbeb7hvx>
-              <div class="portraits" data-astro-cid-wbeb7hvx>
+          <li
+            class="card flex flex-col gap-3 p-4 border border-brand-border rounded-md text-brand-black"
+          >
+            <header class="flex whitespace-pre-line items-center gap-3">
+              <div class="portraits flex flex-none [&amp;&gt;*+*]:-ml-3">
                 <img
                   src="/_astro/%E7%90%B3.DQMiuETL_1mFwjE.webp"
                   srcset="
@@ -437,43 +383,53 @@ exports[`built emblems page snapshots > matches the full HTML snapshot for the e
                   class="thumb"
                 />
               </div>
-              <div data-astro-cid-wbeb7hvx>
-                <h2 data-astro-cid-wbeb7hvx>琳</h2>
-                <p class="works" data-astro-cid-wbeb7hvx>
+              <div class="self-stretch border-b border-brand-border">
+                <h2 class="text-xl font-medium">琳</h2>
+                <p class="works text-xs text-brand-gray">
                   FE7《火焰之纹章 烈火之剑》
                 </p>
               </div>
             </header>
-            <p class="intro" data-astro-cid-wbeb7hvx>
+            <p class="intro whitespace-pre-line text-base">
               人称“烈火纹章士”。生于逐水草而居的游牧民族，是位武艺高超的剑士。
             </p>
-            <dl data-astro-cid-wbeb7hvx>
-              <div data-astro-cid-wbeb7hvx>
-                <dt data-astro-cid-wbeb7hvx>声优</dt>
-                <dd data-astro-cid-wbeb7hvx>大本 真基子</dd>
+            <dl
+              class="whitespace-pre-line grid gap-1 [&amp;&gt;div]:grid [&amp;&gt;div]:grid-cols-[4.5rem_1fr] [&amp;&gt;div]:gap-2"
+            >
+              <div class="text-sm">
+                <dt class="text-brand-gray">声优</dt>
+                <dd class="font-medium">大本 真基子</dd>
               </div>
-              <div data-astro-cid-wbeb7hvx>
-                <dt data-astro-cid-wbeb7hvx>加入</dt>
-                <dd data-astro-cid-wbeb7hvx>
-                  <span class="chapter" data-astro-cid-wbeb7hvx>第十一章</span
-                  ><span class="cond" data-astro-cid-wbeb7hvx
+              <div class="text-sm">
+                <dt class="text-brand-gray">加入</dt>
+                <dd class="text-sm">
+                  <span class="block font-medium">第十一章</span
+                  ><span class="text-xs text-brand-gray"
                     >琉尔临近地图下方脱离点时，触发剧情后加入</span
                   >
                 </dd>
               </div>
-              <div data-astro-cid-wbeb7hvx>
-                <dt data-astro-cid-wbeb7hvx>满级加成</dt>
-                <dd class="bonus" data-astro-cid-wbeb7hvx>
-                  <span data-astro-cid-wbeb7hvx>+4技巧</span
-                  ><span data-astro-cid-wbeb7hvx>+5速度</span
-                  ><span data-astro-cid-wbeb7hvx>+3魔防</span>
+              <div class="text-sm">
+                <dt class="text-brand-gray">满级加成</dt>
+                <dd class="flex flex-wrap gap-1 whitespace-normal font-medium">
+                  <span class="px-2 rounded-md bg-brand-lightblue font-[Barlow]"
+                    >+4技巧</span
+                  ><span
+                    class="px-2 rounded-md bg-brand-lightblue font-[Barlow]"
+                    >+5速度</span
+                  ><span
+                    class="px-2 rounded-md bg-brand-lightblue font-[Barlow]"
+                    >+3魔防</span
+                  >
                 </dd>
               </div>
             </dl>
           </li>
-          <li class="card" data-astro-cid-wbeb7hvx>
-            <header data-astro-cid-wbeb7hvx>
-              <div class="portraits" data-astro-cid-wbeb7hvx>
+          <li
+            class="card flex flex-col gap-3 p-4 border border-brand-border rounded-md text-brand-black"
+          >
+            <header class="flex whitespace-pre-line items-center gap-3">
+              <div class="portraits flex flex-none [&amp;&gt;*+*]:-ml-3">
                 <img
                   src="/_astro/%E8%89%BE%E8%8E%89%E5%8F%AF.DGuU3Twk_8cwEt.webp"
                   srcset="
@@ -489,43 +445,53 @@ exports[`built emblems page snapshots > matches the full HTML snapshot for the e
                   class="thumb"
                 />
               </div>
-              <div data-astro-cid-wbeb7hvx>
-                <h2 data-astro-cid-wbeb7hvx>艾莉可</h2>
-                <p class="works" data-astro-cid-wbeb7hvx>
+              <div class="self-stretch border-b border-brand-border">
+                <h2 class="text-xl font-medium">艾莉可</h2>
+                <p class="works text-xs text-brand-gray">
                   FE8《火焰之纹章 圣魔之光石》
                 </p>
               </div>
             </header>
-            <p class="intro" data-astro-cid-wbeb7hvx>
+            <p class="intro whitespace-pre-line text-base">
               人称“圣魔纹章士”。为了和平挺身而战，是位心地善良的公主。
             </p>
-            <dl data-astro-cid-wbeb7hvx>
-              <div data-astro-cid-wbeb7hvx>
-                <dt data-astro-cid-wbeb7hvx>声优</dt>
-                <dd data-astro-cid-wbeb7hvx>水桥 香织</dd>
+            <dl
+              class="whitespace-pre-line grid gap-1 [&amp;&gt;div]:grid [&amp;&gt;div]:grid-cols-[4.5rem_1fr] [&amp;&gt;div]:gap-2"
+            >
+              <div class="text-sm">
+                <dt class="text-brand-gray">声优</dt>
+                <dd class="font-medium">水桥 香织</dd>
               </div>
-              <div data-astro-cid-wbeb7hvx>
-                <dt data-astro-cid-wbeb7hvx>加入</dt>
-                <dd data-astro-cid-wbeb7hvx>
-                  <span class="chapter" data-astro-cid-wbeb7hvx>第十六章</span
-                  ><span class="cond" data-astro-cid-wbeb7hvx
+              <div class="text-sm">
+                <dt class="text-brand-gray">加入</dt>
+                <dd class="text-sm">
+                  <span class="block font-medium">第十六章</span
+                  ><span class="text-xs text-brand-gray"
                     >开始时剧情自动加入</span
                   >
                 </dd>
               </div>
-              <div data-astro-cid-wbeb7hvx>
-                <dt data-astro-cid-wbeb7hvx>满级加成</dt>
-                <dd class="bonus" data-astro-cid-wbeb7hvx>
-                  <span data-astro-cid-wbeb7hvx>+3魔力</span
-                  ><span data-astro-cid-wbeb7hvx>+4技巧</span
-                  ><span data-astro-cid-wbeb7hvx>+10幸运</span>
+              <div class="text-sm">
+                <dt class="text-brand-gray">满级加成</dt>
+                <dd class="flex flex-wrap gap-1 whitespace-normal font-medium">
+                  <span class="px-2 rounded-md bg-brand-lightblue font-[Barlow]"
+                    >+3魔力</span
+                  ><span
+                    class="px-2 rounded-md bg-brand-lightblue font-[Barlow]"
+                    >+4技巧</span
+                  ><span
+                    class="px-2 rounded-md bg-brand-lightblue font-[Barlow]"
+                    >+10幸运</span
+                  >
                 </dd>
               </div>
             </dl>
           </li>
-          <li class="card" data-astro-cid-wbeb7hvx>
-            <header data-astro-cid-wbeb7hvx>
-              <div class="portraits" data-astro-cid-wbeb7hvx>
+          <li
+            class="card flex flex-col gap-3 p-4 border border-brand-border rounded-md text-brand-black"
+          >
+            <header class="flex whitespace-pre-line items-center gap-3">
+              <div class="portraits flex flex-none [&amp;&gt;*+*]:-ml-3">
                 <img
                   src="/_astro/%E8%89%BE%E5%85%8B.gVuX0IlM_Z1GfJ5a.webp"
                   srcset="
@@ -541,43 +507,53 @@ exports[`built emblems page snapshots > matches the full HTML snapshot for the e
                   class="thumb"
                 />
               </div>
-              <div data-astro-cid-wbeb7hvx>
-                <h2 data-astro-cid-wbeb7hvx>艾克</h2>
-                <p class="works" data-astro-cid-wbeb7hvx>
+              <div class="self-stretch border-b border-brand-border">
+                <h2 class="text-xl font-medium">艾克</h2>
+                <p class="works text-xs text-brand-gray">
                   FE9《火焰之纹章 苍炎之轨迹》
                 </p>
               </div>
             </header>
-            <p class="intro" data-astro-cid-wbeb7hvx>
+            <p class="intro whitespace-pre-line text-base">
               人称“苍炎纹章士”。著名的佣兵团团长，拥有超群的战斗技巧。
             </p>
-            <dl data-astro-cid-wbeb7hvx>
-              <div data-astro-cid-wbeb7hvx>
-                <dt data-astro-cid-wbeb7hvx>声优</dt>
-                <dd data-astro-cid-wbeb7hvx>萩 道彦</dd>
+            <dl
+              class="whitespace-pre-line grid gap-1 [&amp;&gt;div]:grid [&amp;&gt;div]:grid-cols-[4.5rem_1fr] [&amp;&gt;div]:gap-2"
+            >
+              <div class="text-sm">
+                <dt class="text-brand-gray">声优</dt>
+                <dd class="font-medium">萩 道彦</dd>
               </div>
-              <div data-astro-cid-wbeb7hvx>
-                <dt data-astro-cid-wbeb7hvx>加入</dt>
-                <dd data-astro-cid-wbeb7hvx>
-                  <span class="chapter" data-astro-cid-wbeb7hvx>第十三章</span
-                  ><span class="cond" data-astro-cid-wbeb7hvx
+              <div class="text-sm">
+                <dt class="text-brand-gray">加入</dt>
+                <dd class="text-sm">
+                  <span class="block font-medium">第十三章</span
+                  ><span class="text-xs text-brand-gray"
                     >开始时剧情自动加入</span
                   >
                 </dd>
               </div>
-              <div data-astro-cid-wbeb7hvx>
-                <dt data-astro-cid-wbeb7hvx>满级加成</dt>
-                <dd class="bonus" data-astro-cid-wbeb7hvx>
-                  <span data-astro-cid-wbeb7hvx>+7HP</span
-                  ><span data-astro-cid-wbeb7hvx>+4力量</span
-                  ><span data-astro-cid-wbeb7hvx>+5防守</span>
+              <div class="text-sm">
+                <dt class="text-brand-gray">满级加成</dt>
+                <dd class="flex flex-wrap gap-1 whitespace-normal font-medium">
+                  <span class="px-2 rounded-md bg-brand-lightblue font-[Barlow]"
+                    >+7HP</span
+                  ><span
+                    class="px-2 rounded-md bg-brand-lightblue font-[Barlow]"
+                    >+4力量</span
+                  ><span
+                    class="px-2 rounded-md bg-brand-lightblue font-[Barlow]"
+                    >+5防守</span
+                  >
                 </dd>
               </div>
             </dl>
           </li>
-          <li class="card" data-astro-cid-wbeb7hvx>
-            <header data-astro-cid-wbeb7hvx>
-              <div class="portraits" data-astro-cid-wbeb7hvx>
+          <li
+            class="card flex flex-col gap-3 p-4 border border-brand-border rounded-md text-brand-black"
+          >
+            <header class="flex whitespace-pre-line items-center gap-3">
+              <div class="portraits flex flex-none [&amp;&gt;*+*]:-ml-3">
                 <img
                   src="/_astro/%E7%B1%B3%E5%8D%A1%E9%9B%85.CESRusiq_46m3e.webp"
                   srcset="
@@ -593,43 +569,53 @@ exports[`built emblems page snapshots > matches the full HTML snapshot for the e
                   class="thumb"
                 />
               </div>
-              <div data-astro-cid-wbeb7hvx>
-                <h2 data-astro-cid-wbeb7hvx>米卡雅</h2>
-                <p class="works" data-astro-cid-wbeb7hvx>
+              <div class="self-stretch border-b border-brand-border">
+                <h2 class="text-xl font-medium">米卡雅</h2>
+                <p class="works text-xs text-brand-gray">
                   FE10《火焰之纹章 晓之女神》
                 </p>
               </div>
             </header>
-            <p class="intro" data-astro-cid-wbeb7hvx>
+            <p class="intro whitespace-pre-line text-base">
               人称“拂晓纹章士”。拥有治愈、预知等神秘力量。
             </p>
-            <dl data-astro-cid-wbeb7hvx>
-              <div data-astro-cid-wbeb7hvx>
-                <dt data-astro-cid-wbeb7hvx>声优</dt>
-                <dd data-astro-cid-wbeb7hvx>桑谷 夏子</dd>
+            <dl
+              class="whitespace-pre-line grid gap-1 [&amp;&gt;div]:grid [&amp;&gt;div]:grid-cols-[4.5rem_1fr] [&amp;&gt;div]:gap-2"
+            >
+              <div class="text-sm">
+                <dt class="text-brand-gray">声优</dt>
+                <dd class="font-medium">桑谷 夏子</dd>
               </div>
-              <div data-astro-cid-wbeb7hvx>
-                <dt data-astro-cid-wbeb7hvx>加入</dt>
-                <dd data-astro-cid-wbeb7hvx>
-                  <span class="chapter" data-astro-cid-wbeb7hvx>第六章</span
-                  ><span class="cond" data-astro-cid-wbeb7hvx
+              <div class="text-sm">
+                <dt class="text-brand-gray">加入</dt>
+                <dd class="text-sm">
+                  <span class="block font-medium">第六章</span
+                  ><span class="text-xs text-brand-gray"
                     >击败琉尔附近的蛮族盗贼后加入；第十一章暂时失去；第十九章结束时剧情回归</span
                   >
                 </dd>
               </div>
-              <div data-astro-cid-wbeb7hvx>
-                <dt data-astro-cid-wbeb7hvx>满级加成</dt>
-                <dd class="bonus" data-astro-cid-wbeb7hvx>
-                  <span data-astro-cid-wbeb7hvx>+4魔力</span
-                  ><span data-astro-cid-wbeb7hvx>+6幸运</span
-                  ><span data-astro-cid-wbeb7hvx>+5魔防</span>
+              <div class="text-sm">
+                <dt class="text-brand-gray">满级加成</dt>
+                <dd class="flex flex-wrap gap-1 whitespace-normal font-medium">
+                  <span class="px-2 rounded-md bg-brand-lightblue font-[Barlow]"
+                    >+4魔力</span
+                  ><span
+                    class="px-2 rounded-md bg-brand-lightblue font-[Barlow]"
+                    >+6幸运</span
+                  ><span
+                    class="px-2 rounded-md bg-brand-lightblue font-[Barlow]"
+                    >+5魔防</span
+                  >
                 </dd>
               </div>
             </dl>
           </li>
-          <li class="card" data-astro-cid-wbeb7hvx>
-            <header data-astro-cid-wbeb7hvx>
-              <div class="portraits" data-astro-cid-wbeb7hvx>
+          <li
+            class="card flex flex-col gap-3 p-4 border border-brand-border rounded-md text-brand-black"
+          >
+            <header class="flex whitespace-pre-line items-center gap-3">
+              <div class="portraits flex flex-none [&amp;&gt;*+*]:-ml-3">
                 <img
                   src="/_astro/%E9%9C%B2%E7%90%AA%E5%A8%9C.CHTpsBNs_2iyftC.webp"
                   srcset="
@@ -645,43 +631,53 @@ exports[`built emblems page snapshots > matches the full HTML snapshot for the e
                   class="thumb"
                 />
               </div>
-              <div data-astro-cid-wbeb7hvx>
-                <h2 data-astro-cid-wbeb7hvx>露琪娜</h2>
-                <p class="works" data-astro-cid-wbeb7hvx>
+              <div class="self-stretch border-b border-brand-border">
+                <h2 class="text-xl font-medium">露琪娜</h2>
+                <p class="works text-xs text-brand-gray">
                   FE11《火焰之纹章 觉醒》
                 </p>
               </div>
             </header>
-            <p class="intro" data-astro-cid-wbeb7hvx>
+            <p class="intro whitespace-pre-line text-base">
               人称“觉醒纹章士”。是位相信希望，不向绝望屈服的神圣公主。
             </p>
-            <dl data-astro-cid-wbeb7hvx>
-              <div data-astro-cid-wbeb7hvx>
-                <dt data-astro-cid-wbeb7hvx>声优</dt>
-                <dd data-astro-cid-wbeb7hvx>小林 优</dd>
+            <dl
+              class="whitespace-pre-line grid gap-1 [&amp;&gt;div]:grid [&amp;&gt;div]:grid-cols-[4.5rem_1fr] [&amp;&gt;div]:gap-2"
+            >
+              <div class="text-sm">
+                <dt class="text-brand-gray">声优</dt>
+                <dd class="font-medium">小林 优</dd>
               </div>
-              <div data-astro-cid-wbeb7hvx>
-                <dt data-astro-cid-wbeb7hvx>加入</dt>
-                <dd data-astro-cid-wbeb7hvx>
-                  <span class="chapter" data-astro-cid-wbeb7hvx>第十一章</span
-                  ><span class="cond" data-astro-cid-wbeb7hvx
+              <div class="text-sm">
+                <dt class="text-brand-gray">加入</dt>
+                <dd class="text-sm">
+                  <span class="block font-medium">第十一章</span
+                  ><span class="text-xs text-brand-gray"
                     >琉尔临近地图下方脱离点时，触发剧情后加入</span
                   >
                 </dd>
               </div>
-              <div data-astro-cid-wbeb7hvx>
-                <dt data-astro-cid-wbeb7hvx>满级加成</dt>
-                <dd class="bonus" data-astro-cid-wbeb7hvx>
-                  <span data-astro-cid-wbeb7hvx>+5技巧</span
-                  ><span data-astro-cid-wbeb7hvx>+4速度</span
-                  ><span data-astro-cid-wbeb7hvx>+6幸运</span>
+              <div class="text-sm">
+                <dt class="text-brand-gray">满级加成</dt>
+                <dd class="flex flex-wrap gap-1 whitespace-normal font-medium">
+                  <span class="px-2 rounded-md bg-brand-lightblue font-[Barlow]"
+                    >+5技巧</span
+                  ><span
+                    class="px-2 rounded-md bg-brand-lightblue font-[Barlow]"
+                    >+4速度</span
+                  ><span
+                    class="px-2 rounded-md bg-brand-lightblue font-[Barlow]"
+                    >+6幸运</span
+                  >
                 </dd>
               </div>
             </dl>
           </li>
-          <li class="card" data-astro-cid-wbeb7hvx>
-            <header data-astro-cid-wbeb7hvx>
-              <div class="portraits" data-astro-cid-wbeb7hvx>
+          <li
+            class="card flex flex-col gap-3 p-4 border border-brand-border rounded-md text-brand-black"
+          >
+            <header class="flex whitespace-pre-line items-center gap-3">
+              <div class="portraits flex flex-none [&amp;&gt;*+*]:-ml-3">
                 <img
                   src="/_astro/%E7%A5%9E%E5%A8%81.tpFAvUuR_ZndRnz.webp"
                   srcset="
@@ -697,43 +693,53 @@ exports[`built emblems page snapshots > matches the full HTML snapshot for the e
                   class="thumb"
                 />
               </div>
-              <div data-astro-cid-wbeb7hvx>
-                <h2 data-astro-cid-wbeb7hvx>神威</h2>
-                <p class="works" data-astro-cid-wbeb7hvx>
+              <div class="self-stretch border-b border-brand-border">
+                <h2 class="text-xl font-medium">神威</h2>
+                <p class="works text-xs text-brand-gray">
                   FE12《火焰之纹章 if 白夜/暗夜/透魔王国》
                 </p>
               </div>
             </header>
-            <p class="intro" data-astro-cid-wbeb7hvx>
+            <p class="intro whitespace-pre-line text-base">
               人称“选择纹章士”。继承神族龙血脉，拥有百折不挠的精神。
             </p>
-            <dl data-astro-cid-wbeb7hvx>
-              <div data-astro-cid-wbeb7hvx>
-                <dt data-astro-cid-wbeb7hvx>声优</dt>
-                <dd data-astro-cid-wbeb7hvx>佐藤 聪美</dd>
+            <dl
+              class="whitespace-pre-line grid gap-1 [&amp;&gt;div]:grid [&amp;&gt;div]:grid-cols-[4.5rem_1fr] [&amp;&gt;div]:gap-2"
+            >
+              <div class="text-sm">
+                <dt class="text-brand-gray">声优</dt>
+                <dd class="font-medium">佐藤 聪美</dd>
               </div>
-              <div data-astro-cid-wbeb7hvx>
-                <dt data-astro-cid-wbeb7hvx>加入</dt>
-                <dd data-astro-cid-wbeb7hvx>
-                  <span class="chapter" data-astro-cid-wbeb7hvx>第十五章</span
-                  ><span class="cond" data-astro-cid-wbeb7hvx
+              <div class="text-sm">
+                <dt class="text-brand-gray">加入</dt>
+                <dd class="text-sm">
+                  <span class="block font-medium">第十五章</span
+                  ><span class="text-xs text-brand-gray"
                     >用琉尔说得赛安达斯后加入</span
                   >
                 </dd>
               </div>
-              <div data-astro-cid-wbeb7hvx>
-                <dt data-astro-cid-wbeb7hvx>满级加成</dt>
-                <dd class="bonus" data-astro-cid-wbeb7hvx>
-                  <span data-astro-cid-wbeb7hvx>+15HP</span
-                  ><span data-astro-cid-wbeb7hvx>+4魔力</span
-                  ><span data-astro-cid-wbeb7hvx>+3魔防</span>
+              <div class="text-sm">
+                <dt class="text-brand-gray">满级加成</dt>
+                <dd class="flex flex-wrap gap-1 whitespace-normal font-medium">
+                  <span class="px-2 rounded-md bg-brand-lightblue font-[Barlow]"
+                    >+15HP</span
+                  ><span
+                    class="px-2 rounded-md bg-brand-lightblue font-[Barlow]"
+                    >+4魔力</span
+                  ><span
+                    class="px-2 rounded-md bg-brand-lightblue font-[Barlow]"
+                    >+3魔防</span
+                  >
                 </dd>
               </div>
             </dl>
           </li>
-          <li class="card" data-astro-cid-wbeb7hvx>
-            <header data-astro-cid-wbeb7hvx>
-              <div class="portraits" data-astro-cid-wbeb7hvx>
+          <li
+            class="card flex flex-col gap-3 p-4 border border-brand-border rounded-md text-brand-black"
+          >
+            <header class="flex whitespace-pre-line items-center gap-3">
+              <div class="portraits flex flex-none [&amp;&gt;*+*]:-ml-3">
                 <img
                   src="/_astro/%E8%B4%9D%E9%9B%B7%E7%89%B9.BV3zHhC8_1xs8km.webp"
                   srcset="
@@ -749,43 +755,53 @@ exports[`built emblems page snapshots > matches the full HTML snapshot for the e
                   class="thumb"
                 />
               </div>
-              <div data-astro-cid-wbeb7hvx>
-                <h2 data-astro-cid-wbeb7hvx>贝雷特</h2>
-                <p class="works" data-astro-cid-wbeb7hvx>
+              <div class="self-stretch border-b border-brand-border">
+                <h2 class="text-xl font-medium">贝雷特</h2>
+                <p class="works text-xs text-brand-gray">
                   FE13《火焰之纹章 风花雪月》
                 </p>
               </div>
             </header>
-            <p class="intro" data-astro-cid-wbeb7hvx>
+            <p class="intro whitespace-pre-line text-base">
               人称“风花纹章士”。曾为佣兵的士官学校教师。
             </p>
-            <dl data-astro-cid-wbeb7hvx>
-              <div data-astro-cid-wbeb7hvx>
-                <dt data-astro-cid-wbeb7hvx>声优</dt>
-                <dd data-astro-cid-wbeb7hvx>小林 裕介</dd>
+            <dl
+              class="whitespace-pre-line grid gap-1 [&amp;&gt;div]:grid [&amp;&gt;div]:grid-cols-[4.5rem_1fr] [&amp;&gt;div]:gap-2"
+            >
+              <div class="text-sm">
+                <dt class="text-brand-gray">声优</dt>
+                <dd class="font-medium">小林 裕介</dd>
               </div>
-              <div data-astro-cid-wbeb7hvx>
-                <dt data-astro-cid-wbeb7hvx>加入</dt>
-                <dd data-astro-cid-wbeb7hvx>
-                  <span class="chapter" data-astro-cid-wbeb7hvx>第十四章</span
-                  ><span class="cond" data-astro-cid-wbeb7hvx
+              <div class="text-sm">
+                <dt class="text-brand-gray">加入</dt>
+                <dd class="text-sm">
+                  <span class="block font-medium">第十四章</span
+                  ><span class="text-xs text-brand-gray"
                     >取得胜利后剧情加入</span
                   >
                 </dd>
               </div>
-              <div data-astro-cid-wbeb7hvx>
-                <dt data-astro-cid-wbeb7hvx>满级加成</dt>
-                <dd class="bonus" data-astro-cid-wbeb7hvx>
-                  <span data-astro-cid-wbeb7hvx>+3魔力</span
-                  ><span data-astro-cid-wbeb7hvx>+3速度</span
-                  ><span data-astro-cid-wbeb7hvx>+12幸运</span>
+              <div class="text-sm">
+                <dt class="text-brand-gray">满级加成</dt>
+                <dd class="flex flex-wrap gap-1 whitespace-normal font-medium">
+                  <span class="px-2 rounded-md bg-brand-lightblue font-[Barlow]"
+                    >+3魔力</span
+                  ><span
+                    class="px-2 rounded-md bg-brand-lightblue font-[Barlow]"
+                    >+3速度</span
+                  ><span
+                    class="px-2 rounded-md bg-brand-lightblue font-[Barlow]"
+                    >+12幸运</span
+                  >
                 </dd>
               </div>
             </dl>
           </li>
-          <li class="card" data-astro-cid-wbeb7hvx>
-            <header data-astro-cid-wbeb7hvx>
-              <div class="portraits" data-astro-cid-wbeb7hvx>
+          <li
+            class="card flex flex-col gap-3 p-4 border border-brand-border rounded-md text-brand-black"
+          >
+            <header class="flex whitespace-pre-line items-center gap-3">
+              <div class="portraits flex flex-none [&amp;&gt;*+*]:-ml-3">
                 <img
                   src="/_astro/alear.D0o6GltF_Z1mam07.webp"
                   srcset="
@@ -801,43 +817,53 @@ exports[`built emblems page snapshots > matches the full HTML snapshot for the e
                   class="thumb"
                 />
               </div>
-              <div data-astro-cid-wbeb7hvx>
-                <h2 data-astro-cid-wbeb7hvx>琉尔</h2>
-                <p class="works" data-astro-cid-wbeb7hvx>
+              <div class="self-stretch border-b border-brand-border">
+                <h2 class="text-xl font-medium">琉尔</h2>
+                <p class="works text-xs text-brand-gray">
                   FE14《火焰之纹章 ENGAGE》
                 </p>
               </div>
             </header>
-            <p class="intro" data-astro-cid-wbeb7hvx>
+            <p class="intro whitespace-pre-line text-base">
               以“绊炎纹章士”之资重生的神龙。同时拥有纹章士与神龙的力量。
             </p>
-            <dl data-astro-cid-wbeb7hvx>
-              <div data-astro-cid-wbeb7hvx>
-                <dt data-astro-cid-wbeb7hvx>声优</dt>
-                <dd data-astro-cid-wbeb7hvx>下野 纮（男）/远藤 绫（女）</dd>
+            <dl
+              class="whitespace-pre-line grid gap-1 [&amp;&gt;div]:grid [&amp;&gt;div]:grid-cols-[4.5rem_1fr] [&amp;&gt;div]:gap-2"
+            >
+              <div class="text-sm">
+                <dt class="text-brand-gray">声优</dt>
+                <dd class="font-medium">下野 纮（男）/远藤 绫（女）</dd>
               </div>
-              <div data-astro-cid-wbeb7hvx>
-                <dt data-astro-cid-wbeb7hvx>加入</dt>
-                <dd data-astro-cid-wbeb7hvx>
-                  <span class="chapter" data-astro-cid-wbeb7hvx>第二十二章</span
-                  ><span class="cond" data-astro-cid-wbeb7hvx
+              <div class="text-sm">
+                <dt class="text-brand-gray">加入</dt>
+                <dd class="text-sm">
+                  <span class="block font-medium">第二十二章</span
+                  ><span class="text-xs text-brand-gray"
                     >第二十二章结束时，触发剧情加入</span
                   >
                 </dd>
               </div>
-              <div data-astro-cid-wbeb7hvx>
-                <dt data-astro-cid-wbeb7hvx>满级加成</dt>
-                <dd class="bonus" data-astro-cid-wbeb7hvx>
-                  <span data-astro-cid-wbeb7hvx>+15HP</span
-                  ><span data-astro-cid-wbeb7hvx>+4速度</span
-                  ><span data-astro-cid-wbeb7hvx>+4防守</span>
+              <div class="text-sm">
+                <dt class="text-brand-gray">满级加成</dt>
+                <dd class="flex flex-wrap gap-1 whitespace-normal font-medium">
+                  <span class="px-2 rounded-md bg-brand-lightblue font-[Barlow]"
+                    >+15HP</span
+                  ><span
+                    class="px-2 rounded-md bg-brand-lightblue font-[Barlow]"
+                    >+4速度</span
+                  ><span
+                    class="px-2 rounded-md bg-brand-lightblue font-[Barlow]"
+                    >+4防守</span
+                  >
                 </dd>
               </div>
             </dl>
           </li>
-          <li class="card" data-astro-cid-wbeb7hvx>
-            <header data-astro-cid-wbeb7hvx>
-              <div class="portraits" data-astro-cid-wbeb7hvx>
+          <li
+            class="card flex flex-col gap-3 p-4 border border-brand-border rounded-md text-brand-black"
+          >
+            <header class="flex whitespace-pre-line items-center gap-3">
+              <div class="portraits flex flex-none [&amp;&gt;*+*]:-ml-3">
                 <img
                   src="/_astro/%E8%89%BE%E9%BB%9B%E5%B0%94%E8%B4%BE%E7%89%B9.BBBHXKNq_Z29otgJ.webp"
                   srcset="
@@ -879,46 +905,56 @@ exports[`built emblems page snapshots > matches the full HTML snapshot for the e
                   class="thumb"
                 />
               </div>
-              <div data-astro-cid-wbeb7hvx>
-                <h2 data-astro-cid-wbeb7hvx>艾黛尔贾特/帝弥托利/库罗德</h2>
-                <p class="works" data-astro-cid-wbeb7hvx>
+              <div class="self-stretch border-b border-brand-border">
+                <h2 class="text-xl font-medium">艾黛尔贾特/帝弥托利/库罗德</h2>
+                <p class="works text-xs text-brand-gray">
                   FE13《火焰之纹章 风花雪月》
                 </p>
               </div>
             </header>
-            <p class="intro" data-astro-cid-wbeb7hvx>
+            <p class="intro whitespace-pre-line text-base">
               人称“三鼎纹章士”。是位气质高贵又不失威严的炎之皇女。
             </p>
-            <dl data-astro-cid-wbeb7hvx>
-              <div data-astro-cid-wbeb7hvx>
-                <dt data-astro-cid-wbeb7hvx>声优</dt>
-                <dd data-astro-cid-wbeb7hvx>
+            <dl
+              class="whitespace-pre-line grid gap-1 [&amp;&gt;div]:grid [&amp;&gt;div]:grid-cols-[4.5rem_1fr] [&amp;&gt;div]:gap-2"
+            >
+              <div class="text-sm">
+                <dt class="text-brand-gray">声优</dt>
+                <dd class="font-medium">
                   艾黛尔贾特:加隈 亚衣 帝弥托利:石川 界人 库罗德:丰永 利行
                 </dd>
               </div>
-              <div data-astro-cid-wbeb7hvx>
-                <dt data-astro-cid-wbeb7hvx>加入</dt>
-                <dd data-astro-cid-wbeb7hvx>
-                  <span class="chapter" data-astro-cid-wbeb7hvx>第七章</span
-                  ><span class="cond" data-astro-cid-wbeb7hvx
+              <div class="text-sm">
+                <dt class="text-brand-gray">加入</dt>
+                <dd class="text-sm">
+                  <span class="block font-medium">第七章</span
+                  ><span class="text-xs text-brand-gray"
                     >DLC 第一弹
                     第七章开始，据点索拉涅尔-眺望之丘，触发剧情后加入</span
                   >
                 </dd>
               </div>
-              <div data-astro-cid-wbeb7hvx>
-                <dt data-astro-cid-wbeb7hvx>满级加成</dt>
-                <dd class="bonus" data-astro-cid-wbeb7hvx>
-                  <span data-astro-cid-wbeb7hvx>+5力量</span
-                  ><span data-astro-cid-wbeb7hvx>+4技巧</span
-                  ><span data-astro-cid-wbeb7hvx>+3防守</span>
+              <div class="text-sm">
+                <dt class="text-brand-gray">满级加成</dt>
+                <dd class="flex flex-wrap gap-1 whitespace-normal font-medium">
+                  <span class="px-2 rounded-md bg-brand-lightblue font-[Barlow]"
+                    >+5力量</span
+                  ><span
+                    class="px-2 rounded-md bg-brand-lightblue font-[Barlow]"
+                    >+4技巧</span
+                  ><span
+                    class="px-2 rounded-md bg-brand-lightblue font-[Barlow]"
+                    >+3防守</span
+                  >
                 </dd>
               </div>
             </dl>
           </li>
-          <li class="card" data-astro-cid-wbeb7hvx>
-            <header data-astro-cid-wbeb7hvx>
-              <div class="portraits" data-astro-cid-wbeb7hvx>
+          <li
+            class="card flex flex-col gap-3 p-4 border border-brand-border rounded-md text-brand-black"
+          >
+            <header class="flex whitespace-pre-line items-center gap-3">
+              <div class="portraits flex flex-none [&amp;&gt;*+*]:-ml-3">
                 <img
                   src="/_astro/%E7%90%AA%E5%A7%AC.DT-baRyV_Z19MGJr.webp"
                   srcset="
@@ -934,44 +970,54 @@ exports[`built emblems page snapshots > matches the full HTML snapshot for the e
                   class="thumb"
                 />
               </div>
-              <div data-astro-cid-wbeb7hvx>
-                <h2 data-astro-cid-wbeb7hvx>琪姬</h2>
-                <p class="works" data-astro-cid-wbeb7hvx>
+              <div class="self-stretch border-b border-brand-border">
+                <h2 class="text-xl font-medium">琪姬</h2>
+                <p class="works text-xs text-brand-gray">
                   FE1《火焰之纹章 暗黑龙与光之剑》
                 </p>
               </div>
             </header>
-            <p class="intro" data-astro-cid-wbeb7hvx>
+            <p class="intro whitespace-pre-line text-base">
               人称“龙姬纹章士”。是位继承了神龙族血脉的纯真少女。
             </p>
-            <dl data-astro-cid-wbeb7hvx>
-              <div data-astro-cid-wbeb7hvx>
-                <dt data-astro-cid-wbeb7hvx>声优</dt>
-                <dd data-astro-cid-wbeb7hvx>诸星 堇</dd>
+            <dl
+              class="whitespace-pre-line grid gap-1 [&amp;&gt;div]:grid [&amp;&gt;div]:grid-cols-[4.5rem_1fr] [&amp;&gt;div]:gap-2"
+            >
+              <div class="text-sm">
+                <dt class="text-brand-gray">声优</dt>
+                <dd class="font-medium">诸星 堇</dd>
               </div>
-              <div data-astro-cid-wbeb7hvx>
-                <dt data-astro-cid-wbeb7hvx>加入</dt>
-                <dd data-astro-cid-wbeb7hvx>
-                  <span class="chapter" data-astro-cid-wbeb7hvx>第七章</span
-                  ><span class="cond" data-astro-cid-wbeb7hvx
+              <div class="text-sm">
+                <dt class="text-brand-gray">加入</dt>
+                <dd class="text-sm">
+                  <span class="block font-medium">第七章</span
+                  ><span class="text-xs text-brand-gray"
                     >DLC 第一弹 第七章开始，先完成领取风花雪月三级长的剧情后
                     通关神龙之章 龙之神殿的外传：先祖神龙</span
                   >
                 </dd>
               </div>
-              <div data-astro-cid-wbeb7hvx>
-                <dt data-astro-cid-wbeb7hvx>满级加成</dt>
-                <dd class="bonus" data-astro-cid-wbeb7hvx>
-                  <span data-astro-cid-wbeb7hvx>+10HP</span
-                  ><span data-astro-cid-wbeb7hvx>+10幸运</span
-                  ><span data-astro-cid-wbeb7hvx>+4防守</span>
+              <div class="text-sm">
+                <dt class="text-brand-gray">满级加成</dt>
+                <dd class="flex flex-wrap gap-1 whitespace-normal font-medium">
+                  <span class="px-2 rounded-md bg-brand-lightblue font-[Barlow]"
+                    >+10HP</span
+                  ><span
+                    class="px-2 rounded-md bg-brand-lightblue font-[Barlow]"
+                    >+10幸运</span
+                  ><span
+                    class="px-2 rounded-md bg-brand-lightblue font-[Barlow]"
+                    >+4防守</span
+                  >
                 </dd>
               </div>
             </dl>
           </li>
-          <li class="card" data-astro-cid-wbeb7hvx>
-            <header data-astro-cid-wbeb7hvx>
-              <div class="portraits" data-astro-cid-wbeb7hvx>
+          <li
+            class="card flex flex-col gap-3 p-4 border border-brand-border rounded-md text-brand-black"
+          >
+            <header class="flex whitespace-pre-line items-center gap-3">
+              <div class="portraits flex flex-none [&amp;&gt;*+*]:-ml-3">
                 <img
                   src="/_astro/%E6%B5%B7%E5%85%8B%E6%89%98%E5%B0%94.CC-WXcdE_1SYXpM.webp"
                   srcset="
@@ -987,44 +1033,54 @@ exports[`built emblems page snapshots > matches the full HTML snapshot for the e
                   class="thumb"
                 />
               </div>
-              <div data-astro-cid-wbeb7hvx>
-                <h2 data-astro-cid-wbeb7hvx>海克托尔</h2>
-                <p class="works" data-astro-cid-wbeb7hvx>
+              <div class="self-stretch border-b border-brand-border">
+                <h2 class="text-xl font-medium">海克托尔</h2>
+                <p class="works text-xs text-brand-gray">
                   FE7《火焰之纹章 烈火之剑》
                 </p>
               </div>
             </header>
-            <p class="intro" data-astro-cid-wbeb7hvx>
+            <p class="intro whitespace-pre-line text-base">
               人称“天雷纹章士”。是位充满自信且勇敢善战的豪爽青年。
             </p>
-            <dl data-astro-cid-wbeb7hvx>
-              <div data-astro-cid-wbeb7hvx>
-                <dt data-astro-cid-wbeb7hvx>声优</dt>
-                <dd data-astro-cid-wbeb7hvx>鸟海 浩辅</dd>
+            <dl
+              class="whitespace-pre-line grid gap-1 [&amp;&gt;div]:grid [&amp;&gt;div]:grid-cols-[4.5rem_1fr] [&amp;&gt;div]:gap-2"
+            >
+              <div class="text-sm">
+                <dt class="text-brand-gray">声优</dt>
+                <dd class="font-medium">鸟海 浩辅</dd>
               </div>
-              <div data-astro-cid-wbeb7hvx>
-                <dt data-astro-cid-wbeb7hvx>加入</dt>
-                <dd data-astro-cid-wbeb7hvx>
-                  <span class="chapter" data-astro-cid-wbeb7hvx>第七章</span
-                  ><span class="cond" data-astro-cid-wbeb7hvx
+              <div class="text-sm">
+                <dt class="text-brand-gray">加入</dt>
+                <dd class="text-sm">
+                  <span class="block font-medium">第七章</span
+                  ><span class="text-xs text-brand-gray"
                     >DLC 第二弹 在神龙之章获得琪姬的手镯后 通关神龙之章
                     狂战士洞穴的外传：热血猛将</span
                   >
                 </dd>
               </div>
-              <div data-astro-cid-wbeb7hvx>
-                <dt data-astro-cid-wbeb7hvx>满级加成</dt>
-                <dd class="bonus" data-astro-cid-wbeb7hvx>
-                  <span data-astro-cid-wbeb7hvx>+3体格</span
-                  ><span data-astro-cid-wbeb7hvx>+4力量</span
-                  ><span data-astro-cid-wbeb7hvx>+5防守</span>
+              <div class="text-sm">
+                <dt class="text-brand-gray">满级加成</dt>
+                <dd class="flex flex-wrap gap-1 whitespace-normal font-medium">
+                  <span class="px-2 rounded-md bg-brand-lightblue font-[Barlow]"
+                    >+3体格</span
+                  ><span
+                    class="px-2 rounded-md bg-brand-lightblue font-[Barlow]"
+                    >+4力量</span
+                  ><span
+                    class="px-2 rounded-md bg-brand-lightblue font-[Barlow]"
+                    >+5防守</span
+                  >
                 </dd>
               </div>
             </dl>
           </li>
-          <li class="card" data-astro-cid-wbeb7hvx>
-            <header data-astro-cid-wbeb7hvx>
-              <div class="portraits" data-astro-cid-wbeb7hvx>
+          <li
+            class="card flex flex-col gap-3 p-4 border border-brand-border rounded-md text-brand-black"
+          >
+            <header class="flex whitespace-pre-line items-center gap-3">
+              <div class="portraits flex flex-none [&amp;&gt;*+*]:-ml-3">
                 <img
                   src="/_astro/%E5%A1%9E%E6%B6%85%E9%87%8C%E6%AC%A7.RL0c0Kx2_Z1y9uiv.webp"
                   srcset="
@@ -1040,44 +1096,54 @@ exports[`built emblems page snapshots > matches the full HTML snapshot for the e
                   class="thumb"
                 />
               </div>
-              <div data-astro-cid-wbeb7hvx>
-                <h2 data-astro-cid-wbeb7hvx>塞涅里欧</h2>
-                <p class="works" data-astro-cid-wbeb7hvx>
+              <div class="self-stretch border-b border-brand-border">
+                <h2 class="text-xl font-medium">塞涅里欧</h2>
+                <p class="works text-xs text-brand-gray">
                   FE9《火焰之纹章 苍炎之轨迹》
                 </p>
               </div>
             </header>
-            <p class="intro" data-astro-cid-wbeb7hvx>
+            <p class="intro whitespace-pre-line text-base">
               人称“贤风纹章士”。是位做事沉着，能冷静下判断的黑衣参谋。
             </p>
-            <dl data-astro-cid-wbeb7hvx>
-              <div data-astro-cid-wbeb7hvx>
-                <dt data-astro-cid-wbeb7hvx>声优</dt>
-                <dd data-astro-cid-wbeb7hvx>村濑 步</dd>
+            <dl
+              class="whitespace-pre-line grid gap-1 [&amp;&gt;div]:grid [&amp;&gt;div]:grid-cols-[4.5rem_1fr] [&amp;&gt;div]:gap-2"
+            >
+              <div class="text-sm">
+                <dt class="text-brand-gray">声优</dt>
+                <dd class="font-medium">村濑 步</dd>
               </div>
-              <div data-astro-cid-wbeb7hvx>
-                <dt data-astro-cid-wbeb7hvx>加入</dt>
-                <dd data-astro-cid-wbeb7hvx>
-                  <span class="chapter" data-astro-cid-wbeb7hvx>第七章</span
-                  ><span class="cond" data-astro-cid-wbeb7hvx
+              <div class="text-sm">
+                <dt class="text-brand-gray">加入</dt>
+                <dd class="text-sm">
+                  <span class="block font-medium">第七章</span
+                  ><span class="text-xs text-brand-gray"
                     >DLC 第二弹 在神龙之章获得琪姬的手镯后 通关神龙之章
                     灼热焦土的外传：苍色参谋</span
                   >
                 </dd>
               </div>
-              <div data-astro-cid-wbeb7hvx>
-                <dt data-astro-cid-wbeb7hvx>满级加成</dt>
-                <dd class="bonus" data-astro-cid-wbeb7hvx>
-                  <span data-astro-cid-wbeb7hvx>+4魔力</span
-                  ><span data-astro-cid-wbeb7hvx>+3技巧</span
-                  ><span data-astro-cid-wbeb7hvx>+5魔防</span>
+              <div class="text-sm">
+                <dt class="text-brand-gray">满级加成</dt>
+                <dd class="flex flex-wrap gap-1 whitespace-normal font-medium">
+                  <span class="px-2 rounded-md bg-brand-lightblue font-[Barlow]"
+                    >+4魔力</span
+                  ><span
+                    class="px-2 rounded-md bg-brand-lightblue font-[Barlow]"
+                    >+3技巧</span
+                  ><span
+                    class="px-2 rounded-md bg-brand-lightblue font-[Barlow]"
+                    >+5魔防</span
+                  >
                 </dd>
               </div>
             </dl>
           </li>
-          <li class="card" data-astro-cid-wbeb7hvx>
-            <header data-astro-cid-wbeb7hvx>
-              <div class="portraits" data-astro-cid-wbeb7hvx>
+          <li
+            class="card flex flex-col gap-3 p-4 border border-brand-border rounded-md text-brand-black"
+          >
+            <header class="flex whitespace-pre-line items-center gap-3">
+              <div class="portraits flex flex-none [&amp;&gt;*+*]:-ml-3">
                 <img
                   src="/_astro/%E5%8D%A1%E7%BE%8E%E6%8B%89.DCyjfOX9_ZREn2b.webp"
                   srcset="
@@ -1093,44 +1159,54 @@ exports[`built emblems page snapshots > matches the full HTML snapshot for the e
                   class="thumb"
                 />
               </div>
-              <div data-astro-cid-wbeb7hvx>
-                <h2 data-astro-cid-wbeb7hvx>卡美拉</h2>
-                <p class="works" data-astro-cid-wbeb7hvx>
+              <div class="self-stretch border-b border-brand-border">
+                <h2 class="text-xl font-medium">卡美拉</h2>
+                <p class="works text-xs text-brand-gray">
                   FE12《火焰之纹章 if 白夜/暗夜/透魔王国》
                 </p>
               </div>
             </header>
-            <p class="intro" data-astro-cid-wbeb7hvx>
+            <p class="intro whitespace-pre-line text-base">
               人称“暗夜纹章士”。是位非常妖艳美丽的魔龙骑士。
             </p>
-            <dl data-astro-cid-wbeb7hvx>
-              <div data-astro-cid-wbeb7hvx>
-                <dt data-astro-cid-wbeb7hvx>声优</dt>
-                <dd data-astro-cid-wbeb7hvx>泽城 美雪</dd>
+            <dl
+              class="whitespace-pre-line grid gap-1 [&amp;&gt;div]:grid [&amp;&gt;div]:grid-cols-[4.5rem_1fr] [&amp;&gt;div]:gap-2"
+            >
+              <div class="text-sm">
+                <dt class="text-brand-gray">声优</dt>
+                <dd class="font-medium">泽城 美雪</dd>
               </div>
-              <div data-astro-cid-wbeb7hvx>
-                <dt data-astro-cid-wbeb7hvx>加入</dt>
-                <dd data-astro-cid-wbeb7hvx>
-                  <span class="chapter" data-astro-cid-wbeb7hvx>第七章</span
-                  ><span class="cond" data-astro-cid-wbeb7hvx
+              <div class="text-sm">
+                <dt class="text-brand-gray">加入</dt>
+                <dd class="text-sm">
+                  <span class="block font-medium">第七章</span
+                  ><span class="text-xs text-brand-gray"
                     >DLC 第二弹 在神龙之章获得琪姬的手镯后 通关神龙之章
                     黄昏水都的外传：黑暗妖艳</span
                   >
                 </dd>
               </div>
-              <div data-astro-cid-wbeb7hvx>
-                <dt data-astro-cid-wbeb7hvx>满级加成</dt>
-                <dd class="bonus" data-astro-cid-wbeb7hvx>
-                  <span data-astro-cid-wbeb7hvx>+7HP</span
-                  ><span data-astro-cid-wbeb7hvx>+5速度</span
-                  ><span data-astro-cid-wbeb7hvx>+4魔防</span>
+              <div class="text-sm">
+                <dt class="text-brand-gray">满级加成</dt>
+                <dd class="flex flex-wrap gap-1 whitespace-normal font-medium">
+                  <span class="px-2 rounded-md bg-brand-lightblue font-[Barlow]"
+                    >+7HP</span
+                  ><span
+                    class="px-2 rounded-md bg-brand-lightblue font-[Barlow]"
+                    >+5速度</span
+                  ><span
+                    class="px-2 rounded-md bg-brand-lightblue font-[Barlow]"
+                    >+4魔防</span
+                  >
                 </dd>
               </div>
             </dl>
           </li>
-          <li class="card" data-astro-cid-wbeb7hvx>
-            <header data-astro-cid-wbeb7hvx>
-              <div class="portraits" data-astro-cid-wbeb7hvx>
+          <li
+            class="card flex flex-col gap-3 p-4 border border-brand-border rounded-md text-brand-black"
+          >
+            <header class="flex whitespace-pre-line items-center gap-3">
+              <div class="portraits flex flex-none [&amp;&gt;*+*]:-ml-3">
                 <img
                   src="/_astro/%E5%BA%93%E6%B4%9B%E6%AD%A6.0TRcJ9my_Z18Fz7d.webp"
                   srcset="
@@ -1146,47 +1222,55 @@ exports[`built emblems page snapshots > matches the full HTML snapshot for the e
                   class="thumb"
                 />
               </div>
-              <div data-astro-cid-wbeb7hvx>
-                <h2 data-astro-cid-wbeb7hvx>库洛武/鲁弗莱</h2>
-                <p class="works" data-astro-cid-wbeb7hvx>
+              <div class="self-stretch border-b border-brand-border">
+                <h2 class="text-xl font-medium">库洛武/鲁弗莱</h2>
+                <p class="works text-xs text-brand-gray">
                   FE11《火焰之纹章 觉醒》
                 </p>
               </div>
             </header>
-            <p class="intro" data-astro-cid-wbeb7hvx>
+            <p class="intro whitespace-pre-line text-base">
               库洛武:人称“牵绊纹章士”。是位信任伙伴、扭转命运的神圣王子。
               鲁弗莱:人称“牵绊纹章士”。是位失去记忆，辅佐着库洛武的天才军师。
             </p>
-            <dl data-astro-cid-wbeb7hvx>
-              <div data-astro-cid-wbeb7hvx>
-                <dt data-astro-cid-wbeb7hvx>声优</dt>
-                <dd data-astro-cid-wbeb7hvx>
-                  库洛武:杉田 智和 鲁弗莱:细谷 佳正
-                </dd>
+            <dl
+              class="whitespace-pre-line grid gap-1 [&amp;&gt;div]:grid [&amp;&gt;div]:grid-cols-[4.5rem_1fr] [&amp;&gt;div]:gap-2"
+            >
+              <div class="text-sm">
+                <dt class="text-brand-gray">声优</dt>
+                <dd class="font-medium">库洛武:杉田 智和 鲁弗莱:细谷 佳正</dd>
               </div>
-              <div data-astro-cid-wbeb7hvx>
-                <dt data-astro-cid-wbeb7hvx>加入</dt>
-                <dd data-astro-cid-wbeb7hvx>
-                  <span class="chapter" data-astro-cid-wbeb7hvx>第七章</span
-                  ><span class="cond" data-astro-cid-wbeb7hvx
+              <div class="text-sm">
+                <dt class="text-brand-gray">加入</dt>
+                <dd class="text-sm">
+                  <span class="block font-medium">第七章</span
+                  ><span class="text-xs text-brand-gray"
                     >DLC 第三弹 在神龙之章获得琪姬的手镯后 通关神龙之章
                     命运与牵绊的祭坛的外传：圣王</span
                   >
                 </dd>
               </div>
-              <div data-astro-cid-wbeb7hvx>
-                <dt data-astro-cid-wbeb7hvx>满级加成</dt>
-                <dd class="bonus" data-astro-cid-wbeb7hvx>
-                  <span data-astro-cid-wbeb7hvx>+3力量</span
-                  ><span data-astro-cid-wbeb7hvx>+5技巧</span
-                  ><span data-astro-cid-wbeb7hvx>+4速度</span>
+              <div class="text-sm">
+                <dt class="text-brand-gray">满级加成</dt>
+                <dd class="flex flex-wrap gap-1 whitespace-normal font-medium">
+                  <span class="px-2 rounded-md bg-brand-lightblue font-[Barlow]"
+                    >+3力量</span
+                  ><span
+                    class="px-2 rounded-md bg-brand-lightblue font-[Barlow]"
+                    >+5技巧</span
+                  ><span
+                    class="px-2 rounded-md bg-brand-lightblue font-[Barlow]"
+                    >+4速度</span
+                  >
                 </dd>
               </div>
             </dl>
           </li>
-          <li class="card" data-astro-cid-wbeb7hvx>
-            <header data-astro-cid-wbeb7hvx>
-              <div class="portraits" data-astro-cid-wbeb7hvx>
+          <li
+            class="card flex flex-col gap-3 p-4 border border-brand-border rounded-md text-brand-black"
+          >
+            <header class="flex whitespace-pre-line items-center gap-3">
+              <div class="portraits flex flex-none [&amp;&gt;*+*]:-ml-3">
                 <img
                   src="/_astro/%E7%BB%B4%E6%B4%9B%E5%A6%AE%E5%8D%A1.JBY0aKSb_Z2aHPjk.webp"
                   srcset="
@@ -1202,37 +1286,45 @@ exports[`built emblems page snapshots > matches the full HTML snapshot for the e
                   class="thumb"
                 />
               </div>
-              <div data-astro-cid-wbeb7hvx>
-                <h2 data-astro-cid-wbeb7hvx>维洛妮卡</h2>
-                <p class="works" data-astro-cid-wbeb7hvx>
+              <div class="self-stretch border-b border-brand-border">
+                <h2 class="text-xl font-medium">维洛妮卡</h2>
+                <p class="works text-xs text-brand-gray">
                   FEH《火焰之纹章 英雄》（手游）
                 </p>
               </div>
             </header>
-            <p class="intro" data-astro-cid-wbeb7hvx>
+            <p class="intro whitespace-pre-line text-base">
               人称“英雄纹章士”。是位能操控异界英雄的皇女。
             </p>
-            <dl data-astro-cid-wbeb7hvx>
-              <div data-astro-cid-wbeb7hvx>
-                <dt data-astro-cid-wbeb7hvx>声优</dt>
-                <dd data-astro-cid-wbeb7hvx>日高 里菜</dd>
+            <dl
+              class="whitespace-pre-line grid gap-1 [&amp;&gt;div]:grid [&amp;&gt;div]:grid-cols-[4.5rem_1fr] [&amp;&gt;div]:gap-2"
+            >
+              <div class="text-sm">
+                <dt class="text-brand-gray">声优</dt>
+                <dd class="font-medium">日高 里菜</dd>
               </div>
-              <div data-astro-cid-wbeb7hvx>
-                <dt data-astro-cid-wbeb7hvx>加入</dt>
-                <dd data-astro-cid-wbeb7hvx>
-                  <span class="chapter" data-astro-cid-wbeb7hvx>第七章</span
-                  ><span class="cond" data-astro-cid-wbeb7hvx
+              <div class="text-sm">
+                <dt class="text-brand-gray">加入</dt>
+                <dd class="text-sm">
+                  <span class="block font-medium">第七章</span
+                  ><span class="text-xs text-brand-gray"
                     >DLC 第三弹 在神龙之章获得琪姬的手镯后 通关神龙之章
                     英雄们的圣域的外传：年幼皇女</span
                   >
                 </dd>
               </div>
-              <div data-astro-cid-wbeb7hvx>
-                <dt data-astro-cid-wbeb7hvx>满级加成</dt>
-                <dd class="bonus" data-astro-cid-wbeb7hvx>
-                  <span data-astro-cid-wbeb7hvx>+5魔力</span
-                  ><span data-astro-cid-wbeb7hvx>+4魔防</span
-                  ><span data-astro-cid-wbeb7hvx>+6幸运</span>
+              <div class="text-sm">
+                <dt class="text-brand-gray">满级加成</dt>
+                <dd class="flex flex-wrap gap-1 whitespace-normal font-medium">
+                  <span class="px-2 rounded-md bg-brand-lightblue font-[Barlow]"
+                    >+5魔力</span
+                  ><span
+                    class="px-2 rounded-md bg-brand-lightblue font-[Barlow]"
+                    >+4魔防</span
+                  ><span
+                    class="px-2 rounded-md bg-brand-lightblue font-[Barlow]"
+                    >+6幸运</span
+                  >
                 </dd>
               </div>
             </dl>
