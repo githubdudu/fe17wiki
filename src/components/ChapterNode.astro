@@ -3,7 +3,6 @@
  * A chapter in the chronological timeline.
  * Represents a chapter or a chapter or a chapter and its side branches in the timeline.
  */
-import ChapterCard from "./ChapterCard.astro";
 
 export interface Node {
   id: string;
@@ -39,7 +38,17 @@ const dlc = node.type === "divine" || node.type === "xenologue";
     class="grid grid-cols-[24px_1fr] sm:grid-cols-[32px_1fr] relative"
     data-desciption="chapter-header"
   >
-    <div class="timeline-dot col-start-2 flex gap-2 text-xl">
+    <div
+      class:list={[
+        "timeline-dot col-start-2 flex gap-2 text-xl",
+        {
+          "dot-main": node.type === "main",
+          "dot-paralogue": node.type === "paralogue",
+          "dot-xenologue": node.type === "xenologue",
+          "dot-divine": node.type === "divine",
+        },
+      ]}
+    >
       <div class="font-bold">{node.name}</div>
       <div>{node.title}</div>
     </div>
@@ -89,7 +98,7 @@ const dlc = node.type === "divine" || node.type === "xenologue";
     top: 0.5rem;
     width: 0.5rem;
     height: 0.5rem;
-    border: 2px solid var(--side);
+    border: 2px solid var(--color-dot, var(--color-brand-black, #000));
     border-radius: 50%;
     background: #fff;
     transform: translateX(-50%);
@@ -98,6 +107,19 @@ const dlc = node.type === "divine" || node.type === "xenologue";
       left: 1rem;
       top: 0.5rem;
     }
+  }
+
+  .dot-main {
+    --color-dot: var(--color-brand-black);
+  }
+  .dot-paralogue {
+    --color-dot: var(--color-kind-character);
+  }
+  .dot-xenologue {
+    --color-dot: var(--color-kind-engrave);
+  }
+  .dot-divine {
+    --color-dot: var(--color-kind-weapon);
   }
 
   .timeline-line::before {

@@ -25,7 +25,7 @@ exports[`built chapters page snapshots > matches the full HTML snapshot for the 
     <style>
       .timeline-dot[data-astro-cid-mloacws5]:before {
         content: "";
-        border: 2px solid var(--side);
+        border: 2px solid var(--color-dot, var(--color-brand-black, #000));
         background: #fff;
         border-radius: 50%;
         width: 0.5rem;
@@ -38,6 +38,18 @@ exports[`built chapters page snapshots > matches the full HTML snapshot for the 
           top: 0.5rem;
           left: 1rem;
         }
+      }
+      .dot-main[data-astro-cid-mloacws5] {
+        --color-dot: var(--color-brand-black);
+      }
+      .dot-paralogue[data-astro-cid-mloacws5] {
+        --color-dot: var(--color-kind-character);
+      }
+      .dot-xenologue[data-astro-cid-mloacws5] {
+        --color-dot: var(--color-kind-engrave);
+      }
+      .dot-divine[data-astro-cid-mloacws5] {
+        --color-dot: var(--color-kind-weapon);
       }
       .timeline-line[data-astro-cid-mloacws5]:before {
         content: "";
@@ -81,17 +93,6 @@ exports[`built chapters page snapshots > matches the full HTML snapshot for the 
           height: 1rem;
         }
       }
-      .chapters[data-astro-cid-eh6el2uw] {
-        --axis: #262a3f;
-        --side: #5d6478;
-        --shadow: #262a3f26;
-        --line: #d4dde2;
-        --gap: 10rem;
-        --label: 4rem;
-        --label-s: 7rem;
-        --curve: 32px;
-        color: #22263a;
-      }
     </style>
   </head>
   <body data-astro-cid-z4jru4n3>
@@ -108,29 +109,20 @@ exports[`built chapters page snapshots > matches the full HTML snapshot for the 
         >
       </nav>
       <main data-astro-cid-entc4gyn>
-        <div class="chapters" data-astro-cid-eh6el2uw>
-          <h1 class="text-2xl font-medium my-4" data-astro-cid-eh6el2uw>
-            章节流程
-          </h1>
-          <p
-            class="lead flex gap-2 text-brand-gray text-base"
-            data-astro-cid-eh6el2uw
-          >
+        <div class="chapters">
+          <h1 class="text-2xl font-medium my-4">章节流程</h1>
+          <p class="flex gap-2 text-brand-gray text-base mb-2">
             <span
               class="color-main before:inline-block before:w-4 before:border-b-4 before:border-brand-black"
-              data-astro-cid-eh6el2uw
               >&nbsp;主线</span
             ><span
               class="color-paralogue before:inline-block before:w-4 before:border-b-4 before:border-kind-character"
-              data-astro-cid-eh6el2uw
               >&nbsp;外传</span
             ><span
               class="color-divine before:inline-block before:w-4 before:border-b-4 before:border-kind-weapon"
-              data-astro-cid-eh6el2uw
               >&nbsp;神龙之章</span
             ><span
               class="color-xenologue before:inline-block before:w-4 before:border-b-4 before:border-kind-engrave"
-              data-astro-cid-eh6el2uw
               >&nbsp;邪龙之章</span
             >
           </p>
@@ -148,7 +140,7 @@ exports[`built chapters page snapshots > matches the full HTML snapshot for the 
                   data-astro-cid-mloacws5
                 >
                   <div
-                    class="timeline-dot col-start-2 flex gap-2 text-xl"
+                    class="timeline-dot col-start-2 flex gap-2 text-xl dot-main"
                     data-astro-cid-mloacws5
                   >
                     <div class="font-bold" data-astro-cid-mloacws5>序章</div>
@@ -187,7 +179,7 @@ exports[`built chapters page snapshots > matches the full HTML snapshot for the 
                   data-astro-cid-mloacws5
                 >
                   <div
-                    class="timeline-dot col-start-2 flex gap-2 text-xl"
+                    class="timeline-dot col-start-2 flex gap-2 text-xl dot-main"
                     data-astro-cid-mloacws5
                   >
                     <div class="font-bold" data-astro-cid-mloacws5>第1章</div>
@@ -226,7 +218,7 @@ exports[`built chapters page snapshots > matches the full HTML snapshot for the 
                   data-astro-cid-mloacws5
                 >
                   <div
-                    class="timeline-dot col-start-2 flex gap-2 text-xl"
+                    class="timeline-dot col-start-2 flex gap-2 text-xl dot-main"
                     data-astro-cid-mloacws5
                   >
                     <div class="font-bold" data-astro-cid-mloacws5>第2章</div>
@@ -265,7 +257,7 @@ exports[`built chapters page snapshots > matches the full HTML snapshot for the 
                   data-astro-cid-mloacws5
                 >
                   <div
-                    class="timeline-dot col-start-2 flex gap-2 text-xl"
+                    class="timeline-dot col-start-2 flex gap-2 text-xl dot-main"
                     data-astro-cid-mloacws5
                   >
                     <div class="font-bold" data-astro-cid-mloacws5>第3章</div>
@@ -304,7 +296,7 @@ exports[`built chapters page snapshots > matches the full HTML snapshot for the 
                   data-astro-cid-mloacws5
                 >
                   <div
-                    class="timeline-dot col-start-2 flex gap-2 text-xl"
+                    class="timeline-dot col-start-2 flex gap-2 text-xl dot-main"
                     data-astro-cid-mloacws5
                   >
                     <div class="font-bold" data-astro-cid-mloacws5>第4章</div>
@@ -343,7 +335,7 @@ exports[`built chapters page snapshots > matches the full HTML snapshot for the 
                   data-astro-cid-mloacws5
                 >
                   <div
-                    class="timeline-dot col-start-2 flex gap-2 text-xl"
+                    class="timeline-dot col-start-2 flex gap-2 text-xl dot-main"
                     data-astro-cid-mloacws5
                   >
                     <div class="font-bold" data-astro-cid-mloacws5>第5章</div>
@@ -383,7 +375,7 @@ exports[`built chapters page snapshots > matches the full HTML snapshot for the 
                           data-astro-cid-mloacws5
                         >
                           <div
-                            class="timeline-dot col-start-2 flex gap-2 text-xl"
+                            class="timeline-dot col-start-2 flex gap-2 text-xl dot-paralogue"
                             data-astro-cid-mloacws5
                           >
                             <div class="font-bold" data-astro-cid-mloacws5>
@@ -428,7 +420,7 @@ exports[`built chapters page snapshots > matches the full HTML snapshot for the 
                   data-astro-cid-mloacws5
                 >
                   <div
-                    class="timeline-dot col-start-2 flex gap-2 text-xl"
+                    class="timeline-dot col-start-2 flex gap-2 text-xl dot-main"
                     data-astro-cid-mloacws5
                   >
                     <div class="font-bold" data-astro-cid-mloacws5>第6章</div>
@@ -468,7 +460,7 @@ exports[`built chapters page snapshots > matches the full HTML snapshot for the 
                           data-astro-cid-mloacws5
                         >
                           <div
-                            class="timeline-dot col-start-2 flex gap-2 text-xl"
+                            class="timeline-dot col-start-2 flex gap-2 text-xl dot-xenologue"
                             data-astro-cid-mloacws5
                           >
                             <div class="font-bold" data-astro-cid-mloacws5>
@@ -509,7 +501,7 @@ exports[`built chapters page snapshots > matches the full HTML snapshot for the 
                           data-astro-cid-mloacws5
                         >
                           <div
-                            class="timeline-dot col-start-2 flex gap-2 text-xl"
+                            class="timeline-dot col-start-2 flex gap-2 text-xl dot-xenologue"
                             data-astro-cid-mloacws5
                           >
                             <div class="font-bold" data-astro-cid-mloacws5>
@@ -550,7 +542,7 @@ exports[`built chapters page snapshots > matches the full HTML snapshot for the 
                           data-astro-cid-mloacws5
                         >
                           <div
-                            class="timeline-dot col-start-2 flex gap-2 text-xl"
+                            class="timeline-dot col-start-2 flex gap-2 text-xl dot-xenologue"
                             data-astro-cid-mloacws5
                           >
                             <div class="font-bold" data-astro-cid-mloacws5>
@@ -591,7 +583,7 @@ exports[`built chapters page snapshots > matches the full HTML snapshot for the 
                           data-astro-cid-mloacws5
                         >
                           <div
-                            class="timeline-dot col-start-2 flex gap-2 text-xl"
+                            class="timeline-dot col-start-2 flex gap-2 text-xl dot-xenologue"
                             data-astro-cid-mloacws5
                           >
                             <div class="font-bold" data-astro-cid-mloacws5>
@@ -632,7 +624,7 @@ exports[`built chapters page snapshots > matches the full HTML snapshot for the 
                           data-astro-cid-mloacws5
                         >
                           <div
-                            class="timeline-dot col-start-2 flex gap-2 text-xl"
+                            class="timeline-dot col-start-2 flex gap-2 text-xl dot-xenologue"
                             data-astro-cid-mloacws5
                           >
                             <div class="font-bold" data-astro-cid-mloacws5>
@@ -673,7 +665,7 @@ exports[`built chapters page snapshots > matches the full HTML snapshot for the 
                           data-astro-cid-mloacws5
                         >
                           <div
-                            class="timeline-dot col-start-2 flex gap-2 text-xl"
+                            class="timeline-dot col-start-2 flex gap-2 text-xl dot-xenologue"
                             data-astro-cid-mloacws5
                           >
                             <div class="font-bold" data-astro-cid-mloacws5>
@@ -719,7 +711,7 @@ exports[`built chapters page snapshots > matches the full HTML snapshot for the 
                           data-astro-cid-mloacws5
                         >
                           <div
-                            class="timeline-dot col-start-2 flex gap-2 text-xl"
+                            class="timeline-dot col-start-2 flex gap-2 text-xl dot-paralogue"
                             data-astro-cid-mloacws5
                           >
                             <div class="font-bold" data-astro-cid-mloacws5>
@@ -765,7 +757,7 @@ exports[`built chapters page snapshots > matches the full HTML snapshot for the 
                           data-astro-cid-mloacws5
                         >
                           <div
-                            class="timeline-dot col-start-2 flex gap-2 text-xl"
+                            class="timeline-dot col-start-2 flex gap-2 text-xl dot-divine"
                             data-astro-cid-mloacws5
                           >
                             <div class="font-bold" data-astro-cid-mloacws5>
@@ -807,7 +799,7 @@ exports[`built chapters page snapshots > matches the full HTML snapshot for the 
                                   data-astro-cid-mloacws5
                                 >
                                   <div
-                                    class="timeline-dot col-start-2 flex gap-2 text-xl"
+                                    class="timeline-dot col-start-2 flex gap-2 text-xl dot-divine"
                                     data-astro-cid-mloacws5
                                   >
                                     <div
@@ -856,7 +848,7 @@ exports[`built chapters page snapshots > matches the full HTML snapshot for the 
                                   data-astro-cid-mloacws5
                                 >
                                   <div
-                                    class="timeline-dot col-start-2 flex gap-2 text-xl"
+                                    class="timeline-dot col-start-2 flex gap-2 text-xl dot-divine"
                                     data-astro-cid-mloacws5
                                   >
                                     <div
@@ -905,7 +897,7 @@ exports[`built chapters page snapshots > matches the full HTML snapshot for the 
                                   data-astro-cid-mloacws5
                                 >
                                   <div
-                                    class="timeline-dot col-start-2 flex gap-2 text-xl"
+                                    class="timeline-dot col-start-2 flex gap-2 text-xl dot-divine"
                                     data-astro-cid-mloacws5
                                   >
                                     <div
@@ -954,7 +946,7 @@ exports[`built chapters page snapshots > matches the full HTML snapshot for the 
                                   data-astro-cid-mloacws5
                                 >
                                   <div
-                                    class="timeline-dot col-start-2 flex gap-2 text-xl"
+                                    class="timeline-dot col-start-2 flex gap-2 text-xl dot-divine"
                                     data-astro-cid-mloacws5
                                   >
                                     <div
@@ -1003,7 +995,7 @@ exports[`built chapters page snapshots > matches the full HTML snapshot for the 
                                   data-astro-cid-mloacws5
                                 >
                                   <div
-                                    class="timeline-dot col-start-2 flex gap-2 text-xl"
+                                    class="timeline-dot col-start-2 flex gap-2 text-xl dot-divine"
                                     data-astro-cid-mloacws5
                                   >
                                     <div
@@ -1055,7 +1047,7 @@ exports[`built chapters page snapshots > matches the full HTML snapshot for the 
                   data-astro-cid-mloacws5
                 >
                   <div
-                    class="timeline-dot col-start-2 flex gap-2 text-xl"
+                    class="timeline-dot col-start-2 flex gap-2 text-xl dot-main"
                     data-astro-cid-mloacws5
                   >
                     <div class="font-bold" data-astro-cid-mloacws5>第7章</div>
@@ -1094,7 +1086,7 @@ exports[`built chapters page snapshots > matches the full HTML snapshot for the 
                   data-astro-cid-mloacws5
                 >
                   <div
-                    class="timeline-dot col-start-2 flex gap-2 text-xl"
+                    class="timeline-dot col-start-2 flex gap-2 text-xl dot-main"
                     data-astro-cid-mloacws5
                   >
                     <div class="font-bold" data-astro-cid-mloacws5>第8章</div>
@@ -1133,7 +1125,7 @@ exports[`built chapters page snapshots > matches the full HTML snapshot for the 
                   data-astro-cid-mloacws5
                 >
                   <div
-                    class="timeline-dot col-start-2 flex gap-2 text-xl"
+                    class="timeline-dot col-start-2 flex gap-2 text-xl dot-main"
                     data-astro-cid-mloacws5
                   >
                     <div class="font-bold" data-astro-cid-mloacws5>第9章</div>
@@ -1172,7 +1164,7 @@ exports[`built chapters page snapshots > matches the full HTML snapshot for the 
                   data-astro-cid-mloacws5
                 >
                   <div
-                    class="timeline-dot col-start-2 flex gap-2 text-xl"
+                    class="timeline-dot col-start-2 flex gap-2 text-xl dot-main"
                     data-astro-cid-mloacws5
                   >
                     <div class="font-bold" data-astro-cid-mloacws5>第10章</div>
@@ -1211,7 +1203,7 @@ exports[`built chapters page snapshots > matches the full HTML snapshot for the 
                   data-astro-cid-mloacws5
                 >
                   <div
-                    class="timeline-dot col-start-2 flex gap-2 text-xl"
+                    class="timeline-dot col-start-2 flex gap-2 text-xl dot-main"
                     data-astro-cid-mloacws5
                   >
                     <div class="font-bold" data-astro-cid-mloacws5>第11章</div>
@@ -1251,7 +1243,7 @@ exports[`built chapters page snapshots > matches the full HTML snapshot for the 
                           data-astro-cid-mloacws5
                         >
                           <div
-                            class="timeline-dot col-start-2 flex gap-2 text-xl"
+                            class="timeline-dot col-start-2 flex gap-2 text-xl dot-paralogue"
                             data-astro-cid-mloacws5
                           >
                             <div class="font-bold" data-astro-cid-mloacws5>
@@ -1296,7 +1288,7 @@ exports[`built chapters page snapshots > matches the full HTML snapshot for the 
                   data-astro-cid-mloacws5
                 >
                   <div
-                    class="timeline-dot col-start-2 flex gap-2 text-xl"
+                    class="timeline-dot col-start-2 flex gap-2 text-xl dot-main"
                     data-astro-cid-mloacws5
                   >
                     <div class="font-bold" data-astro-cid-mloacws5>第12章</div>
@@ -1336,7 +1328,7 @@ exports[`built chapters page snapshots > matches the full HTML snapshot for the 
                           data-astro-cid-mloacws5
                         >
                           <div
-                            class="timeline-dot col-start-2 flex gap-2 text-xl"
+                            class="timeline-dot col-start-2 flex gap-2 text-xl dot-paralogue"
                             data-astro-cid-mloacws5
                           >
                             <div class="font-bold" data-astro-cid-mloacws5>
@@ -1381,7 +1373,7 @@ exports[`built chapters page snapshots > matches the full HTML snapshot for the 
                   data-astro-cid-mloacws5
                 >
                   <div
-                    class="timeline-dot col-start-2 flex gap-2 text-xl"
+                    class="timeline-dot col-start-2 flex gap-2 text-xl dot-main"
                     data-astro-cid-mloacws5
                   >
                     <div class="font-bold" data-astro-cid-mloacws5>第13章</div>
@@ -1421,7 +1413,7 @@ exports[`built chapters page snapshots > matches the full HTML snapshot for the 
                           data-astro-cid-mloacws5
                         >
                           <div
-                            class="timeline-dot col-start-2 flex gap-2 text-xl"
+                            class="timeline-dot col-start-2 flex gap-2 text-xl dot-paralogue"
                             data-astro-cid-mloacws5
                           >
                             <div class="font-bold" data-astro-cid-mloacws5>
@@ -1466,7 +1458,7 @@ exports[`built chapters page snapshots > matches the full HTML snapshot for the 
                   data-astro-cid-mloacws5
                 >
                   <div
-                    class="timeline-dot col-start-2 flex gap-2 text-xl"
+                    class="timeline-dot col-start-2 flex gap-2 text-xl dot-main"
                     data-astro-cid-mloacws5
                   >
                     <div class="font-bold" data-astro-cid-mloacws5>第14章</div>
@@ -1506,7 +1498,7 @@ exports[`built chapters page snapshots > matches the full HTML snapshot for the 
                           data-astro-cid-mloacws5
                         >
                           <div
-                            class="timeline-dot col-start-2 flex gap-2 text-xl"
+                            class="timeline-dot col-start-2 flex gap-2 text-xl dot-paralogue"
                             data-astro-cid-mloacws5
                           >
                             <div class="font-bold" data-astro-cid-mloacws5>
@@ -1551,7 +1543,7 @@ exports[`built chapters page snapshots > matches the full HTML snapshot for the 
                   data-astro-cid-mloacws5
                 >
                   <div
-                    class="timeline-dot col-start-2 flex gap-2 text-xl"
+                    class="timeline-dot col-start-2 flex gap-2 text-xl dot-main"
                     data-astro-cid-mloacws5
                   >
                     <div class="font-bold" data-astro-cid-mloacws5>第15章</div>
@@ -1591,7 +1583,7 @@ exports[`built chapters page snapshots > matches the full HTML snapshot for the 
                           data-astro-cid-mloacws5
                         >
                           <div
-                            class="timeline-dot col-start-2 flex gap-2 text-xl"
+                            class="timeline-dot col-start-2 flex gap-2 text-xl dot-paralogue"
                             data-astro-cid-mloacws5
                           >
                             <div class="font-bold" data-astro-cid-mloacws5>
@@ -1636,7 +1628,7 @@ exports[`built chapters page snapshots > matches the full HTML snapshot for the 
                   data-astro-cid-mloacws5
                 >
                   <div
-                    class="timeline-dot col-start-2 flex gap-2 text-xl"
+                    class="timeline-dot col-start-2 flex gap-2 text-xl dot-main"
                     data-astro-cid-mloacws5
                   >
                     <div class="font-bold" data-astro-cid-mloacws5>第16章</div>
@@ -1676,7 +1668,7 @@ exports[`built chapters page snapshots > matches the full HTML snapshot for the 
                           data-astro-cid-mloacws5
                         >
                           <div
-                            class="timeline-dot col-start-2 flex gap-2 text-xl"
+                            class="timeline-dot col-start-2 flex gap-2 text-xl dot-paralogue"
                             data-astro-cid-mloacws5
                           >
                             <div class="font-bold" data-astro-cid-mloacws5>
@@ -1721,7 +1713,7 @@ exports[`built chapters page snapshots > matches the full HTML snapshot for the 
                   data-astro-cid-mloacws5
                 >
                   <div
-                    class="timeline-dot col-start-2 flex gap-2 text-xl"
+                    class="timeline-dot col-start-2 flex gap-2 text-xl dot-main"
                     data-astro-cid-mloacws5
                   >
                     <div class="font-bold" data-astro-cid-mloacws5>第17章</div>
@@ -1761,7 +1753,7 @@ exports[`built chapters page snapshots > matches the full HTML snapshot for the 
                           data-astro-cid-mloacws5
                         >
                           <div
-                            class="timeline-dot col-start-2 flex gap-2 text-xl"
+                            class="timeline-dot col-start-2 flex gap-2 text-xl dot-paralogue"
                             data-astro-cid-mloacws5
                           >
                             <div class="font-bold" data-astro-cid-mloacws5>
@@ -1807,7 +1799,7 @@ exports[`built chapters page snapshots > matches the full HTML snapshot for the 
                           data-astro-cid-mloacws5
                         >
                           <div
-                            class="timeline-dot col-start-2 flex gap-2 text-xl"
+                            class="timeline-dot col-start-2 flex gap-2 text-xl dot-paralogue"
                             data-astro-cid-mloacws5
                           >
                             <div class="font-bold" data-astro-cid-mloacws5>
@@ -1852,7 +1844,7 @@ exports[`built chapters page snapshots > matches the full HTML snapshot for the 
                   data-astro-cid-mloacws5
                 >
                   <div
-                    class="timeline-dot col-start-2 flex gap-2 text-xl"
+                    class="timeline-dot col-start-2 flex gap-2 text-xl dot-main"
                     data-astro-cid-mloacws5
                   >
                     <div class="font-bold" data-astro-cid-mloacws5>第18章</div>
@@ -1891,7 +1883,7 @@ exports[`built chapters page snapshots > matches the full HTML snapshot for the 
                   data-astro-cid-mloacws5
                 >
                   <div
-                    class="timeline-dot col-start-2 flex gap-2 text-xl"
+                    class="timeline-dot col-start-2 flex gap-2 text-xl dot-main"
                     data-astro-cid-mloacws5
                   >
                     <div class="font-bold" data-astro-cid-mloacws5>第19章</div>
@@ -1931,7 +1923,7 @@ exports[`built chapters page snapshots > matches the full HTML snapshot for the 
                           data-astro-cid-mloacws5
                         >
                           <div
-                            class="timeline-dot col-start-2 flex gap-2 text-xl"
+                            class="timeline-dot col-start-2 flex gap-2 text-xl dot-paralogue"
                             data-astro-cid-mloacws5
                           >
                             <div class="font-bold" data-astro-cid-mloacws5>
@@ -1977,7 +1969,7 @@ exports[`built chapters page snapshots > matches the full HTML snapshot for the 
                           data-astro-cid-mloacws5
                         >
                           <div
-                            class="timeline-dot col-start-2 flex gap-2 text-xl"
+                            class="timeline-dot col-start-2 flex gap-2 text-xl dot-paralogue"
                             data-astro-cid-mloacws5
                           >
                             <div class="font-bold" data-astro-cid-mloacws5>
@@ -2022,7 +2014,7 @@ exports[`built chapters page snapshots > matches the full HTML snapshot for the 
                   data-astro-cid-mloacws5
                 >
                   <div
-                    class="timeline-dot col-start-2 flex gap-2 text-xl"
+                    class="timeline-dot col-start-2 flex gap-2 text-xl dot-main"
                     data-astro-cid-mloacws5
                   >
                     <div class="font-bold" data-astro-cid-mloacws5>第20章</div>
@@ -2062,7 +2054,7 @@ exports[`built chapters page snapshots > matches the full HTML snapshot for the 
                           data-astro-cid-mloacws5
                         >
                           <div
-                            class="timeline-dot col-start-2 flex gap-2 text-xl"
+                            class="timeline-dot col-start-2 flex gap-2 text-xl dot-paralogue"
                             data-astro-cid-mloacws5
                           >
                             <div class="font-bold" data-astro-cid-mloacws5>
@@ -2107,7 +2099,7 @@ exports[`built chapters page snapshots > matches the full HTML snapshot for the 
                   data-astro-cid-mloacws5
                 >
                   <div
-                    class="timeline-dot col-start-2 flex gap-2 text-xl"
+                    class="timeline-dot col-start-2 flex gap-2 text-xl dot-main"
                     data-astro-cid-mloacws5
                   >
                     <div class="font-bold" data-astro-cid-mloacws5>第21章</div>
@@ -2146,7 +2138,7 @@ exports[`built chapters page snapshots > matches the full HTML snapshot for the 
                   data-astro-cid-mloacws5
                 >
                   <div
-                    class="timeline-dot col-start-2 flex gap-2 text-xl"
+                    class="timeline-dot col-start-2 flex gap-2 text-xl dot-main"
                     data-astro-cid-mloacws5
                   >
                     <div class="font-bold" data-astro-cid-mloacws5>第22章</div>
@@ -2186,7 +2178,7 @@ exports[`built chapters page snapshots > matches the full HTML snapshot for the 
                           data-astro-cid-mloacws5
                         >
                           <div
-                            class="timeline-dot col-start-2 flex gap-2 text-xl"
+                            class="timeline-dot col-start-2 flex gap-2 text-xl dot-paralogue"
                             data-astro-cid-mloacws5
                           >
                             <div class="font-bold" data-astro-cid-mloacws5>
@@ -2232,7 +2224,7 @@ exports[`built chapters page snapshots > matches the full HTML snapshot for the 
                           data-astro-cid-mloacws5
                         >
                           <div
-                            class="timeline-dot col-start-2 flex gap-2 text-xl"
+                            class="timeline-dot col-start-2 flex gap-2 text-xl dot-paralogue"
                             data-astro-cid-mloacws5
                           >
                             <div class="font-bold" data-astro-cid-mloacws5>
@@ -2277,7 +2269,7 @@ exports[`built chapters page snapshots > matches the full HTML snapshot for the 
                   data-astro-cid-mloacws5
                 >
                   <div
-                    class="timeline-dot col-start-2 flex gap-2 text-xl"
+                    class="timeline-dot col-start-2 flex gap-2 text-xl dot-main"
                     data-astro-cid-mloacws5
                   >
                     <div class="font-bold" data-astro-cid-mloacws5>第23章</div>
@@ -2316,7 +2308,7 @@ exports[`built chapters page snapshots > matches the full HTML snapshot for the 
                   data-astro-cid-mloacws5
                 >
                   <div
-                    class="timeline-dot col-start-2 flex gap-2 text-xl"
+                    class="timeline-dot col-start-2 flex gap-2 text-xl dot-main"
                     data-astro-cid-mloacws5
                   >
                     <div class="font-bold" data-astro-cid-mloacws5>第24章</div>
@@ -2355,7 +2347,7 @@ exports[`built chapters page snapshots > matches the full HTML snapshot for the 
                   data-astro-cid-mloacws5
                 >
                   <div
-                    class="timeline-dot col-start-2 flex gap-2 text-xl"
+                    class="timeline-dot col-start-2 flex gap-2 text-xl dot-main"
                     data-astro-cid-mloacws5
                   >
                     <div class="font-bold" data-astro-cid-mloacws5>第25章</div>
@@ -2394,7 +2386,7 @@ exports[`built chapters page snapshots > matches the full HTML snapshot for the 
                   data-astro-cid-mloacws5
                 >
                   <div
-                    class="timeline-dot col-start-2 flex gap-2 text-xl"
+                    class="timeline-dot col-start-2 flex gap-2 text-xl dot-main"
                     data-astro-cid-mloacws5
                   >
                     <div class="font-bold" data-astro-cid-mloacws5>第26章</div>
