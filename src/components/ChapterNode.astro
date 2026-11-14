@@ -1,9 +1,7 @@
 ---
 /**
- * 时间轴上的一个事件：轴上的圆点 + 编号，虚线连到右边的卡片（章节名 + 在这里加入的人物）。
- * 下面挂着接着它进行的章节（chain，如邪龙之章 1→6）和从它分出的支线（children，外传 / 神龙之章各章）。
- * 支线的轴、圆点、虚线、弯道都在这里画（每层支线都各自拐出来）；主干的那一套在 chapters 页里（它的 li 属于那个文件）。
- * 颜色由 li 上的 data-type 决定，尺寸用页面定义的 --gap / --label-s / --curve。
+ * A chapter in the chronological timeline.
+ * Represents a chapter or a chapter or a chapter and its side branches in the timeline.
  */
 import ChapterCard from "./ChapterCard.astro";
 
@@ -16,15 +14,16 @@ export interface Node {
   newChars: { id: string; name: string; img: string }[];
   newEmblems: { name: string; img: string }[];
   children: Node[];
-  /** 接在这个节点后面依次进行的章节（如邪龙之章第2–6章），画成一条小轴而不是层层支线 */
+  /** no more indentation for chain, it only works for xenologues */
   chain: Node[];
 }
 
 interface Props {
   node: Node;
-  main?: boolean; // 主线节点：标题用 h2、编号更大
+  hasNext?: boolean; //
+  main?: boolean; // 主线节点?
 }
-const { node, main = false } = Astro.props;
+const { node, hasNext, main = false } = Astro.props;
 const dlc = node.type === "divine" || node.type === "xenologue";
 ---
 
@@ -34,166 +33,117 @@ const dlc = node.type === "divine" || node.type === "xenologue";
     { main, dlc, grouped: node.children.length + node.chain.length > 0 },
   ]}
   id={node.id}
+  data-desciption="chapter-node"
 >
-  <div class="grid grid-cols-[24px_1fr] sm:grid-cols-[32px_1fr] relative">
-    <div class="chapter-dot col-start-2 flex gap-4 text-xl">
+  <div
+    class="grid grid-cols-[24px_1fr] sm:grid-cols-[32px_1fr] relative"
+    data-desciption="chapter-header"
+  >
+    <div class="timeline-dot col-start-2 flex gap-2 text-xl">
       <div class="font-bold">{node.name}</div>
       <div>{node.title}</div>
     </div>
   </div>
-  <div class="grid grid-cols-[24px_1fr] sm:grid-cols-[32px_1fr] relative">
-    <div class="thread-line"></div>
-    <div class="col-start-2">content of chapter</div>
+  <div
+    class="chapter-main grid grid-cols-[24px_1fr] sm:grid-cols-[32px_1fr] relative"
+    data-desciption="chapter-main"
+  >
+    <div
+      class:list={[
+        "timeline-line absolute top-0 bottom-0 start-0 w-6 sm:w-8",
+        { hidden: !hasNext && node.id != "d1" },
+      ]}
+      aria-hidden="true"
+    ></div>
+    <div class="col-start-2 text-base mb-2">content of chapter</div>
+    {node.chain.length > 0 && (
+      <ol class="timeline-curve ml-3 sm:ml-4 col-span-2">
+        {node.chain.map((next, i, arr) => (
+          <li data-type={next.type}>
+            <Astro.self node={next} hasNext={i !== arr.length - 1} />
+          </li>
+        ))}
+      </ol>
+    )}
+    {node.children.length > 0 &&
+      node.children.map((child) => (
+        <ul
+          class:list={[
+            "timeline-curve ml-3 sm:ml-4 col-span-2",
+            { timeline_end_fix: child.id === "d6" },
+          ]}
+        >
+          <li data-type={child.type}>
+            <Astro.self node={child} />
+          </li>
+        </ul>
+      ))}
   </div>
 </div>
-{
-  node.chain.length > 0 && (
-    <ol class="">
-      {node.chain.map((next) => (
-        <li data-type={next.type}>
-          <Astro.self node={next} />
-        </li>
-      ))}
-    </ol>
-  )
-}
-{
-  node.children.length > 0 && (
-    <ul class="">
-      {node.children.map((child) => (
-        <li data-type={child.type}>
-          <Astro.self node={child} />
-        </li>
-      ))}
-    </ul>
-  )
-}
 
 <style>
-  .chapter-dot::before {
+  .timeline-dot::before {
     content: "";
     position: absolute;
-    left: 1rem;
-    top: 8px;
-    width: 8px;
-    height: 8px;
+    left: 0.75rem;
+    top: 0.5rem;
+    width: 0.5rem;
+    height: 0.5rem;
     border: 2px solid var(--side);
     border-radius: 50%;
     background: #fff;
     transform: translateX(-50%);
+
+    @media (min-width: 640px) {
+      left: 1rem;
+      top: 0.5rem;
+    }
   }
 
-  .thread-line::before {
+  .timeline-line::before {
     content: "";
     display: block;
     height: 100%;
     width: 1px;
     background: var(--color-brand-border);
-    margin-inline-start: 15.5px;
-    /* position: absolute; */
-    /* left: 0;
-    top: 0; */
-    /* border-left: 2px dashed var(--axis); */
-  }
-  /* ---- 事件本身：圆点左边的编号 + 右侧卡片 ---- */
-  .event {
-    /* position: relative;
-    display: grid;
-    justify-items: start; */
+    margin-inline-start: calc(0.75rem - 0.5px);
+
+    @media (min-width: 640px) {
+      margin-inline-start: calc(1rem - 0.5px);
+    }
   }
 
-  /*
-   * ---- 下一级的行 ----
-   * 两种：.chain（邪龙之章 2–6 章，依次进行，接着上一级的轴往下，--indent: 0）
-   * 和 .branches（神龙之章打完第1章后一起解锁的五章，各自往右拐出来）。
-   * 列表左移 --gap 贴到上一级的轴上，缩进走每个 li 的 padding，画法和主干上的行完全一样。
-   */
-  .branches,
-  .chain {
+  .timeline_end_fix {
     position: relative;
-    /* 不留上外边距：上一级的 .event 到这里正好接上，轴不断开（行距由卡片的 margin-bottom 给） */
-    margin: 0 0 0.25rem calc(-1 * var(--gap));
-    padding: 0;
-    list-style: none;
   }
-  .chain {
-    --indent: 0px;
-  }
-  .branches {
-    /* 分支自己的轴（圆点）再往右让出一整段虚线的宽度，卡片跟着右移，虚线长度不变 */
-    --indent: calc(var(--label-s) + 0.5rem + var(--gap));
-    --label: var(--label-s); /* 支线编号窄一档（只用于 .marker 的宽度） */
+  .timeline_end_fix::before {
+    content: "";
+    position: absolute;
+    background: white;
+    left: -1px;
+    height: 100%;
+    width: 2px;
   }
 
-  .branches > li,
-  .chain > li {
+  .timeline-curve {
     position: relative;
-    padding-left: calc(var(--indent) + var(--gap));
-    border-left: 3px solid var(--side);
   }
-  /* 一组的最后一个：圆点在顶边，自己这一行不画线，轴到这里为止 */
-  .branches > li:last-child,
-  .chain > li:last-child {
-    border-left-color: transparent;
-  }
-  /* 圆点到卡片的虚线 */
-  .branches > li::before,
-  .chain > li::before {
+  .timeline-curve::after {
     content: "";
     position: absolute;
-    top: 0;
-    left: calc(var(--indent) + 0.9rem);
-    width: calc(var(--gap) - 1.15rem);
-    border-top: 2px dashed var(--axis);
-  }
-  /* 轴上的圆点 */
-  .branches > li::after,
-  .chain > li::after {
-    content: "";
-    position: absolute;
-    left: calc(var(--indent) - 9.5px);
-    top: -7px;
-    width: 11px;
-    height: 11px;
-    border: 3px solid var(--side);
-    border-radius: 50%;
-    background: #fff;
-  }
-
-  /* 有缩进的行：从上一级的轴拐出来（神龙之章五章各一条弯道） */
-  .branches > li > .event::before {
-    content: "";
-    position: absolute;
+    height: 0.5rem;
     box-sizing: border-box;
-    top: calc(-1 * var(--curve));
-    /* 从上一级的轴（左边缘）横过来，在自己的圆点上拐下去：宽度只到自己的轴，不含虚线那一段 --gap */
-    left: calc(-1 * (var(--gap) + var(--indent) + 3px));
-    width: calc(var(--indent) + 3px);
-    height: var(--curve);
-    border-top: 3px solid var(--axis);
-    border-right: 3px solid var(--axis);
-    border-top-right-radius: var(--curve);
-  }
+    border: 0px solid var(--color-brand-border);
+    border-inline-start-width: 1px;
+    border-bottom-width: 1px;
+    border-end-start-radius: 1rem;
+    top: 0;
+    width: 0.5rem;
 
-  /* 手机：缩短虚线和缩进，给卡片留宽度；编号回到卡片标题上方 */
-  @media (max-width: 640px) {
-    .branches > li::before,
-    .chain > li::before {
-      left: calc(var(--indent) + 0.35rem);
-      width: 0.6rem;
-    }
-    .branches {
-      --indent: calc(0.4rem + var(--gap));
-    }
-    .marker,
-    .event.main > .marker {
-      position: static;
-      display: block;
-      width: auto;
-      height: auto;
-      line-height: 1.6;
-      text-align: left;
-      font-size: 0.9rem;
+    @media (min-width: 640px) {
+      height: 1rem;
+      border-end-start-radius: 2rem;
+      width: 1rem;
     }
   }
 </style>

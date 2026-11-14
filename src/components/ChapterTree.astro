@@ -12,9 +12,9 @@ const { trunk } = Astro.props;
   {
     // TODO: What node type and node is for?
     // What is main for?
-    trunk.map((node) => (
+    trunk.map((node, i, arr) => (
       <li>
-        <ChapterNode node={node} main={node.type === "main"} />
+        <ChapterNode node={node} hasNext={i !== arr.length - 1} main={node.type === "main"} />
       </li>
     ))
   }

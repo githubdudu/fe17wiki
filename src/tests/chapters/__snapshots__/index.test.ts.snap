@@ -21,107 +21,64 @@ exports[`built chapters page snapshots > matches the full HTML snapshot for the 
       name="description"
       content="火焰纹章结合全部章节流程：主线序章到第26章，外传与神龙之章、邪龙之章 DLC 在哪一章解锁，以及每一章加入的角色和纹章士。"
     />
-    <link rel="stylesheet" href="/_astro/NavLayout.CTFKBE2S.css" />
+    <link rel="stylesheet" href="/_astro/NavLayout.V0wHCpcP.css" />
     <style>
-      .chapter-dot[data-astro-cid-mloacws5]:before {
+      .timeline-dot[data-astro-cid-mloacws5]:before {
         content: "";
         border: 2px solid var(--side);
         background: #fff;
         border-radius: 50%;
-        width: 8px;
-        height: 8px;
+        width: 0.5rem;
+        height: 0.5rem;
         position: absolute;
-        top: 8px;
-        left: 1rem;
+        top: 0.5rem;
+        left: 0.75rem;
         transform: translate(-50%);
+        @media (width>=640px) {
+          top: 0.5rem;
+          left: 1rem;
+        }
       }
-      .thread-line[data-astro-cid-mloacws5]:before {
+      .timeline-line[data-astro-cid-mloacws5]:before {
         content: "";
         background: var(--color-brand-border);
         width: 1px;
         height: 100%;
-        margin-inline-start: 15.5px;
+        margin-inline-start: calc(0.75rem - 0.5px);
         display: block;
+        @media (width>=640px) {
+          margin-inline-start: calc(1rem - 0.5px);
+        }
       }
-      .branches[data-astro-cid-mloacws5],
-      .chain[data-astro-cid-mloacws5] {
-        margin: 0 0 0.25rem calc(-1 * var(--gap));
-        padding: 0;
-        list-style: none;
+      .timeline_end_fix[data-astro-cid-mloacws5] {
         position: relative;
       }
-      .chain[data-astro-cid-mloacws5] {
-        --indent: 0px;
-      }
-      .branches[data-astro-cid-mloacws5] {
-        --indent: calc(var(--label-s) + 0.5rem + var(--gap));
-        --label: var(--label-s);
-      }
-      .branches[data-astro-cid-mloacws5] > li[data-astro-cid-mloacws5],
-      .chain[data-astro-cid-mloacws5] > li[data-astro-cid-mloacws5] {
-        padding-left: calc(var(--indent) + var(--gap));
-        border-left: 3px solid var(--side);
-        position: relative;
-      }
-      .branches[data-astro-cid-mloacws5]
-        > li[data-astro-cid-mloacws5]:last-child,
-      .chain[data-astro-cid-mloacws5] > li[data-astro-cid-mloacws5]:last-child {
-        border-left-color: #0000;
-      }
-      .branches[data-astro-cid-mloacws5] > li[data-astro-cid-mloacws5]:before,
-      .chain[data-astro-cid-mloacws5] > li[data-astro-cid-mloacws5]:before {
+      .timeline_end_fix[data-astro-cid-mloacws5]:before {
         content: "";
-        top: 0;
-        left: calc(var(--indent) + 0.9rem);
-        width: calc(var(--gap) - 1.15rem);
-        border-top: 2px dashed var(--axis);
-        position: absolute;
-      }
-      .branches[data-astro-cid-mloacws5] > li[data-astro-cid-mloacws5]:after,
-      .chain[data-astro-cid-mloacws5] > li[data-astro-cid-mloacws5]:after {
-        content: "";
-        left: calc(var(--indent) - 9.5px);
-        border: 3px solid var(--side);
         background: #fff;
-        border-radius: 50%;
-        width: 11px;
-        height: 11px;
+        width: 2px;
+        height: 100%;
         position: absolute;
-        top: -7px;
+        left: -1px;
       }
-      .branches[data-astro-cid-mloacws5]
-        > li[data-astro-cid-mloacws5]
-        > .event[data-astro-cid-mloacws5]:before {
+      .timeline-curve[data-astro-cid-mloacws5] {
+        position: relative;
+      }
+      .timeline-curve[data-astro-cid-mloacws5]:after {
         content: "";
         box-sizing: border-box;
-        top: calc(-1 * var(--curve));
-        left: calc(-1 * (var(--gap) + var(--indent) + 3px));
-        width: calc(var(--indent) + 3px);
-        height: var(--curve);
-        border-top: 3px solid var(--axis);
-        border-right: 3px solid var(--axis);
-        border-top-right-radius: var(--curve);
+        border: 0px solid var(--color-brand-border);
+        border-inline-start-width: 1px;
+        border-bottom-width: 1px;
+        border-end-start-radius: 1rem;
+        width: 0.5rem;
+        height: 0.5rem;
         position: absolute;
-      }
-      @media (width<=640px) {
-        .branches[data-astro-cid-mloacws5] > li[data-astro-cid-mloacws5]:before,
-        .chain[data-astro-cid-mloacws5] > li[data-astro-cid-mloacws5]:before {
-          left: calc(var(--indent) + 0.35rem);
-          width: 0.6rem;
-        }
-        .branches[data-astro-cid-mloacws5] {
-          --indent: calc(0.4rem + var(--gap));
-        }
-        .marker[data-astro-cid-mloacws5],
-        .event[data-astro-cid-mloacws5].main
-          > .marker[data-astro-cid-mloacws5] {
-          text-align: left;
-          width: auto;
-          height: auto;
-          font-size: 0.9rem;
-          line-height: 1.6;
-          display: block;
-          position: static;
+        top: 0;
+        @media (width>=640px) {
+          border-end-start-radius: 2rem;
+          width: 1rem;
+          height: 1rem;
         }
       }
       .chapters[data-astro-cid-eh6el2uw] {
@@ -142,8 +99,8 @@ exports[`built chapters page snapshots > matches the full HTML snapshot for the 
       <nav class="menu" aria-label="主菜单" data-astro-cid-entc4gyn>
         <a href="/" data-astro-cid-entc4gyn>首页</a
         ><a href="/characters" data-astro-cid-entc4gyn>角色</a
-        ><a href="/skills" data-astro-cid-entc4gyn>特技</a
         ><a href="/classes" data-astro-cid-entc4gyn>兵种</a
+        ><a href="/skills" data-astro-cid-entc4gyn>特技</a
         ><a href="/emblems" data-astro-cid-entc4gyn>纹章士</a
         ><a href="/team" data-astro-cid-entc4gyn>阵容搭配</a
         ><a href="/chapters" aria-current="page" data-astro-cid-entc4gyn
@@ -179,13 +136,19 @@ exports[`built chapters page snapshots > matches the full HTML snapshot for the 
           </p>
           <ol class="trunk" data-description="Chapter Tree">
             <li>
-              <div class="event main" id="ch0" data-astro-cid-mloacws5>
+              <div
+                class="event main"
+                id="ch0"
+                data-desciption="chapter-node"
+                data-astro-cid-mloacws5
+              >
                 <div
                   class="grid grid-cols-[24px_1fr] sm:grid-cols-[32px_1fr] relative"
+                  data-desciption="chapter-header"
                   data-astro-cid-mloacws5
                 >
                   <div
-                    class="chapter-dot col-start-2 flex gap-4 text-xl"
+                    class="timeline-dot col-start-2 flex gap-2 text-xl"
                     data-astro-cid-mloacws5
                   >
                     <div class="font-bold" data-astro-cid-mloacws5>序章</div>
@@ -193,24 +156,38 @@ exports[`built chapters page snapshots > matches the full HTML snapshot for the 
                   </div>
                 </div>
                 <div
-                  class="grid grid-cols-[24px_1fr] sm:grid-cols-[32px_1fr] relative"
+                  class="chapter-main grid grid-cols-[24px_1fr] sm:grid-cols-[32px_1fr] relative"
+                  data-desciption="chapter-main"
                   data-astro-cid-mloacws5
                 >
-                  <div class="thread-line" data-astro-cid-mloacws5></div>
-                  <div class="col-start-2" data-astro-cid-mloacws5>
+                  <div
+                    class="timeline-line absolute top-0 bottom-0 start-0 w-6 sm:w-8"
+                    aria-hidden="true"
+                    data-astro-cid-mloacws5
+                  ></div>
+                  <div
+                    class="col-start-2 text-base mb-2"
+                    data-astro-cid-mloacws5
+                  >
                     content of chapter
                   </div>
                 </div>
               </div>
             </li>
             <li>
-              <div class="event main" id="ch1" data-astro-cid-mloacws5>
+              <div
+                class="event main"
+                id="ch1"
+                data-desciption="chapter-node"
+                data-astro-cid-mloacws5
+              >
                 <div
                   class="grid grid-cols-[24px_1fr] sm:grid-cols-[32px_1fr] relative"
+                  data-desciption="chapter-header"
                   data-astro-cid-mloacws5
                 >
                   <div
-                    class="chapter-dot col-start-2 flex gap-4 text-xl"
+                    class="timeline-dot col-start-2 flex gap-2 text-xl"
                     data-astro-cid-mloacws5
                   >
                     <div class="font-bold" data-astro-cid-mloacws5>第1章</div>
@@ -218,24 +195,38 @@ exports[`built chapters page snapshots > matches the full HTML snapshot for the 
                   </div>
                 </div>
                 <div
-                  class="grid grid-cols-[24px_1fr] sm:grid-cols-[32px_1fr] relative"
+                  class="chapter-main grid grid-cols-[24px_1fr] sm:grid-cols-[32px_1fr] relative"
+                  data-desciption="chapter-main"
                   data-astro-cid-mloacws5
                 >
-                  <div class="thread-line" data-astro-cid-mloacws5></div>
-                  <div class="col-start-2" data-astro-cid-mloacws5>
+                  <div
+                    class="timeline-line absolute top-0 bottom-0 start-0 w-6 sm:w-8"
+                    aria-hidden="true"
+                    data-astro-cid-mloacws5
+                  ></div>
+                  <div
+                    class="col-start-2 text-base mb-2"
+                    data-astro-cid-mloacws5
+                  >
                     content of chapter
                   </div>
                 </div>
               </div>
             </li>
             <li>
-              <div class="event main" id="ch2" data-astro-cid-mloacws5>
+              <div
+                class="event main"
+                id="ch2"
+                data-desciption="chapter-node"
+                data-astro-cid-mloacws5
+              >
                 <div
                   class="grid grid-cols-[24px_1fr] sm:grid-cols-[32px_1fr] relative"
+                  data-desciption="chapter-header"
                   data-astro-cid-mloacws5
                 >
                   <div
-                    class="chapter-dot col-start-2 flex gap-4 text-xl"
+                    class="timeline-dot col-start-2 flex gap-2 text-xl"
                     data-astro-cid-mloacws5
                   >
                     <div class="font-bold" data-astro-cid-mloacws5>第2章</div>
@@ -243,24 +234,38 @@ exports[`built chapters page snapshots > matches the full HTML snapshot for the 
                   </div>
                 </div>
                 <div
-                  class="grid grid-cols-[24px_1fr] sm:grid-cols-[32px_1fr] relative"
+                  class="chapter-main grid grid-cols-[24px_1fr] sm:grid-cols-[32px_1fr] relative"
+                  data-desciption="chapter-main"
                   data-astro-cid-mloacws5
                 >
-                  <div class="thread-line" data-astro-cid-mloacws5></div>
-                  <div class="col-start-2" data-astro-cid-mloacws5>
+                  <div
+                    class="timeline-line absolute top-0 bottom-0 start-0 w-6 sm:w-8"
+                    aria-hidden="true"
+                    data-astro-cid-mloacws5
+                  ></div>
+                  <div
+                    class="col-start-2 text-base mb-2"
+                    data-astro-cid-mloacws5
+                  >
                     content of chapter
                   </div>
                 </div>
               </div>
             </li>
             <li>
-              <div class="event main" id="ch3" data-astro-cid-mloacws5>
+              <div
+                class="event main"
+                id="ch3"
+                data-desciption="chapter-node"
+                data-astro-cid-mloacws5
+              >
                 <div
                   class="grid grid-cols-[24px_1fr] sm:grid-cols-[32px_1fr] relative"
+                  data-desciption="chapter-header"
                   data-astro-cid-mloacws5
                 >
                   <div
-                    class="chapter-dot col-start-2 flex gap-4 text-xl"
+                    class="timeline-dot col-start-2 flex gap-2 text-xl"
                     data-astro-cid-mloacws5
                   >
                     <div class="font-bold" data-astro-cid-mloacws5>第3章</div>
@@ -268,24 +273,38 @@ exports[`built chapters page snapshots > matches the full HTML snapshot for the 
                   </div>
                 </div>
                 <div
-                  class="grid grid-cols-[24px_1fr] sm:grid-cols-[32px_1fr] relative"
+                  class="chapter-main grid grid-cols-[24px_1fr] sm:grid-cols-[32px_1fr] relative"
+                  data-desciption="chapter-main"
                   data-astro-cid-mloacws5
                 >
-                  <div class="thread-line" data-astro-cid-mloacws5></div>
-                  <div class="col-start-2" data-astro-cid-mloacws5>
+                  <div
+                    class="timeline-line absolute top-0 bottom-0 start-0 w-6 sm:w-8"
+                    aria-hidden="true"
+                    data-astro-cid-mloacws5
+                  ></div>
+                  <div
+                    class="col-start-2 text-base mb-2"
+                    data-astro-cid-mloacws5
+                  >
                     content of chapter
                   </div>
                 </div>
               </div>
             </li>
             <li>
-              <div class="event main" id="ch4" data-astro-cid-mloacws5>
+              <div
+                class="event main"
+                id="ch4"
+                data-desciption="chapter-node"
+                data-astro-cid-mloacws5
+              >
                 <div
                   class="grid grid-cols-[24px_1fr] sm:grid-cols-[32px_1fr] relative"
+                  data-desciption="chapter-header"
                   data-astro-cid-mloacws5
                 >
                   <div
-                    class="chapter-dot col-start-2 flex gap-4 text-xl"
+                    class="timeline-dot col-start-2 flex gap-2 text-xl"
                     data-astro-cid-mloacws5
                   >
                     <div class="font-bold" data-astro-cid-mloacws5>第4章</div>
@@ -293,24 +312,38 @@ exports[`built chapters page snapshots > matches the full HTML snapshot for the 
                   </div>
                 </div>
                 <div
-                  class="grid grid-cols-[24px_1fr] sm:grid-cols-[32px_1fr] relative"
+                  class="chapter-main grid grid-cols-[24px_1fr] sm:grid-cols-[32px_1fr] relative"
+                  data-desciption="chapter-main"
                   data-astro-cid-mloacws5
                 >
-                  <div class="thread-line" data-astro-cid-mloacws5></div>
-                  <div class="col-start-2" data-astro-cid-mloacws5>
+                  <div
+                    class="timeline-line absolute top-0 bottom-0 start-0 w-6 sm:w-8"
+                    aria-hidden="true"
+                    data-astro-cid-mloacws5
+                  ></div>
+                  <div
+                    class="col-start-2 text-base mb-2"
+                    data-astro-cid-mloacws5
+                  >
                     content of chapter
                   </div>
                 </div>
               </div>
             </li>
             <li>
-              <div class="event main grouped" id="ch5" data-astro-cid-mloacws5>
+              <div
+                class="event main grouped"
+                id="ch5"
+                data-desciption="chapter-node"
+                data-astro-cid-mloacws5
+              >
                 <div
                   class="grid grid-cols-[24px_1fr] sm:grid-cols-[32px_1fr] relative"
+                  data-desciption="chapter-header"
                   data-astro-cid-mloacws5
                 >
                   <div
-                    class="chapter-dot col-start-2 flex gap-4 text-xl"
+                    class="timeline-dot col-start-2 flex gap-2 text-xl"
                     data-astro-cid-mloacws5
                   >
                     <div class="font-bold" data-astro-cid-mloacws5>第5章</div>
@@ -318,53 +351,84 @@ exports[`built chapters page snapshots > matches the full HTML snapshot for the 
                   </div>
                 </div>
                 <div
-                  class="grid grid-cols-[24px_1fr] sm:grid-cols-[32px_1fr] relative"
-                  data-astro-cid-mloacws5
-                >
-                  <div class="thread-line" data-astro-cid-mloacws5></div>
-                  <div class="col-start-2" data-astro-cid-mloacws5>
-                    content of chapter
-                  </div>
-                </div>
-              </div>
-              <ul class="" data-astro-cid-mloacws5>
-                <li data-type="paralogue" data-astro-cid-mloacws5>
-                  <div class="event" id="p1" data-astro-cid-mloacws5>
-                    <div
-                      class="grid grid-cols-[24px_1fr] sm:grid-cols-[32px_1fr] relative"
-                      data-astro-cid-mloacws5
-                    >
-                      <div
-                        class="chapter-dot col-start-2 flex gap-4 text-xl"
-                        data-astro-cid-mloacws5
-                      >
-                        <div class="font-bold" data-astro-cid-mloacws5>
-                          外传1
-                        </div>
-                        <div data-astro-cid-mloacws5>大器晚成</div>
-                      </div>
-                    </div>
-                    <div
-                      class="grid grid-cols-[24px_1fr] sm:grid-cols-[32px_1fr] relative"
-                      data-astro-cid-mloacws5
-                    >
-                      <div class="thread-line" data-astro-cid-mloacws5></div>
-                      <div class="col-start-2" data-astro-cid-mloacws5>
-                        content of chapter
-                      </div>
-                    </div>
-                  </div>
-                </li>
-              </ul>
-            </li>
-            <li>
-              <div class="event main grouped" id="ch6" data-astro-cid-mloacws5>
-                <div
-                  class="grid grid-cols-[24px_1fr] sm:grid-cols-[32px_1fr] relative"
+                  class="chapter-main grid grid-cols-[24px_1fr] sm:grid-cols-[32px_1fr] relative"
+                  data-desciption="chapter-main"
                   data-astro-cid-mloacws5
                 >
                   <div
-                    class="chapter-dot col-start-2 flex gap-4 text-xl"
+                    class="timeline-line absolute top-0 bottom-0 start-0 w-6 sm:w-8"
+                    aria-hidden="true"
+                    data-astro-cid-mloacws5
+                  ></div>
+                  <div
+                    class="col-start-2 text-base mb-2"
+                    data-astro-cid-mloacws5
+                  >
+                    content of chapter
+                  </div>
+                  <ul
+                    class="timeline-curve ml-3 sm:ml-4 col-span-2"
+                    data-astro-cid-mloacws5
+                  >
+                    <li data-type="paralogue" data-astro-cid-mloacws5>
+                      <div
+                        class="event"
+                        id="p1"
+                        data-desciption="chapter-node"
+                        data-astro-cid-mloacws5
+                      >
+                        <div
+                          class="grid grid-cols-[24px_1fr] sm:grid-cols-[32px_1fr] relative"
+                          data-desciption="chapter-header"
+                          data-astro-cid-mloacws5
+                        >
+                          <div
+                            class="timeline-dot col-start-2 flex gap-2 text-xl"
+                            data-astro-cid-mloacws5
+                          >
+                            <div class="font-bold" data-astro-cid-mloacws5>
+                              外传1
+                            </div>
+                            <div data-astro-cid-mloacws5>大器晚成</div>
+                          </div>
+                        </div>
+                        <div
+                          class="chapter-main grid grid-cols-[24px_1fr] sm:grid-cols-[32px_1fr] relative"
+                          data-desciption="chapter-main"
+                          data-astro-cid-mloacws5
+                        >
+                          <div
+                            class="timeline-line absolute top-0 bottom-0 start-0 w-6 sm:w-8 hidden"
+                            aria-hidden="true"
+                            data-astro-cid-mloacws5
+                          ></div>
+                          <div
+                            class="col-start-2 text-base mb-2"
+                            data-astro-cid-mloacws5
+                          >
+                            content of chapter
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </li>
+            <li>
+              <div
+                class="event main grouped"
+                id="ch6"
+                data-desciption="chapter-node"
+                data-astro-cid-mloacws5
+              >
+                <div
+                  class="grid grid-cols-[24px_1fr] sm:grid-cols-[32px_1fr] relative"
+                  data-desciption="chapter-header"
+                  data-astro-cid-mloacws5
+                >
+                  <div
+                    class="timeline-dot col-start-2 flex gap-2 text-xl"
                     data-astro-cid-mloacws5
                   >
                     <div class="font-bold" data-astro-cid-mloacws5>第6章</div>
@@ -372,59 +436,80 @@ exports[`built chapters page snapshots > matches the full HTML snapshot for the 
                   </div>
                 </div>
                 <div
-                  class="grid grid-cols-[24px_1fr] sm:grid-cols-[32px_1fr] relative"
+                  class="chapter-main grid grid-cols-[24px_1fr] sm:grid-cols-[32px_1fr] relative"
+                  data-desciption="chapter-main"
                   data-astro-cid-mloacws5
                 >
-                  <div class="thread-line" data-astro-cid-mloacws5></div>
-                  <div class="col-start-2" data-astro-cid-mloacws5>
-                    content of chapter
-                  </div>
-                </div>
-              </div>
-              <ol class="" data-astro-cid-mloacws5>
-                <li data-type="xenologue" data-astro-cid-mloacws5>
                   <div
-                    class="event dlc grouped"
-                    id="x1"
+                    class="timeline-line absolute top-0 bottom-0 start-0 w-6 sm:w-8"
+                    aria-hidden="true"
+                    data-astro-cid-mloacws5
+                  ></div>
+                  <div
+                    class="col-start-2 text-base mb-2"
                     data-astro-cid-mloacws5
                   >
-                    <div
-                      class="grid grid-cols-[24px_1fr] sm:grid-cols-[32px_1fr] relative"
-                      data-astro-cid-mloacws5
-                    >
-                      <div
-                        class="chapter-dot col-start-2 flex gap-4 text-xl"
-                        data-astro-cid-mloacws5
-                      >
-                        <div class="font-bold" data-astro-cid-mloacws5>
-                          邪龙之章1
-                        </div>
-                        <div data-astro-cid-mloacws5>异国双龙</div>
-                      </div>
-                    </div>
-                    <div
-                      class="grid grid-cols-[24px_1fr] sm:grid-cols-[32px_1fr] relative"
-                      data-astro-cid-mloacws5
-                    >
-                      <div class="thread-line" data-astro-cid-mloacws5></div>
-                      <div class="col-start-2" data-astro-cid-mloacws5>
-                        content of chapter
-                      </div>
-                    </div>
+                    content of chapter
                   </div>
-                  <ol class="" data-astro-cid-mloacws5>
+                  <ol
+                    class="timeline-curve ml-3 sm:ml-4 col-span-2"
+                    data-astro-cid-mloacws5
+                  >
                     <li data-type="xenologue" data-astro-cid-mloacws5>
                       <div
-                        class="event dlc grouped"
-                        id="x2"
+                        class="event dlc"
+                        id="x1"
+                        data-desciption="chapter-node"
                         data-astro-cid-mloacws5
                       >
                         <div
                           class="grid grid-cols-[24px_1fr] sm:grid-cols-[32px_1fr] relative"
+                          data-desciption="chapter-header"
                           data-astro-cid-mloacws5
                         >
                           <div
-                            class="chapter-dot col-start-2 flex gap-4 text-xl"
+                            class="timeline-dot col-start-2 flex gap-2 text-xl"
+                            data-astro-cid-mloacws5
+                          >
+                            <div class="font-bold" data-astro-cid-mloacws5>
+                              邪龙之章1
+                            </div>
+                            <div data-astro-cid-mloacws5>异国双龙</div>
+                          </div>
+                        </div>
+                        <div
+                          class="chapter-main grid grid-cols-[24px_1fr] sm:grid-cols-[32px_1fr] relative"
+                          data-desciption="chapter-main"
+                          data-astro-cid-mloacws5
+                        >
+                          <div
+                            class="timeline-line absolute top-0 bottom-0 start-0 w-6 sm:w-8"
+                            aria-hidden="true"
+                            data-astro-cid-mloacws5
+                          ></div>
+                          <div
+                            class="col-start-2 text-base mb-2"
+                            data-astro-cid-mloacws5
+                          >
+                            content of chapter
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                    <li data-type="xenologue" data-astro-cid-mloacws5>
+                      <div
+                        class="event dlc"
+                        id="x2"
+                        data-desciption="chapter-node"
+                        data-astro-cid-mloacws5
+                      >
+                        <div
+                          class="grid grid-cols-[24px_1fr] sm:grid-cols-[32px_1fr] relative"
+                          data-desciption="chapter-header"
+                          data-astro-cid-mloacws5
+                        >
+                          <div
+                            class="timeline-dot col-start-2 flex gap-2 text-xl"
                             data-astro-cid-mloacws5
                           >
                             <div class="font-bold" data-astro-cid-mloacws5>
@@ -434,417 +519,543 @@ exports[`built chapters page snapshots > matches the full HTML snapshot for the 
                           </div>
                         </div>
                         <div
-                          class="grid grid-cols-[24px_1fr] sm:grid-cols-[32px_1fr] relative"
+                          class="chapter-main grid grid-cols-[24px_1fr] sm:grid-cols-[32px_1fr] relative"
+                          data-desciption="chapter-main"
                           data-astro-cid-mloacws5
                         >
                           <div
-                            class="thread-line"
+                            class="timeline-line absolute top-0 bottom-0 start-0 w-6 sm:w-8"
+                            aria-hidden="true"
                             data-astro-cid-mloacws5
                           ></div>
-                          <div class="col-start-2" data-astro-cid-mloacws5>
+                          <div
+                            class="col-start-2 text-base mb-2"
+                            data-astro-cid-mloacws5
+                          >
                             content of chapter
                           </div>
                         </div>
                       </div>
-                      <ol class="" data-astro-cid-mloacws5>
-                        <li data-type="xenologue" data-astro-cid-mloacws5>
+                    </li>
+                    <li data-type="xenologue" data-astro-cid-mloacws5>
+                      <div
+                        class="event dlc"
+                        id="x3"
+                        data-desciption="chapter-node"
+                        data-astro-cid-mloacws5
+                      >
+                        <div
+                          class="grid grid-cols-[24px_1fr] sm:grid-cols-[32px_1fr] relative"
+                          data-desciption="chapter-header"
+                          data-astro-cid-mloacws5
+                        >
                           <div
-                            class="event dlc grouped"
-                            id="x3"
+                            class="timeline-dot col-start-2 flex gap-2 text-xl"
                             data-astro-cid-mloacws5
                           >
-                            <div
-                              class="grid grid-cols-[24px_1fr] sm:grid-cols-[32px_1fr] relative"
-                              data-astro-cid-mloacws5
-                            >
-                              <div
-                                class="chapter-dot col-start-2 flex gap-4 text-xl"
-                                data-astro-cid-mloacws5
-                              >
-                                <div class="font-bold" data-astro-cid-mloacws5>
-                                  邪龙之章3
-                                </div>
-                                <div data-astro-cid-mloacws5>
-                                  士兵们的作战之道
-                                </div>
-                              </div>
+                            <div class="font-bold" data-astro-cid-mloacws5>
+                              邪龙之章3
                             </div>
-                            <div
-                              class="grid grid-cols-[24px_1fr] sm:grid-cols-[32px_1fr] relative"
-                              data-astro-cid-mloacws5
-                            >
-                              <div
-                                class="thread-line"
-                                data-astro-cid-mloacws5
-                              ></div>
-                              <div class="col-start-2" data-astro-cid-mloacws5>
-                                content of chapter
-                              </div>
-                            </div>
+                            <div data-astro-cid-mloacws5>士兵们的作战之道</div>
                           </div>
-                          <ol class="" data-astro-cid-mloacws5>
-                            <li data-type="xenologue" data-astro-cid-mloacws5>
-                              <div
-                                class="event dlc grouped"
-                                id="x4"
-                                data-astro-cid-mloacws5
-                              >
-                                <div
-                                  class="grid grid-cols-[24px_1fr] sm:grid-cols-[32px_1fr] relative"
-                                  data-astro-cid-mloacws5
-                                >
-                                  <div
-                                    class="chapter-dot col-start-2 flex gap-4 text-xl"
-                                    data-astro-cid-mloacws5
-                                  >
-                                    <div
-                                      class="font-bold"
-                                      data-astro-cid-mloacws5
-                                    >
-                                      邪龙之章4
-                                    </div>
-                                    <div data-astro-cid-mloacws5>王者之战</div>
-                                  </div>
-                                </div>
-                                <div
-                                  class="grid grid-cols-[24px_1fr] sm:grid-cols-[32px_1fr] relative"
-                                  data-astro-cid-mloacws5
-                                >
-                                  <div
-                                    class="thread-line"
-                                    data-astro-cid-mloacws5
-                                  ></div>
-                                  <div
-                                    class="col-start-2"
-                                    data-astro-cid-mloacws5
-                                  >
-                                    content of chapter
-                                  </div>
-                                </div>
-                              </div>
-                              <ol class="" data-astro-cid-mloacws5>
-                                <li
-                                  data-type="xenologue"
-                                  data-astro-cid-mloacws5
-                                >
-                                  <div
-                                    class="event dlc grouped"
-                                    id="x5"
-                                    data-astro-cid-mloacws5
-                                  >
-                                    <div
-                                      class="grid grid-cols-[24px_1fr] sm:grid-cols-[32px_1fr] relative"
-                                      data-astro-cid-mloacws5
-                                    >
-                                      <div
-                                        class="chapter-dot col-start-2 flex gap-4 text-xl"
-                                        data-astro-cid-mloacws5
-                                      >
-                                        <div
-                                          class="font-bold"
-                                          data-astro-cid-mloacws5
-                                        >
-                                          邪龙之章5
-                                        </div>
-                                        <div data-astro-cid-mloacws5>
-                                          邪龙继承者
-                                        </div>
-                                      </div>
-                                    </div>
-                                    <div
-                                      class="grid grid-cols-[24px_1fr] sm:grid-cols-[32px_1fr] relative"
-                                      data-astro-cid-mloacws5
-                                    >
-                                      <div
-                                        class="thread-line"
-                                        data-astro-cid-mloacws5
-                                      ></div>
-                                      <div
-                                        class="col-start-2"
-                                        data-astro-cid-mloacws5
-                                      >
-                                        content of chapter
-                                      </div>
-                                    </div>
-                                  </div>
-                                  <ol class="" data-astro-cid-mloacws5>
-                                    <li
-                                      data-type="xenologue"
-                                      data-astro-cid-mloacws5
-                                    >
-                                      <div
-                                        class="event dlc"
-                                        id="x6"
-                                        data-astro-cid-mloacws5
-                                      >
-                                        <div
-                                          class="grid grid-cols-[24px_1fr] sm:grid-cols-[32px_1fr] relative"
-                                          data-astro-cid-mloacws5
-                                        >
-                                          <div
-                                            class="chapter-dot col-start-2 flex gap-4 text-xl"
-                                            data-astro-cid-mloacws5
-                                          >
-                                            <div
-                                              class="font-bold"
-                                              data-astro-cid-mloacws5
-                                            >
-                                              邪龙之章6
-                                            </div>
-                                            <div data-astro-cid-mloacws5>
-                                              七手镯
-                                            </div>
-                                          </div>
-                                        </div>
-                                        <div
-                                          class="grid grid-cols-[24px_1fr] sm:grid-cols-[32px_1fr] relative"
-                                          data-astro-cid-mloacws5
-                                        >
-                                          <div
-                                            class="thread-line"
-                                            data-astro-cid-mloacws5
-                                          ></div>
-                                          <div
-                                            class="col-start-2"
-                                            data-astro-cid-mloacws5
-                                          >
-                                            content of chapter
-                                          </div>
-                                        </div>
-                                      </div>
-                                    </li>
-                                  </ol>
-                                </li>
-                              </ol>
-                            </li>
-                          </ol>
-                        </li>
-                      </ol>
+                        </div>
+                        <div
+                          class="chapter-main grid grid-cols-[24px_1fr] sm:grid-cols-[32px_1fr] relative"
+                          data-desciption="chapter-main"
+                          data-astro-cid-mloacws5
+                        >
+                          <div
+                            class="timeline-line absolute top-0 bottom-0 start-0 w-6 sm:w-8"
+                            aria-hidden="true"
+                            data-astro-cid-mloacws5
+                          ></div>
+                          <div
+                            class="col-start-2 text-base mb-2"
+                            data-astro-cid-mloacws5
+                          >
+                            content of chapter
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                    <li data-type="xenologue" data-astro-cid-mloacws5>
+                      <div
+                        class="event dlc"
+                        id="x4"
+                        data-desciption="chapter-node"
+                        data-astro-cid-mloacws5
+                      >
+                        <div
+                          class="grid grid-cols-[24px_1fr] sm:grid-cols-[32px_1fr] relative"
+                          data-desciption="chapter-header"
+                          data-astro-cid-mloacws5
+                        >
+                          <div
+                            class="timeline-dot col-start-2 flex gap-2 text-xl"
+                            data-astro-cid-mloacws5
+                          >
+                            <div class="font-bold" data-astro-cid-mloacws5>
+                              邪龙之章4
+                            </div>
+                            <div data-astro-cid-mloacws5>王者之战</div>
+                          </div>
+                        </div>
+                        <div
+                          class="chapter-main grid grid-cols-[24px_1fr] sm:grid-cols-[32px_1fr] relative"
+                          data-desciption="chapter-main"
+                          data-astro-cid-mloacws5
+                        >
+                          <div
+                            class="timeline-line absolute top-0 bottom-0 start-0 w-6 sm:w-8"
+                            aria-hidden="true"
+                            data-astro-cid-mloacws5
+                          ></div>
+                          <div
+                            class="col-start-2 text-base mb-2"
+                            data-astro-cid-mloacws5
+                          >
+                            content of chapter
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                    <li data-type="xenologue" data-astro-cid-mloacws5>
+                      <div
+                        class="event dlc"
+                        id="x5"
+                        data-desciption="chapter-node"
+                        data-astro-cid-mloacws5
+                      >
+                        <div
+                          class="grid grid-cols-[24px_1fr] sm:grid-cols-[32px_1fr] relative"
+                          data-desciption="chapter-header"
+                          data-astro-cid-mloacws5
+                        >
+                          <div
+                            class="timeline-dot col-start-2 flex gap-2 text-xl"
+                            data-astro-cid-mloacws5
+                          >
+                            <div class="font-bold" data-astro-cid-mloacws5>
+                              邪龙之章5
+                            </div>
+                            <div data-astro-cid-mloacws5>邪龙继承者</div>
+                          </div>
+                        </div>
+                        <div
+                          class="chapter-main grid grid-cols-[24px_1fr] sm:grid-cols-[32px_1fr] relative"
+                          data-desciption="chapter-main"
+                          data-astro-cid-mloacws5
+                        >
+                          <div
+                            class="timeline-line absolute top-0 bottom-0 start-0 w-6 sm:w-8"
+                            aria-hidden="true"
+                            data-astro-cid-mloacws5
+                          ></div>
+                          <div
+                            class="col-start-2 text-base mb-2"
+                            data-astro-cid-mloacws5
+                          >
+                            content of chapter
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                    <li data-type="xenologue" data-astro-cid-mloacws5>
+                      <div
+                        class="event dlc"
+                        id="x6"
+                        data-desciption="chapter-node"
+                        data-astro-cid-mloacws5
+                      >
+                        <div
+                          class="grid grid-cols-[24px_1fr] sm:grid-cols-[32px_1fr] relative"
+                          data-desciption="chapter-header"
+                          data-astro-cid-mloacws5
+                        >
+                          <div
+                            class="timeline-dot col-start-2 flex gap-2 text-xl"
+                            data-astro-cid-mloacws5
+                          >
+                            <div class="font-bold" data-astro-cid-mloacws5>
+                              邪龙之章6
+                            </div>
+                            <div data-astro-cid-mloacws5>七手镯</div>
+                          </div>
+                        </div>
+                        <div
+                          class="chapter-main grid grid-cols-[24px_1fr] sm:grid-cols-[32px_1fr] relative"
+                          data-desciption="chapter-main"
+                          data-astro-cid-mloacws5
+                        >
+                          <div
+                            class="timeline-line absolute top-0 bottom-0 start-0 w-6 sm:w-8 hidden"
+                            aria-hidden="true"
+                            data-astro-cid-mloacws5
+                          ></div>
+                          <div
+                            class="col-start-2 text-base mb-2"
+                            data-astro-cid-mloacws5
+                          >
+                            content of chapter
+                          </div>
+                        </div>
+                      </div>
                     </li>
                   </ol>
-                </li>
-              </ol>
-              <ul class="" data-astro-cid-mloacws5>
-                <li data-type="paralogue" data-astro-cid-mloacws5>
-                  <div class="event" id="p2" data-astro-cid-mloacws5>
-                    <div
-                      class="grid grid-cols-[24px_1fr] sm:grid-cols-[32px_1fr] relative"
-                      data-astro-cid-mloacws5
-                    >
-                      <div
-                        class="chapter-dot col-start-2 flex gap-4 text-xl"
-                        data-astro-cid-mloacws5
-                      >
-                        <div class="font-bold" data-astro-cid-mloacws5>
-                          外传2
-                        </div>
-                        <div data-astro-cid-mloacws5>秘密的旅行商人</div>
-                      </div>
-                    </div>
-                    <div
-                      class="grid grid-cols-[24px_1fr] sm:grid-cols-[32px_1fr] relative"
-                      data-astro-cid-mloacws5
-                    >
-                      <div class="thread-line" data-astro-cid-mloacws5></div>
-                      <div class="col-start-2" data-astro-cid-mloacws5>
-                        content of chapter
-                      </div>
-                    </div>
-                  </div>
-                </li>
-                <li data-type="divine" data-astro-cid-mloacws5>
-                  <div
-                    class="event dlc grouped"
-                    id="d1"
+                  <ul
+                    class="timeline-curve ml-3 sm:ml-4 col-span-2"
                     data-astro-cid-mloacws5
                   >
-                    <div
-                      class="grid grid-cols-[24px_1fr] sm:grid-cols-[32px_1fr] relative"
-                      data-astro-cid-mloacws5
-                    >
+                    <li data-type="paralogue" data-astro-cid-mloacws5>
                       <div
-                        class="chapter-dot col-start-2 flex gap-4 text-xl"
+                        class="event"
+                        id="p2"
+                        data-desciption="chapter-node"
                         data-astro-cid-mloacws5
                       >
-                        <div class="font-bold" data-astro-cid-mloacws5>
-                          神龙之章
-                        </div>
-                        <div data-astro-cid-mloacws5>先祖神龙</div>
-                      </div>
-                    </div>
-                    <div
-                      class="grid grid-cols-[24px_1fr] sm:grid-cols-[32px_1fr] relative"
-                      data-astro-cid-mloacws5
-                    >
-                      <div class="thread-line" data-astro-cid-mloacws5></div>
-                      <div class="col-start-2" data-astro-cid-mloacws5>
-                        content of chapter
-                      </div>
-                    </div>
-                  </div>
-                  <ul class="" data-astro-cid-mloacws5>
-                    <li data-type="divine" data-astro-cid-mloacws5>
-                      <div class="event dlc" id="d2" data-astro-cid-mloacws5>
                         <div
                           class="grid grid-cols-[24px_1fr] sm:grid-cols-[32px_1fr] relative"
+                          data-desciption="chapter-header"
                           data-astro-cid-mloacws5
                         >
                           <div
-                            class="chapter-dot col-start-2 flex gap-4 text-xl"
+                            class="timeline-dot col-start-2 flex gap-2 text-xl"
                             data-astro-cid-mloacws5
                           >
                             <div class="font-bold" data-astro-cid-mloacws5>
-                              神龙之章
+                              外传2
                             </div>
-                            <div data-astro-cid-mloacws5>热血猛将</div>
+                            <div data-astro-cid-mloacws5>秘密的旅行商人</div>
                           </div>
                         </div>
                         <div
-                          class="grid grid-cols-[24px_1fr] sm:grid-cols-[32px_1fr] relative"
+                          class="chapter-main grid grid-cols-[24px_1fr] sm:grid-cols-[32px_1fr] relative"
+                          data-desciption="chapter-main"
                           data-astro-cid-mloacws5
                         >
                           <div
-                            class="thread-line"
+                            class="timeline-line absolute top-0 bottom-0 start-0 w-6 sm:w-8 hidden"
+                            aria-hidden="true"
                             data-astro-cid-mloacws5
                           ></div>
-                          <div class="col-start-2" data-astro-cid-mloacws5>
-                            content of chapter
-                          </div>
-                        </div>
-                      </div>
-                    </li>
-                    <li data-type="divine" data-astro-cid-mloacws5>
-                      <div class="event dlc" id="d3" data-astro-cid-mloacws5>
-                        <div
-                          class="grid grid-cols-[24px_1fr] sm:grid-cols-[32px_1fr] relative"
-                          data-astro-cid-mloacws5
-                        >
                           <div
-                            class="chapter-dot col-start-2 flex gap-4 text-xl"
+                            class="col-start-2 text-base mb-2"
                             data-astro-cid-mloacws5
                           >
-                            <div class="font-bold" data-astro-cid-mloacws5>
-                              神龙之章
-                            </div>
-                            <div data-astro-cid-mloacws5>苍色参谋</div>
-                          </div>
-                        </div>
-                        <div
-                          class="grid grid-cols-[24px_1fr] sm:grid-cols-[32px_1fr] relative"
-                          data-astro-cid-mloacws5
-                        >
-                          <div
-                            class="thread-line"
-                            data-astro-cid-mloacws5
-                          ></div>
-                          <div class="col-start-2" data-astro-cid-mloacws5>
-                            content of chapter
-                          </div>
-                        </div>
-                      </div>
-                    </li>
-                    <li data-type="divine" data-astro-cid-mloacws5>
-                      <div class="event dlc" id="d4" data-astro-cid-mloacws5>
-                        <div
-                          class="grid grid-cols-[24px_1fr] sm:grid-cols-[32px_1fr] relative"
-                          data-astro-cid-mloacws5
-                        >
-                          <div
-                            class="chapter-dot col-start-2 flex gap-4 text-xl"
-                            data-astro-cid-mloacws5
-                          >
-                            <div class="font-bold" data-astro-cid-mloacws5>
-                              神龙之章
-                            </div>
-                            <div data-astro-cid-mloacws5>黑暗妖艳</div>
-                          </div>
-                        </div>
-                        <div
-                          class="grid grid-cols-[24px_1fr] sm:grid-cols-[32px_1fr] relative"
-                          data-astro-cid-mloacws5
-                        >
-                          <div
-                            class="thread-line"
-                            data-astro-cid-mloacws5
-                          ></div>
-                          <div class="col-start-2" data-astro-cid-mloacws5>
-                            content of chapter
-                          </div>
-                        </div>
-                      </div>
-                    </li>
-                    <li data-type="divine" data-astro-cid-mloacws5>
-                      <div class="event dlc" id="d5" data-astro-cid-mloacws5>
-                        <div
-                          class="grid grid-cols-[24px_1fr] sm:grid-cols-[32px_1fr] relative"
-                          data-astro-cid-mloacws5
-                        >
-                          <div
-                            class="chapter-dot col-start-2 flex gap-4 text-xl"
-                            data-astro-cid-mloacws5
-                          >
-                            <div class="font-bold" data-astro-cid-mloacws5>
-                              神龙之章
-                            </div>
-                            <div data-astro-cid-mloacws5>圣王</div>
-                          </div>
-                        </div>
-                        <div
-                          class="grid grid-cols-[24px_1fr] sm:grid-cols-[32px_1fr] relative"
-                          data-astro-cid-mloacws5
-                        >
-                          <div
-                            class="thread-line"
-                            data-astro-cid-mloacws5
-                          ></div>
-                          <div class="col-start-2" data-astro-cid-mloacws5>
-                            content of chapter
-                          </div>
-                        </div>
-                      </div>
-                    </li>
-                    <li data-type="divine" data-astro-cid-mloacws5>
-                      <div class="event dlc" id="d6" data-astro-cid-mloacws5>
-                        <div
-                          class="grid grid-cols-[24px_1fr] sm:grid-cols-[32px_1fr] relative"
-                          data-astro-cid-mloacws5
-                        >
-                          <div
-                            class="chapter-dot col-start-2 flex gap-4 text-xl"
-                            data-astro-cid-mloacws5
-                          >
-                            <div class="font-bold" data-astro-cid-mloacws5>
-                              神龙之章
-                            </div>
-                            <div data-astro-cid-mloacws5>年幼皇女</div>
-                          </div>
-                        </div>
-                        <div
-                          class="grid grid-cols-[24px_1fr] sm:grid-cols-[32px_1fr] relative"
-                          data-astro-cid-mloacws5
-                        >
-                          <div
-                            class="thread-line"
-                            data-astro-cid-mloacws5
-                          ></div>
-                          <div class="col-start-2" data-astro-cid-mloacws5>
                             content of chapter
                           </div>
                         </div>
                       </div>
                     </li>
                   </ul>
-                </li>
-              </ul>
+                  <ul
+                    class="timeline-curve ml-3 sm:ml-4 col-span-2"
+                    data-astro-cid-mloacws5
+                  >
+                    <li data-type="divine" data-astro-cid-mloacws5>
+                      <div
+                        class="event dlc grouped"
+                        id="d1"
+                        data-desciption="chapter-node"
+                        data-astro-cid-mloacws5
+                      >
+                        <div
+                          class="grid grid-cols-[24px_1fr] sm:grid-cols-[32px_1fr] relative"
+                          data-desciption="chapter-header"
+                          data-astro-cid-mloacws5
+                        >
+                          <div
+                            class="timeline-dot col-start-2 flex gap-2 text-xl"
+                            data-astro-cid-mloacws5
+                          >
+                            <div class="font-bold" data-astro-cid-mloacws5>
+                              神龙之章
+                            </div>
+                            <div data-astro-cid-mloacws5>先祖神龙</div>
+                          </div>
+                        </div>
+                        <div
+                          class="chapter-main grid grid-cols-[24px_1fr] sm:grid-cols-[32px_1fr] relative"
+                          data-desciption="chapter-main"
+                          data-astro-cid-mloacws5
+                        >
+                          <div
+                            class="timeline-line absolute top-0 bottom-0 start-0 w-6 sm:w-8"
+                            aria-hidden="true"
+                            data-astro-cid-mloacws5
+                          ></div>
+                          <div
+                            class="col-start-2 text-base mb-2"
+                            data-astro-cid-mloacws5
+                          >
+                            content of chapter
+                          </div>
+                          <ul
+                            class="timeline-curve ml-3 sm:ml-4 col-span-2"
+                            data-astro-cid-mloacws5
+                          >
+                            <li data-type="divine" data-astro-cid-mloacws5>
+                              <div
+                                class="event dlc"
+                                id="d2"
+                                data-desciption="chapter-node"
+                                data-astro-cid-mloacws5
+                              >
+                                <div
+                                  class="grid grid-cols-[24px_1fr] sm:grid-cols-[32px_1fr] relative"
+                                  data-desciption="chapter-header"
+                                  data-astro-cid-mloacws5
+                                >
+                                  <div
+                                    class="timeline-dot col-start-2 flex gap-2 text-xl"
+                                    data-astro-cid-mloacws5
+                                  >
+                                    <div
+                                      class="font-bold"
+                                      data-astro-cid-mloacws5
+                                    >
+                                      神龙之章
+                                    </div>
+                                    <div data-astro-cid-mloacws5>热血猛将</div>
+                                  </div>
+                                </div>
+                                <div
+                                  class="chapter-main grid grid-cols-[24px_1fr] sm:grid-cols-[32px_1fr] relative"
+                                  data-desciption="chapter-main"
+                                  data-astro-cid-mloacws5
+                                >
+                                  <div
+                                    class="timeline-line absolute top-0 bottom-0 start-0 w-6 sm:w-8 hidden"
+                                    aria-hidden="true"
+                                    data-astro-cid-mloacws5
+                                  ></div>
+                                  <div
+                                    class="col-start-2 text-base mb-2"
+                                    data-astro-cid-mloacws5
+                                  >
+                                    content of chapter
+                                  </div>
+                                </div>
+                              </div>
+                            </li>
+                          </ul>
+                          <ul
+                            class="timeline-curve ml-3 sm:ml-4 col-span-2"
+                            data-astro-cid-mloacws5
+                          >
+                            <li data-type="divine" data-astro-cid-mloacws5>
+                              <div
+                                class="event dlc"
+                                id="d3"
+                                data-desciption="chapter-node"
+                                data-astro-cid-mloacws5
+                              >
+                                <div
+                                  class="grid grid-cols-[24px_1fr] sm:grid-cols-[32px_1fr] relative"
+                                  data-desciption="chapter-header"
+                                  data-astro-cid-mloacws5
+                                >
+                                  <div
+                                    class="timeline-dot col-start-2 flex gap-2 text-xl"
+                                    data-astro-cid-mloacws5
+                                  >
+                                    <div
+                                      class="font-bold"
+                                      data-astro-cid-mloacws5
+                                    >
+                                      神龙之章
+                                    </div>
+                                    <div data-astro-cid-mloacws5>苍色参谋</div>
+                                  </div>
+                                </div>
+                                <div
+                                  class="chapter-main grid grid-cols-[24px_1fr] sm:grid-cols-[32px_1fr] relative"
+                                  data-desciption="chapter-main"
+                                  data-astro-cid-mloacws5
+                                >
+                                  <div
+                                    class="timeline-line absolute top-0 bottom-0 start-0 w-6 sm:w-8 hidden"
+                                    aria-hidden="true"
+                                    data-astro-cid-mloacws5
+                                  ></div>
+                                  <div
+                                    class="col-start-2 text-base mb-2"
+                                    data-astro-cid-mloacws5
+                                  >
+                                    content of chapter
+                                  </div>
+                                </div>
+                              </div>
+                            </li>
+                          </ul>
+                          <ul
+                            class="timeline-curve ml-3 sm:ml-4 col-span-2"
+                            data-astro-cid-mloacws5
+                          >
+                            <li data-type="divine" data-astro-cid-mloacws5>
+                              <div
+                                class="event dlc"
+                                id="d4"
+                                data-desciption="chapter-node"
+                                data-astro-cid-mloacws5
+                              >
+                                <div
+                                  class="grid grid-cols-[24px_1fr] sm:grid-cols-[32px_1fr] relative"
+                                  data-desciption="chapter-header"
+                                  data-astro-cid-mloacws5
+                                >
+                                  <div
+                                    class="timeline-dot col-start-2 flex gap-2 text-xl"
+                                    data-astro-cid-mloacws5
+                                  >
+                                    <div
+                                      class="font-bold"
+                                      data-astro-cid-mloacws5
+                                    >
+                                      神龙之章
+                                    </div>
+                                    <div data-astro-cid-mloacws5>黑暗妖艳</div>
+                                  </div>
+                                </div>
+                                <div
+                                  class="chapter-main grid grid-cols-[24px_1fr] sm:grid-cols-[32px_1fr] relative"
+                                  data-desciption="chapter-main"
+                                  data-astro-cid-mloacws5
+                                >
+                                  <div
+                                    class="timeline-line absolute top-0 bottom-0 start-0 w-6 sm:w-8 hidden"
+                                    aria-hidden="true"
+                                    data-astro-cid-mloacws5
+                                  ></div>
+                                  <div
+                                    class="col-start-2 text-base mb-2"
+                                    data-astro-cid-mloacws5
+                                  >
+                                    content of chapter
+                                  </div>
+                                </div>
+                              </div>
+                            </li>
+                          </ul>
+                          <ul
+                            class="timeline-curve ml-3 sm:ml-4 col-span-2"
+                            data-astro-cid-mloacws5
+                          >
+                            <li data-type="divine" data-astro-cid-mloacws5>
+                              <div
+                                class="event dlc"
+                                id="d5"
+                                data-desciption="chapter-node"
+                                data-astro-cid-mloacws5
+                              >
+                                <div
+                                  class="grid grid-cols-[24px_1fr] sm:grid-cols-[32px_1fr] relative"
+                                  data-desciption="chapter-header"
+                                  data-astro-cid-mloacws5
+                                >
+                                  <div
+                                    class="timeline-dot col-start-2 flex gap-2 text-xl"
+                                    data-astro-cid-mloacws5
+                                  >
+                                    <div
+                                      class="font-bold"
+                                      data-astro-cid-mloacws5
+                                    >
+                                      神龙之章
+                                    </div>
+                                    <div data-astro-cid-mloacws5>圣王</div>
+                                  </div>
+                                </div>
+                                <div
+                                  class="chapter-main grid grid-cols-[24px_1fr] sm:grid-cols-[32px_1fr] relative"
+                                  data-desciption="chapter-main"
+                                  data-astro-cid-mloacws5
+                                >
+                                  <div
+                                    class="timeline-line absolute top-0 bottom-0 start-0 w-6 sm:w-8 hidden"
+                                    aria-hidden="true"
+                                    data-astro-cid-mloacws5
+                                  ></div>
+                                  <div
+                                    class="col-start-2 text-base mb-2"
+                                    data-astro-cid-mloacws5
+                                  >
+                                    content of chapter
+                                  </div>
+                                </div>
+                              </div>
+                            </li>
+                          </ul>
+                          <ul
+                            class="timeline-curve ml-3 sm:ml-4 col-span-2 timeline_end_fix"
+                            data-astro-cid-mloacws5
+                          >
+                            <li data-type="divine" data-astro-cid-mloacws5>
+                              <div
+                                class="event dlc"
+                                id="d6"
+                                data-desciption="chapter-node"
+                                data-astro-cid-mloacws5
+                              >
+                                <div
+                                  class="grid grid-cols-[24px_1fr] sm:grid-cols-[32px_1fr] relative"
+                                  data-desciption="chapter-header"
+                                  data-astro-cid-mloacws5
+                                >
+                                  <div
+                                    class="timeline-dot col-start-2 flex gap-2 text-xl"
+                                    data-astro-cid-mloacws5
+                                  >
+                                    <div
+                                      class="font-bold"
+                                      data-astro-cid-mloacws5
+                                    >
+                                      神龙之章
+                                    </div>
+                                    <div data-astro-cid-mloacws5>年幼皇女</div>
+                                  </div>
+                                </div>
+                                <div
+                                  class="chapter-main grid grid-cols-[24px_1fr] sm:grid-cols-[32px_1fr] relative"
+                                  data-desciption="chapter-main"
+                                  data-astro-cid-mloacws5
+                                >
+                                  <div
+                                    class="timeline-line absolute top-0 bottom-0 start-0 w-6 sm:w-8 hidden"
+                                    aria-hidden="true"
+                                    data-astro-cid-mloacws5
+                                  ></div>
+                                  <div
+                                    class="col-start-2 text-base mb-2"
+                                    data-astro-cid-mloacws5
+                                  >
+                                    content of chapter
+                                  </div>
+                                </div>
+                              </div>
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </div>
             </li>
             <li>
-              <div class="event main" id="ch7" data-astro-cid-mloacws5>
+              <div
+                class="event main"
+                id="ch7"
+                data-desciption="chapter-node"
+                data-astro-cid-mloacws5
+              >
                 <div
                   class="grid grid-cols-[24px_1fr] sm:grid-cols-[32px_1fr] relative"
+                  data-desciption="chapter-header"
                   data-astro-cid-mloacws5
                 >
                   <div
-                    class="chapter-dot col-start-2 flex gap-4 text-xl"
+                    class="timeline-dot col-start-2 flex gap-2 text-xl"
                     data-astro-cid-mloacws5
                   >
                     <div class="font-bold" data-astro-cid-mloacws5>第7章</div>
@@ -852,24 +1063,38 @@ exports[`built chapters page snapshots > matches the full HTML snapshot for the 
                   </div>
                 </div>
                 <div
-                  class="grid grid-cols-[24px_1fr] sm:grid-cols-[32px_1fr] relative"
+                  class="chapter-main grid grid-cols-[24px_1fr] sm:grid-cols-[32px_1fr] relative"
+                  data-desciption="chapter-main"
                   data-astro-cid-mloacws5
                 >
-                  <div class="thread-line" data-astro-cid-mloacws5></div>
-                  <div class="col-start-2" data-astro-cid-mloacws5>
+                  <div
+                    class="timeline-line absolute top-0 bottom-0 start-0 w-6 sm:w-8"
+                    aria-hidden="true"
+                    data-astro-cid-mloacws5
+                  ></div>
+                  <div
+                    class="col-start-2 text-base mb-2"
+                    data-astro-cid-mloacws5
+                  >
                     content of chapter
                   </div>
                 </div>
               </div>
             </li>
             <li>
-              <div class="event main" id="ch8" data-astro-cid-mloacws5>
+              <div
+                class="event main"
+                id="ch8"
+                data-desciption="chapter-node"
+                data-astro-cid-mloacws5
+              >
                 <div
                   class="grid grid-cols-[24px_1fr] sm:grid-cols-[32px_1fr] relative"
+                  data-desciption="chapter-header"
                   data-astro-cid-mloacws5
                 >
                   <div
-                    class="chapter-dot col-start-2 flex gap-4 text-xl"
+                    class="timeline-dot col-start-2 flex gap-2 text-xl"
                     data-astro-cid-mloacws5
                   >
                     <div class="font-bold" data-astro-cid-mloacws5>第8章</div>
@@ -877,24 +1102,38 @@ exports[`built chapters page snapshots > matches the full HTML snapshot for the 
                   </div>
                 </div>
                 <div
-                  class="grid grid-cols-[24px_1fr] sm:grid-cols-[32px_1fr] relative"
+                  class="chapter-main grid grid-cols-[24px_1fr] sm:grid-cols-[32px_1fr] relative"
+                  data-desciption="chapter-main"
                   data-astro-cid-mloacws5
                 >
-                  <div class="thread-line" data-astro-cid-mloacws5></div>
-                  <div class="col-start-2" data-astro-cid-mloacws5>
+                  <div
+                    class="timeline-line absolute top-0 bottom-0 start-0 w-6 sm:w-8"
+                    aria-hidden="true"
+                    data-astro-cid-mloacws5
+                  ></div>
+                  <div
+                    class="col-start-2 text-base mb-2"
+                    data-astro-cid-mloacws5
+                  >
                     content of chapter
                   </div>
                 </div>
               </div>
             </li>
             <li>
-              <div class="event main" id="ch9" data-astro-cid-mloacws5>
+              <div
+                class="event main"
+                id="ch9"
+                data-desciption="chapter-node"
+                data-astro-cid-mloacws5
+              >
                 <div
                   class="grid grid-cols-[24px_1fr] sm:grid-cols-[32px_1fr] relative"
+                  data-desciption="chapter-header"
                   data-astro-cid-mloacws5
                 >
                   <div
-                    class="chapter-dot col-start-2 flex gap-4 text-xl"
+                    class="timeline-dot col-start-2 flex gap-2 text-xl"
                     data-astro-cid-mloacws5
                   >
                     <div class="font-bold" data-astro-cid-mloacws5>第9章</div>
@@ -902,24 +1141,38 @@ exports[`built chapters page snapshots > matches the full HTML snapshot for the 
                   </div>
                 </div>
                 <div
-                  class="grid grid-cols-[24px_1fr] sm:grid-cols-[32px_1fr] relative"
+                  class="chapter-main grid grid-cols-[24px_1fr] sm:grid-cols-[32px_1fr] relative"
+                  data-desciption="chapter-main"
                   data-astro-cid-mloacws5
                 >
-                  <div class="thread-line" data-astro-cid-mloacws5></div>
-                  <div class="col-start-2" data-astro-cid-mloacws5>
+                  <div
+                    class="timeline-line absolute top-0 bottom-0 start-0 w-6 sm:w-8"
+                    aria-hidden="true"
+                    data-astro-cid-mloacws5
+                  ></div>
+                  <div
+                    class="col-start-2 text-base mb-2"
+                    data-astro-cid-mloacws5
+                  >
                     content of chapter
                   </div>
                 </div>
               </div>
             </li>
             <li>
-              <div class="event main" id="ch10" data-astro-cid-mloacws5>
+              <div
+                class="event main"
+                id="ch10"
+                data-desciption="chapter-node"
+                data-astro-cid-mloacws5
+              >
                 <div
                   class="grid grid-cols-[24px_1fr] sm:grid-cols-[32px_1fr] relative"
+                  data-desciption="chapter-header"
                   data-astro-cid-mloacws5
                 >
                   <div
-                    class="chapter-dot col-start-2 flex gap-4 text-xl"
+                    class="timeline-dot col-start-2 flex gap-2 text-xl"
                     data-astro-cid-mloacws5
                   >
                     <div class="font-bold" data-astro-cid-mloacws5>第10章</div>
@@ -927,24 +1180,38 @@ exports[`built chapters page snapshots > matches the full HTML snapshot for the 
                   </div>
                 </div>
                 <div
-                  class="grid grid-cols-[24px_1fr] sm:grid-cols-[32px_1fr] relative"
+                  class="chapter-main grid grid-cols-[24px_1fr] sm:grid-cols-[32px_1fr] relative"
+                  data-desciption="chapter-main"
                   data-astro-cid-mloacws5
                 >
-                  <div class="thread-line" data-astro-cid-mloacws5></div>
-                  <div class="col-start-2" data-astro-cid-mloacws5>
+                  <div
+                    class="timeline-line absolute top-0 bottom-0 start-0 w-6 sm:w-8"
+                    aria-hidden="true"
+                    data-astro-cid-mloacws5
+                  ></div>
+                  <div
+                    class="col-start-2 text-base mb-2"
+                    data-astro-cid-mloacws5
+                  >
                     content of chapter
                   </div>
                 </div>
               </div>
             </li>
             <li>
-              <div class="event main grouped" id="ch11" data-astro-cid-mloacws5>
+              <div
+                class="event main grouped"
+                id="ch11"
+                data-desciption="chapter-node"
+                data-astro-cid-mloacws5
+              >
                 <div
                   class="grid grid-cols-[24px_1fr] sm:grid-cols-[32px_1fr] relative"
+                  data-desciption="chapter-header"
                   data-astro-cid-mloacws5
                 >
                   <div
-                    class="chapter-dot col-start-2 flex gap-4 text-xl"
+                    class="timeline-dot col-start-2 flex gap-2 text-xl"
                     data-astro-cid-mloacws5
                   >
                     <div class="font-bold" data-astro-cid-mloacws5>第11章</div>
@@ -952,53 +1219,84 @@ exports[`built chapters page snapshots > matches the full HTML snapshot for the 
                   </div>
                 </div>
                 <div
-                  class="grid grid-cols-[24px_1fr] sm:grid-cols-[32px_1fr] relative"
-                  data-astro-cid-mloacws5
-                >
-                  <div class="thread-line" data-astro-cid-mloacws5></div>
-                  <div class="col-start-2" data-astro-cid-mloacws5>
-                    content of chapter
-                  </div>
-                </div>
-              </div>
-              <ul class="" data-astro-cid-mloacws5>
-                <li data-type="paralogue" data-astro-cid-mloacws5>
-                  <div class="event" id="p3" data-astro-cid-mloacws5>
-                    <div
-                      class="grid grid-cols-[24px_1fr] sm:grid-cols-[32px_1fr] relative"
-                      data-astro-cid-mloacws5
-                    >
-                      <div
-                        class="chapter-dot col-start-2 flex gap-4 text-xl"
-                        data-astro-cid-mloacws5
-                      >
-                        <div class="font-bold" data-astro-cid-mloacws5>
-                          外传3
-                        </div>
-                        <div data-astro-cid-mloacws5>圣公主</div>
-                      </div>
-                    </div>
-                    <div
-                      class="grid grid-cols-[24px_1fr] sm:grid-cols-[32px_1fr] relative"
-                      data-astro-cid-mloacws5
-                    >
-                      <div class="thread-line" data-astro-cid-mloacws5></div>
-                      <div class="col-start-2" data-astro-cid-mloacws5>
-                        content of chapter
-                      </div>
-                    </div>
-                  </div>
-                </li>
-              </ul>
-            </li>
-            <li>
-              <div class="event main grouped" id="ch12" data-astro-cid-mloacws5>
-                <div
-                  class="grid grid-cols-[24px_1fr] sm:grid-cols-[32px_1fr] relative"
+                  class="chapter-main grid grid-cols-[24px_1fr] sm:grid-cols-[32px_1fr] relative"
+                  data-desciption="chapter-main"
                   data-astro-cid-mloacws5
                 >
                   <div
-                    class="chapter-dot col-start-2 flex gap-4 text-xl"
+                    class="timeline-line absolute top-0 bottom-0 start-0 w-6 sm:w-8"
+                    aria-hidden="true"
+                    data-astro-cid-mloacws5
+                  ></div>
+                  <div
+                    class="col-start-2 text-base mb-2"
+                    data-astro-cid-mloacws5
+                  >
+                    content of chapter
+                  </div>
+                  <ul
+                    class="timeline-curve ml-3 sm:ml-4 col-span-2"
+                    data-astro-cid-mloacws5
+                  >
+                    <li data-type="paralogue" data-astro-cid-mloacws5>
+                      <div
+                        class="event"
+                        id="p3"
+                        data-desciption="chapter-node"
+                        data-astro-cid-mloacws5
+                      >
+                        <div
+                          class="grid grid-cols-[24px_1fr] sm:grid-cols-[32px_1fr] relative"
+                          data-desciption="chapter-header"
+                          data-astro-cid-mloacws5
+                        >
+                          <div
+                            class="timeline-dot col-start-2 flex gap-2 text-xl"
+                            data-astro-cid-mloacws5
+                          >
+                            <div class="font-bold" data-astro-cid-mloacws5>
+                              外传3
+                            </div>
+                            <div data-astro-cid-mloacws5>圣公主</div>
+                          </div>
+                        </div>
+                        <div
+                          class="chapter-main grid grid-cols-[24px_1fr] sm:grid-cols-[32px_1fr] relative"
+                          data-desciption="chapter-main"
+                          data-astro-cid-mloacws5
+                        >
+                          <div
+                            class="timeline-line absolute top-0 bottom-0 start-0 w-6 sm:w-8 hidden"
+                            aria-hidden="true"
+                            data-astro-cid-mloacws5
+                          ></div>
+                          <div
+                            class="col-start-2 text-base mb-2"
+                            data-astro-cid-mloacws5
+                          >
+                            content of chapter
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </li>
+            <li>
+              <div
+                class="event main grouped"
+                id="ch12"
+                data-desciption="chapter-node"
+                data-astro-cid-mloacws5
+              >
+                <div
+                  class="grid grid-cols-[24px_1fr] sm:grid-cols-[32px_1fr] relative"
+                  data-desciption="chapter-header"
+                  data-astro-cid-mloacws5
+                >
+                  <div
+                    class="timeline-dot col-start-2 flex gap-2 text-xl"
                     data-astro-cid-mloacws5
                   >
                     <div class="font-bold" data-astro-cid-mloacws5>第12章</div>
@@ -1006,53 +1304,84 @@ exports[`built chapters page snapshots > matches the full HTML snapshot for the 
                   </div>
                 </div>
                 <div
-                  class="grid grid-cols-[24px_1fr] sm:grid-cols-[32px_1fr] relative"
-                  data-astro-cid-mloacws5
-                >
-                  <div class="thread-line" data-astro-cid-mloacws5></div>
-                  <div class="col-start-2" data-astro-cid-mloacws5>
-                    content of chapter
-                  </div>
-                </div>
-              </div>
-              <ul class="" data-astro-cid-mloacws5>
-                <li data-type="paralogue" data-astro-cid-mloacws5>
-                  <div class="event" id="p4" data-astro-cid-mloacws5>
-                    <div
-                      class="grid grid-cols-[24px_1fr] sm:grid-cols-[32px_1fr] relative"
-                      data-astro-cid-mloacws5
-                    >
-                      <div
-                        class="chapter-dot col-start-2 flex gap-4 text-xl"
-                        data-astro-cid-mloacws5
-                      >
-                        <div class="font-bold" data-astro-cid-mloacws5>
-                          外传4
-                        </div>
-                        <div data-astro-cid-mloacws5>草原女爵</div>
-                      </div>
-                    </div>
-                    <div
-                      class="grid grid-cols-[24px_1fr] sm:grid-cols-[32px_1fr] relative"
-                      data-astro-cid-mloacws5
-                    >
-                      <div class="thread-line" data-astro-cid-mloacws5></div>
-                      <div class="col-start-2" data-astro-cid-mloacws5>
-                        content of chapter
-                      </div>
-                    </div>
-                  </div>
-                </li>
-              </ul>
-            </li>
-            <li>
-              <div class="event main grouped" id="ch13" data-astro-cid-mloacws5>
-                <div
-                  class="grid grid-cols-[24px_1fr] sm:grid-cols-[32px_1fr] relative"
+                  class="chapter-main grid grid-cols-[24px_1fr] sm:grid-cols-[32px_1fr] relative"
+                  data-desciption="chapter-main"
                   data-astro-cid-mloacws5
                 >
                   <div
-                    class="chapter-dot col-start-2 flex gap-4 text-xl"
+                    class="timeline-line absolute top-0 bottom-0 start-0 w-6 sm:w-8"
+                    aria-hidden="true"
+                    data-astro-cid-mloacws5
+                  ></div>
+                  <div
+                    class="col-start-2 text-base mb-2"
+                    data-astro-cid-mloacws5
+                  >
+                    content of chapter
+                  </div>
+                  <ul
+                    class="timeline-curve ml-3 sm:ml-4 col-span-2"
+                    data-astro-cid-mloacws5
+                  >
+                    <li data-type="paralogue" data-astro-cid-mloacws5>
+                      <div
+                        class="event"
+                        id="p4"
+                        data-desciption="chapter-node"
+                        data-astro-cid-mloacws5
+                      >
+                        <div
+                          class="grid grid-cols-[24px_1fr] sm:grid-cols-[32px_1fr] relative"
+                          data-desciption="chapter-header"
+                          data-astro-cid-mloacws5
+                        >
+                          <div
+                            class="timeline-dot col-start-2 flex gap-2 text-xl"
+                            data-astro-cid-mloacws5
+                          >
+                            <div class="font-bold" data-astro-cid-mloacws5>
+                              外传4
+                            </div>
+                            <div data-astro-cid-mloacws5>草原女爵</div>
+                          </div>
+                        </div>
+                        <div
+                          class="chapter-main grid grid-cols-[24px_1fr] sm:grid-cols-[32px_1fr] relative"
+                          data-desciption="chapter-main"
+                          data-astro-cid-mloacws5
+                        >
+                          <div
+                            class="timeline-line absolute top-0 bottom-0 start-0 w-6 sm:w-8 hidden"
+                            aria-hidden="true"
+                            data-astro-cid-mloacws5
+                          ></div>
+                          <div
+                            class="col-start-2 text-base mb-2"
+                            data-astro-cid-mloacws5
+                          >
+                            content of chapter
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </li>
+            <li>
+              <div
+                class="event main grouped"
+                id="ch13"
+                data-desciption="chapter-node"
+                data-astro-cid-mloacws5
+              >
+                <div
+                  class="grid grid-cols-[24px_1fr] sm:grid-cols-[32px_1fr] relative"
+                  data-desciption="chapter-header"
+                  data-astro-cid-mloacws5
+                >
+                  <div
+                    class="timeline-dot col-start-2 flex gap-2 text-xl"
                     data-astro-cid-mloacws5
                   >
                     <div class="font-bold" data-astro-cid-mloacws5>第13章</div>
@@ -1060,53 +1389,84 @@ exports[`built chapters page snapshots > matches the full HTML snapshot for the 
                   </div>
                 </div>
                 <div
-                  class="grid grid-cols-[24px_1fr] sm:grid-cols-[32px_1fr] relative"
-                  data-astro-cid-mloacws5
-                >
-                  <div class="thread-line" data-astro-cid-mloacws5></div>
-                  <div class="col-start-2" data-astro-cid-mloacws5>
-                    content of chapter
-                  </div>
-                </div>
-              </div>
-              <ul class="" data-astro-cid-mloacws5>
-                <li data-type="paralogue" data-astro-cid-mloacws5>
-                  <div class="event" id="p5" data-astro-cid-mloacws5>
-                    <div
-                      class="grid grid-cols-[24px_1fr] sm:grid-cols-[32px_1fr] relative"
-                      data-astro-cid-mloacws5
-                    >
-                      <div
-                        class="chapter-dot col-start-2 flex gap-4 text-xl"
-                        data-astro-cid-mloacws5
-                      >
-                        <div class="font-bold" data-astro-cid-mloacws5>
-                          外传5
-                        </div>
-                        <div data-astro-cid-mloacws5>苍炎勇者</div>
-                      </div>
-                    </div>
-                    <div
-                      class="grid grid-cols-[24px_1fr] sm:grid-cols-[32px_1fr] relative"
-                      data-astro-cid-mloacws5
-                    >
-                      <div class="thread-line" data-astro-cid-mloacws5></div>
-                      <div class="col-start-2" data-astro-cid-mloacws5>
-                        content of chapter
-                      </div>
-                    </div>
-                  </div>
-                </li>
-              </ul>
-            </li>
-            <li>
-              <div class="event main grouped" id="ch14" data-astro-cid-mloacws5>
-                <div
-                  class="grid grid-cols-[24px_1fr] sm:grid-cols-[32px_1fr] relative"
+                  class="chapter-main grid grid-cols-[24px_1fr] sm:grid-cols-[32px_1fr] relative"
+                  data-desciption="chapter-main"
                   data-astro-cid-mloacws5
                 >
                   <div
-                    class="chapter-dot col-start-2 flex gap-4 text-xl"
+                    class="timeline-line absolute top-0 bottom-0 start-0 w-6 sm:w-8"
+                    aria-hidden="true"
+                    data-astro-cid-mloacws5
+                  ></div>
+                  <div
+                    class="col-start-2 text-base mb-2"
+                    data-astro-cid-mloacws5
+                  >
+                    content of chapter
+                  </div>
+                  <ul
+                    class="timeline-curve ml-3 sm:ml-4 col-span-2"
+                    data-astro-cid-mloacws5
+                  >
+                    <li data-type="paralogue" data-astro-cid-mloacws5>
+                      <div
+                        class="event"
+                        id="p5"
+                        data-desciption="chapter-node"
+                        data-astro-cid-mloacws5
+                      >
+                        <div
+                          class="grid grid-cols-[24px_1fr] sm:grid-cols-[32px_1fr] relative"
+                          data-desciption="chapter-header"
+                          data-astro-cid-mloacws5
+                        >
+                          <div
+                            class="timeline-dot col-start-2 flex gap-2 text-xl"
+                            data-astro-cid-mloacws5
+                          >
+                            <div class="font-bold" data-astro-cid-mloacws5>
+                              外传5
+                            </div>
+                            <div data-astro-cid-mloacws5>苍炎勇者</div>
+                          </div>
+                        </div>
+                        <div
+                          class="chapter-main grid grid-cols-[24px_1fr] sm:grid-cols-[32px_1fr] relative"
+                          data-desciption="chapter-main"
+                          data-astro-cid-mloacws5
+                        >
+                          <div
+                            class="timeline-line absolute top-0 bottom-0 start-0 w-6 sm:w-8 hidden"
+                            aria-hidden="true"
+                            data-astro-cid-mloacws5
+                          ></div>
+                          <div
+                            class="col-start-2 text-base mb-2"
+                            data-astro-cid-mloacws5
+                          >
+                            content of chapter
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </li>
+            <li>
+              <div
+                class="event main grouped"
+                id="ch14"
+                data-desciption="chapter-node"
+                data-astro-cid-mloacws5
+              >
+                <div
+                  class="grid grid-cols-[24px_1fr] sm:grid-cols-[32px_1fr] relative"
+                  data-desciption="chapter-header"
+                  data-astro-cid-mloacws5
+                >
+                  <div
+                    class="timeline-dot col-start-2 flex gap-2 text-xl"
                     data-astro-cid-mloacws5
                   >
                     <div class="font-bold" data-astro-cid-mloacws5>第14章</div>
@@ -1114,53 +1474,84 @@ exports[`built chapters page snapshots > matches the full HTML snapshot for the 
                   </div>
                 </div>
                 <div
-                  class="grid grid-cols-[24px_1fr] sm:grid-cols-[32px_1fr] relative"
-                  data-astro-cid-mloacws5
-                >
-                  <div class="thread-line" data-astro-cid-mloacws5></div>
-                  <div class="col-start-2" data-astro-cid-mloacws5>
-                    content of chapter
-                  </div>
-                </div>
-              </div>
-              <ul class="" data-astro-cid-mloacws5>
-                <li data-type="paralogue" data-astro-cid-mloacws5>
-                  <div class="event" id="p6" data-astro-cid-mloacws5>
-                    <div
-                      class="grid grid-cols-[24px_1fr] sm:grid-cols-[32px_1fr] relative"
-                      data-astro-cid-mloacws5
-                    >
-                      <div
-                        class="chapter-dot col-start-2 flex gap-4 text-xl"
-                        data-astro-cid-mloacws5
-                      >
-                        <div class="font-bold" data-astro-cid-mloacws5>
-                          外传6
-                        </div>
-                        <div data-astro-cid-mloacws5>引领者</div>
-                      </div>
-                    </div>
-                    <div
-                      class="grid grid-cols-[24px_1fr] sm:grid-cols-[32px_1fr] relative"
-                      data-astro-cid-mloacws5
-                    >
-                      <div class="thread-line" data-astro-cid-mloacws5></div>
-                      <div class="col-start-2" data-astro-cid-mloacws5>
-                        content of chapter
-                      </div>
-                    </div>
-                  </div>
-                </li>
-              </ul>
-            </li>
-            <li>
-              <div class="event main grouped" id="ch15" data-astro-cid-mloacws5>
-                <div
-                  class="grid grid-cols-[24px_1fr] sm:grid-cols-[32px_1fr] relative"
+                  class="chapter-main grid grid-cols-[24px_1fr] sm:grid-cols-[32px_1fr] relative"
+                  data-desciption="chapter-main"
                   data-astro-cid-mloacws5
                 >
                   <div
-                    class="chapter-dot col-start-2 flex gap-4 text-xl"
+                    class="timeline-line absolute top-0 bottom-0 start-0 w-6 sm:w-8"
+                    aria-hidden="true"
+                    data-astro-cid-mloacws5
+                  ></div>
+                  <div
+                    class="col-start-2 text-base mb-2"
+                    data-astro-cid-mloacws5
+                  >
+                    content of chapter
+                  </div>
+                  <ul
+                    class="timeline-curve ml-3 sm:ml-4 col-span-2"
+                    data-astro-cid-mloacws5
+                  >
+                    <li data-type="paralogue" data-astro-cid-mloacws5>
+                      <div
+                        class="event"
+                        id="p6"
+                        data-desciption="chapter-node"
+                        data-astro-cid-mloacws5
+                      >
+                        <div
+                          class="grid grid-cols-[24px_1fr] sm:grid-cols-[32px_1fr] relative"
+                          data-desciption="chapter-header"
+                          data-astro-cid-mloacws5
+                        >
+                          <div
+                            class="timeline-dot col-start-2 flex gap-2 text-xl"
+                            data-astro-cid-mloacws5
+                          >
+                            <div class="font-bold" data-astro-cid-mloacws5>
+                              外传6
+                            </div>
+                            <div data-astro-cid-mloacws5>引领者</div>
+                          </div>
+                        </div>
+                        <div
+                          class="chapter-main grid grid-cols-[24px_1fr] sm:grid-cols-[32px_1fr] relative"
+                          data-desciption="chapter-main"
+                          data-astro-cid-mloacws5
+                        >
+                          <div
+                            class="timeline-line absolute top-0 bottom-0 start-0 w-6 sm:w-8 hidden"
+                            aria-hidden="true"
+                            data-astro-cid-mloacws5
+                          ></div>
+                          <div
+                            class="col-start-2 text-base mb-2"
+                            data-astro-cid-mloacws5
+                          >
+                            content of chapter
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </li>
+            <li>
+              <div
+                class="event main grouped"
+                id="ch15"
+                data-desciption="chapter-node"
+                data-astro-cid-mloacws5
+              >
+                <div
+                  class="grid grid-cols-[24px_1fr] sm:grid-cols-[32px_1fr] relative"
+                  data-desciption="chapter-header"
+                  data-astro-cid-mloacws5
+                >
+                  <div
+                    class="timeline-dot col-start-2 flex gap-2 text-xl"
                     data-astro-cid-mloacws5
                   >
                     <div class="font-bold" data-astro-cid-mloacws5>第15章</div>
@@ -1168,53 +1559,84 @@ exports[`built chapters page snapshots > matches the full HTML snapshot for the 
                   </div>
                 </div>
                 <div
-                  class="grid grid-cols-[24px_1fr] sm:grid-cols-[32px_1fr] relative"
-                  data-astro-cid-mloacws5
-                >
-                  <div class="thread-line" data-astro-cid-mloacws5></div>
-                  <div class="col-start-2" data-astro-cid-mloacws5>
-                    content of chapter
-                  </div>
-                </div>
-              </div>
-              <ul class="" data-astro-cid-mloacws5>
-                <li data-type="paralogue" data-astro-cid-mloacws5>
-                  <div class="event" id="p7" data-astro-cid-mloacws5>
-                    <div
-                      class="grid grid-cols-[24px_1fr] sm:grid-cols-[32px_1fr] relative"
-                      data-astro-cid-mloacws5
-                    >
-                      <div
-                        class="chapter-dot col-start-2 flex gap-4 text-xl"
-                        data-astro-cid-mloacws5
-                      >
-                        <div class="font-bold" data-astro-cid-mloacws5>
-                          外传7
-                        </div>
-                        <div data-astro-cid-mloacws5>选择未来之人</div>
-                      </div>
-                    </div>
-                    <div
-                      class="grid grid-cols-[24px_1fr] sm:grid-cols-[32px_1fr] relative"
-                      data-astro-cid-mloacws5
-                    >
-                      <div class="thread-line" data-astro-cid-mloacws5></div>
-                      <div class="col-start-2" data-astro-cid-mloacws5>
-                        content of chapter
-                      </div>
-                    </div>
-                  </div>
-                </li>
-              </ul>
-            </li>
-            <li>
-              <div class="event main grouped" id="ch16" data-astro-cid-mloacws5>
-                <div
-                  class="grid grid-cols-[24px_1fr] sm:grid-cols-[32px_1fr] relative"
+                  class="chapter-main grid grid-cols-[24px_1fr] sm:grid-cols-[32px_1fr] relative"
+                  data-desciption="chapter-main"
                   data-astro-cid-mloacws5
                 >
                   <div
-                    class="chapter-dot col-start-2 flex gap-4 text-xl"
+                    class="timeline-line absolute top-0 bottom-0 start-0 w-6 sm:w-8"
+                    aria-hidden="true"
+                    data-astro-cid-mloacws5
+                  ></div>
+                  <div
+                    class="col-start-2 text-base mb-2"
+                    data-astro-cid-mloacws5
+                  >
+                    content of chapter
+                  </div>
+                  <ul
+                    class="timeline-curve ml-3 sm:ml-4 col-span-2"
+                    data-astro-cid-mloacws5
+                  >
+                    <li data-type="paralogue" data-astro-cid-mloacws5>
+                      <div
+                        class="event"
+                        id="p7"
+                        data-desciption="chapter-node"
+                        data-astro-cid-mloacws5
+                      >
+                        <div
+                          class="grid grid-cols-[24px_1fr] sm:grid-cols-[32px_1fr] relative"
+                          data-desciption="chapter-header"
+                          data-astro-cid-mloacws5
+                        >
+                          <div
+                            class="timeline-dot col-start-2 flex gap-2 text-xl"
+                            data-astro-cid-mloacws5
+                          >
+                            <div class="font-bold" data-astro-cid-mloacws5>
+                              外传7
+                            </div>
+                            <div data-astro-cid-mloacws5>选择未来之人</div>
+                          </div>
+                        </div>
+                        <div
+                          class="chapter-main grid grid-cols-[24px_1fr] sm:grid-cols-[32px_1fr] relative"
+                          data-desciption="chapter-main"
+                          data-astro-cid-mloacws5
+                        >
+                          <div
+                            class="timeline-line absolute top-0 bottom-0 start-0 w-6 sm:w-8 hidden"
+                            aria-hidden="true"
+                            data-astro-cid-mloacws5
+                          ></div>
+                          <div
+                            class="col-start-2 text-base mb-2"
+                            data-astro-cid-mloacws5
+                          >
+                            content of chapter
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </li>
+            <li>
+              <div
+                class="event main grouped"
+                id="ch16"
+                data-desciption="chapter-node"
+                data-astro-cid-mloacws5
+              >
+                <div
+                  class="grid grid-cols-[24px_1fr] sm:grid-cols-[32px_1fr] relative"
+                  data-desciption="chapter-header"
+                  data-astro-cid-mloacws5
+                >
+                  <div
+                    class="timeline-dot col-start-2 flex gap-2 text-xl"
                     data-astro-cid-mloacws5
                   >
                     <div class="font-bold" data-astro-cid-mloacws5>第16章</div>
@@ -1222,53 +1644,84 @@ exports[`built chapters page snapshots > matches the full HTML snapshot for the 
                   </div>
                 </div>
                 <div
-                  class="grid grid-cols-[24px_1fr] sm:grid-cols-[32px_1fr] relative"
-                  data-astro-cid-mloacws5
-                >
-                  <div class="thread-line" data-astro-cid-mloacws5></div>
-                  <div class="col-start-2" data-astro-cid-mloacws5>
-                    content of chapter
-                  </div>
-                </div>
-              </div>
-              <ul class="" data-astro-cid-mloacws5>
-                <li data-type="paralogue" data-astro-cid-mloacws5>
-                  <div class="event" id="p8" data-astro-cid-mloacws5>
-                    <div
-                      class="grid grid-cols-[24px_1fr] sm:grid-cols-[32px_1fr] relative"
-                      data-astro-cid-mloacws5
-                    >
-                      <div
-                        class="chapter-dot col-start-2 flex gap-4 text-xl"
-                        data-astro-cid-mloacws5
-                      >
-                        <div class="font-bold" data-astro-cid-mloacws5>
-                          外传8
-                        </div>
-                        <div data-astro-cid-mloacws5>碧绿风空</div>
-                      </div>
-                    </div>
-                    <div
-                      class="grid grid-cols-[24px_1fr] sm:grid-cols-[32px_1fr] relative"
-                      data-astro-cid-mloacws5
-                    >
-                      <div class="thread-line" data-astro-cid-mloacws5></div>
-                      <div class="col-start-2" data-astro-cid-mloacws5>
-                        content of chapter
-                      </div>
-                    </div>
-                  </div>
-                </li>
-              </ul>
-            </li>
-            <li>
-              <div class="event main grouped" id="ch17" data-astro-cid-mloacws5>
-                <div
-                  class="grid grid-cols-[24px_1fr] sm:grid-cols-[32px_1fr] relative"
+                  class="chapter-main grid grid-cols-[24px_1fr] sm:grid-cols-[32px_1fr] relative"
+                  data-desciption="chapter-main"
                   data-astro-cid-mloacws5
                 >
                   <div
-                    class="chapter-dot col-start-2 flex gap-4 text-xl"
+                    class="timeline-line absolute top-0 bottom-0 start-0 w-6 sm:w-8"
+                    aria-hidden="true"
+                    data-astro-cid-mloacws5
+                  ></div>
+                  <div
+                    class="col-start-2 text-base mb-2"
+                    data-astro-cid-mloacws5
+                  >
+                    content of chapter
+                  </div>
+                  <ul
+                    class="timeline-curve ml-3 sm:ml-4 col-span-2"
+                    data-astro-cid-mloacws5
+                  >
+                    <li data-type="paralogue" data-astro-cid-mloacws5>
+                      <div
+                        class="event"
+                        id="p8"
+                        data-desciption="chapter-node"
+                        data-astro-cid-mloacws5
+                      >
+                        <div
+                          class="grid grid-cols-[24px_1fr] sm:grid-cols-[32px_1fr] relative"
+                          data-desciption="chapter-header"
+                          data-astro-cid-mloacws5
+                        >
+                          <div
+                            class="timeline-dot col-start-2 flex gap-2 text-xl"
+                            data-astro-cid-mloacws5
+                          >
+                            <div class="font-bold" data-astro-cid-mloacws5>
+                              外传8
+                            </div>
+                            <div data-astro-cid-mloacws5>碧绿风空</div>
+                          </div>
+                        </div>
+                        <div
+                          class="chapter-main grid grid-cols-[24px_1fr] sm:grid-cols-[32px_1fr] relative"
+                          data-desciption="chapter-main"
+                          data-astro-cid-mloacws5
+                        >
+                          <div
+                            class="timeline-line absolute top-0 bottom-0 start-0 w-6 sm:w-8 hidden"
+                            aria-hidden="true"
+                            data-astro-cid-mloacws5
+                          ></div>
+                          <div
+                            class="col-start-2 text-base mb-2"
+                            data-astro-cid-mloacws5
+                          >
+                            content of chapter
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </li>
+            <li>
+              <div
+                class="event main grouped"
+                id="ch17"
+                data-desciption="chapter-node"
+                data-astro-cid-mloacws5
+              >
+                <div
+                  class="grid grid-cols-[24px_1fr] sm:grid-cols-[32px_1fr] relative"
+                  data-desciption="chapter-header"
+                  data-astro-cid-mloacws5
+                >
+                  <div
+                    class="timeline-dot col-start-2 flex gap-2 text-xl"
                     data-astro-cid-mloacws5
                   >
                     <div class="font-bold" data-astro-cid-mloacws5>第17章</div>
@@ -1276,80 +1729,130 @@ exports[`built chapters page snapshots > matches the full HTML snapshot for the 
                   </div>
                 </div>
                 <div
-                  class="grid grid-cols-[24px_1fr] sm:grid-cols-[32px_1fr] relative"
-                  data-astro-cid-mloacws5
-                >
-                  <div class="thread-line" data-astro-cid-mloacws5></div>
-                  <div class="col-start-2" data-astro-cid-mloacws5>
-                    content of chapter
-                  </div>
-                </div>
-              </div>
-              <ul class="" data-astro-cid-mloacws5>
-                <li data-type="paralogue" data-astro-cid-mloacws5>
-                  <div class="event" id="p9" data-astro-cid-mloacws5>
-                    <div
-                      class="grid grid-cols-[24px_1fr] sm:grid-cols-[32px_1fr] relative"
-                      data-astro-cid-mloacws5
-                    >
-                      <div
-                        class="chapter-dot col-start-2 flex gap-4 text-xl"
-                        data-astro-cid-mloacws5
-                      >
-                        <div class="font-bold" data-astro-cid-mloacws5>
-                          外传9
-                        </div>
-                        <div data-astro-cid-mloacws5>圣战骑士</div>
-                      </div>
-                    </div>
-                    <div
-                      class="grid grid-cols-[24px_1fr] sm:grid-cols-[32px_1fr] relative"
-                      data-astro-cid-mloacws5
-                    >
-                      <div class="thread-line" data-astro-cid-mloacws5></div>
-                      <div class="col-start-2" data-astro-cid-mloacws5>
-                        content of chapter
-                      </div>
-                    </div>
-                  </div>
-                </li>
-                <li data-type="paralogue" data-astro-cid-mloacws5>
-                  <div class="event" id="p10" data-astro-cid-mloacws5>
-                    <div
-                      class="grid grid-cols-[24px_1fr] sm:grid-cols-[32px_1fr] relative"
-                      data-astro-cid-mloacws5
-                    >
-                      <div
-                        class="chapter-dot col-start-2 flex gap-4 text-xl"
-                        data-astro-cid-mloacws5
-                      >
-                        <div class="font-bold" data-astro-cid-mloacws5>
-                          外传10
-                        </div>
-                        <div data-astro-cid-mloacws5>贤王</div>
-                      </div>
-                    </div>
-                    <div
-                      class="grid grid-cols-[24px_1fr] sm:grid-cols-[32px_1fr] relative"
-                      data-astro-cid-mloacws5
-                    >
-                      <div class="thread-line" data-astro-cid-mloacws5></div>
-                      <div class="col-start-2" data-astro-cid-mloacws5>
-                        content of chapter
-                      </div>
-                    </div>
-                  </div>
-                </li>
-              </ul>
-            </li>
-            <li>
-              <div class="event main" id="ch18" data-astro-cid-mloacws5>
-                <div
-                  class="grid grid-cols-[24px_1fr] sm:grid-cols-[32px_1fr] relative"
+                  class="chapter-main grid grid-cols-[24px_1fr] sm:grid-cols-[32px_1fr] relative"
+                  data-desciption="chapter-main"
                   data-astro-cid-mloacws5
                 >
                   <div
-                    class="chapter-dot col-start-2 flex gap-4 text-xl"
+                    class="timeline-line absolute top-0 bottom-0 start-0 w-6 sm:w-8"
+                    aria-hidden="true"
+                    data-astro-cid-mloacws5
+                  ></div>
+                  <div
+                    class="col-start-2 text-base mb-2"
+                    data-astro-cid-mloacws5
+                  >
+                    content of chapter
+                  </div>
+                  <ul
+                    class="timeline-curve ml-3 sm:ml-4 col-span-2"
+                    data-astro-cid-mloacws5
+                  >
+                    <li data-type="paralogue" data-astro-cid-mloacws5>
+                      <div
+                        class="event"
+                        id="p9"
+                        data-desciption="chapter-node"
+                        data-astro-cid-mloacws5
+                      >
+                        <div
+                          class="grid grid-cols-[24px_1fr] sm:grid-cols-[32px_1fr] relative"
+                          data-desciption="chapter-header"
+                          data-astro-cid-mloacws5
+                        >
+                          <div
+                            class="timeline-dot col-start-2 flex gap-2 text-xl"
+                            data-astro-cid-mloacws5
+                          >
+                            <div class="font-bold" data-astro-cid-mloacws5>
+                              外传9
+                            </div>
+                            <div data-astro-cid-mloacws5>圣战骑士</div>
+                          </div>
+                        </div>
+                        <div
+                          class="chapter-main grid grid-cols-[24px_1fr] sm:grid-cols-[32px_1fr] relative"
+                          data-desciption="chapter-main"
+                          data-astro-cid-mloacws5
+                        >
+                          <div
+                            class="timeline-line absolute top-0 bottom-0 start-0 w-6 sm:w-8 hidden"
+                            aria-hidden="true"
+                            data-astro-cid-mloacws5
+                          ></div>
+                          <div
+                            class="col-start-2 text-base mb-2"
+                            data-astro-cid-mloacws5
+                          >
+                            content of chapter
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                  </ul>
+                  <ul
+                    class="timeline-curve ml-3 sm:ml-4 col-span-2"
+                    data-astro-cid-mloacws5
+                  >
+                    <li data-type="paralogue" data-astro-cid-mloacws5>
+                      <div
+                        class="event"
+                        id="p10"
+                        data-desciption="chapter-node"
+                        data-astro-cid-mloacws5
+                      >
+                        <div
+                          class="grid grid-cols-[24px_1fr] sm:grid-cols-[32px_1fr] relative"
+                          data-desciption="chapter-header"
+                          data-astro-cid-mloacws5
+                        >
+                          <div
+                            class="timeline-dot col-start-2 flex gap-2 text-xl"
+                            data-astro-cid-mloacws5
+                          >
+                            <div class="font-bold" data-astro-cid-mloacws5>
+                              外传10
+                            </div>
+                            <div data-astro-cid-mloacws5>贤王</div>
+                          </div>
+                        </div>
+                        <div
+                          class="chapter-main grid grid-cols-[24px_1fr] sm:grid-cols-[32px_1fr] relative"
+                          data-desciption="chapter-main"
+                          data-astro-cid-mloacws5
+                        >
+                          <div
+                            class="timeline-line absolute top-0 bottom-0 start-0 w-6 sm:w-8 hidden"
+                            aria-hidden="true"
+                            data-astro-cid-mloacws5
+                          ></div>
+                          <div
+                            class="col-start-2 text-base mb-2"
+                            data-astro-cid-mloacws5
+                          >
+                            content of chapter
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </li>
+            <li>
+              <div
+                class="event main"
+                id="ch18"
+                data-desciption="chapter-node"
+                data-astro-cid-mloacws5
+              >
+                <div
+                  class="grid grid-cols-[24px_1fr] sm:grid-cols-[32px_1fr] relative"
+                  data-desciption="chapter-header"
+                  data-astro-cid-mloacws5
+                >
+                  <div
+                    class="timeline-dot col-start-2 flex gap-2 text-xl"
                     data-astro-cid-mloacws5
                   >
                     <div class="font-bold" data-astro-cid-mloacws5>第18章</div>
@@ -1357,24 +1860,38 @@ exports[`built chapters page snapshots > matches the full HTML snapshot for the 
                   </div>
                 </div>
                 <div
-                  class="grid grid-cols-[24px_1fr] sm:grid-cols-[32px_1fr] relative"
+                  class="chapter-main grid grid-cols-[24px_1fr] sm:grid-cols-[32px_1fr] relative"
+                  data-desciption="chapter-main"
                   data-astro-cid-mloacws5
                 >
-                  <div class="thread-line" data-astro-cid-mloacws5></div>
-                  <div class="col-start-2" data-astro-cid-mloacws5>
+                  <div
+                    class="timeline-line absolute top-0 bottom-0 start-0 w-6 sm:w-8"
+                    aria-hidden="true"
+                    data-astro-cid-mloacws5
+                  ></div>
+                  <div
+                    class="col-start-2 text-base mb-2"
+                    data-astro-cid-mloacws5
+                  >
                     content of chapter
                   </div>
                 </div>
               </div>
             </li>
             <li>
-              <div class="event main grouped" id="ch19" data-astro-cid-mloacws5>
+              <div
+                class="event main grouped"
+                id="ch19"
+                data-desciption="chapter-node"
+                data-astro-cid-mloacws5
+              >
                 <div
                   class="grid grid-cols-[24px_1fr] sm:grid-cols-[32px_1fr] relative"
+                  data-desciption="chapter-header"
                   data-astro-cid-mloacws5
                 >
                   <div
-                    class="chapter-dot col-start-2 flex gap-4 text-xl"
+                    class="timeline-dot col-start-2 flex gap-2 text-xl"
                     data-astro-cid-mloacws5
                   >
                     <div class="font-bold" data-astro-cid-mloacws5>第19章</div>
@@ -1382,80 +1899,130 @@ exports[`built chapters page snapshots > matches the full HTML snapshot for the 
                   </div>
                 </div>
                 <div
-                  class="grid grid-cols-[24px_1fr] sm:grid-cols-[32px_1fr] relative"
-                  data-astro-cid-mloacws5
-                >
-                  <div class="thread-line" data-astro-cid-mloacws5></div>
-                  <div class="col-start-2" data-astro-cid-mloacws5>
-                    content of chapter
-                  </div>
-                </div>
-              </div>
-              <ul class="" data-astro-cid-mloacws5>
-                <li data-type="paralogue" data-astro-cid-mloacws5>
-                  <div class="event" id="p11" data-astro-cid-mloacws5>
-                    <div
-                      class="grid grid-cols-[24px_1fr] sm:grid-cols-[32px_1fr] relative"
-                      data-astro-cid-mloacws5
-                    >
-                      <div
-                        class="chapter-dot col-start-2 flex gap-4 text-xl"
-                        data-astro-cid-mloacws5
-                      >
-                        <div class="font-bold" data-astro-cid-mloacws5>
-                          外传11
-                        </div>
-                        <div data-astro-cid-mloacws5>拂晓巫女</div>
-                      </div>
-                    </div>
-                    <div
-                      class="grid grid-cols-[24px_1fr] sm:grid-cols-[32px_1fr] relative"
-                      data-astro-cid-mloacws5
-                    >
-                      <div class="thread-line" data-astro-cid-mloacws5></div>
-                      <div class="col-start-2" data-astro-cid-mloacws5>
-                        content of chapter
-                      </div>
-                    </div>
-                  </div>
-                </li>
-                <li data-type="paralogue" data-astro-cid-mloacws5>
-                  <div class="event" id="p12" data-astro-cid-mloacws5>
-                    <div
-                      class="grid grid-cols-[24px_1fr] sm:grid-cols-[32px_1fr] relative"
-                      data-astro-cid-mloacws5
-                    >
-                      <div
-                        class="chapter-dot col-start-2 flex gap-4 text-xl"
-                        data-astro-cid-mloacws5
-                      >
-                        <div class="font-bold" data-astro-cid-mloacws5>
-                          外传12
-                        </div>
-                        <div data-astro-cid-mloacws5>幼狮</div>
-                      </div>
-                    </div>
-                    <div
-                      class="grid grid-cols-[24px_1fr] sm:grid-cols-[32px_1fr] relative"
-                      data-astro-cid-mloacws5
-                    >
-                      <div class="thread-line" data-astro-cid-mloacws5></div>
-                      <div class="col-start-2" data-astro-cid-mloacws5>
-                        content of chapter
-                      </div>
-                    </div>
-                  </div>
-                </li>
-              </ul>
-            </li>
-            <li>
-              <div class="event main grouped" id="ch20" data-astro-cid-mloacws5>
-                <div
-                  class="grid grid-cols-[24px_1fr] sm:grid-cols-[32px_1fr] relative"
+                  class="chapter-main grid grid-cols-[24px_1fr] sm:grid-cols-[32px_1fr] relative"
+                  data-desciption="chapter-main"
                   data-astro-cid-mloacws5
                 >
                   <div
-                    class="chapter-dot col-start-2 flex gap-4 text-xl"
+                    class="timeline-line absolute top-0 bottom-0 start-0 w-6 sm:w-8"
+                    aria-hidden="true"
+                    data-astro-cid-mloacws5
+                  ></div>
+                  <div
+                    class="col-start-2 text-base mb-2"
+                    data-astro-cid-mloacws5
+                  >
+                    content of chapter
+                  </div>
+                  <ul
+                    class="timeline-curve ml-3 sm:ml-4 col-span-2"
+                    data-astro-cid-mloacws5
+                  >
+                    <li data-type="paralogue" data-astro-cid-mloacws5>
+                      <div
+                        class="event"
+                        id="p11"
+                        data-desciption="chapter-node"
+                        data-astro-cid-mloacws5
+                      >
+                        <div
+                          class="grid grid-cols-[24px_1fr] sm:grid-cols-[32px_1fr] relative"
+                          data-desciption="chapter-header"
+                          data-astro-cid-mloacws5
+                        >
+                          <div
+                            class="timeline-dot col-start-2 flex gap-2 text-xl"
+                            data-astro-cid-mloacws5
+                          >
+                            <div class="font-bold" data-astro-cid-mloacws5>
+                              外传11
+                            </div>
+                            <div data-astro-cid-mloacws5>拂晓巫女</div>
+                          </div>
+                        </div>
+                        <div
+                          class="chapter-main grid grid-cols-[24px_1fr] sm:grid-cols-[32px_1fr] relative"
+                          data-desciption="chapter-main"
+                          data-astro-cid-mloacws5
+                        >
+                          <div
+                            class="timeline-line absolute top-0 bottom-0 start-0 w-6 sm:w-8 hidden"
+                            aria-hidden="true"
+                            data-astro-cid-mloacws5
+                          ></div>
+                          <div
+                            class="col-start-2 text-base mb-2"
+                            data-astro-cid-mloacws5
+                          >
+                            content of chapter
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                  </ul>
+                  <ul
+                    class="timeline-curve ml-3 sm:ml-4 col-span-2"
+                    data-astro-cid-mloacws5
+                  >
+                    <li data-type="paralogue" data-astro-cid-mloacws5>
+                      <div
+                        class="event"
+                        id="p12"
+                        data-desciption="chapter-node"
+                        data-astro-cid-mloacws5
+                      >
+                        <div
+                          class="grid grid-cols-[24px_1fr] sm:grid-cols-[32px_1fr] relative"
+                          data-desciption="chapter-header"
+                          data-astro-cid-mloacws5
+                        >
+                          <div
+                            class="timeline-dot col-start-2 flex gap-2 text-xl"
+                            data-astro-cid-mloacws5
+                          >
+                            <div class="font-bold" data-astro-cid-mloacws5>
+                              外传12
+                            </div>
+                            <div data-astro-cid-mloacws5>幼狮</div>
+                          </div>
+                        </div>
+                        <div
+                          class="chapter-main grid grid-cols-[24px_1fr] sm:grid-cols-[32px_1fr] relative"
+                          data-desciption="chapter-main"
+                          data-astro-cid-mloacws5
+                        >
+                          <div
+                            class="timeline-line absolute top-0 bottom-0 start-0 w-6 sm:w-8 hidden"
+                            aria-hidden="true"
+                            data-astro-cid-mloacws5
+                          ></div>
+                          <div
+                            class="col-start-2 text-base mb-2"
+                            data-astro-cid-mloacws5
+                          >
+                            content of chapter
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </li>
+            <li>
+              <div
+                class="event main grouped"
+                id="ch20"
+                data-desciption="chapter-node"
+                data-astro-cid-mloacws5
+              >
+                <div
+                  class="grid grid-cols-[24px_1fr] sm:grid-cols-[32px_1fr] relative"
+                  data-desciption="chapter-header"
+                  data-astro-cid-mloacws5
+                >
+                  <div
+                    class="timeline-dot col-start-2 flex gap-2 text-xl"
                     data-astro-cid-mloacws5
                   >
                     <div class="font-bold" data-astro-cid-mloacws5>第20章</div>
@@ -1463,53 +2030,84 @@ exports[`built chapters page snapshots > matches the full HTML snapshot for the 
                   </div>
                 </div>
                 <div
-                  class="grid grid-cols-[24px_1fr] sm:grid-cols-[32px_1fr] relative"
-                  data-astro-cid-mloacws5
-                >
-                  <div class="thread-line" data-astro-cid-mloacws5></div>
-                  <div class="col-start-2" data-astro-cid-mloacws5>
-                    content of chapter
-                  </div>
-                </div>
-              </div>
-              <ul class="" data-astro-cid-mloacws5>
-                <li data-type="paralogue" data-astro-cid-mloacws5>
-                  <div class="event" id="p13" data-astro-cid-mloacws5>
-                    <div
-                      class="grid grid-cols-[24px_1fr] sm:grid-cols-[32px_1fr] relative"
-                      data-astro-cid-mloacws5
-                    >
-                      <div
-                        class="chapter-dot col-start-2 flex gap-4 text-xl"
-                        data-astro-cid-mloacws5
-                      >
-                        <div class="font-bold" data-astro-cid-mloacws5>
-                          外传13
-                        </div>
-                        <div data-astro-cid-mloacws5>慈悲公主</div>
-                      </div>
-                    </div>
-                    <div
-                      class="grid grid-cols-[24px_1fr] sm:grid-cols-[32px_1fr] relative"
-                      data-astro-cid-mloacws5
-                    >
-                      <div class="thread-line" data-astro-cid-mloacws5></div>
-                      <div class="col-start-2" data-astro-cid-mloacws5>
-                        content of chapter
-                      </div>
-                    </div>
-                  </div>
-                </li>
-              </ul>
-            </li>
-            <li>
-              <div class="event main" id="ch21" data-astro-cid-mloacws5>
-                <div
-                  class="grid grid-cols-[24px_1fr] sm:grid-cols-[32px_1fr] relative"
+                  class="chapter-main grid grid-cols-[24px_1fr] sm:grid-cols-[32px_1fr] relative"
+                  data-desciption="chapter-main"
                   data-astro-cid-mloacws5
                 >
                   <div
-                    class="chapter-dot col-start-2 flex gap-4 text-xl"
+                    class="timeline-line absolute top-0 bottom-0 start-0 w-6 sm:w-8"
+                    aria-hidden="true"
+                    data-astro-cid-mloacws5
+                  ></div>
+                  <div
+                    class="col-start-2 text-base mb-2"
+                    data-astro-cid-mloacws5
+                  >
+                    content of chapter
+                  </div>
+                  <ul
+                    class="timeline-curve ml-3 sm:ml-4 col-span-2"
+                    data-astro-cid-mloacws5
+                  >
+                    <li data-type="paralogue" data-astro-cid-mloacws5>
+                      <div
+                        class="event"
+                        id="p13"
+                        data-desciption="chapter-node"
+                        data-astro-cid-mloacws5
+                      >
+                        <div
+                          class="grid grid-cols-[24px_1fr] sm:grid-cols-[32px_1fr] relative"
+                          data-desciption="chapter-header"
+                          data-astro-cid-mloacws5
+                        >
+                          <div
+                            class="timeline-dot col-start-2 flex gap-2 text-xl"
+                            data-astro-cid-mloacws5
+                          >
+                            <div class="font-bold" data-astro-cid-mloacws5>
+                              外传13
+                            </div>
+                            <div data-astro-cid-mloacws5>慈悲公主</div>
+                          </div>
+                        </div>
+                        <div
+                          class="chapter-main grid grid-cols-[24px_1fr] sm:grid-cols-[32px_1fr] relative"
+                          data-desciption="chapter-main"
+                          data-astro-cid-mloacws5
+                        >
+                          <div
+                            class="timeline-line absolute top-0 bottom-0 start-0 w-6 sm:w-8 hidden"
+                            aria-hidden="true"
+                            data-astro-cid-mloacws5
+                          ></div>
+                          <div
+                            class="col-start-2 text-base mb-2"
+                            data-astro-cid-mloacws5
+                          >
+                            content of chapter
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </li>
+            <li>
+              <div
+                class="event main"
+                id="ch21"
+                data-desciption="chapter-node"
+                data-astro-cid-mloacws5
+              >
+                <div
+                  class="grid grid-cols-[24px_1fr] sm:grid-cols-[32px_1fr] relative"
+                  data-desciption="chapter-header"
+                  data-astro-cid-mloacws5
+                >
+                  <div
+                    class="timeline-dot col-start-2 flex gap-2 text-xl"
                     data-astro-cid-mloacws5
                   >
                     <div class="font-bold" data-astro-cid-mloacws5>第21章</div>
@@ -1517,24 +2115,38 @@ exports[`built chapters page snapshots > matches the full HTML snapshot for the 
                   </div>
                 </div>
                 <div
-                  class="grid grid-cols-[24px_1fr] sm:grid-cols-[32px_1fr] relative"
+                  class="chapter-main grid grid-cols-[24px_1fr] sm:grid-cols-[32px_1fr] relative"
+                  data-desciption="chapter-main"
                   data-astro-cid-mloacws5
                 >
-                  <div class="thread-line" data-astro-cid-mloacws5></div>
-                  <div class="col-start-2" data-astro-cid-mloacws5>
+                  <div
+                    class="timeline-line absolute top-0 bottom-0 start-0 w-6 sm:w-8"
+                    aria-hidden="true"
+                    data-astro-cid-mloacws5
+                  ></div>
+                  <div
+                    class="col-start-2 text-base mb-2"
+                    data-astro-cid-mloacws5
+                  >
                     content of chapter
                   </div>
                 </div>
               </div>
             </li>
             <li>
-              <div class="event main grouped" id="ch22" data-astro-cid-mloacws5>
+              <div
+                class="event main grouped"
+                id="ch22"
+                data-desciption="chapter-node"
+                data-astro-cid-mloacws5
+              >
                 <div
                   class="grid grid-cols-[24px_1fr] sm:grid-cols-[32px_1fr] relative"
+                  data-desciption="chapter-header"
                   data-astro-cid-mloacws5
                 >
                   <div
-                    class="chapter-dot col-start-2 flex gap-4 text-xl"
+                    class="timeline-dot col-start-2 flex gap-2 text-xl"
                     data-astro-cid-mloacws5
                   >
                     <div class="font-bold" data-astro-cid-mloacws5>第22章</div>
@@ -1542,80 +2154,130 @@ exports[`built chapters page snapshots > matches the full HTML snapshot for the 
                   </div>
                 </div>
                 <div
-                  class="grid grid-cols-[24px_1fr] sm:grid-cols-[32px_1fr] relative"
-                  data-astro-cid-mloacws5
-                >
-                  <div class="thread-line" data-astro-cid-mloacws5></div>
-                  <div class="col-start-2" data-astro-cid-mloacws5>
-                    content of chapter
-                  </div>
-                </div>
-              </div>
-              <ul class="" data-astro-cid-mloacws5>
-                <li data-type="paralogue" data-astro-cid-mloacws5>
-                  <div class="event" id="p14" data-astro-cid-mloacws5>
-                    <div
-                      class="grid grid-cols-[24px_1fr] sm:grid-cols-[32px_1fr] relative"
-                      data-astro-cid-mloacws5
-                    >
-                      <div
-                        class="chapter-dot col-start-2 flex gap-4 text-xl"
-                        data-astro-cid-mloacws5
-                      >
-                        <div class="font-bold" data-astro-cid-mloacws5>
-                          外传14
-                        </div>
-                        <div data-astro-cid-mloacws5>英雄王</div>
-                      </div>
-                    </div>
-                    <div
-                      class="grid grid-cols-[24px_1fr] sm:grid-cols-[32px_1fr] relative"
-                      data-astro-cid-mloacws5
-                    >
-                      <div class="thread-line" data-astro-cid-mloacws5></div>
-                      <div class="col-start-2" data-astro-cid-mloacws5>
-                        content of chapter
-                      </div>
-                    </div>
-                  </div>
-                </li>
-                <li data-type="paralogue" data-astro-cid-mloacws5>
-                  <div class="event" id="p15" data-astro-cid-mloacws5>
-                    <div
-                      class="grid grid-cols-[24px_1fr] sm:grid-cols-[32px_1fr] relative"
-                      data-astro-cid-mloacws5
-                    >
-                      <div
-                        class="chapter-dot col-start-2 flex gap-4 text-xl"
-                        data-astro-cid-mloacws5
-                      >
-                        <div class="font-bold" data-astro-cid-mloacws5>
-                          外传15
-                        </div>
-                        <div data-astro-cid-mloacws5>编织者</div>
-                      </div>
-                    </div>
-                    <div
-                      class="grid grid-cols-[24px_1fr] sm:grid-cols-[32px_1fr] relative"
-                      data-astro-cid-mloacws5
-                    >
-                      <div class="thread-line" data-astro-cid-mloacws5></div>
-                      <div class="col-start-2" data-astro-cid-mloacws5>
-                        content of chapter
-                      </div>
-                    </div>
-                  </div>
-                </li>
-              </ul>
-            </li>
-            <li>
-              <div class="event main" id="ch23" data-astro-cid-mloacws5>
-                <div
-                  class="grid grid-cols-[24px_1fr] sm:grid-cols-[32px_1fr] relative"
+                  class="chapter-main grid grid-cols-[24px_1fr] sm:grid-cols-[32px_1fr] relative"
+                  data-desciption="chapter-main"
                   data-astro-cid-mloacws5
                 >
                   <div
-                    class="chapter-dot col-start-2 flex gap-4 text-xl"
+                    class="timeline-line absolute top-0 bottom-0 start-0 w-6 sm:w-8"
+                    aria-hidden="true"
+                    data-astro-cid-mloacws5
+                  ></div>
+                  <div
+                    class="col-start-2 text-base mb-2"
+                    data-astro-cid-mloacws5
+                  >
+                    content of chapter
+                  </div>
+                  <ul
+                    class="timeline-curve ml-3 sm:ml-4 col-span-2"
+                    data-astro-cid-mloacws5
+                  >
+                    <li data-type="paralogue" data-astro-cid-mloacws5>
+                      <div
+                        class="event"
+                        id="p14"
+                        data-desciption="chapter-node"
+                        data-astro-cid-mloacws5
+                      >
+                        <div
+                          class="grid grid-cols-[24px_1fr] sm:grid-cols-[32px_1fr] relative"
+                          data-desciption="chapter-header"
+                          data-astro-cid-mloacws5
+                        >
+                          <div
+                            class="timeline-dot col-start-2 flex gap-2 text-xl"
+                            data-astro-cid-mloacws5
+                          >
+                            <div class="font-bold" data-astro-cid-mloacws5>
+                              外传14
+                            </div>
+                            <div data-astro-cid-mloacws5>英雄王</div>
+                          </div>
+                        </div>
+                        <div
+                          class="chapter-main grid grid-cols-[24px_1fr] sm:grid-cols-[32px_1fr] relative"
+                          data-desciption="chapter-main"
+                          data-astro-cid-mloacws5
+                        >
+                          <div
+                            class="timeline-line absolute top-0 bottom-0 start-0 w-6 sm:w-8 hidden"
+                            aria-hidden="true"
+                            data-astro-cid-mloacws5
+                          ></div>
+                          <div
+                            class="col-start-2 text-base mb-2"
+                            data-astro-cid-mloacws5
+                          >
+                            content of chapter
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                  </ul>
+                  <ul
+                    class="timeline-curve ml-3 sm:ml-4 col-span-2"
+                    data-astro-cid-mloacws5
+                  >
+                    <li data-type="paralogue" data-astro-cid-mloacws5>
+                      <div
+                        class="event"
+                        id="p15"
+                        data-desciption="chapter-node"
+                        data-astro-cid-mloacws5
+                      >
+                        <div
+                          class="grid grid-cols-[24px_1fr] sm:grid-cols-[32px_1fr] relative"
+                          data-desciption="chapter-header"
+                          data-astro-cid-mloacws5
+                        >
+                          <div
+                            class="timeline-dot col-start-2 flex gap-2 text-xl"
+                            data-astro-cid-mloacws5
+                          >
+                            <div class="font-bold" data-astro-cid-mloacws5>
+                              外传15
+                            </div>
+                            <div data-astro-cid-mloacws5>编织者</div>
+                          </div>
+                        </div>
+                        <div
+                          class="chapter-main grid grid-cols-[24px_1fr] sm:grid-cols-[32px_1fr] relative"
+                          data-desciption="chapter-main"
+                          data-astro-cid-mloacws5
+                        >
+                          <div
+                            class="timeline-line absolute top-0 bottom-0 start-0 w-6 sm:w-8 hidden"
+                            aria-hidden="true"
+                            data-astro-cid-mloacws5
+                          ></div>
+                          <div
+                            class="col-start-2 text-base mb-2"
+                            data-astro-cid-mloacws5
+                          >
+                            content of chapter
+                          </div>
+                        </div>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </li>
+            <li>
+              <div
+                class="event main"
+                id="ch23"
+                data-desciption="chapter-node"
+                data-astro-cid-mloacws5
+              >
+                <div
+                  class="grid grid-cols-[24px_1fr] sm:grid-cols-[32px_1fr] relative"
+                  data-desciption="chapter-header"
+                  data-astro-cid-mloacws5
+                >
+                  <div
+                    class="timeline-dot col-start-2 flex gap-2 text-xl"
                     data-astro-cid-mloacws5
                   >
                     <div class="font-bold" data-astro-cid-mloacws5>第23章</div>
@@ -1623,24 +2285,38 @@ exports[`built chapters page snapshots > matches the full HTML snapshot for the 
                   </div>
                 </div>
                 <div
-                  class="grid grid-cols-[24px_1fr] sm:grid-cols-[32px_1fr] relative"
+                  class="chapter-main grid grid-cols-[24px_1fr] sm:grid-cols-[32px_1fr] relative"
+                  data-desciption="chapter-main"
                   data-astro-cid-mloacws5
                 >
-                  <div class="thread-line" data-astro-cid-mloacws5></div>
-                  <div class="col-start-2" data-astro-cid-mloacws5>
+                  <div
+                    class="timeline-line absolute top-0 bottom-0 start-0 w-6 sm:w-8"
+                    aria-hidden="true"
+                    data-astro-cid-mloacws5
+                  ></div>
+                  <div
+                    class="col-start-2 text-base mb-2"
+                    data-astro-cid-mloacws5
+                  >
                     content of chapter
                   </div>
                 </div>
               </div>
             </li>
             <li>
-              <div class="event main" id="ch24" data-astro-cid-mloacws5>
+              <div
+                class="event main"
+                id="ch24"
+                data-desciption="chapter-node"
+                data-astro-cid-mloacws5
+              >
                 <div
                   class="grid grid-cols-[24px_1fr] sm:grid-cols-[32px_1fr] relative"
+                  data-desciption="chapter-header"
                   data-astro-cid-mloacws5
                 >
                   <div
-                    class="chapter-dot col-start-2 flex gap-4 text-xl"
+                    class="timeline-dot col-start-2 flex gap-2 text-xl"
                     data-astro-cid-mloacws5
                   >
                     <div class="font-bold" data-astro-cid-mloacws5>第24章</div>
@@ -1648,24 +2324,38 @@ exports[`built chapters page snapshots > matches the full HTML snapshot for the 
                   </div>
                 </div>
                 <div
-                  class="grid grid-cols-[24px_1fr] sm:grid-cols-[32px_1fr] relative"
+                  class="chapter-main grid grid-cols-[24px_1fr] sm:grid-cols-[32px_1fr] relative"
+                  data-desciption="chapter-main"
                   data-astro-cid-mloacws5
                 >
-                  <div class="thread-line" data-astro-cid-mloacws5></div>
-                  <div class="col-start-2" data-astro-cid-mloacws5>
+                  <div
+                    class="timeline-line absolute top-0 bottom-0 start-0 w-6 sm:w-8"
+                    aria-hidden="true"
+                    data-astro-cid-mloacws5
+                  ></div>
+                  <div
+                    class="col-start-2 text-base mb-2"
+                    data-astro-cid-mloacws5
+                  >
                     content of chapter
                   </div>
                 </div>
               </div>
             </li>
             <li>
-              <div class="event main" id="ch25" data-astro-cid-mloacws5>
+              <div
+                class="event main"
+                id="ch25"
+                data-desciption="chapter-node"
+                data-astro-cid-mloacws5
+              >
                 <div
                   class="grid grid-cols-[24px_1fr] sm:grid-cols-[32px_1fr] relative"
+                  data-desciption="chapter-header"
                   data-astro-cid-mloacws5
                 >
                   <div
-                    class="chapter-dot col-start-2 flex gap-4 text-xl"
+                    class="timeline-dot col-start-2 flex gap-2 text-xl"
                     data-astro-cid-mloacws5
                   >
                     <div class="font-bold" data-astro-cid-mloacws5>第25章</div>
@@ -1673,24 +2363,38 @@ exports[`built chapters page snapshots > matches the full HTML snapshot for the 
                   </div>
                 </div>
                 <div
-                  class="grid grid-cols-[24px_1fr] sm:grid-cols-[32px_1fr] relative"
+                  class="chapter-main grid grid-cols-[24px_1fr] sm:grid-cols-[32px_1fr] relative"
+                  data-desciption="chapter-main"
                   data-astro-cid-mloacws5
                 >
-                  <div class="thread-line" data-astro-cid-mloacws5></div>
-                  <div class="col-start-2" data-astro-cid-mloacws5>
+                  <div
+                    class="timeline-line absolute top-0 bottom-0 start-0 w-6 sm:w-8"
+                    aria-hidden="true"
+                    data-astro-cid-mloacws5
+                  ></div>
+                  <div
+                    class="col-start-2 text-base mb-2"
+                    data-astro-cid-mloacws5
+                  >
                     content of chapter
                   </div>
                 </div>
               </div>
             </li>
             <li>
-              <div class="event main" id="ch26" data-astro-cid-mloacws5>
+              <div
+                class="event main"
+                id="ch26"
+                data-desciption="chapter-node"
+                data-astro-cid-mloacws5
+              >
                 <div
                   class="grid grid-cols-[24px_1fr] sm:grid-cols-[32px_1fr] relative"
+                  data-desciption="chapter-header"
                   data-astro-cid-mloacws5
                 >
                   <div
-                    class="chapter-dot col-start-2 flex gap-4 text-xl"
+                    class="timeline-dot col-start-2 flex gap-2 text-xl"
                     data-astro-cid-mloacws5
                   >
                     <div class="font-bold" data-astro-cid-mloacws5>第26章</div>
@@ -1698,11 +2402,19 @@ exports[`built chapters page snapshots > matches the full HTML snapshot for the 
                   </div>
                 </div>
                 <div
-                  class="grid grid-cols-[24px_1fr] sm:grid-cols-[32px_1fr] relative"
+                  class="chapter-main grid grid-cols-[24px_1fr] sm:grid-cols-[32px_1fr] relative"
+                  data-desciption="chapter-main"
                   data-astro-cid-mloacws5
                 >
-                  <div class="thread-line" data-astro-cid-mloacws5></div>
-                  <div class="col-start-2" data-astro-cid-mloacws5>
+                  <div
+                    class="timeline-line absolute top-0 bottom-0 start-0 w-6 sm:w-8 hidden"
+                    aria-hidden="true"
+                    data-astro-cid-mloacws5
+                  ></div>
+                  <div
+                    class="col-start-2 text-base mb-2"
+                    data-astro-cid-mloacws5
+                  >
                     content of chapter
                   </div>
                 </div>

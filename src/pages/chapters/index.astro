@@ -2,7 +2,7 @@
 import { getCollection } from "astro:content";
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import NavLayout from "../../components/NavLayout.astro";
-import ChapterNode, { type Node } from "../../components/ChapterNode.astro";
+import { type Node } from "../../components/ChapterNode.astro";
 import ChapterTree from "../../components/ChapterTree.astro";
 
 const byOrder = (
@@ -71,8 +71,9 @@ chapters.forEach((c) => {
   else if (c.data["类型"] === "神龙之章")
     chaptersMap.get(c.data["父节点"])!.children.push(chaptersMap.get(c.id)!);
   // Attach the xenologue chapters as chain which is displayed as a list.
+  // All xenologue chapters are attached to the chain of chapter "ch6".
   else if (c.data["类型"] === "邪龙之章")
-    chaptersMap.get(c.data["父节点"])!.chain.push(chaptersMap.get(c.id)!);
+    chaptersMap.get("ch6")!.chain.push(chaptersMap.get(c.id)!);
 });
 
 // 4. Select the main chapters as the main list from the map.
@@ -92,22 +93,18 @@ console.dir({ mainList }, { depth: 10 });
     <div class="chapters">
       <h1 class="text-2xl font-medium my-4">章节流程</h1>
       <p class="lead flex gap-2 text-brand-gray text-base">
-        <span
-          class="color-main before:inline-block before:w-4 before:border-b-4 before:border-brand-black"
-          >&nbsp;主线</span
-        >
-        <span
-          class="color-paralogue before:inline-block before:w-4 before:border-b-4 before:border-kind-character"
-          >&nbsp;外传</span
-        >
-        <span
-          class="color-divine before:inline-block before:w-4 before:border-b-4 before:border-kind-weapon"
-          >&nbsp;神龙之章</span
-        >
-        <span
-          class="color-xenologue before:inline-block before:w-4 before:border-b-4 before:border-kind-engrave"
-          >&nbsp;邪龙之章</span
-        >
+        <span class="color-main before:inline-block before:w-4 before:border-b-4 before:border-brand-black">
+          &nbsp;主线
+        </span>
+        <span class="color-paralogue before:inline-block before:w-4 before:border-b-4 before:border-kind-character">
+          &nbsp;外传
+        </span>
+        <span class="color-divine before:inline-block before:w-4 before:border-b-4 before:border-kind-weapon">
+          &nbsp;神龙之章
+        </span>
+        <span class="color-xenologue before:inline-block before:w-4 before:border-b-4 before:border-kind-engrave">
+          &nbsp;邪龙之章
+        </span>
       </p>
       <ChapterTree trunk={mainList} />
     </div>
