@@ -23,58 +23,57 @@ const portraitsOf = (names: string) =>
 <BaseLayout>
   <NavLayout>
     <h1 class="my-4 text-2xl font-medium">
-      纹章士 <span class="text-brand-gray text-md font-medium">
-        {emblems.length}
-      </span>
+      纹章士{" "}
+      <span class="text-brand-gray text-md font-medium">{emblems.length}</span>
     </h1>
 
     <ul class="emblems grid grid-cols-1 md:grid-cols-2 gap-3">
-      {
-        emblems.map((e) => {
-          const d = e.data;
-          return (
-            <li class="card flex flex-col gap-3 p-4 border border-brand-border rounded-md text-brand-black ">
-              <header class="flex whitespace-pre-line items-center gap-3 ">
-                <div class="portraits flex flex-none [&>*+*]:-ml-3">
-                  {portraitsOf(d["纹章士"]).map((src) => (
-                    <Thumb src={src} alt="" size={56} />
+      {emblems.map((e) => {
+        const d = e.data;
+        return (
+          <li class="card flex flex-col gap-3 border-2 border-brand-border rounded-md text-brand-black">
+            <header class="flex whitespace-pre-line items-center gap-3 bg-brand-lightblue rounded-t-sm p-4">
+              <div class="portraits flex flex-none [&>*+*]:-ml-3">
+                {portraitsOf(d["纹章士"]).map((src) => (
+                  <Thumb src={src} alt="" size={56} />
+                ))}
+              </div>
+              <div class="self-stretch flex flex-col justify-between">
+                <h2 class="text-xl font-medium">{d["纹章士"]}</h2>
+                <p class="flex-2 flex flex-col justify-center text-xs text-brand-gray">
+                  {d["登场作品"]}
+                </p>
+              </div>
+            </header>
+
+            <p class="intro whitespace-pre-line text-base px-4">{d["简介"]}</p>
+
+            <dl class="whitespace-pre-line grid gap-1 px-4 pb-4 [&>div]:grid [&>div]:grid-cols-[4.5rem_1fr] [&>div]:gap-2">
+              <div class="text-sm">
+                <dt class="text-brand-gray">声优</dt>
+                <dd class="font-medium">{d["声优"]}</dd>
+              </div>
+              <div class="text-sm">
+                <dt class="text-brand-gray">加入</dt>
+                <dd class="text-sm">
+                  <span class="block font-medium">{d["加入章节"]}</span>
+                  <span class="text-xs text-brand-gray">{d["加入条件"]}</span>
+                </dd>
+              </div>
+              <div class="text-sm">
+                <dt class="text-brand-gray">满级加成</dt>
+                <dd class="flex flex-wrap gap-1 whitespace-normal font-medium">
+                  {d["满级能力加成"].split("\n").map((b: string) => (
+                    <span class="px-2 rounded-md bg-brand-lightblue font-[Barlow]">
+                      {b}
+                    </span>
                   ))}
-                </div>
-                <div class="self-stretch border-b border-brand-border">
-                  <h2 class="text-xl font-medium">{d["纹章士"]}</h2>
-                  <p class="works  text-xs text-brand-gray">{d["登场作品"]}</p>
-                </div>
-              </header>
-
-              <p class="intro whitespace-pre-line text-base">{d["简介"]}</p>
-
-              <dl class="whitespace-pre-line grid gap-1 [&>div]:grid [&>div]:grid-cols-[4.5rem_1fr] [&>div]:gap-2">
-                <div class="text-sm">
-                  <dt class="text-brand-gray">声优</dt>
-                  <dd class="font-medium">{d["声优"]}</dd>
-                </div>
-                <div class="text-sm">
-                  <dt class="text-brand-gray">加入</dt>
-                  <dd class="text-sm">
-                    <span class="block font-medium">{d["加入章节"]}</span>
-                    <span class="text-xs text-brand-gray">{d["加入条件"]}</span>
-                  </dd>
-                </div>
-                <div class="text-sm">
-                  <dt class="text-brand-gray">满级加成</dt>
-                  <dd class="flex flex-wrap gap-1 whitespace-normal font-medium">
-                    {d["满级能力加成"].split("\n").map((b: string) => (
-                      <span class="px-2 rounded-md bg-brand-lightblue font-[Barlow]">
-                        {b}
-                      </span>
-                    ))}
-                  </dd>
-                </div>
-              </dl>
-            </li>
-          );
-        })
-      }
+                </dd>
+              </div>
+            </dl>
+          </li>
+        );
+      })}
     </ul>
   </NavLayout>
 </BaseLayout>

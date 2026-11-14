@@ -29,7 +29,7 @@ export function TeamTable({
     <main className="overflow-x-auto">
       <table
         ref={tableRef}
-        className="w-full border-collapse [&_th]:text-left [&_th]:text-sm [&_th]:text-brand-gray [&_th]:bg-brand-lightblue [&_th,&_td]:border [&_th,&_td]:border-brand-border [&_th]:px-3 [&_th]:py-2 [&_td]:px-2 [&_td]:py-1"
+        className="w-full border-collapse [&_th]:text-left [&_th]:text-sm [&_th]:text-brand-gray [&_th]:bg-brand-lightblue [&_th,&_td]:border-2 [&_th,&_td]:border-brand-border [&_th]:px-3 [&_th]:py-2 [&_td]:px-2 [&_td]:py-1"
         data-description="Team Table"
       >
         <thead>
@@ -70,7 +70,7 @@ export function TeamTable({
         </tbody>
       </table>
       <button
-        className="block w-full border border-brand-border rounded-md text-2xl cursor-pointer mt-2 text-brand-gray hover:text-brand-black hover:border-brand-black"
+        className="block w-full border-2 border-brand-blue rounded-md text-2xl cursor-pointer mt-2 text-brand-blue hover:bg-brand-hover"
         title="增加一个角色"
         aria-label="增加一个角色"
         onClick={() => onRowsChange([...rows, EMPTY])}
