@@ -1,0 +1,1778 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`built character detail page snapshots > matches the full HTML snapshot for alear 1`] = `
+"<!DOCTYPE html>
+<html lang="zh-CN" data-astro-cid-z4jru4n3>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" href="/favicon.ico" />
+    <meta name="generator" content="Astro v7.4.2" />
+    <!-- 数字字体：Barlow 数字窄而清楚、有等宽数字，用于表格里的数值 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Barlow:wght@500;700&display=swap"
+    />
+    <title>火焰纹章结合 Engage Wiki</title>
+    <link rel="stylesheet" href="/_astro/NavLayout.2QCpPIjh.css" />
+  </head>
+  <body data-astro-cid-z4jru4n3>
+    <div class="nav-layout" data-astro-cid-entc4gyn>
+      <nav class="menu" aria-label="主菜单" data-astro-cid-entc4gyn>
+        <a href="/" data-astro-cid-entc4gyn>首页</a
+        ><a href="/characters" aria-current="page" data-astro-cid-entc4gyn
+          >角色</a
+        ><a href="/classes" data-astro-cid-entc4gyn>兵种</a
+        ><a href="/skills" data-astro-cid-entc4gyn>特技</a
+        ><a href="/emblems" data-astro-cid-entc4gyn>纹章士</a
+        ><a href="/team" data-astro-cid-entc4gyn>阵容搭配</a
+        ><a href="/chapters" data-astro-cid-entc4gyn>章节流程</a>
+      </nav>
+      <aside data-astro-cid-entc4gyn><div>Sidebar</div></aside>
+      <main data-astro-cid-entc4gyn>
+        <h1>琉尔 Alear</h1>
+        <table>
+          <tbody>
+            <tr>
+              <th>章节id</th>
+              <td>ch0</td>
+            </tr>
+            <tr>
+              <th>头像</th>
+              <td>src/assets/characters/alear.webp</td>
+            </tr>
+            <tr>
+              <th>分组</th>
+              <td>主人公</td>
+            </tr>
+            <tr>
+              <th>所属势力</th>
+              <td>里特司</td>
+            </tr>
+            <tr>
+              <th>角色名称_简中</th>
+              <td>琉尔</td>
+            </tr>
+            <tr>
+              <th>角色名称_英文</th>
+              <td>Alear</td>
+            </tr>
+            <tr>
+              <th>评级</th>
+              <td>S</td>
+            </tr>
+            <tr>
+              <th>初始职业</th>
+              <td>神龙之子【龙族】</td>
+            </tr>
+            <tr>
+              <th>加入章节</th>
+              <td>序章</td>
+            </tr>
+            <tr>
+              <th>加入条件</th>
+              <td>自捏主角初始加入</td>
+            </tr>
+            <tr>
+              <th>个人特技</th>
+              <td>神龙团结</td>
+            </tr>
+            <tr>
+              <th>详细说明</th>
+              <td>相邻我方单位的造成伤害+3，所受伤害-1。</td>
+            </tr>
+            <tr>
+              <th>初始武器资质</th>
+              <td>剑、体术</td>
+            </tr>
+            <tr>
+              <th>个人成长率_HP</th>
+              <td>60</td>
+            </tr>
+            <tr>
+              <th>个人成长率_力量</th>
+              <td>35</td>
+            </tr>
+            <tr>
+              <th>个人成长率_魔力</th>
+              <td>20</td>
+            </tr>
+            <tr>
+              <th>个人成长率_技巧</th>
+              <td>45</td>
+            </tr>
+            <tr>
+              <th>个人成长率_速度</th>
+              <td>50</td>
+            </tr>
+            <tr>
+              <th>个人成长率_幸运</th>
+              <td>25</td>
+            </tr>
+            <tr>
+              <th>个人成长率_防守</th>
+              <td>40</td>
+            </tr>
+            <tr>
+              <th>个人成长率_魔防</th>
+              <td>25</td>
+            </tr>
+            <tr>
+              <th>个人成长率_体格</th>
+              <td>5</td>
+            </tr>
+            <tr>
+              <th>个人成长率_合计</th>
+              <td>305</td>
+            </tr>
+            <tr>
+              <th>初始能力值_LV</th>
+              <td>1</td>
+            </tr>
+            <tr>
+              <th>初始能力值_HP</th>
+              <td>22</td>
+            </tr>
+            <tr>
+              <th>初始能力值_力量</th>
+              <td>6</td>
+            </tr>
+            <tr>
+              <th>初始能力值_魔力</th>
+              <td>0</td>
+            </tr>
+            <tr>
+              <th>初始能力值_技巧</th>
+              <td>5</td>
+            </tr>
+            <tr>
+              <th>初始能力值_速度</th>
+              <td>7</td>
+            </tr>
+            <tr>
+              <th>初始能力值_幸运</th>
+              <td>5</td>
+            </tr>
+            <tr>
+              <th>初始能力值_防守</th>
+              <td>5</td>
+            </tr>
+            <tr>
+              <th>初始能力值_魔防</th>
+              <td>3</td>
+            </tr>
+            <tr>
+              <th>初始能力值_体格</th>
+              <td>4</td>
+            </tr>
+            <tr>
+              <th>初始能力值_移动</th>
+              <td>4</td>
+            </tr>
+            <tr>
+              <th>初始能力值_初始SP</th>
+              <td>300</td>
+            </tr>
+            <tr>
+              <th>初始能力值_初始武器等级</th>
+              <td>剑B</td>
+            </tr>
+            <tr>
+              <th>初始能力值_内置等级</th>
+              <td>--</td>
+            </tr>
+            <tr>
+              <th>order</th>
+              <td>0</td>
+            </tr>
+          </tbody>
+        </table>
+      </main>
+    </div>
+  </body>
+</html>
+"
+`;
+
+exports[`built character detail page snapshots > matches the full HTML snapshot for clanne 1`] = `
+"<!DOCTYPE html>
+<html lang="zh-CN" data-astro-cid-z4jru4n3>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" href="/favicon.ico" />
+    <meta name="generator" content="Astro v7.4.2" />
+    <!-- 数字字体：Barlow 数字窄而清楚、有等宽数字，用于表格里的数值 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Barlow:wght@500;700&display=swap"
+    />
+    <title>火焰纹章结合 Engage Wiki</title>
+    <link rel="stylesheet" href="/_astro/NavLayout.2QCpPIjh.css" />
+  </head>
+  <body data-astro-cid-z4jru4n3>
+    <div class="nav-layout" data-astro-cid-entc4gyn>
+      <nav class="menu" aria-label="主菜单" data-astro-cid-entc4gyn>
+        <a href="/" data-astro-cid-entc4gyn>首页</a
+        ><a href="/characters" aria-current="page" data-astro-cid-entc4gyn
+          >角色</a
+        ><a href="/classes" data-astro-cid-entc4gyn>兵种</a
+        ><a href="/skills" data-astro-cid-entc4gyn>特技</a
+        ><a href="/emblems" data-astro-cid-entc4gyn>纹章士</a
+        ><a href="/team" data-astro-cid-entc4gyn>阵容搭配</a
+        ><a href="/chapters" data-astro-cid-entc4gyn>章节流程</a>
+      </nav>
+      <aside data-astro-cid-entc4gyn><div>Sidebar</div></aside>
+      <main data-astro-cid-entc4gyn>
+        <h1>柯岚 Clanne</h1>
+        <table>
+          <tbody>
+            <tr>
+              <th>章节id</th>
+              <td>ch2</td>
+            </tr>
+            <tr>
+              <th>头像</th>
+              <td>src/assets/characters/clanne.webp</td>
+            </tr>
+            <tr>
+              <th>分组</th>
+              <td>里特司</td>
+            </tr>
+            <tr>
+              <th>所属势力</th>
+              <td>里特司</td>
+            </tr>
+            <tr>
+              <th>角色名称_简中</th>
+              <td>柯岚</td>
+            </tr>
+            <tr>
+              <th>角色名称_英文</th>
+              <td>Clanne</td>
+            </tr>
+            <tr>
+              <th>评级</th>
+              <td>D</td>
+            </tr>
+            <tr>
+              <th>初始职业</th>
+              <td>魔法师【魔道】</td>
+            </tr>
+            <tr>
+              <th>加入章节</th>
+              <td>第二章</td>
+            </tr>
+            <tr>
+              <th>加入条件</th>
+              <td>开始时自动加入</td>
+            </tr>
+            <tr>
+              <th>个人特技</th>
+              <td>碧之信仰</td>
+            </tr>
+            <tr>
+              <th>详细说明</th>
+              <td>与主角相邻时，主角与自身的命中+10。</td>
+            </tr>
+            <tr>
+              <th>初始武器资质</th>
+              <td>剑、魔道书</td>
+            </tr>
+            <tr>
+              <th>个人成长率_HP</th>
+              <td>40</td>
+            </tr>
+            <tr>
+              <th>个人成长率_力量</th>
+              <td>35</td>
+            </tr>
+            <tr>
+              <th>个人成长率_魔力</th>
+              <td>10</td>
+            </tr>
+            <tr>
+              <th>个人成长率_技巧</th>
+              <td>40</td>
+            </tr>
+            <tr>
+              <th>个人成长率_速度</th>
+              <td>50</td>
+            </tr>
+            <tr>
+              <th>个人成长率_幸运</th>
+              <td>20</td>
+            </tr>
+            <tr>
+              <th>个人成长率_防守</th>
+              <td>30</td>
+            </tr>
+            <tr>
+              <th>个人成长率_魔防</th>
+              <td>25</td>
+            </tr>
+            <tr>
+              <th>个人成长率_体格</th>
+              <td>5</td>
+            </tr>
+            <tr>
+              <th>个人成长率_合计</th>
+              <td>255</td>
+            </tr>
+            <tr>
+              <th>初始能力值_LV</th>
+              <td>1</td>
+            </tr>
+            <tr>
+              <th>初始能力值_HP</th>
+              <td>19</td>
+            </tr>
+            <tr>
+              <th>初始能力值_力量</th>
+              <td>1</td>
+            </tr>
+            <tr>
+              <th>初始能力值_魔力</th>
+              <td>8</td>
+            </tr>
+            <tr>
+              <th>初始能力值_技巧</th>
+              <td>11</td>
+            </tr>
+            <tr>
+              <th>初始能力值_速度</th>
+              <td>9</td>
+            </tr>
+            <tr>
+              <th>初始能力值_幸运</th>
+              <td>4</td>
+            </tr>
+            <tr>
+              <th>初始能力值_防守</th>
+              <td>4</td>
+            </tr>
+            <tr>
+              <th>初始能力值_魔防</th>
+              <td>7</td>
+            </tr>
+            <tr>
+              <th>初始能力值_体格</th>
+              <td>4</td>
+            </tr>
+            <tr>
+              <th>初始能力值_移动</th>
+              <td>4</td>
+            </tr>
+            <tr>
+              <th>初始能力值_初始SP</th>
+              <td>300</td>
+            </tr>
+            <tr>
+              <th>初始能力值_初始武器等级</th>
+              <td>魔道书B</td>
+            </tr>
+            <tr>
+              <th>初始能力值_内置等级</th>
+              <td>--</td>
+            </tr>
+            <tr>
+              <th>order</th>
+              <td>2</td>
+            </tr>
+          </tbody>
+        </table>
+      </main>
+    </div>
+  </body>
+</html>
+"
+`;
+
+exports[`built character detail page snapshots > matches the full HTML snapshot for ivy 1`] = `
+"<!DOCTYPE html>
+<html lang="zh-CN" data-astro-cid-z4jru4n3>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" href="/favicon.ico" />
+    <meta name="generator" content="Astro v7.4.2" />
+    <!-- 数字字体：Barlow 数字窄而清楚、有等宽数字，用于表格里的数值 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Barlow:wght@500;700&display=swap"
+    />
+    <title>火焰纹章结合 Engage Wiki</title>
+    <link rel="stylesheet" href="/_astro/NavLayout.2QCpPIjh.css" />
+  </head>
+  <body data-astro-cid-z4jru4n3>
+    <div class="nav-layout" data-astro-cid-entc4gyn>
+      <nav class="menu" aria-label="主菜单" data-astro-cid-entc4gyn>
+        <a href="/" data-astro-cid-entc4gyn>首页</a
+        ><a href="/characters" aria-current="page" data-astro-cid-entc4gyn
+          >角色</a
+        ><a href="/classes" data-astro-cid-entc4gyn>兵种</a
+        ><a href="/skills" data-astro-cid-entc4gyn>特技</a
+        ><a href="/emblems" data-astro-cid-entc4gyn>纹章士</a
+        ><a href="/team" data-astro-cid-entc4gyn>阵容搭配</a
+        ><a href="/chapters" data-astro-cid-entc4gyn>章节流程</a>
+      </nav>
+      <aside data-astro-cid-entc4gyn><div>Sidebar</div></aside>
+      <main data-astro-cid-entc4gyn>
+        <h1>艾比 Ivy</h1>
+        <table>
+          <tbody>
+            <tr>
+              <th>章节id</th>
+              <td>ch11</td>
+            </tr>
+            <tr>
+              <th>头像</th>
+              <td>src/assets/characters/ivy.webp</td>
+            </tr>
+            <tr>
+              <th>分组</th>
+              <td>伊尔席翁</td>
+            </tr>
+            <tr>
+              <th>所属势力</th>
+              <td>伊尔席翁</td>
+            </tr>
+            <tr>
+              <th>角色名称_简中</th>
+              <td>艾比</td>
+            </tr>
+            <tr>
+              <th>角色名称_英文</th>
+              <td>Ivy</td>
+            </tr>
+            <tr>
+              <th>评级</th>
+              <td>B</td>
+            </tr>
+            <tr>
+              <th>初始职业</th>
+              <td>驯兽师（魔+杖）【飞行】</td>
+            </tr>
+            <tr>
+              <th>加入章节</th>
+              <td>第十一章</td>
+            </tr>
+            <tr>
+              <th>加入条件</th>
+              <td>琉尔临近地图下方脱离点时，触发剧情后入队</td>
+            </tr>
+            <tr>
+              <th>个人特技</th>
+              <td>执着</td>
+            </tr>
+            <tr>
+              <th>详细说明</th>
+              <td>与相同敌人连续战斗时命中+20。</td>
+            </tr>
+            <tr>
+              <th>初始武器资质</th>
+              <td>魔道书、杖</td>
+            </tr>
+            <tr>
+              <th>个人成长率_HP</th>
+              <td>55</td>
+            </tr>
+            <tr>
+              <th>个人成长率_力量</th>
+              <td>25</td>
+            </tr>
+            <tr>
+              <th>个人成长率_魔力</th>
+              <td>30</td>
+            </tr>
+            <tr>
+              <th>个人成长率_技巧</th>
+              <td>25</td>
+            </tr>
+            <tr>
+              <th>个人成长率_速度</th>
+              <td>40</td>
+            </tr>
+            <tr>
+              <th>个人成长率_幸运</th>
+              <td>15</td>
+            </tr>
+            <tr>
+              <th>个人成长率_防守</th>
+              <td>30</td>
+            </tr>
+            <tr>
+              <th>个人成长率_魔防</th>
+              <td>35</td>
+            </tr>
+            <tr>
+              <th>个人成长率_体格</th>
+              <td>10</td>
+            </tr>
+            <tr>
+              <th>个人成长率_合计</th>
+              <td>265</td>
+            </tr>
+            <tr>
+              <th>初始能力值_LV</th>
+              <td>17</td>
+            </tr>
+            <tr>
+              <th>初始能力值_HP</th>
+              <td>32</td>
+            </tr>
+            <tr>
+              <th>初始能力值_力量</th>
+              <td>7</td>
+            </tr>
+            <tr>
+              <th>初始能力值_魔力</th>
+              <td>17</td>
+            </tr>
+            <tr>
+              <th>初始能力值_技巧</th>
+              <td>15</td>
+            </tr>
+            <tr>
+              <th>初始能力值_速度</th>
+              <td>13</td>
+            </tr>
+            <tr>
+              <th>初始能力值_幸运</th>
+              <td>4</td>
+            </tr>
+            <tr>
+              <th>初始能力值_防守</th>
+              <td>12</td>
+            </tr>
+            <tr>
+              <th>初始能力值_魔防</th>
+              <td>15</td>
+            </tr>
+            <tr>
+              <th>初始能力值_体格</th>
+              <td>7</td>
+            </tr>
+            <tr>
+              <th>初始能力值_移动</th>
+              <td>5</td>
+            </tr>
+            <tr>
+              <th>初始能力值_初始SP</th>
+              <td>1000</td>
+            </tr>
+            <tr>
+              <th>初始能力值_初始武器等级</th>
+              <td>魔道书B、杖B</td>
+            </tr>
+            <tr>
+              <th>初始能力值_内置等级</th>
+              <td>--</td>
+            </tr>
+            <tr>
+              <th>order</th>
+              <td>19</td>
+            </tr>
+          </tbody>
+        </table>
+      </main>
+    </div>
+  </body>
+</html>
+"
+`;
+
+exports[`built character detail page snapshots > matches the full HTML snapshot for lapis 1`] = `
+"<!DOCTYPE html>
+<html lang="zh-CN" data-astro-cid-z4jru4n3>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" href="/favicon.ico" />
+    <meta name="generator" content="Astro v7.4.2" />
+    <!-- 数字字体：Barlow 数字窄而清楚、有等宽数字，用于表格里的数值 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Barlow:wght@500;700&display=swap"
+    />
+    <title>火焰纹章结合 Engage Wiki</title>
+    <link rel="stylesheet" href="/_astro/NavLayout.2QCpPIjh.css" />
+  </head>
+  <body data-astro-cid-z4jru4n3>
+    <div class="nav-layout" data-astro-cid-entc4gyn>
+      <nav class="menu" aria-label="主菜单" data-astro-cid-entc4gyn>
+        <a href="/" data-astro-cid-entc4gyn>首页</a
+        ><a href="/characters" aria-current="page" data-astro-cid-entc4gyn
+          >角色</a
+        ><a href="/classes" data-astro-cid-entc4gyn>兵种</a
+        ><a href="/skills" data-astro-cid-entc4gyn>特技</a
+        ><a href="/emblems" data-astro-cid-entc4gyn>纹章士</a
+        ><a href="/team" data-astro-cid-entc4gyn>阵容搭配</a
+        ><a href="/chapters" data-astro-cid-entc4gyn>章节流程</a>
+      </nav>
+      <aside data-astro-cid-entc4gyn><div>Sidebar</div></aside>
+      <main data-astro-cid-entc4gyn>
+        <h1>菈琵思 Lapis</h1>
+        <table>
+          <tbody>
+            <tr>
+              <th>章节id</th>
+              <td>ch7</td>
+            </tr>
+            <tr>
+              <th>头像</th>
+              <td>src/assets/characters/lapis.webp</td>
+            </tr>
+            <tr>
+              <th>分组</th>
+              <td>布罗帝亚</td>
+            </tr>
+            <tr>
+              <th>所属势力</th>
+              <td>布罗帝亚</td>
+            </tr>
+            <tr>
+              <th>角色名称_简中</th>
+              <td>菈琵思</td>
+            </tr>
+            <tr>
+              <th>角色名称_英文</th>
+              <td>Lapis</td>
+            </tr>
+            <tr>
+              <th>评级</th>
+              <td>C</td>
+            </tr>
+            <tr>
+              <th>初始职业</th>
+              <td>刀剑战士【连携】</td>
+            </tr>
+            <tr>
+              <th>加入章节</th>
+              <td>第七章</td>
+            </tr>
+            <tr>
+              <th>加入条件</th>
+              <td>开始时自动加入</td>
+            </tr>
+            <tr>
+              <th>个人特技</th>
+              <td>战果转让</td>
+            </tr>
+            <tr>
+              <th>详细说明</th>
+              <td>周围1格内有我方单位时，命中+10、回避+10、必杀-10。</td>
+            </tr>
+            <tr>
+              <th>初始武器资质</th>
+              <td>剑</td>
+            </tr>
+            <tr>
+              <th>个人成长率_HP</th>
+              <td>55</td>
+            </tr>
+            <tr>
+              <th>个人成长率_力量</th>
+              <td>25</td>
+            </tr>
+            <tr>
+              <th>个人成长率_魔力</th>
+              <td>20</td>
+            </tr>
+            <tr>
+              <th>个人成长率_技巧</th>
+              <td>35</td>
+            </tr>
+            <tr>
+              <th>个人成长率_速度</th>
+              <td>55</td>
+            </tr>
+            <tr>
+              <th>个人成长率_幸运</th>
+              <td>25</td>
+            </tr>
+            <tr>
+              <th>个人成长率_防守</th>
+              <td>35</td>
+            </tr>
+            <tr>
+              <th>个人成长率_魔防</th>
+              <td>30</td>
+            </tr>
+            <tr>
+              <th>个人成长率_体格</th>
+              <td>5</td>
+            </tr>
+            <tr>
+              <th>个人成长率_合计</th>
+              <td>285</td>
+            </tr>
+            <tr>
+              <th>初始能力值_LV</th>
+              <td>10</td>
+            </tr>
+            <tr>
+              <th>初始能力值_HP</th>
+              <td>26</td>
+            </tr>
+            <tr>
+              <th>初始能力值_力量</th>
+              <td>11</td>
+            </tr>
+            <tr>
+              <th>初始能力值_魔力</th>
+              <td>2</td>
+            </tr>
+            <tr>
+              <th>初始能力值_技巧</th>
+              <td>12</td>
+            </tr>
+            <tr>
+              <th>初始能力值_速度</th>
+              <td>14</td>
+            </tr>
+            <tr>
+              <th>初始能力值_幸运</th>
+              <td>7</td>
+            </tr>
+            <tr>
+              <th>初始能力值_防守</th>
+              <td>7</td>
+            </tr>
+            <tr>
+              <th>初始能力值_魔防</th>
+              <td>6</td>
+            </tr>
+            <tr>
+              <th>初始能力值_体格</th>
+              <td>5</td>
+            </tr>
+            <tr>
+              <th>初始能力值_移动</th>
+              <td>4</td>
+            </tr>
+            <tr>
+              <th>初始能力值_初始SP</th>
+              <td>500</td>
+            </tr>
+            <tr>
+              <th>初始能力值_初始武器等级</th>
+              <td>剑B</td>
+            </tr>
+            <tr>
+              <th>初始能力值_内置等级</th>
+              <td>--</td>
+            </tr>
+            <tr>
+              <th>order</th>
+              <td>16</td>
+            </tr>
+          </tbody>
+        </table>
+      </main>
+    </div>
+  </body>
+</html>
+"
+`;
+
+exports[`built character detail page snapshots > matches the full HTML snapshot for merrin 1`] = `
+"<!DOCTYPE html>
+<html lang="zh-CN" data-astro-cid-z4jru4n3>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" href="/favicon.ico" />
+    <meta name="generator" content="Astro v7.4.2" />
+    <!-- 数字字体：Barlow 数字窄而清楚、有等宽数字，用于表格里的数值 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Barlow:wght@500;700&display=swap"
+    />
+    <title>火焰纹章结合 Engage Wiki</title>
+    <link rel="stylesheet" href="/_astro/NavLayout.2QCpPIjh.css" />
+  </head>
+  <body data-astro-cid-z4jru4n3>
+    <div class="nav-layout" data-astro-cid-entc4gyn>
+      <nav class="menu" aria-label="主菜单" data-astro-cid-entc4gyn>
+        <a href="/" data-astro-cid-entc4gyn>首页</a
+        ><a href="/characters" aria-current="page" data-astro-cid-entc4gyn
+          >角色</a
+        ><a href="/classes" data-astro-cid-entc4gyn>兵种</a
+        ><a href="/skills" data-astro-cid-entc4gyn>特技</a
+        ><a href="/emblems" data-astro-cid-entc4gyn>纹章士</a
+        ><a href="/team" data-astro-cid-entc4gyn>阵容搭配</a
+        ><a href="/chapters" data-astro-cid-entc4gyn>章节流程</a>
+      </nav>
+      <aside data-astro-cid-entc4gyn><div>Sidebar</div></aside>
+      <main data-astro-cid-entc4gyn>
+        <h1>玫琳 Merrin</h1>
+        <table>
+          <tbody>
+            <tr>
+              <th>章节id</th>
+              <td>ch13</td>
+            </tr>
+            <tr>
+              <th>头像</th>
+              <td>src/assets/characters/merrin.webp</td>
+            </tr>
+            <tr>
+              <th>分组</th>
+              <td>索尔姆</td>
+            </tr>
+            <tr>
+              <th>所属势力</th>
+              <td>索尔姆</td>
+            </tr>
+            <tr>
+              <th>角色名称_简中</th>
+              <td>玫琳</td>
+            </tr>
+            <tr>
+              <th>角色名称_英文</th>
+              <td>Merrin</td>
+            </tr>
+            <tr>
+              <th>评级</th>
+              <td>A</td>
+            </tr>
+            <tr>
+              <th>初始职业</th>
+              <td>狼骑士【骑马】</td>
+            </tr>
+            <tr>
+              <th>加入章节</th>
+              <td>第十三章</td>
+            </tr>
+            <tr>
+              <th>加入条件</th>
+              <td>开始时自动加入</td>
+            </tr>
+            <tr>
+              <th>个人特技</th>
+              <td>护航</td>
+            </tr>
+            <tr>
+              <th>详细说明</th>
+              <td>
+                若自身周围2格内有2位以上的我方女性单位，该单位与自身的命中、回避+5。
+              </td>
+            </tr>
+            <tr>
+              <th>初始武器资质</th>
+              <td>剑、短剑</td>
+            </tr>
+            <tr>
+              <th>个人成长率_HP</th>
+              <td>55</td>
+            </tr>
+            <tr>
+              <th>个人成长率_力量</th>
+              <td>25</td>
+            </tr>
+            <tr>
+              <th>个人成长率_魔力</th>
+              <td>25</td>
+            </tr>
+            <tr>
+              <th>个人成长率_技巧</th>
+              <td>40</td>
+            </tr>
+            <tr>
+              <th>个人成长率_速度</th>
+              <td>50</td>
+            </tr>
+            <tr>
+              <th>个人成长率_幸运</th>
+              <td>25</td>
+            </tr>
+            <tr>
+              <th>个人成长率_防守</th>
+              <td>30</td>
+            </tr>
+            <tr>
+              <th>个人成长率_魔防</th>
+              <td>30</td>
+            </tr>
+            <tr>
+              <th>个人成长率_体格</th>
+              <td>10</td>
+            </tr>
+            <tr>
+              <th>个人成长率_合计</th>
+              <td>290</td>
+            </tr>
+            <tr>
+              <th>初始能力值_LV</th>
+              <td>1</td>
+            </tr>
+            <tr>
+              <th>初始能力值_HP</th>
+              <td>36</td>
+            </tr>
+            <tr>
+              <th>初始能力值_力量</th>
+              <td>15</td>
+            </tr>
+            <tr>
+              <th>初始能力值_魔力</th>
+              <td>10</td>
+            </tr>
+            <tr>
+              <th>初始能力值_技巧</th>
+              <td>21</td>
+            </tr>
+            <tr>
+              <th>初始能力值_速度</th>
+              <td>21</td>
+            </tr>
+            <tr>
+              <th>初始能力值_幸运</th>
+              <td>14</td>
+            </tr>
+            <tr>
+              <th>初始能力值_防守</th>
+              <td>12</td>
+            </tr>
+            <tr>
+              <th>初始能力值_魔防</th>
+              <td>12</td>
+            </tr>
+            <tr>
+              <th>初始能力值_体格</th>
+              <td>9</td>
+            </tr>
+            <tr>
+              <th>初始能力值_移动</th>
+              <td>6</td>
+            </tr>
+            <tr>
+              <th>初始能力值_初始SP</th>
+              <td>1500</td>
+            </tr>
+            <tr>
+              <th>初始能力值_初始武器等级</th>
+              <td>剑B、短剑S</td>
+            </tr>
+            <tr>
+              <th>初始能力值_内置等级</th>
+              <td>15</td>
+            </tr>
+            <tr>
+              <th>order</th>
+              <td>29</td>
+            </tr>
+          </tbody>
+        </table>
+      </main>
+    </div>
+  </body>
+</html>
+"
+`;
+
+exports[`built character detail page snapshots > matches the full HTML snapshot for nel 1`] = `
+"<!DOCTYPE html>
+<html lang="zh-CN" data-astro-cid-z4jru4n3>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" href="/favicon.ico" />
+    <meta name="generator" content="Astro v7.4.2" />
+    <!-- 数字字体：Barlow 数字窄而清楚、有等宽数字，用于表格里的数值 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Barlow:wght@500;700&display=swap"
+    />
+    <title>火焰纹章结合 Engage Wiki</title>
+    <link rel="stylesheet" href="/_astro/NavLayout.2QCpPIjh.css" />
+  </head>
+  <body data-astro-cid-z4jru4n3>
+    <div class="nav-layout" data-astro-cid-entc4gyn>
+      <nav class="menu" aria-label="主菜单" data-astro-cid-entc4gyn>
+        <a href="/" data-astro-cid-entc4gyn>首页</a
+        ><a href="/characters" aria-current="page" data-astro-cid-entc4gyn
+          >角色</a
+        ><a href="/classes" data-astro-cid-entc4gyn>兵种</a
+        ><a href="/skills" data-astro-cid-entc4gyn>特技</a
+        ><a href="/emblems" data-astro-cid-entc4gyn>纹章士</a
+        ><a href="/team" data-astro-cid-entc4gyn>阵容搭配</a
+        ><a href="/chapters" data-astro-cid-entc4gyn>章节流程</a>
+      </nav>
+      <aside data-astro-cid-entc4gyn><div>Sidebar</div></aside>
+      <main data-astro-cid-entc4gyn>
+        <h1>爱尔 Nel</h1>
+        <table>
+          <tbody>
+            <tr>
+              <th>章节id</th>
+              <td>x6</td>
+            </tr>
+            <tr>
+              <th>头像</th>
+              <td>src/assets/characters/nel.webp</td>
+            </tr>
+            <tr>
+              <th>分组</th>
+              <td>邪龙之章</td>
+            </tr>
+            <tr>
+              <th>所属势力</th>
+              <td>其它</td>
+            </tr>
+            <tr>
+              <th>角色名称_简中</th>
+              <td>爱尔</td>
+            </tr>
+            <tr>
+              <th>角色名称_英文</th>
+              <td>Nel</td>
+            </tr>
+            <tr>
+              <th>评级</th>
+              <td></td>
+            </tr>
+            <tr>
+              <th>初始职业</th>
+              <td>邪龙之女（枪+龙石）【龙族】</td>
+            </tr>
+            <tr>
+              <th>加入章节</th>
+              <td>邪龙之章</td>
+            </tr>
+            <tr>
+              <th>加入条件</th>
+              <td>通关邪龙之章第6章后加入</td>
+            </tr>
+            <tr>
+              <th>个人特技</th>
+              <td>守护者</td>
+            </tr>
+            <tr>
+              <th>详细说明</th>
+              <td>拉法尔受到敌人攻击时必杀+10，效果持续1回合。</td>
+            </tr>
+            <tr>
+              <th>初始武器资质</th>
+              <td>枪</td>
+            </tr>
+            <tr>
+              <th>个人成长率_HP</th>
+              <td>55</td>
+            </tr>
+            <tr>
+              <th>个人成长率_力量</th>
+              <td>30</td>
+            </tr>
+            <tr>
+              <th>个人成长率_魔力</th>
+              <td>25</td>
+            </tr>
+            <tr>
+              <th>个人成长率_技巧</th>
+              <td>40</td>
+            </tr>
+            <tr>
+              <th>个人成长率_速度</th>
+              <td>45</td>
+            </tr>
+            <tr>
+              <th>个人成长率_幸运</th>
+              <td>30</td>
+            </tr>
+            <tr>
+              <th>个人成长率_防守</th>
+              <td>30</td>
+            </tr>
+            <tr>
+              <th>个人成长率_魔防</th>
+              <td>35</td>
+            </tr>
+            <tr>
+              <th>个人成长率_体格</th>
+              <td>10</td>
+            </tr>
+            <tr>
+              <th>个人成长率_合计</th>
+              <td>300</td>
+            </tr>
+            <tr>
+              <th>初始能力值_LV</th>
+              <td>20</td>
+            </tr>
+            <tr>
+              <th>初始能力值_HP</th>
+              <td>35</td>
+            </tr>
+            <tr>
+              <th>初始能力值_力量</th>
+              <td>14</td>
+            </tr>
+            <tr>
+              <th>初始能力值_魔力</th>
+              <td>12</td>
+            </tr>
+            <tr>
+              <th>初始能力值_技巧</th>
+              <td>17</td>
+            </tr>
+            <tr>
+              <th>初始能力值_速度</th>
+              <td>19</td>
+            </tr>
+            <tr>
+              <th>初始能力值_幸运</th>
+              <td>16</td>
+            </tr>
+            <tr>
+              <th>初始能力值_防守</th>
+              <td>14</td>
+            </tr>
+            <tr>
+              <th>初始能力值_魔防</th>
+              <td>15</td>
+            </tr>
+            <tr>
+              <th>初始能力值_体格</th>
+              <td>8</td>
+            </tr>
+            <tr>
+              <th>初始能力值_移动</th>
+              <td>5</td>
+            </tr>
+            <tr>
+              <th>初始能力值_初始SP</th>
+              <td>2000</td>
+            </tr>
+            <tr>
+              <th>初始能力值_初始武器等级</th>
+              <td>枪A、龙石S</td>
+            </tr>
+            <tr>
+              <th>初始能力值_内置等级</th>
+              <td>--</td>
+            </tr>
+            <tr>
+              <th>order</th>
+              <td>39</td>
+            </tr>
+          </tbody>
+        </table>
+      </main>
+    </div>
+  </body>
+</html>
+"
+`;
+
+exports[`built character detail page snapshots > matches the full HTML snapshot for pandreo 1`] = `
+"<!DOCTYPE html>
+<html lang="zh-CN" data-astro-cid-z4jru4n3>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" href="/favicon.ico" />
+    <meta name="generator" content="Astro v7.4.2" />
+    <!-- 数字字体：Barlow 数字窄而清楚、有等宽数字，用于表格里的数值 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Barlow:wght@500;700&display=swap"
+    />
+    <title>火焰纹章结合 Engage Wiki</title>
+    <link rel="stylesheet" href="/_astro/NavLayout.2QCpPIjh.css" />
+  </head>
+  <body data-astro-cid-z4jru4n3>
+    <div class="nav-layout" data-astro-cid-entc4gyn>
+      <nav class="menu" aria-label="主菜单" data-astro-cid-entc4gyn>
+        <a href="/" data-astro-cid-entc4gyn>首页</a
+        ><a href="/characters" aria-current="page" data-astro-cid-entc4gyn
+          >角色</a
+        ><a href="/classes" data-astro-cid-entc4gyn>兵种</a
+        ><a href="/skills" data-astro-cid-entc4gyn>特技</a
+        ><a href="/emblems" data-astro-cid-entc4gyn>纹章士</a
+        ><a href="/team" data-astro-cid-entc4gyn>阵容搭配</a
+        ><a href="/chapters" data-astro-cid-entc4gyn>章节流程</a>
+      </nav>
+      <aside data-astro-cid-entc4gyn><div>Sidebar</div></aside>
+      <main data-astro-cid-entc4gyn>
+        <h1>庞德罗 Pandreo</h1>
+        <table>
+          <tbody>
+            <tr>
+              <th>章节id</th>
+              <td>ch12</td>
+            </tr>
+            <tr>
+              <th>头像</th>
+              <td>src/assets/characters/pandreo.webp</td>
+            </tr>
+            <tr>
+              <th>分组</th>
+              <td>索尔姆</td>
+            </tr>
+            <tr>
+              <th>所属势力</th>
+              <td>索尔姆</td>
+            </tr>
+            <tr>
+              <th>角色名称_简中</th>
+              <td>庞德罗</td>
+            </tr>
+            <tr>
+              <th>角色名称_英文</th>
+              <td>Pandreo</td>
+            </tr>
+            <tr>
+              <th>评级</th>
+              <td>A</td>
+            </tr>
+            <tr>
+              <th>初始职业</th>
+              <td>主教【魔道】</td>
+            </tr>
+            <tr>
+              <th>加入章节</th>
+              <td>第十二章</td>
+            </tr>
+            <tr>
+              <th>加入条件</th>
+              <td>开始时自动加入</td>
+            </tr>
+            <tr>
+              <th>个人特技</th>
+              <td>大集会</td>
+            </tr>
+            <tr>
+              <th>详细说明</th>
+              <td>
+                自身的命中、回避提升，幅度为周围2格内的敌我双方单位总数×3。
+              </td>
+            </tr>
+            <tr>
+              <th>初始武器资质</th>
+              <td>魔道书、杖、体术</td>
+            </tr>
+            <tr>
+              <th>个人成长率_HP</th>
+              <td>60</td>
+            </tr>
+            <tr>
+              <th>个人成长率_力量</th>
+              <td>5</td>
+            </tr>
+            <tr>
+              <th>个人成长率_魔力</th>
+              <td>30</td>
+            </tr>
+            <tr>
+              <th>个人成长率_技巧</th>
+              <td>45</td>
+            </tr>
+            <tr>
+              <th>个人成长率_速度</th>
+              <td>45</td>
+            </tr>
+            <tr>
+              <th>个人成长率_幸运</th>
+              <td>30</td>
+            </tr>
+            <tr>
+              <th>个人成长率_防守</th>
+              <td>15</td>
+            </tr>
+            <tr>
+              <th>个人成长率_魔防</th>
+              <td>55</td>
+            </tr>
+            <tr>
+              <th>个人成长率_体格</th>
+              <td>15</td>
+            </tr>
+            <tr>
+              <th>个人成长率_合计</th>
+              <td>300</td>
+            </tr>
+            <tr>
+              <th>初始能力值_LV</th>
+              <td>1</td>
+            </tr>
+            <tr>
+              <th>初始能力值_HP</th>
+              <td>34</td>
+            </tr>
+            <tr>
+              <th>初始能力值_力量</th>
+              <td>7</td>
+            </tr>
+            <tr>
+              <th>初始能力值_魔力</th>
+              <td>16</td>
+            </tr>
+            <tr>
+              <th>初始能力值_技巧</th>
+              <td>18</td>
+            </tr>
+            <tr>
+              <th>初始能力值_速度</th>
+              <td>17</td>
+            </tr>
+            <tr>
+              <th>初始能力值_幸运</th>
+              <td>14</td>
+            </tr>
+            <tr>
+              <th>初始能力值_防守</th>
+              <td>8</td>
+            </tr>
+            <tr>
+              <th>初始能力值_魔防</th>
+              <td>22</td>
+            </tr>
+            <tr>
+              <th>初始能力值_体格</th>
+              <td>8</td>
+            </tr>
+            <tr>
+              <th>初始能力值_移动</th>
+              <td>5</td>
+            </tr>
+            <tr>
+              <th>初始能力值_初始SP</th>
+              <td>1200</td>
+            </tr>
+            <tr>
+              <th>初始能力值_初始武器等级</th>
+              <td>魔道书B、杖S、体术C</td>
+            </tr>
+            <tr>
+              <th>初始能力值_内置等级</th>
+              <td>15</td>
+            </tr>
+            <tr>
+              <th>order</th>
+              <td>31</td>
+            </tr>
+          </tbody>
+        </table>
+      </main>
+    </div>
+  </body>
+</html>
+"
+`;
+
+exports[`built character detail page snapshots > matches the full HTML snapshot for rosado 1`] = `
+"<!DOCTYPE html>
+<html lang="zh-CN" data-astro-cid-z4jru4n3>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" href="/favicon.ico" />
+    <meta name="generator" content="Astro v7.4.2" />
+    <!-- 数字字体：Barlow 数字窄而清楚、有等宽数字，用于表格里的数值 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Barlow:wght@500;700&display=swap"
+    />
+    <title>火焰纹章结合 Engage Wiki</title>
+    <link rel="stylesheet" href="/_astro/NavLayout.2QCpPIjh.css" />
+  </head>
+  <body data-astro-cid-z4jru4n3>
+    <div class="nav-layout" data-astro-cid-entc4gyn>
+      <nav class="menu" aria-label="主菜单" data-astro-cid-entc4gyn>
+        <a href="/" data-astro-cid-entc4gyn>首页</a
+        ><a href="/characters" aria-current="page" data-astro-cid-entc4gyn
+          >角色</a
+        ><a href="/classes" data-astro-cid-entc4gyn>兵种</a
+        ><a href="/skills" data-astro-cid-entc4gyn>特技</a
+        ><a href="/emblems" data-astro-cid-entc4gyn>纹章士</a
+        ><a href="/team" data-astro-cid-entc4gyn>阵容搭配</a
+        ><a href="/chapters" data-astro-cid-entc4gyn>章节流程</a>
+      </nav>
+      <aside data-astro-cid-entc4gyn><div>Sidebar</div></aside>
+      <main data-astro-cid-entc4gyn>
+        <h1>罗萨德 Rosado</h1>
+        <table>
+          <tbody>
+            <tr>
+              <th>章节id</th>
+              <td>ch16</td>
+            </tr>
+            <tr>
+              <th>头像</th>
+              <td>src/assets/characters/rosado.webp</td>
+            </tr>
+            <tr>
+              <th>分组</th>
+              <td>伊尔席翁</td>
+            </tr>
+            <tr>
+              <th>所属势力</th>
+              <td>伊尔席翁</td>
+            </tr>
+            <tr>
+              <th>角色名称_简中</th>
+              <td>罗萨德</td>
+            </tr>
+            <tr>
+              <th>角色名称_英文</th>
+              <td>Rosado</td>
+            </tr>
+            <tr>
+              <th>评级</th>
+              <td>B</td>
+            </tr>
+            <tr>
+              <th>初始职业</th>
+              <td>飞龙骑士（枪+斧）【飞行】</td>
+            </tr>
+            <tr>
+              <th>加入章节</th>
+              <td>第十六章</td>
+            </tr>
+            <tr>
+              <th>加入条件</th>
+              <td>开始时自动加入</td>
+            </tr>
+            <tr>
+              <th>个人特技</th>
+              <td>微笑</td>
+            </tr>
+            <tr>
+              <th>详细说明</th>
+              <td>若敌人为男性单位，敌人的回避-20。</td>
+            </tr>
+            <tr>
+              <th>初始武器资质</th>
+              <td>枪、斧</td>
+            </tr>
+            <tr>
+              <th>个人成长率_HP</th>
+              <td>75</td>
+            </tr>
+            <tr>
+              <th>个人成长率_力量</th>
+              <td>45</td>
+            </tr>
+            <tr>
+              <th>个人成长率_魔力</th>
+              <td>25</td>
+            </tr>
+            <tr>
+              <th>个人成长率_技巧</th>
+              <td>40</td>
+            </tr>
+            <tr>
+              <th>个人成长率_速度</th>
+              <td>45</td>
+            </tr>
+            <tr>
+              <th>个人成长率_幸运</th>
+              <td>20</td>
+            </tr>
+            <tr>
+              <th>个人成长率_防守</th>
+              <td>30</td>
+            </tr>
+            <tr>
+              <th>个人成长率_魔防</th>
+              <td>30</td>
+            </tr>
+            <tr>
+              <th>个人成长率_体格</th>
+              <td>5</td>
+            </tr>
+            <tr>
+              <th>个人成长率_合计</th>
+              <td>315</td>
+            </tr>
+            <tr>
+              <th>初始能力值_LV</th>
+              <td>3</td>
+            </tr>
+            <tr>
+              <th>初始能力值_HP</th>
+              <td>44</td>
+            </tr>
+            <tr>
+              <th>初始能力值_力量</th>
+              <td>16</td>
+            </tr>
+            <tr>
+              <th>初始能力值_魔力</th>
+              <td>7</td>
+            </tr>
+            <tr>
+              <th>初始能力值_技巧</th>
+              <td>19</td>
+            </tr>
+            <tr>
+              <th>初始能力值_速度</th>
+              <td>21</td>
+            </tr>
+            <tr>
+              <th>初始能力值_幸运</th>
+              <td>8</td>
+            </tr>
+            <tr>
+              <th>初始能力值_防守</th>
+              <td>15</td>
+            </tr>
+            <tr>
+              <th>初始能力值_魔防</th>
+              <td>11</td>
+            </tr>
+            <tr>
+              <th>初始能力值_体格</th>
+              <td>8</td>
+            </tr>
+            <tr>
+              <th>初始能力值_移动</th>
+              <td>6</td>
+            </tr>
+            <tr>
+              <th>初始能力值_初始SP</th>
+              <td>1800</td>
+            </tr>
+            <tr>
+              <th>初始能力值_初始武器等级</th>
+              <td>枪B、斧A</td>
+            </tr>
+            <tr>
+              <th>初始能力值_内置等级</th>
+              <td>17</td>
+            </tr>
+            <tr>
+              <th>order</th>
+              <td>23</td>
+            </tr>
+          </tbody>
+        </table>
+      </main>
+    </div>
+  </body>
+</html>
+"
+`;
+
+exports[`built character detail page snapshots > matches the full HTML snapshot for yunaka 1`] = `
+"<!DOCTYPE html>
+<html lang="zh-CN" data-astro-cid-z4jru4n3>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" href="/favicon.ico" />
+    <meta name="generator" content="Astro v7.4.2" />
+    <!-- 数字字体：Barlow 数字窄而清楚、有等宽数字，用于表格里的数值 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Barlow:wght@500;700&display=swap"
+    />
+    <title>火焰纹章结合 Engage Wiki</title>
+    <link rel="stylesheet" href="/_astro/NavLayout.2QCpPIjh.css" />
+  </head>
+  <body data-astro-cid-z4jru4n3>
+    <div class="nav-layout" data-astro-cid-entc4gyn>
+      <nav class="menu" aria-label="主菜单" data-astro-cid-entc4gyn>
+        <a href="/" data-astro-cid-entc4gyn>首页</a
+        ><a href="/characters" aria-current="page" data-astro-cid-entc4gyn
+          >角色</a
+        ><a href="/classes" data-astro-cid-entc4gyn>兵种</a
+        ><a href="/skills" data-astro-cid-entc4gyn>特技</a
+        ><a href="/emblems" data-astro-cid-entc4gyn>纹章士</a
+        ><a href="/team" data-astro-cid-entc4gyn>阵容搭配</a
+        ><a href="/chapters" data-astro-cid-entc4gyn>章节流程</a>
+      </nav>
+      <aside data-astro-cid-entc4gyn><div>Sidebar</div></aside>
+      <main data-astro-cid-entc4gyn>
+        <h1>尤娜卡 Yunaka</h1>
+        <table>
+          <tbody>
+            <tr>
+              <th>章节id</th>
+              <td>ch6</td>
+            </tr>
+            <tr>
+              <th>头像</th>
+              <td>src/assets/characters/yunaka.webp</td>
+            </tr>
+            <tr>
+              <th>分组</th>
+              <td>布罗帝亚</td>
+            </tr>
+            <tr>
+              <th>所属势力</th>
+              <td>布罗帝亚</td>
+            </tr>
+            <tr>
+              <th>角色名称_简中</th>
+              <td>尤娜卡</td>
+            </tr>
+            <tr>
+              <th>角色名称_英文</th>
+              <td>Yunaka</td>
+            </tr>
+            <tr>
+              <th>评级</th>
+              <td>A</td>
+            </tr>
+            <tr>
+              <th>初始职业</th>
+              <td>小偷【隐密】</td>
+            </tr>
+            <tr>
+              <th>加入章节</th>
+              <td>第六章</td>
+            </tr>
+            <tr>
+              <th>加入条件</th>
+              <td>开始时自动加入</td>
+            </tr>
+            <tr>
+              <th>个人特技</th>
+              <td>杀人技术</td>
+            </tr>
+            <tr>
+              <th>详细说明</th>
+              <td>于回避地形发动攻击时必杀+15。</td>
+            </tr>
+            <tr>
+              <th>初始武器资质</th>
+              <td>短剑</td>
+            </tr>
+            <tr>
+              <th>个人成长率_HP</th>
+              <td>50</td>
+            </tr>
+            <tr>
+              <th>个人成长率_力量</th>
+              <td>35</td>
+            </tr>
+            <tr>
+              <th>个人成长率_魔力</th>
+              <td>25</td>
+            </tr>
+            <tr>
+              <th>个人成长率_技巧</th>
+              <td>40</td>
+            </tr>
+            <tr>
+              <th>个人成长率_速度</th>
+              <td>45</td>
+            </tr>
+            <tr>
+              <th>个人成长率_幸运</th>
+              <td>25</td>
+            </tr>
+            <tr>
+              <th>个人成长率_防守</th>
+              <td>15</td>
+            </tr>
+            <tr>
+              <th>个人成长率_魔防</th>
+              <td>45</td>
+            </tr>
+            <tr>
+              <th>个人成长率_体格</th>
+              <td>5</td>
+            </tr>
+            <tr>
+              <th>个人成长率_合计</th>
+              <td>285</td>
+            </tr>
+            <tr>
+              <th>初始能力值_LV</th>
+              <td>6</td>
+            </tr>
+            <tr>
+              <th>初始能力值_HP</th>
+              <td>25</td>
+            </tr>
+            <tr>
+              <th>初始能力值_力量</th>
+              <td>8</td>
+            </tr>
+            <tr>
+              <th>初始能力值_魔力</th>
+              <td>5</td>
+            </tr>
+            <tr>
+              <th>初始能力值_技巧</th>
+              <td>14</td>
+            </tr>
+            <tr>
+              <th>初始能力值_速度</th>
+              <td>12</td>
+            </tr>
+            <tr>
+              <th>初始能力值_幸运</th>
+              <td>8</td>
+            </tr>
+            <tr>
+              <th>初始能力值_防守</th>
+              <td>9</td>
+            </tr>
+            <tr>
+              <th>初始能力值_魔防</th>
+              <td>7</td>
+            </tr>
+            <tr>
+              <th>初始能力值_体格</th>
+              <td>5</td>
+            </tr>
+            <tr>
+              <th>初始能力值_移动</th>
+              <td>5</td>
+            </tr>
+            <tr>
+              <th>初始能力值_初始SP</th>
+              <td>500</td>
+            </tr>
+            <tr>
+              <th>初始能力值_初始武器等级</th>
+              <td>短剑S</td>
+            </tr>
+            <tr>
+              <th>初始能力值_内置等级</th>
+              <td>--</td>
+            </tr>
+            <tr>
+              <th>order</th>
+              <td>17</td>
+            </tr>
+          </tbody>
+        </table>
+      </main>
+    </div>
+  </body>
+</html>
+"
+`;

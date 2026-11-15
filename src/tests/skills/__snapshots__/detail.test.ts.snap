@@ -1,0 +1,2111 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`built skill detail page snapshots > 个人特技: matches the full HTML snapshot for 战之血 1`] = `
+"<!DOCTYPE html>
+<html lang="zh-CN" data-astro-cid-z4jru4n3>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" href="/favicon.ico" />
+    <meta name="generator" content="Astro v7.4.2" />
+    <!-- 数字字体：Barlow 数字窄而清楚、有等宽数字，用于表格里的数值 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Barlow:wght@500;700&display=swap"
+    />
+    <title>火焰纹章结合 Engage Wiki</title>
+    <link rel="stylesheet" href="/_astro/NavLayout.2QCpPIjh.css" />
+    <style>
+      .thumb[data-astro-cid-zennbdu3] {
+        aspect-ratio: 1;
+        border-radius: 6px;
+        flex: none;
+        max-width: 100%;
+        height: auto;
+        display: block;
+      }
+      .placeholder[data-astro-cid-zennbdu3] {
+        background: #e5e5e5;
+      }
+    </style>
+  </head>
+  <body data-astro-cid-z4jru4n3>
+    <div class="nav-layout no-sidebar" data-astro-cid-entc4gyn>
+      <nav class="menu" aria-label="主菜单" data-astro-cid-entc4gyn>
+        <a href="/" data-astro-cid-entc4gyn>首页</a
+        ><a href="/characters" data-astro-cid-entc4gyn>角色</a
+        ><a href="/classes" data-astro-cid-entc4gyn>兵种</a
+        ><a href="/skills" aria-current="page" data-astro-cid-entc4gyn>特技</a
+        ><a href="/emblems" data-astro-cid-entc4gyn>纹章士</a
+        ><a href="/team" data-astro-cid-entc4gyn>阵容搭配</a
+        ><a href="/chapters" data-astro-cid-entc4gyn>章节流程</a>
+      </nav>
+      <main data-astro-cid-entc4gyn>
+        <p class="my-4 text-sm">
+          <a
+            class="text-brand-blue focus-visible:outline-brand-orange focus-visible:outline-offset-4 underline"
+            href="/skills"
+            >← 全部特技</a
+          >
+        </p>
+        <header class="flex items-stretch gap-4">
+          <img
+            src="/_astro/%E6%88%98%E4%B9%8B%E8%A1%80.C9i1sBvh_Z12ypVE.webp"
+            srcset="
+              /_astro/%E6%88%98%E4%B9%8B%E8%A1%80.C9i1sBvh_Z12ypVE.webp 1x,
+              /_astro/%E6%88%98%E4%B9%8B%E8%A1%80.C9i1sBvh_enCTL.webp   2x
+            "
+            alt
+            data-astro-cid-zennbdu3="true"
+            loading="lazy"
+            decoding="async"
+            width="64"
+            height="64"
+            class="thumb"
+          />
+          <div class="flex flex-col justify-around">
+            <p class="text-brand-gray text-sm">个人特技</p>
+            <h1 class="text-2xl font-medium">战之血</h1>
+          </div>
+        </header>
+        <p
+          class="desc my-4 px-4 py-4 border-l-4 border-brand-orange text-brand-black bg-brand-bg text-xl"
+        >
+          HP未达到最大值时，必杀+10。
+        </p>
+        <section class="my-4">
+          <h2 class="mb-1.5 font-bold text-brand-gray text-lg">
+            拥有此特技的角色
+          </h2>
+          <a
+            class="owner inline-flex items-center gap-2 font-bold text-brand-blue text-base focus-visible:outline-brand-orange focus-visible:outline-offset-4"
+            href="/characters/panette"
+            ><img
+              src="/_astro/panette.CVIzBhZE_Z1He4f0.webp"
+              srcset="
+                /_astro/panette.CVIzBhZE_Z1He4f0.webp 1x,
+                /_astro/panette.CVIzBhZE_1eugRh.webp  2x
+              "
+              alt
+              data-astro-cid-zennbdu3="true"
+              loading="lazy"
+              decoding="async"
+              width="40"
+              height="40"
+              class="thumb"
+            /><span class="hover:underline">帕涅托涅</span></a
+          >
+        </section>
+        <section class="my-4">
+          <h2 class="mb-1.5 font-bold text-brand-gray text-lg">特技信息</h2>
+          <dl class="my-4">
+            <div
+              class="grid grid-cols-[6rem_minmax(0,1fr)] gap-3 border border-brand-border py-2 px-3"
+            >
+              <dt class="text-brand-gray text-sm">特技名称</dt>
+              <dd class="text-sm whitespace-pre-line">战之血</dd>
+            </div>
+            <div
+              class="grid grid-cols-[6rem_minmax(0,1fr)] gap-3 border border-brand-border py-2 px-3"
+            >
+              <dt class="text-brand-gray text-sm">特技类型</dt>
+              <dd class="text-sm whitespace-pre-line">个人特技</dd>
+            </div>
+            <div
+              class="grid grid-cols-[6rem_minmax(0,1fr)] gap-3 border border-brand-border py-2 px-3"
+            >
+              <dt class="text-brand-gray text-sm">详细效果说明</dt>
+              <dd class="text-sm whitespace-pre-line">
+                HP未达到最大值时，必杀+10。
+              </dd>
+            </div>
+            <div
+              class="grid grid-cols-[6rem_minmax(0,1fr)] gap-3 border border-brand-border py-2 px-3"
+            >
+              <dt class="text-brand-gray text-sm">角色要求</dt>
+              <dd class="text-sm whitespace-pre-line">帕涅托涅</dd>
+            </div>
+            <div
+              class="grid grid-cols-[6rem_minmax(0,1fr)] gap-3 border border-brand-border py-2 px-3"
+            >
+              <dt class="text-brand-gray text-sm">兵种要求</dt>
+              <dd class="text-sm whitespace-pre-line">--</dd>
+            </div>
+            <div
+              class="grid grid-cols-[6rem_minmax(0,1fr)] gap-3 border border-brand-border py-2 px-3"
+            >
+              <dt class="text-brand-gray text-sm">纹章士</dt>
+              <dd class="text-sm whitespace-pre-line">--</dd>
+            </div>
+            <div
+              class="grid grid-cols-[6rem_minmax(0,1fr)] gap-3 border border-brand-border py-2 px-3"
+            >
+              <dt class="text-brand-gray text-sm">牵绊等级</dt>
+              <dd class="text-sm whitespace-pre-line">--</dd>
+            </div>
+            <div
+              class="grid grid-cols-[6rem_minmax(0,1fr)] gap-3 border border-brand-border py-2 px-3"
+            >
+              <dt class="text-brand-gray text-sm">继承SP</dt>
+              <dd class="text-sm whitespace-pre-line">--</dd>
+            </div>
+            <div
+              class="grid grid-cols-[6rem_minmax(0,1fr)] gap-3 border border-brand-border py-2 px-3"
+            >
+              <dt class="text-brand-gray text-sm">备注</dt>
+              <dd class="text-sm whitespace-pre-line">
+                第十三章，开始时自动加入
+              </dd>
+            </div>
+          </dl>
+        </section>
+      </main>
+    </div>
+  </body>
+</html>
+"
+`;
+
+exports[`built skill detail page snapshots > 个人特技: matches the full HTML snapshot for 神龙团结 1`] = `
+"<!DOCTYPE html>
+<html lang="zh-CN" data-astro-cid-z4jru4n3>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" href="/favicon.ico" />
+    <meta name="generator" content="Astro v7.4.2" />
+    <!-- 数字字体：Barlow 数字窄而清楚、有等宽数字，用于表格里的数值 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Barlow:wght@500;700&display=swap"
+    />
+    <title>火焰纹章结合 Engage Wiki</title>
+    <link rel="stylesheet" href="/_astro/NavLayout.2QCpPIjh.css" />
+    <style>
+      .thumb[data-astro-cid-zennbdu3] {
+        aspect-ratio: 1;
+        border-radius: 6px;
+        flex: none;
+        max-width: 100%;
+        height: auto;
+        display: block;
+      }
+      .placeholder[data-astro-cid-zennbdu3] {
+        background: #e5e5e5;
+      }
+    </style>
+  </head>
+  <body data-astro-cid-z4jru4n3>
+    <div class="nav-layout no-sidebar" data-astro-cid-entc4gyn>
+      <nav class="menu" aria-label="主菜单" data-astro-cid-entc4gyn>
+        <a href="/" data-astro-cid-entc4gyn>首页</a
+        ><a href="/characters" data-astro-cid-entc4gyn>角色</a
+        ><a href="/classes" data-astro-cid-entc4gyn>兵种</a
+        ><a href="/skills" aria-current="page" data-astro-cid-entc4gyn>特技</a
+        ><a href="/emblems" data-astro-cid-entc4gyn>纹章士</a
+        ><a href="/team" data-astro-cid-entc4gyn>阵容搭配</a
+        ><a href="/chapters" data-astro-cid-entc4gyn>章节流程</a>
+      </nav>
+      <main data-astro-cid-entc4gyn>
+        <p class="my-4 text-sm">
+          <a
+            class="text-brand-blue focus-visible:outline-brand-orange focus-visible:outline-offset-4 underline"
+            href="/skills"
+            >← 全部特技</a
+          >
+        </p>
+        <header class="flex items-stretch gap-4">
+          <img
+            src="/_astro/%E7%A5%9E%E9%BE%99%E5%9B%A2%E7%BB%93.Bv-7jsZL_Mnuzs.webp"
+            srcset="
+              /_astro/%E7%A5%9E%E9%BE%99%E5%9B%A2%E7%BB%93.Bv-7jsZL_Mnuzs.webp  1x,
+              /_astro/%E7%A5%9E%E9%BE%99%E5%9B%A2%E7%BB%93.Bv-7jsZL_2vScuL.webp 2x
+            "
+            alt
+            data-astro-cid-zennbdu3="true"
+            loading="lazy"
+            decoding="async"
+            width="64"
+            height="64"
+            class="thumb"
+          />
+          <div class="flex flex-col justify-around">
+            <p class="text-brand-gray text-sm">个人特技</p>
+            <h1 class="text-2xl font-medium">神龙团结</h1>
+          </div>
+        </header>
+        <p
+          class="desc my-4 px-4 py-4 border-l-4 border-brand-orange text-brand-black bg-brand-bg text-xl"
+        >
+          相邻我方单位的造成伤害+3，所受伤害-1。
+        </p>
+        <section class="my-4">
+          <h2 class="mb-1.5 font-bold text-brand-gray text-lg">
+            拥有此特技的角色
+          </h2>
+          <a
+            class="owner inline-flex items-center gap-2 font-bold text-brand-blue text-base focus-visible:outline-brand-orange focus-visible:outline-offset-4"
+            href="/characters/alear"
+            ><img
+              src="/_astro/alear.D0o6GltF_1aTFnu.webp"
+              srcset="
+                /_astro/alear.D0o6GltF_1aTFnu.webp 1x,
+                /_astro/alear.D0o6GltF_1aX8Ai.webp 2x
+              "
+              alt
+              data-astro-cid-zennbdu3="true"
+              loading="lazy"
+              decoding="async"
+              width="40"
+              height="40"
+              class="thumb"
+            /><span class="hover:underline">琉尔</span></a
+          >
+        </section>
+        <section class="my-4">
+          <h2 class="mb-1.5 font-bold text-brand-gray text-lg">特技信息</h2>
+          <dl class="my-4">
+            <div
+              class="grid grid-cols-[6rem_minmax(0,1fr)] gap-3 border border-brand-border py-2 px-3"
+            >
+              <dt class="text-brand-gray text-sm">特技名称</dt>
+              <dd class="text-sm whitespace-pre-line">神龙团结</dd>
+            </div>
+            <div
+              class="grid grid-cols-[6rem_minmax(0,1fr)] gap-3 border border-brand-border py-2 px-3"
+            >
+              <dt class="text-brand-gray text-sm">特技类型</dt>
+              <dd class="text-sm whitespace-pre-line">个人特技</dd>
+            </div>
+            <div
+              class="grid grid-cols-[6rem_minmax(0,1fr)] gap-3 border border-brand-border py-2 px-3"
+            >
+              <dt class="text-brand-gray text-sm">详细效果说明</dt>
+              <dd class="text-sm whitespace-pre-line">
+                相邻我方单位的造成伤害+3，所受伤害-1。
+              </dd>
+            </div>
+            <div
+              class="grid grid-cols-[6rem_minmax(0,1fr)] gap-3 border border-brand-border py-2 px-3"
+            >
+              <dt class="text-brand-gray text-sm">角色要求</dt>
+              <dd class="text-sm whitespace-pre-line">主角琉尔</dd>
+            </div>
+            <div
+              class="grid grid-cols-[6rem_minmax(0,1fr)] gap-3 border border-brand-border py-2 px-3"
+            >
+              <dt class="text-brand-gray text-sm">兵种要求</dt>
+              <dd class="text-sm whitespace-pre-line">--</dd>
+            </div>
+            <div
+              class="grid grid-cols-[6rem_minmax(0,1fr)] gap-3 border border-brand-border py-2 px-3"
+            >
+              <dt class="text-brand-gray text-sm">纹章士</dt>
+              <dd class="text-sm whitespace-pre-line">--</dd>
+            </div>
+            <div
+              class="grid grid-cols-[6rem_minmax(0,1fr)] gap-3 border border-brand-border py-2 px-3"
+            >
+              <dt class="text-brand-gray text-sm">牵绊等级</dt>
+              <dd class="text-sm whitespace-pre-line">--</dd>
+            </div>
+            <div
+              class="grid grid-cols-[6rem_minmax(0,1fr)] gap-3 border border-brand-border py-2 px-3"
+            >
+              <dt class="text-brand-gray text-sm">继承SP</dt>
+              <dd class="text-sm whitespace-pre-line">--</dd>
+            </div>
+            <div
+              class="grid grid-cols-[6rem_minmax(0,1fr)] gap-3 border border-brand-border py-2 px-3"
+            >
+              <dt class="text-brand-gray text-sm">备注</dt>
+              <dd class="text-sm whitespace-pre-line">自捏主角初始加入</dd>
+            </div>
+          </dl>
+        </section>
+      </main>
+    </div>
+  </body>
+</html>
+"
+`;
+
+exports[`built skill detail page snapshots > 兵种特技: matches the full HTML snapshot for 月光 1`] = `
+"<!DOCTYPE html>
+<html lang="zh-CN" data-astro-cid-z4jru4n3>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" href="/favicon.ico" />
+    <meta name="generator" content="Astro v7.4.2" />
+    <!-- 数字字体：Barlow 数字窄而清楚、有等宽数字，用于表格里的数值 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Barlow:wght@500;700&display=swap"
+    />
+    <title>火焰纹章结合 Engage Wiki</title>
+    <link rel="stylesheet" href="/_astro/NavLayout.2QCpPIjh.css" />
+    <style>
+      .thumb[data-astro-cid-zennbdu3] {
+        aspect-ratio: 1;
+        border-radius: 6px;
+        flex: none;
+        max-width: 100%;
+        height: auto;
+        display: block;
+      }
+      .placeholder[data-astro-cid-zennbdu3] {
+        background: #e5e5e5;
+      }
+    </style>
+  </head>
+  <body data-astro-cid-z4jru4n3>
+    <div class="nav-layout no-sidebar" data-astro-cid-entc4gyn>
+      <nav class="menu" aria-label="主菜单" data-astro-cid-entc4gyn>
+        <a href="/" data-astro-cid-entc4gyn>首页</a
+        ><a href="/characters" data-astro-cid-entc4gyn>角色</a
+        ><a href="/classes" data-astro-cid-entc4gyn>兵种</a
+        ><a href="/skills" aria-current="page" data-astro-cid-entc4gyn>特技</a
+        ><a href="/emblems" data-astro-cid-entc4gyn>纹章士</a
+        ><a href="/team" data-astro-cid-entc4gyn>阵容搭配</a
+        ><a href="/chapters" data-astro-cid-entc4gyn>章节流程</a>
+      </nav>
+      <main data-astro-cid-entc4gyn>
+        <p class="my-4 text-sm">
+          <a
+            class="text-brand-blue focus-visible:outline-brand-orange focus-visible:outline-offset-4 underline"
+            href="/skills"
+            >← 全部特技</a
+          >
+        </p>
+        <header class="flex items-stretch gap-4">
+          <img
+            src="/_astro/%E6%9C%88%E5%85%89.HRxczNRg_Z1orUv5.webp"
+            srcset="
+              /_astro/%E6%9C%88%E5%85%89.HRxczNRg_Z1orUv5.webp 1x,
+              /_astro/%E6%9C%88%E5%85%89.HRxczNRg_ZUwRNS.webp  2x
+            "
+            alt
+            data-astro-cid-zennbdu3="true"
+            loading="lazy"
+            decoding="async"
+            width="64"
+            height="64"
+            class="thumb"
+          />
+          <div class="flex flex-col justify-around">
+            <p class="text-brand-gray text-sm">兵种特技</p>
+            <h1 class="text-2xl font-medium">月光</h1>
+          </div>
+        </header>
+        <p
+          class="desc my-4 px-4 py-4 border-l-4 border-brand-orange text-brand-black bg-brand-bg text-xl"
+        >
+          攻击时，一定几率无视敌人1/2的防守与魔防（几率为“技巧”%）
+        </p>
+        <section class="my-4">
+          <h2 class="mb-1.5 font-bold text-brand-gray text-lg">特技信息</h2>
+          <dl class="my-4">
+            <div
+              class="grid grid-cols-[6rem_minmax(0,1fr)] gap-3 border border-brand-border py-2 px-3"
+            >
+              <dt class="text-brand-gray text-sm">特技名称</dt>
+              <dd class="text-sm whitespace-pre-line">月光</dd>
+            </div>
+            <div
+              class="grid grid-cols-[6rem_minmax(0,1fr)] gap-3 border border-brand-border py-2 px-3"
+            >
+              <dt class="text-brand-gray text-sm">特技类型</dt>
+              <dd class="text-sm whitespace-pre-line">兵种特技</dd>
+            </div>
+            <div
+              class="grid grid-cols-[6rem_minmax(0,1fr)] gap-3 border border-brand-border py-2 px-3"
+            >
+              <dt class="text-brand-gray text-sm">详细效果说明</dt>
+              <dd class="text-sm whitespace-pre-line">
+                攻击时，一定几率无视敌人1/2的防守与魔防（几率为“技巧”%）
+              </dd>
+            </div>
+            <div
+              class="grid grid-cols-[6rem_minmax(0,1fr)] gap-3 border border-brand-border py-2 px-3"
+            >
+              <dt class="text-brand-gray text-sm">角色要求</dt>
+              <dd class="text-sm whitespace-pre-line">史塔卢克</dd>
+            </div>
+            <div
+              class="grid grid-cols-[6rem_minmax(0,1fr)] gap-3 border border-brand-border py-2 px-3"
+            >
+              <dt class="text-brand-gray text-sm">兵种要求</dt>
+              <dd class="text-sm whitespace-pre-line">狙击兵</dd>
+            </div>
+            <div
+              class="grid grid-cols-[6rem_minmax(0,1fr)] gap-3 border border-brand-border py-2 px-3"
+            >
+              <dt class="text-brand-gray text-sm">纹章士</dt>
+              <dd class="text-sm whitespace-pre-line">--</dd>
+            </div>
+            <div
+              class="grid grid-cols-[6rem_minmax(0,1fr)] gap-3 border border-brand-border py-2 px-3"
+            >
+              <dt class="text-brand-gray text-sm">牵绊等级</dt>
+              <dd class="text-sm whitespace-pre-line">--</dd>
+            </div>
+            <div
+              class="grid grid-cols-[6rem_minmax(0,1fr)] gap-3 border border-brand-border py-2 px-3"
+            >
+              <dt class="text-brand-gray text-sm">继承SP</dt>
+              <dd class="text-sm whitespace-pre-line">--</dd>
+            </div>
+            <div
+              class="grid grid-cols-[6rem_minmax(0,1fr)] gap-3 border border-brand-border py-2 px-3"
+            >
+              <dt class="text-brand-gray text-sm">备注</dt>
+              <dd class="text-sm whitespace-pre-line">
+                需要大师证转职 高级兵种Lv.5时习得
+              </dd>
+            </div>
+          </dl>
+        </section>
+      </main>
+    </div>
+  </body>
+</html>
+"
+`;
+
+exports[`built skill detail page snapshots > 兵种特技: matches the full HTML snapshot for 背理之法 1`] = `
+"<!DOCTYPE html>
+<html lang="zh-CN" data-astro-cid-z4jru4n3>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" href="/favicon.ico" />
+    <meta name="generator" content="Astro v7.4.2" />
+    <!-- 数字字体：Barlow 数字窄而清楚、有等宽数字，用于表格里的数值 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Barlow:wght@500;700&display=swap"
+    />
+    <title>火焰纹章结合 Engage Wiki</title>
+    <link rel="stylesheet" href="/_astro/NavLayout.2QCpPIjh.css" />
+    <style>
+      .thumb[data-astro-cid-zennbdu3] {
+        aspect-ratio: 1;
+        border-radius: 6px;
+        flex: none;
+        max-width: 100%;
+        height: auto;
+        display: block;
+      }
+      .placeholder[data-astro-cid-zennbdu3] {
+        background: #e5e5e5;
+      }
+    </style>
+  </head>
+  <body data-astro-cid-z4jru4n3>
+    <div class="nav-layout no-sidebar" data-astro-cid-entc4gyn>
+      <nav class="menu" aria-label="主菜单" data-astro-cid-entc4gyn>
+        <a href="/" data-astro-cid-entc4gyn>首页</a
+        ><a href="/characters" data-astro-cid-entc4gyn>角色</a
+        ><a href="/classes" data-astro-cid-entc4gyn>兵种</a
+        ><a href="/skills" aria-current="page" data-astro-cid-entc4gyn>特技</a
+        ><a href="/emblems" data-astro-cid-entc4gyn>纹章士</a
+        ><a href="/team" data-astro-cid-entc4gyn>阵容搭配</a
+        ><a href="/chapters" data-astro-cid-entc4gyn>章节流程</a>
+      </nav>
+      <main data-astro-cid-entc4gyn>
+        <p class="my-4 text-sm">
+          <a
+            class="text-brand-blue focus-visible:outline-brand-orange focus-visible:outline-offset-4 underline"
+            href="/skills"
+            >← 全部特技</a
+          >
+        </p>
+        <header class="flex items-stretch gap-4">
+          <img
+            src="/_astro/%E8%83%8C%E7%90%86%E4%B9%8B%E6%B3%95.DU7VmR2k_1YsL4h.webp"
+            srcset="
+              /_astro/%E8%83%8C%E7%90%86%E4%B9%8B%E6%B3%95.DU7VmR2k_1YsL4h.webp  1x,
+              /_astro/%E8%83%8C%E7%90%86%E4%B9%8B%E6%B3%95.DU7VmR2k_Z111ySi.webp 2x
+            "
+            alt
+            data-astro-cid-zennbdu3="true"
+            loading="lazy"
+            decoding="async"
+            width="64"
+            height="64"
+            class="thumb"
+          />
+          <div class="flex flex-col justify-around">
+            <p class="text-brand-gray text-sm">兵种特技</p>
+            <h1 class="text-2xl font-medium">背理之法</h1>
+          </div>
+        </header>
+        <p
+          class="desc my-4 px-4 py-4 border-l-4 border-brand-orange text-brand-black bg-brand-bg text-xl"
+        >
+          自身发动攻击时，若敌人的攻击类型（物理攻击、魔道书）与自身不同，速度+3
+        </p>
+        <section class="my-4">
+          <h2 class="mb-1.5 font-bold text-brand-gray text-lg">特技信息</h2>
+          <dl class="my-4">
+            <div
+              class="grid grid-cols-[6rem_minmax(0,1fr)] gap-3 border border-brand-border py-2 px-3"
+            >
+              <dt class="text-brand-gray text-sm">特技名称</dt>
+              <dd class="text-sm whitespace-pre-line">背理之法</dd>
+            </div>
+            <div
+              class="grid grid-cols-[6rem_minmax(0,1fr)] gap-3 border border-brand-border py-2 px-3"
+            >
+              <dt class="text-brand-gray text-sm">特技类型</dt>
+              <dd class="text-sm whitespace-pre-line">兵种特技</dd>
+            </div>
+            <div
+              class="grid grid-cols-[6rem_minmax(0,1fr)] gap-3 border border-brand-border py-2 px-3"
+            >
+              <dt class="text-brand-gray text-sm">详细效果说明</dt>
+              <dd class="text-sm whitespace-pre-line">
+                自身发动攻击时，若敌人的攻击类型（物理攻击、魔道书）与自身不同，速度+3
+              </dd>
+            </div>
+            <div
+              class="grid grid-cols-[6rem_minmax(0,1fr)] gap-3 border border-brand-border py-2 px-3"
+            >
+              <dt class="text-brand-gray text-sm">角色要求</dt>
+              <dd class="text-sm whitespace-pre-line">--</dd>
+            </div>
+            <div
+              class="grid grid-cols-[6rem_minmax(0,1fr)] gap-3 border border-brand-border py-2 px-3"
+            >
+              <dt class="text-brand-gray text-sm">兵种要求</dt>
+              <dd class="text-sm whitespace-pre-line">魔法师骑士</dd>
+            </div>
+            <div
+              class="grid grid-cols-[6rem_minmax(0,1fr)] gap-3 border border-brand-border py-2 px-3"
+            >
+              <dt class="text-brand-gray text-sm">纹章士</dt>
+              <dd class="text-sm whitespace-pre-line">--</dd>
+            </div>
+            <div
+              class="grid grid-cols-[6rem_minmax(0,1fr)] gap-3 border border-brand-border py-2 px-3"
+            >
+              <dt class="text-brand-gray text-sm">牵绊等级</dt>
+              <dd class="text-sm whitespace-pre-line">--</dd>
+            </div>
+            <div
+              class="grid grid-cols-[6rem_minmax(0,1fr)] gap-3 border border-brand-border py-2 px-3"
+            >
+              <dt class="text-brand-gray text-sm">继承SP</dt>
+              <dd class="text-sm whitespace-pre-line">--</dd>
+            </div>
+            <div
+              class="grid grid-cols-[6rem_minmax(0,1fr)] gap-3 border border-brand-border py-2 px-3"
+            >
+              <dt class="text-brand-gray text-sm">备注</dt>
+              <dd class="text-sm whitespace-pre-line">
+                需要大师证转职 高级兵种Lv.5时习得
+              </dd>
+            </div>
+          </dl>
+        </section>
+      </main>
+    </div>
+  </body>
+</html>
+"
+`;
+
+exports[`built skill detail page snapshots > 牵绊戒指特技: matches the full HTML snapshot for 神雷 1`] = `
+"<!DOCTYPE html>
+<html lang="zh-CN" data-astro-cid-z4jru4n3>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" href="/favicon.ico" />
+    <meta name="generator" content="Astro v7.4.2" />
+    <!-- 数字字体：Barlow 数字窄而清楚、有等宽数字，用于表格里的数值 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Barlow:wght@500;700&display=swap"
+    />
+    <title>火焰纹章结合 Engage Wiki</title>
+    <link rel="stylesheet" href="/_astro/NavLayout.2QCpPIjh.css" />
+    <style>
+      .thumb[data-astro-cid-zennbdu3] {
+        aspect-ratio: 1;
+        border-radius: 6px;
+        flex: none;
+        max-width: 100%;
+        height: auto;
+        display: block;
+      }
+      .placeholder[data-astro-cid-zennbdu3] {
+        background: #e5e5e5;
+      }
+    </style>
+  </head>
+  <body data-astro-cid-z4jru4n3>
+    <div class="nav-layout no-sidebar" data-astro-cid-entc4gyn>
+      <nav class="menu" aria-label="主菜单" data-astro-cid-entc4gyn>
+        <a href="/" data-astro-cid-entc4gyn>首页</a
+        ><a href="/characters" data-astro-cid-entc4gyn>角色</a
+        ><a href="/classes" data-astro-cid-entc4gyn>兵种</a
+        ><a href="/skills" aria-current="page" data-astro-cid-entc4gyn>特技</a
+        ><a href="/emblems" data-astro-cid-entc4gyn>纹章士</a
+        ><a href="/team" data-astro-cid-entc4gyn>阵容搭配</a
+        ><a href="/chapters" data-astro-cid-entc4gyn>章节流程</a>
+      </nav>
+      <main data-astro-cid-entc4gyn>
+        <p class="my-4 text-sm">
+          <a
+            class="text-brand-blue focus-visible:outline-brand-orange focus-visible:outline-offset-4 underline"
+            href="/skills"
+            >← 全部特技</a
+          >
+        </p>
+        <header class="flex items-stretch gap-4">
+          <img
+            src="/_astro/%E7%A5%9E%E9%9B%B7.5wheYi5U_ZWMcA9.webp"
+            srcset="
+              /_astro/%E7%A5%9E%E9%9B%B7.5wheYi5U_ZWMcA9.webp 1x,
+              /_astro/%E7%A5%9E%E9%9B%B7.5wheYi5U_2rK8Xd.webp 2x
+            "
+            alt
+            data-astro-cid-zennbdu3="true"
+            loading="lazy"
+            decoding="async"
+            width="64"
+            height="64"
+            class="thumb"
+          />
+          <div class="flex flex-col justify-around">
+            <p class="text-brand-gray text-sm">牵绊戒指特技</p>
+            <h1 class="text-2xl font-medium">神雷</h1>
+          </div>
+        </header>
+        <p
+          class="desc my-4 px-4 py-4 border-l-4 border-brand-orange text-brand-black bg-brand-bg text-xl"
+        >
+          自身使用雷电攻击时，将连续攻击两次（狂雷、托隆除外）
+        </p>
+        <section class="my-4">
+          <h2 class="mb-1.5 font-bold text-brand-gray text-lg">特技信息</h2>
+          <dl class="my-4">
+            <div
+              class="grid grid-cols-[6rem_minmax(0,1fr)] gap-3 border border-brand-border py-2 px-3"
+            >
+              <dt class="text-brand-gray text-sm">特技名称</dt>
+              <dd class="text-sm whitespace-pre-line">神雷</dd>
+            </div>
+            <div
+              class="grid grid-cols-[6rem_minmax(0,1fr)] gap-3 border border-brand-border py-2 px-3"
+            >
+              <dt class="text-brand-gray text-sm">特技类型</dt>
+              <dd class="text-sm whitespace-pre-line">牵绊戒指特技</dd>
+            </div>
+            <div
+              class="grid grid-cols-[6rem_minmax(0,1fr)] gap-3 border border-brand-border py-2 px-3"
+            >
+              <dt class="text-brand-gray text-sm">详细效果说明</dt>
+              <dd class="text-sm whitespace-pre-line">
+                自身使用雷电攻击时，将连续攻击两次（狂雷、托隆除外）
+              </dd>
+            </div>
+            <div
+              class="grid grid-cols-[6rem_minmax(0,1fr)] gap-3 border border-brand-border py-2 px-3"
+            >
+              <dt class="text-brand-gray text-sm">角色要求</dt>
+              <dd class="text-sm whitespace-pre-line">--</dd>
+            </div>
+            <div
+              class="grid grid-cols-[6rem_minmax(0,1fr)] gap-3 border border-brand-border py-2 px-3"
+            >
+              <dt class="text-brand-gray text-sm">兵种要求</dt>
+              <dd class="text-sm whitespace-pre-line">--</dd>
+            </div>
+            <div
+              class="grid grid-cols-[6rem_minmax(0,1fr)] gap-3 border border-brand-border py-2 px-3"
+            >
+              <dt class="text-brand-gray text-sm">纹章士</dt>
+              <dd class="text-sm whitespace-pre-line">里弗</dd>
+            </div>
+            <div
+              class="grid grid-cols-[6rem_minmax(0,1fr)] gap-3 border border-brand-border py-2 px-3"
+            >
+              <dt class="text-brand-gray text-sm">牵绊等级</dt>
+              <dd class="text-sm whitespace-pre-line">--</dd>
+            </div>
+            <div
+              class="grid grid-cols-[6rem_minmax(0,1fr)] gap-3 border border-brand-border py-2 px-3"
+            >
+              <dt class="text-brand-gray text-sm">继承SP</dt>
+              <dd class="text-sm whitespace-pre-line">--</dd>
+            </div>
+            <div
+              class="grid grid-cols-[6rem_minmax(0,1fr)] gap-3 border border-brand-border py-2 px-3"
+            >
+              <dt class="text-brand-gray text-sm">备注</dt>
+              <dd class="text-sm whitespace-pre-line">
+                必须佩戴牵绊戒指【S级欧尔玟】时才生效
+              </dd>
+            </div>
+          </dl>
+        </section>
+      </main>
+    </div>
+  </body>
+</html>
+"
+`;
+
+exports[`built skill detail page snapshots > 牵绊戒指特技: matches the full HTML snapshot for 风神 1`] = `
+"<!DOCTYPE html>
+<html lang="zh-CN" data-astro-cid-z4jru4n3>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" href="/favicon.ico" />
+    <meta name="generator" content="Astro v7.4.2" />
+    <!-- 数字字体：Barlow 数字窄而清楚、有等宽数字，用于表格里的数值 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Barlow:wght@500;700&display=swap"
+    />
+    <title>火焰纹章结合 Engage Wiki</title>
+    <link rel="stylesheet" href="/_astro/NavLayout.2QCpPIjh.css" />
+    <style>
+      .thumb[data-astro-cid-zennbdu3] {
+        aspect-ratio: 1;
+        border-radius: 6px;
+        flex: none;
+        max-width: 100%;
+        height: auto;
+        display: block;
+      }
+      .placeholder[data-astro-cid-zennbdu3] {
+        background: #e5e5e5;
+      }
+    </style>
+  </head>
+  <body data-astro-cid-z4jru4n3>
+    <div class="nav-layout no-sidebar" data-astro-cid-entc4gyn>
+      <nav class="menu" aria-label="主菜单" data-astro-cid-entc4gyn>
+        <a href="/" data-astro-cid-entc4gyn>首页</a
+        ><a href="/characters" data-astro-cid-entc4gyn>角色</a
+        ><a href="/classes" data-astro-cid-entc4gyn>兵种</a
+        ><a href="/skills" aria-current="page" data-astro-cid-entc4gyn>特技</a
+        ><a href="/emblems" data-astro-cid-entc4gyn>纹章士</a
+        ><a href="/team" data-astro-cid-entc4gyn>阵容搭配</a
+        ><a href="/chapters" data-astro-cid-entc4gyn>章节流程</a>
+      </nav>
+      <main data-astro-cid-entc4gyn>
+        <p class="my-4 text-sm">
+          <a
+            class="text-brand-blue focus-visible:outline-brand-orange focus-visible:outline-offset-4 underline"
+            href="/skills"
+            >← 全部特技</a
+          >
+        </p>
+        <header class="flex items-stretch gap-4">
+          <img
+            src="/_astro/%E9%A3%8E%E7%A5%9E.pYRFelqS_Ztr4ul.webp"
+            srcset="
+              /_astro/%E9%A3%8E%E7%A5%9E.pYRFelqS_Ztr4ul.webp 1x,
+              /_astro/%E9%A3%8E%E7%A5%9E.pYRFelqS_26SOsj.webp 2x
+            "
+            alt
+            data-astro-cid-zennbdu3="true"
+            loading="lazy"
+            decoding="async"
+            width="64"
+            height="64"
+            class="thumb"
+          />
+          <div class="flex flex-col justify-around">
+            <p class="text-brand-gray text-sm">牵绊戒指特技</p>
+            <h1 class="text-2xl font-medium">风神</h1>
+          </div>
+        </header>
+        <p
+          class="desc my-4 px-4 py-4 border-l-4 border-brand-orange text-brand-black bg-brand-bg text-xl"
+        >
+          自身的HP为最大值时，弓的射程+1
+        </p>
+        <section class="my-4">
+          <h2 class="mb-1.5 font-bold text-brand-gray text-lg">特技信息</h2>
+          <dl class="my-4">
+            <div
+              class="grid grid-cols-[6rem_minmax(0,1fr)] gap-3 border border-brand-border py-2 px-3"
+            >
+              <dt class="text-brand-gray text-sm">特技名称</dt>
+              <dd class="text-sm whitespace-pre-line">风神</dd>
+            </div>
+            <div
+              class="grid grid-cols-[6rem_minmax(0,1fr)] gap-3 border border-brand-border py-2 px-3"
+            >
+              <dt class="text-brand-gray text-sm">特技类型</dt>
+              <dd class="text-sm whitespace-pre-line">牵绊戒指特技</dd>
+            </div>
+            <div
+              class="grid grid-cols-[6rem_minmax(0,1fr)] gap-3 border border-brand-border py-2 px-3"
+            >
+              <dt class="text-brand-gray text-sm">详细效果说明</dt>
+              <dd class="text-sm whitespace-pre-line">
+                自身的HP为最大值时，弓的射程+1
+              </dd>
+            </div>
+            <div
+              class="grid grid-cols-[6rem_minmax(0,1fr)] gap-3 border border-brand-border py-2 px-3"
+            >
+              <dt class="text-brand-gray text-sm">角色要求</dt>
+              <dd class="text-sm whitespace-pre-line">--</dd>
+            </div>
+            <div
+              class="grid grid-cols-[6rem_minmax(0,1fr)] gap-3 border border-brand-border py-2 px-3"
+            >
+              <dt class="text-brand-gray text-sm">兵种要求</dt>
+              <dd class="text-sm whitespace-pre-line">--</dd>
+            </div>
+            <div
+              class="grid grid-cols-[6rem_minmax(0,1fr)] gap-3 border border-brand-border py-2 px-3"
+            >
+              <dt class="text-brand-gray text-sm">纹章士</dt>
+              <dd class="text-sm whitespace-pre-line">贝雷特</dd>
+            </div>
+            <div
+              class="grid grid-cols-[6rem_minmax(0,1fr)] gap-3 border border-brand-border py-2 px-3"
+            >
+              <dt class="text-brand-gray text-sm">牵绊等级</dt>
+              <dd class="text-sm whitespace-pre-line">--</dd>
+            </div>
+            <div
+              class="grid grid-cols-[6rem_minmax(0,1fr)] gap-3 border border-brand-border py-2 px-3"
+            >
+              <dt class="text-brand-gray text-sm">继承SP</dt>
+              <dd class="text-sm whitespace-pre-line">--</dd>
+            </div>
+            <div
+              class="grid grid-cols-[6rem_minmax(0,1fr)] gap-3 border border-brand-border py-2 px-3"
+            >
+              <dt class="text-brand-gray text-sm">备注</dt>
+              <dd class="text-sm whitespace-pre-line">
+                必须佩戴牵绊戒指【S级库罗德】时才生效
+              </dd>
+            </div>
+          </dl>
+        </section>
+      </main>
+    </div>
+  </body>
+</html>
+"
+`;
+
+exports[`built skill detail page snapshots > 纹章士-同步特技: matches the full HTML snapshot for 再移动 1`] = `
+"<!DOCTYPE html>
+<html lang="zh-CN" data-astro-cid-z4jru4n3>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" href="/favicon.ico" />
+    <meta name="generator" content="Astro v7.4.2" />
+    <!-- 数字字体：Barlow 数字窄而清楚、有等宽数字，用于表格里的数值 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Barlow:wght@500;700&display=swap"
+    />
+    <title>火焰纹章结合 Engage Wiki</title>
+    <link rel="stylesheet" href="/_astro/NavLayout.2QCpPIjh.css" />
+    <style>
+      .thumb[data-astro-cid-zennbdu3] {
+        aspect-ratio: 1;
+        border-radius: 6px;
+        flex: none;
+        max-width: 100%;
+        height: auto;
+        display: block;
+      }
+      .placeholder[data-astro-cid-zennbdu3] {
+        background: #e5e5e5;
+      }
+    </style>
+  </head>
+  <body data-astro-cid-z4jru4n3>
+    <div class="nav-layout no-sidebar" data-astro-cid-entc4gyn>
+      <nav class="menu" aria-label="主菜单" data-astro-cid-entc4gyn>
+        <a href="/" data-astro-cid-entc4gyn>首页</a
+        ><a href="/characters" data-astro-cid-entc4gyn>角色</a
+        ><a href="/classes" data-astro-cid-entc4gyn>兵种</a
+        ><a href="/skills" aria-current="page" data-astro-cid-entc4gyn>特技</a
+        ><a href="/emblems" data-astro-cid-entc4gyn>纹章士</a
+        ><a href="/team" data-astro-cid-entc4gyn>阵容搭配</a
+        ><a href="/chapters" data-astro-cid-entc4gyn>章节流程</a>
+      </nav>
+      <main data-astro-cid-entc4gyn>
+        <p class="my-4 text-sm">
+          <a
+            class="text-brand-blue focus-visible:outline-brand-orange focus-visible:outline-offset-4 underline"
+            href="/skills"
+            >← 全部特技</a
+          >
+        </p>
+        <header class="flex items-stretch gap-4">
+          <img
+            src="/_astro/%E5%86%8D%E7%A7%BB%E5%8A%A8.BCdd0KoY_Z1ub5eo.webp"
+            srcset="
+              /_astro/%E5%86%8D%E7%A7%BB%E5%8A%A8.BCdd0KoY_Z1ub5eo.webp 1x,
+              /_astro/%E5%86%8D%E7%A7%BB%E5%8A%A8.BCdd0KoY_1rPAlH.webp  2x
+            "
+            alt
+            data-astro-cid-zennbdu3="true"
+            loading="lazy"
+            decoding="async"
+            width="64"
+            height="64"
+            class="thumb"
+          />
+          <div class="flex flex-col justify-around">
+            <p class="text-brand-gray text-sm">纹章士-同步特技</p>
+            <h1 class="text-2xl font-medium">再移动</h1>
+          </div>
+        </header>
+        <p
+          class="desc my-4 px-4 py-4 border-l-4 border-brand-orange text-brand-black bg-brand-bg text-xl"
+        >
+          行动后可额外移动2格。
+        </p>
+        <section class="my-4">
+          <h2 class="mb-1.5 font-bold text-brand-gray text-lg">特技信息</h2>
+          <dl class="my-4">
+            <div
+              class="grid grid-cols-[6rem_minmax(0,1fr)] gap-3 border border-brand-border py-2 px-3"
+            >
+              <dt class="text-brand-gray text-sm">特技名称</dt>
+              <dd class="text-sm whitespace-pre-line">再移动</dd>
+            </div>
+            <div
+              class="grid grid-cols-[6rem_minmax(0,1fr)] gap-3 border border-brand-border py-2 px-3"
+            >
+              <dt class="text-brand-gray text-sm">特技类型</dt>
+              <dd class="text-sm whitespace-pre-line">纹章士-同步特技</dd>
+            </div>
+            <div
+              class="grid grid-cols-[6rem_minmax(0,1fr)] gap-3 border border-brand-border py-2 px-3"
+            >
+              <dt class="text-brand-gray text-sm">详细效果说明</dt>
+              <dd class="text-sm whitespace-pre-line">行动后可额外移动2格。</dd>
+            </div>
+            <div
+              class="grid grid-cols-[6rem_minmax(0,1fr)] gap-3 border border-brand-border py-2 px-3"
+            >
+              <dt class="text-brand-gray text-sm">角色要求</dt>
+              <dd class="text-sm whitespace-pre-line">--</dd>
+            </div>
+            <div
+              class="grid grid-cols-[6rem_minmax(0,1fr)] gap-3 border border-brand-border py-2 px-3"
+            >
+              <dt class="text-brand-gray text-sm">兵种要求</dt>
+              <dd class="text-sm whitespace-pre-line">--</dd>
+            </div>
+            <div
+              class="grid grid-cols-[6rem_minmax(0,1fr)] gap-3 border border-brand-border py-2 px-3"
+            >
+              <dt class="text-brand-gray text-sm">纹章士</dt>
+              <dd class="text-sm whitespace-pre-line">西格尔特</dd>
+            </div>
+            <div
+              class="grid grid-cols-[6rem_minmax(0,1fr)] gap-3 border border-brand-border py-2 px-3"
+            >
+              <dt class="text-brand-gray text-sm">牵绊等级</dt>
+              <dd class="text-sm whitespace-pre-line">1</dd>
+            </div>
+            <div
+              class="grid grid-cols-[6rem_minmax(0,1fr)] gap-3 border border-brand-border py-2 px-3"
+            >
+              <dt class="text-brand-gray text-sm">继承SP</dt>
+              <dd class="text-sm whitespace-pre-line">1000</dd>
+            </div>
+            <div
+              class="grid grid-cols-[6rem_minmax(0,1fr)] gap-3 border border-brand-border py-2 px-3"
+            >
+              <dt class="text-brand-gray text-sm">备注</dt>
+              <dd class="text-sm whitespace-pre-line">
+                继承特技和同步效果不叠加
+              </dd>
+            </div>
+          </dl>
+        </section>
+      </main>
+    </div>
+  </body>
+</html>
+"
+`;
+
+exports[`built skill detail page snapshots > 纹章士-同步特技: matches the full HTML snapshot for 身体接触 1`] = `
+"<!DOCTYPE html>
+<html lang="zh-CN" data-astro-cid-z4jru4n3>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" href="/favicon.ico" />
+    <meta name="generator" content="Astro v7.4.2" />
+    <!-- 数字字体：Barlow 数字窄而清楚、有等宽数字，用于表格里的数值 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Barlow:wght@500;700&display=swap"
+    />
+    <title>火焰纹章结合 Engage Wiki</title>
+    <link rel="stylesheet" href="/_astro/NavLayout.2QCpPIjh.css" />
+    <style>
+      .thumb[data-astro-cid-zennbdu3] {
+        aspect-ratio: 1;
+        border-radius: 6px;
+        flex: none;
+        max-width: 100%;
+        height: auto;
+        display: block;
+      }
+      .placeholder[data-astro-cid-zennbdu3] {
+        background: #e5e5e5;
+      }
+    </style>
+  </head>
+  <body data-astro-cid-z4jru4n3>
+    <div class="nav-layout no-sidebar" data-astro-cid-entc4gyn>
+      <nav class="menu" aria-label="主菜单" data-astro-cid-entc4gyn>
+        <a href="/" data-astro-cid-entc4gyn>首页</a
+        ><a href="/characters" data-astro-cid-entc4gyn>角色</a
+        ><a href="/classes" data-astro-cid-entc4gyn>兵种</a
+        ><a href="/skills" aria-current="page" data-astro-cid-entc4gyn>特技</a
+        ><a href="/emblems" data-astro-cid-entc4gyn>纹章士</a
+        ><a href="/team" data-astro-cid-entc4gyn>阵容搭配</a
+        ><a href="/chapters" data-astro-cid-entc4gyn>章节流程</a>
+      </nav>
+      <main data-astro-cid-entc4gyn>
+        <p class="my-4 text-sm">
+          <a
+            class="text-brand-blue focus-visible:outline-brand-orange focus-visible:outline-offset-4 underline"
+            href="/skills"
+            >← 全部特技</a
+          >
+        </p>
+        <header class="flex items-stretch gap-4">
+          <img
+            src="/_astro/%E8%BA%AB%E4%BD%93%E6%8E%A5%E8%A7%A6.C6SkAHng_Zv3rFh.webp"
+            srcset="
+              /_astro/%E8%BA%AB%E4%BD%93%E6%8E%A5%E8%A7%A6.C6SkAHng_Zv3rFh.webp  1x,
+              /_astro/%E8%BA%AB%E4%BD%93%E6%8E%A5%E8%A7%A6.C6SkAHng_Z2fpnKy.webp 2x
+            "
+            alt
+            data-astro-cid-zennbdu3="true"
+            loading="lazy"
+            decoding="async"
+            width="64"
+            height="64"
+            class="thumb"
+          />
+          <div class="flex flex-col justify-around">
+            <p class="text-brand-gray text-sm">纹章士-同步特技</p>
+            <h1 class="text-2xl font-medium">身体接触</h1>
+          </div>
+        </header>
+        <p
+          class="desc my-4 px-4 py-4 border-l-4 border-brand-orange text-brand-black bg-brand-bg text-xl"
+        >
+          行动结束或待命时，回复相邻我方单位5HP，并稍微提升支援值。
+        </p>
+        <section class="my-4">
+          <h2 class="mb-1.5 font-bold text-brand-gray text-lg">特技信息</h2>
+          <dl class="my-4">
+            <div
+              class="grid grid-cols-[6rem_minmax(0,1fr)] gap-3 border border-brand-border py-2 px-3"
+            >
+              <dt class="text-brand-gray text-sm">特技名称</dt>
+              <dd class="text-sm whitespace-pre-line">身体接触</dd>
+            </div>
+            <div
+              class="grid grid-cols-[6rem_minmax(0,1fr)] gap-3 border border-brand-border py-2 px-3"
+            >
+              <dt class="text-brand-gray text-sm">特技类型</dt>
+              <dd class="text-sm whitespace-pre-line">纹章士-同步特技</dd>
+            </div>
+            <div
+              class="grid grid-cols-[6rem_minmax(0,1fr)] gap-3 border border-brand-border py-2 px-3"
+            >
+              <dt class="text-brand-gray text-sm">详细效果说明</dt>
+              <dd class="text-sm whitespace-pre-line">
+                行动结束或待命时，回复相邻我方单位5HP，并稍微提升支援值。
+              </dd>
+            </div>
+            <div
+              class="grid grid-cols-[6rem_minmax(0,1fr)] gap-3 border border-brand-border py-2 px-3"
+            >
+              <dt class="text-brand-gray text-sm">角色要求</dt>
+              <dd class="text-sm whitespace-pre-line">--</dd>
+            </div>
+            <div
+              class="grid grid-cols-[6rem_minmax(0,1fr)] gap-3 border border-brand-border py-2 px-3"
+            >
+              <dt class="text-brand-gray text-sm">兵种要求</dt>
+              <dd class="text-sm whitespace-pre-line">--</dd>
+            </div>
+            <div
+              class="grid grid-cols-[6rem_minmax(0,1fr)] gap-3 border border-brand-border py-2 px-3"
+            >
+              <dt class="text-brand-gray text-sm">纹章士</dt>
+              <dd class="text-sm whitespace-pre-line">神威</dd>
+            </div>
+            <div
+              class="grid grid-cols-[6rem_minmax(0,1fr)] gap-3 border border-brand-border py-2 px-3"
+            >
+              <dt class="text-brand-gray text-sm">牵绊等级</dt>
+              <dd class="text-sm whitespace-pre-line">3</dd>
+            </div>
+            <div
+              class="grid grid-cols-[6rem_minmax(0,1fr)] gap-3 border border-brand-border py-2 px-3"
+            >
+              <dt class="text-brand-gray text-sm">继承SP</dt>
+              <dd class="text-sm whitespace-pre-line">250</dd>
+            </div>
+            <div
+              class="grid grid-cols-[6rem_minmax(0,1fr)] gap-3 border border-brand-border py-2 px-3"
+            >
+              <dt class="text-brand-gray text-sm">备注</dt>
+              <dd class="text-sm whitespace-pre-line">
+                继承特技和同步效果不叠加
+              </dd>
+            </div>
+          </dl>
+        </section>
+      </main>
+    </div>
+  </body>
+</html>
+"
+`;
+
+exports[`built skill detail page snapshots > 纹章士-结合指令技: matches the full HTML snapshot for 计策：女神之舞 1`] = `
+"<!DOCTYPE html>
+<html lang="zh-CN" data-astro-cid-z4jru4n3>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" href="/favicon.ico" />
+    <meta name="generator" content="Astro v7.4.2" />
+    <!-- 数字字体：Barlow 数字窄而清楚、有等宽数字，用于表格里的数值 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Barlow:wght@500;700&display=swap"
+    />
+    <title>火焰纹章结合 Engage Wiki</title>
+    <link rel="stylesheet" href="/_astro/NavLayout.2QCpPIjh.css" />
+    <style>
+      .thumb[data-astro-cid-zennbdu3] {
+        aspect-ratio: 1;
+        border-radius: 6px;
+        flex: none;
+        max-width: 100%;
+        height: auto;
+        display: block;
+      }
+      .placeholder[data-astro-cid-zennbdu3] {
+        background: #e5e5e5;
+      }
+    </style>
+  </head>
+  <body data-astro-cid-z4jru4n3>
+    <div class="nav-layout no-sidebar" data-astro-cid-entc4gyn>
+      <nav class="menu" aria-label="主菜单" data-astro-cid-entc4gyn>
+        <a href="/" data-astro-cid-entc4gyn>首页</a
+        ><a href="/characters" data-astro-cid-entc4gyn>角色</a
+        ><a href="/classes" data-astro-cid-entc4gyn>兵种</a
+        ><a href="/skills" aria-current="page" data-astro-cid-entc4gyn>特技</a
+        ><a href="/emblems" data-astro-cid-entc4gyn>纹章士</a
+        ><a href="/team" data-astro-cid-entc4gyn>阵容搭配</a
+        ><a href="/chapters" data-astro-cid-entc4gyn>章节流程</a>
+      </nav>
+      <main data-astro-cid-entc4gyn>
+        <p class="my-4 text-sm">
+          <a
+            class="text-brand-blue focus-visible:outline-brand-orange focus-visible:outline-offset-4 underline"
+            href="/skills"
+            >← 全部特技</a
+          >
+        </p>
+        <header class="flex items-stretch gap-4">
+          <img
+            src="/_astro/%E8%AE%A1%E7%AD%96%EF%BC%9A%E5%A5%B3%E7%A5%9E%E4%B9%8B%E8%88%9E.B6K3QqIt_Z7azuX.webp"
+            srcset="
+              /_astro/%E8%AE%A1%E7%AD%96%EF%BC%9A%E5%A5%B3%E7%A5%9E%E4%B9%8B%E8%88%9E.B6K3QqIt_Z7azuX.webp 1x,
+              /_astro/%E8%AE%A1%E7%AD%96%EF%BC%9A%E5%A5%B3%E7%A5%9E%E4%B9%8B%E8%88%9E.B6K3QqIt_VeDI5.webp  2x
+            "
+            alt
+            data-astro-cid-zennbdu3="true"
+            loading="lazy"
+            decoding="async"
+            width="64"
+            height="64"
+            class="thumb"
+          />
+          <div class="flex flex-col justify-around">
+            <p class="text-brand-gray text-sm">纹章士-结合指令技</p>
+            <h1 class="text-2xl font-medium">计策：女神之舞</h1>
+          </div>
+        </header>
+        <p
+          class="desc my-4 px-4 py-4 border-l-4 border-brand-orange text-brand-black bg-brand-bg text-xl"
+        >
+          使相邻4格内的我方单位再次行动。
+        </p>
+        <section class="my-4">
+          <h2 class="mb-1.5 font-bold text-brand-gray text-lg">战斗类型加成</h2>
+          <p class="text-base whitespace-pre-line">
+            【龙族】再次行动的我方单位7种基本能力值+3，效果持续1回合
+            【骑马】再次行动的我方单位技巧+10，效果持续1回合
+            【魔道】再次行动的我方单位魔力+4，效果持续1回合
+            【气功】再次行动的我方单位幸运+10，效果持续1回合
+            【连携】再次行动的我方单位力量+4，效果持续1回合
+            【重装】再次行动的我方单位防守+5，效果持续1回合
+            【飞行】再次行动的我方单位魔防+5，效果持续1回合
+            【隐密】再次行动的我方单位速度+5，效果持续1回合
+          </p>
+        </section>
+        <section class="my-4">
+          <h2 class="mb-1.5 font-bold text-brand-gray text-lg">特技信息</h2>
+          <dl class="my-4">
+            <div
+              class="grid grid-cols-[6rem_minmax(0,1fr)] gap-3 border border-brand-border py-2 px-3"
+            >
+              <dt class="text-brand-gray text-sm">特技名称</dt>
+              <dd class="text-sm whitespace-pre-line">计策：女神之舞</dd>
+            </div>
+            <div
+              class="grid grid-cols-[6rem_minmax(0,1fr)] gap-3 border border-brand-border py-2 px-3"
+            >
+              <dt class="text-brand-gray text-sm">特技类型</dt>
+              <dd class="text-sm whitespace-pre-line">纹章士-结合指令技</dd>
+            </div>
+            <div
+              class="grid grid-cols-[6rem_minmax(0,1fr)] gap-3 border border-brand-border py-2 px-3"
+            >
+              <dt class="text-brand-gray text-sm">详细效果说明</dt>
+              <dd class="text-sm whitespace-pre-line">
+                使相邻4格内的我方单位再次行动。
+              </dd>
+            </div>
+            <div
+              class="grid grid-cols-[6rem_minmax(0,1fr)] gap-3 border border-brand-border py-2 px-3"
+            >
+              <dt class="text-brand-gray text-sm">角色要求</dt>
+              <dd class="text-sm whitespace-pre-line">--</dd>
+            </div>
+            <div
+              class="grid grid-cols-[6rem_minmax(0,1fr)] gap-3 border border-brand-border py-2 px-3"
+            >
+              <dt class="text-brand-gray text-sm">兵种要求</dt>
+              <dd class="text-sm whitespace-pre-line">--</dd>
+            </div>
+            <div
+              class="grid grid-cols-[6rem_minmax(0,1fr)] gap-3 border border-brand-border py-2 px-3"
+            >
+              <dt class="text-brand-gray text-sm">纹章士</dt>
+              <dd class="text-sm whitespace-pre-line">贝雷特</dd>
+            </div>
+            <div
+              class="grid grid-cols-[6rem_minmax(0,1fr)] gap-3 border border-brand-border py-2 px-3"
+            >
+              <dt class="text-brand-gray text-sm">牵绊等级</dt>
+              <dd class="text-sm whitespace-pre-line">1</dd>
+            </div>
+            <div
+              class="grid grid-cols-[6rem_minmax(0,1fr)] gap-3 border border-brand-border py-2 px-3"
+            >
+              <dt class="text-brand-gray text-sm">继承SP</dt>
+              <dd class="text-sm whitespace-pre-line">--</dd>
+            </div>
+            <div
+              class="grid grid-cols-[6rem_minmax(0,1fr)] gap-3 border border-brand-border py-2 px-3"
+            >
+              <dt class="text-brand-gray text-sm">备注</dt>
+              <dd class="text-sm whitespace-pre-line">
+                必须与纹章士进入“结合”状态才可使用
+              </dd>
+            </div>
+          </dl>
+        </section>
+      </main>
+    </div>
+  </body>
+</html>
+"
+`;
+
+exports[`built skill detail page snapshots > 纹章士-结合指令技: matches the full HTML snapshot for 霸克·天空 1`] = `
+"<!DOCTYPE html>
+<html lang="zh-CN" data-astro-cid-z4jru4n3>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" href="/favicon.ico" />
+    <meta name="generator" content="Astro v7.4.2" />
+    <!-- 数字字体：Barlow 数字窄而清楚、有等宽数字，用于表格里的数值 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Barlow:wght@500;700&display=swap"
+    />
+    <title>火焰纹章结合 Engage Wiki</title>
+    <link rel="stylesheet" href="/_astro/NavLayout.2QCpPIjh.css" />
+    <style>
+      .thumb[data-astro-cid-zennbdu3] {
+        aspect-ratio: 1;
+        border-radius: 6px;
+        flex: none;
+        max-width: 100%;
+        height: auto;
+        display: block;
+      }
+      .placeholder[data-astro-cid-zennbdu3] {
+        background: #e5e5e5;
+      }
+    </style>
+  </head>
+  <body data-astro-cid-z4jru4n3>
+    <div class="nav-layout no-sidebar" data-astro-cid-entc4gyn>
+      <nav class="menu" aria-label="主菜单" data-astro-cid-entc4gyn>
+        <a href="/" data-astro-cid-entc4gyn>首页</a
+        ><a href="/characters" data-astro-cid-entc4gyn>角色</a
+        ><a href="/classes" data-astro-cid-entc4gyn>兵种</a
+        ><a href="/skills" aria-current="page" data-astro-cid-entc4gyn>特技</a
+        ><a href="/emblems" data-astro-cid-entc4gyn>纹章士</a
+        ><a href="/team" data-astro-cid-entc4gyn>阵容搭配</a
+        ><a href="/chapters" data-astro-cid-entc4gyn>章节流程</a>
+      </nav>
+      <main data-astro-cid-entc4gyn>
+        <p class="my-4 text-sm">
+          <a
+            class="text-brand-blue focus-visible:outline-brand-orange focus-visible:outline-offset-4 underline"
+            href="/skills"
+            >← 全部特技</a
+          >
+        </p>
+        <header class="flex items-stretch gap-4">
+          <img
+            src="/_astro/%E9%9C%B8%E5%85%8B%C2%B7%E5%A4%A9%E7%A9%BA.CWW8nFlU_1X6EvT.webp"
+            srcset="
+              /_astro/%E9%9C%B8%E5%85%8B%C2%B7%E5%A4%A9%E7%A9%BA.CWW8nFlU_1X6EvT.webp  1x,
+              /_astro/%E9%9C%B8%E5%85%8B%C2%B7%E5%A4%A9%E7%A9%BA.CWW8nFlU_Z160GT6.webp 2x
+            "
+            alt
+            data-astro-cid-zennbdu3="true"
+            loading="lazy"
+            decoding="async"
+            width="64"
+            height="64"
+            class="thumb"
+          />
+          <div class="flex flex-col justify-around">
+            <p class="text-brand-gray text-sm">纹章士-结合指令技</p>
+            <h1 class="text-2xl font-medium">霸克·天空</h1>
+          </div>
+        </header>
+        <p
+          class="desc my-4 px-4 py-4 border-l-4 border-brand-orange text-brand-black bg-brand-bg text-xl"
+        >
+          舍弃反击使防守、魔防+5，并于下回合对周围2格施展范围攻击，回复伤害30%的HP，仅限持剑、斧。（可清除地形“瘴气”效果）
+        </p>
+        <section class="my-4">
+          <h2 class="mb-1.5 font-bold text-brand-gray text-lg">战斗类型加成</h2>
+          <p class="text-base whitespace-pre-line">
+            【龙族】伤害+1×遇袭次数 【重装】发动中的防守额外+5
+            【飞行】发动中的魔防额外+5
+          </p>
+        </section>
+        <section class="my-4">
+          <h2 class="mb-1.5 font-bold text-brand-gray text-lg">特技信息</h2>
+          <dl class="my-4">
+            <div
+              class="grid grid-cols-[6rem_minmax(0,1fr)] gap-3 border border-brand-border py-2 px-3"
+            >
+              <dt class="text-brand-gray text-sm">特技名称</dt>
+              <dd class="text-sm whitespace-pre-line">霸克·天空</dd>
+            </div>
+            <div
+              class="grid grid-cols-[6rem_minmax(0,1fr)] gap-3 border border-brand-border py-2 px-3"
+            >
+              <dt class="text-brand-gray text-sm">特技类型</dt>
+              <dd class="text-sm whitespace-pre-line">纹章士-结合指令技</dd>
+            </div>
+            <div
+              class="grid grid-cols-[6rem_minmax(0,1fr)] gap-3 border border-brand-border py-2 px-3"
+            >
+              <dt class="text-brand-gray text-sm">详细效果说明</dt>
+              <dd class="text-sm whitespace-pre-line">
+                舍弃反击使防守、魔防+5，并于下回合对周围2格施展范围攻击，回复伤害30%的HP，仅限持剑、斧。（可清除地形“瘴气”效果）
+              </dd>
+            </div>
+            <div
+              class="grid grid-cols-[6rem_minmax(0,1fr)] gap-3 border border-brand-border py-2 px-3"
+            >
+              <dt class="text-brand-gray text-sm">角色要求</dt>
+              <dd class="text-sm whitespace-pre-line">--</dd>
+            </div>
+            <div
+              class="grid grid-cols-[6rem_minmax(0,1fr)] gap-3 border border-brand-border py-2 px-3"
+            >
+              <dt class="text-brand-gray text-sm">兵种要求</dt>
+              <dd class="text-sm whitespace-pre-line">--</dd>
+            </div>
+            <div
+              class="grid grid-cols-[6rem_minmax(0,1fr)] gap-3 border border-brand-border py-2 px-3"
+            >
+              <dt class="text-brand-gray text-sm">纹章士</dt>
+              <dd class="text-sm whitespace-pre-line">艾克</dd>
+            </div>
+            <div
+              class="grid grid-cols-[6rem_minmax(0,1fr)] gap-3 border border-brand-border py-2 px-3"
+            >
+              <dt class="text-brand-gray text-sm">牵绊等级</dt>
+              <dd class="text-sm whitespace-pre-line">1</dd>
+            </div>
+            <div
+              class="grid grid-cols-[6rem_minmax(0,1fr)] gap-3 border border-brand-border py-2 px-3"
+            >
+              <dt class="text-brand-gray text-sm">继承SP</dt>
+              <dd class="text-sm whitespace-pre-line">--</dd>
+            </div>
+            <div
+              class="grid grid-cols-[6rem_minmax(0,1fr)] gap-3 border border-brand-border py-2 px-3"
+            >
+              <dt class="text-brand-gray text-sm">备注</dt>
+              <dd class="text-sm whitespace-pre-line">
+                必须与纹章士进入“结合”状态才可使用
+              </dd>
+            </div>
+          </dl>
+        </section>
+      </main>
+    </div>
+  </body>
+</html>
+"
+`;
+
+exports[`built skill detail page snapshots > 纹章士-结合特技: matches the full HTML snapshot for 牵绊之盾 1`] = `
+"<!DOCTYPE html>
+<html lang="zh-CN" data-astro-cid-z4jru4n3>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" href="/favicon.ico" />
+    <meta name="generator" content="Astro v7.4.2" />
+    <!-- 数字字体：Barlow 数字窄而清楚、有等宽数字，用于表格里的数值 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Barlow:wght@500;700&display=swap"
+    />
+    <title>火焰纹章结合 Engage Wiki</title>
+    <link rel="stylesheet" href="/_astro/NavLayout.2QCpPIjh.css" />
+    <style>
+      .thumb[data-astro-cid-zennbdu3] {
+        aspect-ratio: 1;
+        border-radius: 6px;
+        flex: none;
+        max-width: 100%;
+        height: auto;
+        display: block;
+      }
+      .placeholder[data-astro-cid-zennbdu3] {
+        background: #e5e5e5;
+      }
+    </style>
+  </head>
+  <body data-astro-cid-z4jru4n3>
+    <div class="nav-layout no-sidebar" data-astro-cid-entc4gyn>
+      <nav class="menu" aria-label="主菜单" data-astro-cid-entc4gyn>
+        <a href="/" data-astro-cid-entc4gyn>首页</a
+        ><a href="/characters" data-astro-cid-entc4gyn>角色</a
+        ><a href="/classes" data-astro-cid-entc4gyn>兵种</a
+        ><a href="/skills" aria-current="page" data-astro-cid-entc4gyn>特技</a
+        ><a href="/emblems" data-astro-cid-entc4gyn>纹章士</a
+        ><a href="/team" data-astro-cid-entc4gyn>阵容搭配</a
+        ><a href="/chapters" data-astro-cid-entc4gyn>章节流程</a>
+      </nav>
+      <main data-astro-cid-entc4gyn>
+        <p class="my-4 text-sm">
+          <a
+            class="text-brand-blue focus-visible:outline-brand-orange focus-visible:outline-offset-4 underline"
+            href="/skills"
+            >← 全部特技</a
+          >
+        </p>
+        <header class="flex items-stretch gap-4">
+          <img
+            src="/_astro/%E7%89%B5%E7%BB%8A%E4%B9%8B%E7%9B%BE.DSp1cNpB_TUkpk.webp"
+            srcset="
+              /_astro/%E7%89%B5%E7%BB%8A%E4%B9%8B%E7%9B%BE.DSp1cNpB_TUkpk.webp  1x,
+              /_astro/%E7%89%B5%E7%BB%8A%E4%B9%8B%E7%9B%BE.DSp1cNpB_1gmSwL.webp 2x
+            "
+            alt
+            data-astro-cid-zennbdu3="true"
+            loading="lazy"
+            decoding="async"
+            width="64"
+            height="64"
+            class="thumb"
+          />
+          <div class="flex flex-col justify-around">
+            <p class="text-brand-gray text-sm">纹章士-结合特技</p>
+            <h1 class="text-2xl font-medium">牵绊之盾</h1>
+          </div>
+        </header>
+        <p
+          class="desc my-4 px-4 py-4 border-l-4 border-brand-orange text-brand-black bg-brand-bg text-xl"
+        >
+          可使用“牵绊之盾”指令，80%几率使敌人对相邻我方单位的首次攻击无效
+        </p>
+        <section class="my-4">
+          <h2 class="mb-1.5 font-bold text-brand-gray text-lg">战斗类型加成</h2>
+          <p class="text-base whitespace-pre-line">
+            【龙族】发动率+10% 【骑马】若我方单位的类型为骑马则必定发动
+            【气功】发动率为100% 【重装】若我方单位的类型为重装则必定发动
+            【飞行】若我方单位的类型为飞行则必定发动
+          </p>
+        </section>
+        <section class="my-4">
+          <h2 class="mb-1.5 font-bold text-brand-gray text-lg">特技信息</h2>
+          <dl class="my-4">
+            <div
+              class="grid grid-cols-[6rem_minmax(0,1fr)] gap-3 border border-brand-border py-2 px-3"
+            >
+              <dt class="text-brand-gray text-sm">特技名称</dt>
+              <dd class="text-sm whitespace-pre-line">牵绊之盾</dd>
+            </div>
+            <div
+              class="grid grid-cols-[6rem_minmax(0,1fr)] gap-3 border border-brand-border py-2 px-3"
+            >
+              <dt class="text-brand-gray text-sm">特技类型</dt>
+              <dd class="text-sm whitespace-pre-line">纹章士-结合特技</dd>
+            </div>
+            <div
+              class="grid grid-cols-[6rem_minmax(0,1fr)] gap-3 border border-brand-border py-2 px-3"
+            >
+              <dt class="text-brand-gray text-sm">详细效果说明</dt>
+              <dd class="text-sm whitespace-pre-line">
+                可使用“牵绊之盾”指令，80%几率使敌人对相邻我方单位的首次攻击无效
+              </dd>
+            </div>
+            <div
+              class="grid grid-cols-[6rem_minmax(0,1fr)] gap-3 border border-brand-border py-2 px-3"
+            >
+              <dt class="text-brand-gray text-sm">角色要求</dt>
+              <dd class="text-sm whitespace-pre-line">--</dd>
+            </div>
+            <div
+              class="grid grid-cols-[6rem_minmax(0,1fr)] gap-3 border border-brand-border py-2 px-3"
+            >
+              <dt class="text-brand-gray text-sm">兵种要求</dt>
+              <dd class="text-sm whitespace-pre-line">--</dd>
+            </div>
+            <div
+              class="grid grid-cols-[6rem_minmax(0,1fr)] gap-3 border border-brand-border py-2 px-3"
+            >
+              <dt class="text-brand-gray text-sm">纹章士</dt>
+              <dd class="text-sm whitespace-pre-line">露琪娜</dd>
+            </div>
+            <div
+              class="grid grid-cols-[6rem_minmax(0,1fr)] gap-3 border border-brand-border py-2 px-3"
+            >
+              <dt class="text-brand-gray text-sm">牵绊等级</dt>
+              <dd class="text-sm whitespace-pre-line">1</dd>
+            </div>
+            <div
+              class="grid grid-cols-[6rem_minmax(0,1fr)] gap-3 border border-brand-border py-2 px-3"
+            >
+              <dt class="text-brand-gray text-sm">继承SP</dt>
+              <dd class="text-sm whitespace-pre-line">--</dd>
+            </div>
+            <div
+              class="grid grid-cols-[6rem_minmax(0,1fr)] gap-3 border border-brand-border py-2 px-3"
+            >
+              <dt class="text-brand-gray text-sm">备注</dt>
+              <dd class="text-sm whitespace-pre-line">
+                必须与纹章士进入“结合”状态才生效
+              </dd>
+            </div>
+          </dl>
+        </section>
+      </main>
+    </div>
+  </body>
+</html>
+"
+`;
+
+exports[`built skill detail page snapshots > 纹章士-结合特技: matches the full HTML snapshot for 神龙加护 1`] = `
+"<!DOCTYPE html>
+<html lang="zh-CN" data-astro-cid-z4jru4n3>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" href="/favicon.ico" />
+    <meta name="generator" content="Astro v7.4.2" />
+    <!-- 数字字体：Barlow 数字窄而清楚、有等宽数字，用于表格里的数值 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Barlow:wght@500;700&display=swap"
+    />
+    <title>火焰纹章结合 Engage Wiki</title>
+    <link rel="stylesheet" href="/_astro/NavLayout.2QCpPIjh.css" />
+    <style>
+      .thumb[data-astro-cid-zennbdu3] {
+        aspect-ratio: 1;
+        border-radius: 6px;
+        flex: none;
+        max-width: 100%;
+        height: auto;
+        display: block;
+      }
+      .placeholder[data-astro-cid-zennbdu3] {
+        background: #e5e5e5;
+      }
+    </style>
+  </head>
+  <body data-astro-cid-z4jru4n3>
+    <div class="nav-layout no-sidebar" data-astro-cid-entc4gyn>
+      <nav class="menu" aria-label="主菜单" data-astro-cid-entc4gyn>
+        <a href="/" data-astro-cid-entc4gyn>首页</a
+        ><a href="/characters" data-astro-cid-entc4gyn>角色</a
+        ><a href="/classes" data-astro-cid-entc4gyn>兵种</a
+        ><a href="/skills" aria-current="page" data-astro-cid-entc4gyn>特技</a
+        ><a href="/emblems" data-astro-cid-entc4gyn>纹章士</a
+        ><a href="/team" data-astro-cid-entc4gyn>阵容搭配</a
+        ><a href="/chapters" data-astro-cid-entc4gyn>章节流程</a>
+      </nav>
+      <main data-astro-cid-entc4gyn>
+        <p class="my-4 text-sm">
+          <a
+            class="text-brand-blue focus-visible:outline-brand-orange focus-visible:outline-offset-4 underline"
+            href="/skills"
+            >← 全部特技</a
+          >
+        </p>
+        <header class="flex items-stretch gap-4">
+          <img
+            src="/_astro/%E7%A5%9E%E9%BE%99%E5%8A%A0%E6%8A%A4.BCRIKj8d_2jYbVq.webp"
+            srcset="
+              /_astro/%E7%A5%9E%E9%BE%99%E5%8A%A0%E6%8A%A4.BCRIKj8d_2jYbVq.webp 1x,
+              /_astro/%E7%A5%9E%E9%BE%99%E5%8A%A0%E6%8A%A4.BCRIKj8d_ZKrHvA.webp 2x
+            "
+            alt
+            data-astro-cid-zennbdu3="true"
+            loading="lazy"
+            decoding="async"
+            width="64"
+            height="64"
+            class="thumb"
+          />
+          <div class="flex flex-col justify-around">
+            <p class="text-brand-gray text-sm">纹章士-结合特技</p>
+            <h1 class="text-2xl font-medium">神龙加护</h1>
+          </div>
+        </header>
+        <p
+          class="desc my-4 px-4 py-4 border-l-4 border-brand-orange text-brand-black bg-brand-bg text-xl"
+        >
+          使所有对自身的克制效果无效。
+        </p>
+        <section class="my-4">
+          <h2 class="mb-1.5 font-bold text-brand-gray text-lg">特技信息</h2>
+          <dl class="my-4">
+            <div
+              class="grid grid-cols-[6rem_minmax(0,1fr)] gap-3 border border-brand-border py-2 px-3"
+            >
+              <dt class="text-brand-gray text-sm">特技名称</dt>
+              <dd class="text-sm whitespace-pre-line">神龙加护</dd>
+            </div>
+            <div
+              class="grid grid-cols-[6rem_minmax(0,1fr)] gap-3 border border-brand-border py-2 px-3"
+            >
+              <dt class="text-brand-gray text-sm">特技类型</dt>
+              <dd class="text-sm whitespace-pre-line">纹章士-结合特技</dd>
+            </div>
+            <div
+              class="grid grid-cols-[6rem_minmax(0,1fr)] gap-3 border border-brand-border py-2 px-3"
+            >
+              <dt class="text-brand-gray text-sm">详细效果说明</dt>
+              <dd class="text-sm whitespace-pre-line">
+                使所有对自身的克制效果无效。
+              </dd>
+            </div>
+            <div
+              class="grid grid-cols-[6rem_minmax(0,1fr)] gap-3 border border-brand-border py-2 px-3"
+            >
+              <dt class="text-brand-gray text-sm">角色要求</dt>
+              <dd class="text-sm whitespace-pre-line">--</dd>
+            </div>
+            <div
+              class="grid grid-cols-[6rem_minmax(0,1fr)] gap-3 border border-brand-border py-2 px-3"
+            >
+              <dt class="text-brand-gray text-sm">兵种要求</dt>
+              <dd class="text-sm whitespace-pre-line">--</dd>
+            </div>
+            <div
+              class="grid grid-cols-[6rem_minmax(0,1fr)] gap-3 border border-brand-border py-2 px-3"
+            >
+              <dt class="text-brand-gray text-sm">纹章士</dt>
+              <dd class="text-sm whitespace-pre-line">琉尔</dd>
+            </div>
+            <div
+              class="grid grid-cols-[6rem_minmax(0,1fr)] gap-3 border border-brand-border py-2 px-3"
+            >
+              <dt class="text-brand-gray text-sm">牵绊等级</dt>
+              <dd class="text-sm whitespace-pre-line">20</dd>
+            </div>
+            <div
+              class="grid grid-cols-[6rem_minmax(0,1fr)] gap-3 border border-brand-border py-2 px-3"
+            >
+              <dt class="text-brand-gray text-sm">继承SP</dt>
+              <dd class="text-sm whitespace-pre-line">--</dd>
+            </div>
+            <div
+              class="grid grid-cols-[6rem_minmax(0,1fr)] gap-3 border border-brand-border py-2 px-3"
+            >
+              <dt class="text-brand-gray text-sm">备注</dt>
+              <dd class="text-sm whitespace-pre-line">
+                需完成对应纹章士外传解锁 必须与纹章士进入“结合”状态才生效
+              </dd>
+            </div>
+          </dl>
+        </section>
+      </main>
+    </div>
+  </body>
+</html>
+"
+`;
+
+exports[`built skill detail page snapshots > 纹章士-继承特技: matches the full HTML snapshot for 回避+30 1`] = `
+"<!DOCTYPE html>
+<html lang="zh-CN" data-astro-cid-z4jru4n3>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" href="/favicon.ico" />
+    <meta name="generator" content="Astro v7.4.2" />
+    <!-- 数字字体：Barlow 数字窄而清楚、有等宽数字，用于表格里的数值 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Barlow:wght@500;700&display=swap"
+    />
+    <title>火焰纹章结合 Engage Wiki</title>
+    <link rel="stylesheet" href="/_astro/NavLayout.2QCpPIjh.css" />
+    <style>
+      .thumb[data-astro-cid-zennbdu3] {
+        aspect-ratio: 1;
+        border-radius: 6px;
+        flex: none;
+        max-width: 100%;
+        height: auto;
+        display: block;
+      }
+      .placeholder[data-astro-cid-zennbdu3] {
+        background: #e5e5e5;
+      }
+    </style>
+  </head>
+  <body data-astro-cid-z4jru4n3>
+    <div class="nav-layout no-sidebar" data-astro-cid-entc4gyn>
+      <nav class="menu" aria-label="主菜单" data-astro-cid-entc4gyn>
+        <a href="/" data-astro-cid-entc4gyn>首页</a
+        ><a href="/characters" data-astro-cid-entc4gyn>角色</a
+        ><a href="/classes" data-astro-cid-entc4gyn>兵种</a
+        ><a href="/skills" aria-current="page" data-astro-cid-entc4gyn>特技</a
+        ><a href="/emblems" data-astro-cid-entc4gyn>纹章士</a
+        ><a href="/team" data-astro-cid-entc4gyn>阵容搭配</a
+        ><a href="/chapters" data-astro-cid-entc4gyn>章节流程</a>
+      </nav>
+      <main data-astro-cid-entc4gyn>
+        <p class="my-4 text-sm">
+          <a
+            class="text-brand-blue focus-visible:outline-brand-orange focus-visible:outline-offset-4 underline"
+            href="/skills"
+            >← 全部特技</a
+          >
+        </p>
+        <header class="flex items-stretch gap-4">
+          <img
+            src="/_astro/%E5%9B%9E%E9%81%BF_30.DJlYyRU9_Z1dqQmS.webp"
+            srcset="
+              /_astro/%E5%9B%9E%E9%81%BF_30.DJlYyRU9_Z1dqQmS.webp 1x,
+              /_astro/%E5%9B%9E%E9%81%BF_30.DJlYyRU9_1IUXCc.webp  2x
+            "
+            alt
+            data-astro-cid-zennbdu3="true"
+            loading="lazy"
+            decoding="async"
+            width="64"
+            height="64"
+            class="thumb"
+          />
+          <div class="flex flex-col justify-around">
+            <p class="text-brand-gray text-sm">纹章士-继承特技</p>
+            <h1 class="text-2xl font-medium">回避+30</h1>
+          </div>
+        </header>
+        <p
+          class="desc my-4 px-4 py-4 border-l-4 border-brand-orange text-brand-black bg-brand-bg text-xl"
+        >
+          回避提升30。
+        </p>
+        <section class="my-4">
+          <h2 class="mb-1.5 font-bold text-brand-gray text-lg">特技信息</h2>
+          <dl class="my-4">
+            <div
+              class="grid grid-cols-[6rem_minmax(0,1fr)] gap-3 border border-brand-border py-2 px-3"
+            >
+              <dt class="text-brand-gray text-sm">特技名称</dt>
+              <dd class="text-sm whitespace-pre-line">回避+30</dd>
+            </div>
+            <div
+              class="grid grid-cols-[6rem_minmax(0,1fr)] gap-3 border border-brand-border py-2 px-3"
+            >
+              <dt class="text-brand-gray text-sm">特技类型</dt>
+              <dd class="text-sm whitespace-pre-line">纹章士-继承特技</dd>
+            </div>
+            <div
+              class="grid grid-cols-[6rem_minmax(0,1fr)] gap-3 border border-brand-border py-2 px-3"
+            >
+              <dt class="text-brand-gray text-sm">详细效果说明</dt>
+              <dd class="text-sm whitespace-pre-line">回避提升30。</dd>
+            </div>
+            <div
+              class="grid grid-cols-[6rem_minmax(0,1fr)] gap-3 border border-brand-border py-2 px-3"
+            >
+              <dt class="text-brand-gray text-sm">角色要求</dt>
+              <dd class="text-sm whitespace-pre-line">--</dd>
+            </div>
+            <div
+              class="grid grid-cols-[6rem_minmax(0,1fr)] gap-3 border border-brand-border py-2 px-3"
+            >
+              <dt class="text-brand-gray text-sm">兵种要求</dt>
+              <dd class="text-sm whitespace-pre-line">--</dd>
+            </div>
+            <div
+              class="grid grid-cols-[6rem_minmax(0,1fr)] gap-3 border border-brand-border py-2 px-3"
+            >
+              <dt class="text-brand-gray text-sm">纹章士</dt>
+              <dd class="text-sm whitespace-pre-line">马尔斯</dd>
+            </div>
+            <div
+              class="grid grid-cols-[6rem_minmax(0,1fr)] gap-3 border border-brand-border py-2 px-3"
+            >
+              <dt class="text-brand-gray text-sm">牵绊等级</dt>
+              <dd class="text-sm whitespace-pre-line">19</dd>
+            </div>
+            <div
+              class="grid grid-cols-[6rem_minmax(0,1fr)] gap-3 border border-brand-border py-2 px-3"
+            >
+              <dt class="text-brand-gray text-sm">继承SP</dt>
+              <dd class="text-sm whitespace-pre-line">4500</dd>
+            </div>
+            <div
+              class="grid grid-cols-[6rem_minmax(0,1fr)] gap-3 border border-brand-border py-2 px-3"
+            >
+              <dt class="text-brand-gray text-sm">备注</dt>
+              <dd class="text-sm whitespace-pre-line">
+                需完成对应纹章士外传解锁 必须继承后并装备才生效
+              </dd>
+            </div>
+          </dl>
+        </section>
+      </main>
+    </div>
+  </body>
+</html>
+"
+`;
+
+exports[`built skill detail page snapshots > 纹章士-继承特技: matches the full HTML snapshot for 速度+3 1`] = `
+"<!DOCTYPE html>
+<html lang="zh-CN" data-astro-cid-z4jru4n3>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" href="/favicon.ico" />
+    <meta name="generator" content="Astro v7.4.2" />
+    <!-- 数字字体：Barlow 数字窄而清楚、有等宽数字，用于表格里的数值 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Barlow:wght@500;700&display=swap"
+    />
+    <title>火焰纹章结合 Engage Wiki</title>
+    <link rel="stylesheet" href="/_astro/NavLayout.2QCpPIjh.css" />
+    <style>
+      .thumb[data-astro-cid-zennbdu3] {
+        aspect-ratio: 1;
+        border-radius: 6px;
+        flex: none;
+        max-width: 100%;
+        height: auto;
+        display: block;
+      }
+      .placeholder[data-astro-cid-zennbdu3] {
+        background: #e5e5e5;
+      }
+    </style>
+  </head>
+  <body data-astro-cid-z4jru4n3>
+    <div class="nav-layout no-sidebar" data-astro-cid-entc4gyn>
+      <nav class="menu" aria-label="主菜单" data-astro-cid-entc4gyn>
+        <a href="/" data-astro-cid-entc4gyn>首页</a
+        ><a href="/characters" data-astro-cid-entc4gyn>角色</a
+        ><a href="/classes" data-astro-cid-entc4gyn>兵种</a
+        ><a href="/skills" aria-current="page" data-astro-cid-entc4gyn>特技</a
+        ><a href="/emblems" data-astro-cid-entc4gyn>纹章士</a
+        ><a href="/team" data-astro-cid-entc4gyn>阵容搭配</a
+        ><a href="/chapters" data-astro-cid-entc4gyn>章节流程</a>
+      </nav>
+      <main data-astro-cid-entc4gyn>
+        <p class="my-4 text-sm">
+          <a
+            class="text-brand-blue focus-visible:outline-brand-orange focus-visible:outline-offset-4 underline"
+            href="/skills"
+            >← 全部特技</a
+          >
+        </p>
+        <header class="flex items-stretch gap-4">
+          <img
+            src="/_astro/%E9%80%9F%E5%BA%A6_3.CdYApWRo_Z2ktvmz.webp"
+            srcset="
+              /_astro/%E9%80%9F%E5%BA%A6_3.CdYApWRo_Z2ktvmz.webp 1x,
+              /_astro/%E9%80%9F%E5%BA%A6_3.CdYApWRo_28Isyv.webp  2x
+            "
+            alt
+            data-astro-cid-zennbdu3="true"
+            loading="lazy"
+            decoding="async"
+            width="64"
+            height="64"
+            class="thumb"
+          />
+          <div class="flex flex-col justify-around">
+            <p class="text-brand-gray text-sm">纹章士-继承特技</p>
+            <h1 class="text-2xl font-medium">速度+3</h1>
+          </div>
+        </header>
+        <p
+          class="desc my-4 px-4 py-4 border-l-4 border-brand-orange text-brand-black bg-brand-bg text-xl"
+        >
+          速度提升3。
+        </p>
+        <section class="my-4">
+          <h2 class="mb-1.5 font-bold text-brand-gray text-lg">特技信息</h2>
+          <dl class="my-4">
+            <div
+              class="grid grid-cols-[6rem_minmax(0,1fr)] gap-3 border border-brand-border py-2 px-3"
+            >
+              <dt class="text-brand-gray text-sm">特技名称</dt>
+              <dd class="text-sm whitespace-pre-line">速度+3</dd>
+            </div>
+            <div
+              class="grid grid-cols-[6rem_minmax(0,1fr)] gap-3 border border-brand-border py-2 px-3"
+            >
+              <dt class="text-brand-gray text-sm">特技类型</dt>
+              <dd class="text-sm whitespace-pre-line">纹章士-继承特技</dd>
+            </div>
+            <div
+              class="grid grid-cols-[6rem_minmax(0,1fr)] gap-3 border border-brand-border py-2 px-3"
+            >
+              <dt class="text-brand-gray text-sm">详细效果说明</dt>
+              <dd class="text-sm whitespace-pre-line">速度提升3。</dd>
+            </div>
+            <div
+              class="grid grid-cols-[6rem_minmax(0,1fr)] gap-3 border border-brand-border py-2 px-3"
+            >
+              <dt class="text-brand-gray text-sm">角色要求</dt>
+              <dd class="text-sm whitespace-pre-line">--</dd>
+            </div>
+            <div
+              class="grid grid-cols-[6rem_minmax(0,1fr)] gap-3 border border-brand-border py-2 px-3"
+            >
+              <dt class="text-brand-gray text-sm">兵种要求</dt>
+              <dd class="text-sm whitespace-pre-line">--</dd>
+            </div>
+            <div
+              class="grid grid-cols-[6rem_minmax(0,1fr)] gap-3 border border-brand-border py-2 px-3"
+            >
+              <dt class="text-brand-gray text-sm">纹章士</dt>
+              <dd class="text-sm whitespace-pre-line">琳</dd>
+            </div>
+            <div
+              class="grid grid-cols-[6rem_minmax(0,1fr)] gap-3 border border-brand-border py-2 px-3"
+            >
+              <dt class="text-brand-gray text-sm">牵绊等级</dt>
+              <dd class="text-sm whitespace-pre-line">9</dd>
+            </div>
+            <div
+              class="grid grid-cols-[6rem_minmax(0,1fr)] gap-3 border border-brand-border py-2 px-3"
+            >
+              <dt class="text-brand-gray text-sm">继承SP</dt>
+              <dd class="text-sm whitespace-pre-line">500</dd>
+            </div>
+            <div
+              class="grid grid-cols-[6rem_minmax(0,1fr)] gap-3 border border-brand-border py-2 px-3"
+            >
+              <dt class="text-brand-gray text-sm">备注</dt>
+              <dd class="text-sm whitespace-pre-line">
+                继承特技和同步效果可叠加
+              </dd>
+            </div>
+          </dl>
+        </section>
+      </main>
+    </div>
+  </body>
+</html>
+"
+`;
